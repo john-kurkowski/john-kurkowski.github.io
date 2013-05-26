@@ -1,0 +1,66 @@
+---
+layout: post
+title: Avoid Git First Drafts
+tags:
+---
+Here are [pages](http://www.viget.com/extend/only-you-can-prevent-git-merge-
+commits/) [rife](http://notes.envato.com/developers/rebasing-merge-commits-in-
+git/) [with](http://stackoverflow.com/questions/2472254/when-should-i-use-git-
+pull-rebase) [debate](http://jasoncodes.com/posts/gup-git-rebase) on using `git
+pull` vs. `git pull --rebase`.
+
+I've decided for myself there are times for both, that is, there are times for
+merge commits and not. There's no hard rule, but I use the former when I want to
+demarcate a feature occurring over several commits. I use the latter if a series
+of commits can be logically squashed to 1-2 commits before pushing; rebasing
+here means a tighter, linear history that is easier to follow.
+
+In both cases still I clean up and squash commits before pushing.
+
+A StackOverflow devil's advocate submitted an answer with the rhetorical
+question, why all this need to rewrite history to present it the way you wished
+it had happened? Why not present it the way it really happened? In both cases
+you ultimately get the completed feature. And letting the history be means less
+jumping through hoops.
+
+But I've always found I prefer to rewrite history to present it in a clearer,
+more purposeful way. Code is read more often than it is written, and version
+control can serve as an indicator as to not only when and how things were done,
+but also *why*[<sup>1</sup>](#1). If you publish history exactly as it was, you
+lose this clarity.
+
+A book author never publishes first drafts. Book readers never see the book with
+rough around the edges, so they puzzle less, avoiding questions like, what does
+the author mean here? Or, did he really mean to include this sentence?
+
+No creator gets their art right the first time. Programmers are no exception.
+
+If programmers were to always publish first drafts,
+
+1. they'll break the build a lot more (or worse) and
+2. when a reader reviews their code, whether it's `HEAD` or ancient history, the
+   reader may interpret the author's initial mistakes as being correct at the
+   time. Even if the reader's initial reaction is confusion, they may assume the
+   change was done for a good reason.
+
+Assuming all code is intentional and correct can be a catastrophic attitude to
+be sure, but unfortunately there isn't enough time to treat every foreign line
+of code as hostile. You might as well make things easy as possible for future
+readers, yourself included.
+
+First, commit often in logical, functioning steps, to ease wrapping your head
+around the change and later reapplying or reverting it. Keep up to date but
+erase superfluous merge commits. Then clean up and reorder code and history
+before pushing. Make it as correct as possible and easy to follow.
+
+See also [Understanding the Git Workflow](http://sandofsky.com/blog/git-
+workflow.html), explaining the beauty of unpublished vs. published history.
+
+<small><sup id="1">1</sup>Self-documenting code is the first, greatest step
+toward this, but over the history of a large codebase, it's impossible to
+express every change at a single glance.</small>
+
+_**Update 2/1/2013:** [This blog post on
+git-rebase](http://blog.izs.me/post/37650663670/git-rebase) comes from a much
+wiser open source & Git wizard. It echoes my sentiments here, but it shows
+rather than tells!_
