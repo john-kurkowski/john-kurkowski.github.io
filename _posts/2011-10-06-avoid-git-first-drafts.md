@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Avoid Git First Drafts
-tags:
+categories: tech
+tags: git
 ---
 Here are [pages](http://www.viget.com/extend/only-you-can-prevent-git-merge-
 commits/) [rife](http://notes.envato.com/developers/rebasing-merge-commits-in-
