@@ -3,8 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
+        <title>
+          {% if page.title %}
+            {{ page.title }} &ndash;
+          {% endif %}
+          {{ site.name }}
+        </title>
+
+        <meta name="author" content="{{ site.name }}" />
+        <meta name="description" content="{{ site.description }}" />
         <meta name="viewport" content="width=device-width">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
@@ -19,23 +31,23 @@
           <div class="site">
             <div class="header">
               <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
             </div>
-     
+
                 {{ content }}
 
             <div class="footer">
               <div class="contact">
                 <p>
-                  Your Name<br />
-                  What You Are<br />
-                  your@email.com
+                  John Kurkowski<br />
+                  UI Engineer<br />
                 </p>
               </div>
               <div class="contact">
                 <p>
-                  <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
-                  <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
+                  <a href="http://twitter.com/bluu/"><img src="/images/twitter-bird-16x16.png" width="16" height="16" /></a>
+                  <a href="http://twitter.com/bluu/">twitter.com/bluu</a><br />
+                  <a href="http://github.com/john-kurkowski/"><img src="/images/gh-16x16.png" width="16" height="16" /></a>
+                  <a href="http://github.com/john-kurkowski/">github.com/john-kurkowski</a><br />
                 </p>
               </div>
             </div>
