@@ -1,7 +1,15 @@
 .highlight {
   background-color: #073642;
   color: #93a1a1;
+  padding: 7px 7px 7px 10px;
+  margin: 20px 0 20px 0;
+  overflow: hidden;
 }
+
+code {
+  font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+}
+
 .highlight .c {
   color: #586e75 !important;
   font-style: italic !important;
