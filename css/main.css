@@ -141,31 +141,13 @@ ul.posts span {
 }
 
 /* standard */
-#post pre {
-  border: 1px solid #ddd;
-  padding: 0 .4em;
+#post blockquote {
+  border-left: 6px solid #ddd;
+  padding: 0 1em;
+  line-height: 1.5em;
+  font-style: italic;
 }
 
 #post ul, #post ol {
   margin-left: 1.35em;
-}
-
-#post code {
-  border: 1px solid #ddd;
-  padding: 0 .2em;
-}
-
-#post pre code {
-  border: none;
-}
-
-/* terminal */
-#post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
-}
-
-#post pre.terminal code {
-  background-color: #333;
 }
