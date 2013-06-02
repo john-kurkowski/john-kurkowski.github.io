@@ -1,12 +1,14 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<div class="site">
+  <h2>{{ page.title }}</h2>
+  <p class="meta">{{ page.date | date_to_string }}</p>
 
-<div id="post">
-{{ content }}
+  <div id="post">
+    {{ content }}
+  </div>
+
+  <div id="disqus_thread"></div>
+  <noscript>Enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript>
 </div>
-
-<div id="disqus_thread"></div>
-<noscript>Enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript>

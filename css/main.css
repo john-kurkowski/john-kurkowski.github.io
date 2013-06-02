@@ -39,6 +39,12 @@ table {
 /* Home
 /*
 /*****************************************************************************/
+
+#home header {
+  background: url(/images/header-full.jpg) no-repeat;
+  background-size: 100%;
+}
+
 ul.posts {
   list-style-type: none;
   margin-bottom: 2em;
