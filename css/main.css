@@ -14,24 +14,35 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+  color: #444;
+  font: 18px Optima, Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+h1 {
+  font-size: 291.515%;
+}
 
-h1 { margin-bottom: 1em; }
+h2 {
+  font-size: 123.077%;
+}
+
+h3 {
+  font-size: 100%;
+}
+
 p { margin: 1em 0; }
 
 a         { color: #00a; }
 a:hover   { color: #000; }
-a:visited { color: #a0a; }
+a:visited { color: #93A1A1; }
 
 table {
   font-size: inherit;
   font: 100%;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none;
 }
 
 /*****************************************************************************/
@@ -40,9 +51,57 @@ table {
 /*
 /*****************************************************************************/
 
-#home header {
-  background: url(/images/header-full.jpg) no-repeat;
+#splash {
+  background: url(/images/splash-full.jpg) no-repeat;
   background-size: 100%;
+}
+
+header h1, header h2 {
+  font-family: 'Trebuchet MS';
+}
+
+header h1 {
+  text-transform: uppercase;
+}
+
+header h2 {
+  margin-bottom: 1em;
+}
+
+header h2, header h3 {
+  font-weight: normal;
+}
+
+header h1 a, header h1 a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  text-decoration: underline;
+}
+
+.headline {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1em;
+}
+
+.headline .statement {
+  float: left;
+  height: 100%;
+}
+
+.headline .statement + .statement {
+  margin-left: 6em;
+}
+
+.headline .statement:nth-child(1) {
+  width: 20%;
+}
+
+.headline .statement:nth-child(2) {
+  width: 40%;
 }
 
 ul.posts {
@@ -67,9 +126,7 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
-  font-size: 115%;
-  text-align: left;
-  width: 38em;
+  width: 36em;
   margin: 3em auto 2em;
   line-height: 1.5em;
 }
@@ -106,7 +163,7 @@ ul.posts span {
 }
 
 .site .footer {
-  font-size: 80%;
+  font-size: 69.269%;
   color: #666;
   border-top: 4px solid #eee;
   margin-top: 2em;

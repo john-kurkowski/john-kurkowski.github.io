@@ -1,5 +1,9 @@
 angular
   .module('johnkurkowski', [])
+  /**
+   * On window resize, resizes the element's background image height to the
+   * attribute's ratio.
+   */
   .directive('backgroundResizeHeightRatio', function() {
     return function(scope, element, attrs) {
       var bg = /url\(([^)]+)/.exec(element.css('background-image'))[1],
@@ -15,6 +19,10 @@ angular
       }).attr('src', bg);
     };
   })
+  /**
+   * Fixes the element at the bottom of the viewport as long as the viewport is
+   * within the element matched by the attribute's selector.
+   */
   .directive('scrollBottomWithin', function() {
     return function(scope, element, attrs) {
       var selector = attrs.scrollBottomWithin,
@@ -42,8 +50,8 @@ angular
             }
           },
 
-          watchDims = function() {
-            var els = element.add(withinEl);
+          dimsToWatch = function() {
+            var els = element.add(withinEl),
                 dims = els.map(function() {
                   return { width: angular.element(this).width(), height: angular.element(this).height() };
                 }).toArray();
@@ -52,7 +60,7 @@ angular
 
           deepEquals = true;
 
-      scope.$watch(watchDims, scrollBottom, deepEquals);
+      scope.$watch(dimsToWatch, scrollBottom, deepEquals);
       angular.element(document).on('scroll', scrollBottom);
     };
   });
