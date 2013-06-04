@@ -8,6 +8,10 @@
 * {
   margin: 0;
   padding: 0;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html, body { height: 100%; }
@@ -22,7 +26,7 @@ h1 {
   font-size: 291.515%;
 }
 
-h2 {
+h2, header .title {
   font-size: 123.077%;
 }
 
@@ -56,11 +60,18 @@ table {
   background-size: 100%;
 }
 
-header h1, header h2 {
+header {
+  border-bottom: 1px dotted #efefef;
+	-webkit-box-shadow: 0 12px 6px -4px rgba(43, 43, 41, 0.7);
+	   -moz-box-shadow: 0 12px 6px -4px rgba(43, 43, 41, 0.7);
+	        box-shadow: 0 12px 6px -4px rgba(43, 43, 41, 0.7);
+}
+
+header h1, header h2, header .title {
   font-family: 'Trebuchet MS';
 }
 
-header h1 {
+header h1, header .title {
   text-transform: uppercase;
 }
 
@@ -72,18 +83,21 @@ header h2, header h3 {
   font-weight: normal;
 }
 
-header h1 a, header h1 a:visited {
+header a, header a:visited {
   color: #fff;
   text-decoration: none;
 }
 
-header h1 a:hover {
+header a:hover {
   text-decoration: underline;
+}
+
+nav, .headline {
+  color: #fff;
 }
 
 .headline {
   background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
   padding: 1em;
 }
 
@@ -102,6 +116,45 @@ header h1 a:hover {
 
 .headline .statement:nth-child(2) {
   width: 40%;
+}
+
+nav {
+  background-color: rgb(43, 43, 41);
+  padding: 0 1em;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+nav li a {
+  display: block;
+  float: left;
+  font: 100% 'Trebuchet MS';
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 38%;
+}
+
+nav li a:hover {
+  background: #222;
+  color: #fff;
+  -webkit-transition: background 0.5s ease;
+     -moz-transition: background 0.5s ease;
+       -o-transition: background 0.5s ease;
+      -ms-transition: background 0.5s ease;
+          transition: background 0.5s ease;
+}
+
+nav li a:visited {
+  color: #fff;
+}
+
+nav li a.selected {
+  text-decoration: underline;
 }
 
 ul.posts {
