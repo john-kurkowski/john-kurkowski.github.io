@@ -172,77 +172,54 @@ ul.posts span {
   font-size: 80%;
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
+.center {
+  width: 36em;
+  margin: 0 auto;
+}
 
-.site {
+.content {
   width: 36em;
   margin: 3em auto 2em;
   line-height: 1.5em;
 }
 
-.site .header a {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.site .header h1.title {
-  display: inline-block;
-  margin-bottom: 2em;
-}
-
-.site .header h1.title a {
-  color: #a00;
-}
-
-.site .header h1.title a:hover {
-  color: #000;
-}
-
-.site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.site .header a.extra:hover {
-  color: #000;
-}
-
-.site .meta {
+.content .meta {
   color: #aaa;
 }
 
-.site .footer {
+footer {
+  background: url('/images/cream_pixels_@2X.png');
   font-size: 69.269%;
   color: #666;
   border-top: 4px solid #eee;
-  margin-top: 2em;
+  margin: 3em auto 2em;
   overflow: hidden;
 }
 
-.site .footer .contact {
+footer {
+  line-height: 2em;
+}
+
+footer .contact {
   float: left;
   margin-right: 3em;
 }
 
-.site .footer .contact a {
+footer .contact a {
   color: #8085C1;
 }
 
-.site .footer .contact img {
+footer .contact img {
   vertical-align: sub;
 }
 
-.site .footer .rss {
+footer .rss {
   margin-top: 1.1em;
   margin-right: -.2em;
   float: right;
 }
 
-.site .footer .rss img {
+footer .rss img {
   border: 0;
 }
 
