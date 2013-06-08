@@ -4,9 +4,10 @@ title:  "Accumulating More Than One Failure In A ValidationNEL"
 categories: tech
 tags: scala
 ---
-This is an adaptation of an internal blog post I made for Gravity engineers. To
-preface, Gravity likes to use 2 very predictable patterns throughout its Scala
-codebase, which is very important for a TIMTOWTDI language like Scala.
+This is an adaptation of an internal blog post I made for
+[Gravity](http://gravity.com) engineers. To preface, Gravity likes to use 2 very
+predictable patterns throughout its Scala codebase, which is very important for
+a TIMTOWTDI language like Scala.
 
 1. The **for-comprehension:** it expresses so much of Gravity's business logic,
    so it is valuable to see its familiar syntax over and over.
