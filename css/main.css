@@ -62,9 +62,9 @@ table {
 
 header {
   border-bottom: 1px dotted #efefef;
-	-webkit-box-shadow: 0 12px 6px -4px rgba(43, 43, 41, 0.7);
-	   -moz-box-shadow: 0 12px 6px -4px rgba(43, 43, 41, 0.7);
-	        box-shadow: 0 12px 6px -4px rgba(43, 43, 41, 0.7);
+	-webkit-box-shadow: 0 12px 18px -4px rgba(43, 43, 41, 0.7);
+	   -moz-box-shadow: 0 12px 18px -4px rgba(43, 43, 41, 0.7);
+	        box-shadow: 0 12px 18px -4px rgba(43, 43, 41, 0.7);
 }
 
 header h1, header h2, header .title {
@@ -122,6 +122,20 @@ nav {
   background-color: rgb(43, 43, 41);
   padding: 0 1em;
   width: 100%;
+  height: 2.5em;
+}
+
+nav .logo {
+  width: 80px;
+  height: 80px;
+  background-image: url("/images/avatar.png");
+  border: 3px solid #fff;
+  border-radius: 50%;
+	-webkit-box-shadow: 0 12px 18px 0 rgba(43, 43, 41, 0.7);
+	   -moz-box-shadow: 0 12px 18px 0 rgba(43, 43, 41, 0.7);
+	        box-shadow: 0 12px 18px 0 rgba(43, 43, 41, 0.7);
+  top: -20px;
+  position: absolute;
 }
 
 nav ul {
@@ -131,22 +145,13 @@ nav ul {
 
 nav li a {
   display: block;
-  float: left;
   font: 100% 'Trebuchet MS';
   padding: 10px;
   text-decoration: none;
-  text-transform: uppercase;
-  width: 38%;
 }
 
 nav li a:hover {
-  background: #222;
   color: #fff;
-  -webkit-transition: background 0.5s ease;
-     -moz-transition: background 0.5s ease;
-       -o-transition: background 0.5s ease;
-      -ms-transition: background 0.5s ease;
-          transition: background 0.5s ease;
 }
 
 nav li a:visited {
@@ -154,6 +159,18 @@ nav li a:visited {
 }
 
 nav li a.selected {
+  text-decoration: underline;
+}
+
+#back-home .statement + .statement {
+  margin-left: 1em;
+}
+
+#back-home a:hover {
+  text-decoration: none;
+}
+
+#back-home a:hover .title {
   text-decoration: underline;
 }
 
