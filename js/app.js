@@ -1,3 +1,7 @@
+var dims = function(i, el) {
+  return { width: angular.element(el).width(), height: angular.element(el).height() };
+};
+
 angular
   .module('johnkurkowski', [])
   /**
@@ -6,11 +10,11 @@ angular
    */
   .directive('backgroundResizeHeightRatio', function() {
     return function(scope, element, attrs) {
-      var bg = /url\(([^)]+)/.exec(element.css('background-image'))[1],
+      var bg = /url[('"]+([^)'"]+)/.exec(element.css('background-image'))[1],
           resize = function() {
             var ratio = parseFloat(attrs.backgroundResizeHeightRatio);
             element.height(element.width() / ratio);
-            scope.$digest();
+            scope.$apply();
           };
 
       angular.element('<img>').load(function() {
@@ -32,9 +36,10 @@ angular
             var win = angular.element(window),
                 viewportHeight = win.scrollTop() + win.innerHeight(),
                 includeMargin = true,
-                withinTop = withinEl.offset().top + withinEl.height();
+                withinTop = withinEl.offset().top + withinEl.height(),
+                isWithin = viewportHeight < withinTop;
 
-            if (viewportHeight < withinTop) {
+            if (isWithin) {
               element.css({
                 position: 'fixed',
                 top: 'auto',
@@ -48,14 +53,13 @@ angular
                 bottom: 'auto'
               });
             }
+
+            // TODO: externalize
+            element.find('.scroll-instruction').toggleClass('show-instruction', isWithin);
           },
 
           dimsToWatch = function() {
-            var els = element.add(withinEl),
-                dims = els.map(function() {
-                  return { width: angular.element(this).width(), height: angular.element(this).height() };
-                }).toArray();
-            return dims;
+            return element.add(withinEl).map(dims).toArray();
           },
 
           deepEquals = true;
