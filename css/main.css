@@ -60,6 +60,10 @@ table {
   background-size: 100%;
 }
 
+.tooltips {
+  position: relative;
+}
+
 header {
   border-bottom: 1px dotted #efefef;
 	-webkit-box-shadow: 0 12px 18px -4px rgba(43, 43, 41, 0.7);

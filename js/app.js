@@ -23,6 +23,31 @@ angular
       }).attr('src', bg);
     };
   })
+  .directive('resizeFromSiblings', function() {
+    return function(scope, element, attrs) {
+      var resize = function() {
+          var parentRect = element.parent()[0].getBoundingClientRect(),
+              prev = element.prev().length ? element.prev()[0].getBoundingClientRect().bottom : parentRect.top,
+              next = element.next().length ? element.next()[0].getBoundingClientRect().top : parentRect.bottom;
+
+          element.height(next - prev);
+        },
+        resizeApply = function() {
+          resize();
+          scope.$apply();
+        },
+        dimsToWatch = function() {
+          var els = element.parent().add(element.prev()).add(element.next()),
+              dims = els.map(function(i, el) { return el.getBoundingClientRect(); }).toArray();
+          return dims;
+        },
+        deepEquals = true;
+
+      resize();
+      angular.element(document).on('scroll', resizeApply);
+      scope.$watch(dimsToWatch, resize, deepEquals);
+    };
+  })
   /**
    * Fixes the element at the bottom of the viewport as long as the viewport is
    * within the element matched by the attribute's selector.
