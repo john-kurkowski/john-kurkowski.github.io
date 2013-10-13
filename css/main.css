@@ -293,6 +293,6 @@ footer .rss img {
   font-style: italic;
 }
 
-#post ul, #post ol {
-  margin-left: 1.35em;
+.content ul, .content ol {
+  margin: 1em 1.35em;
 }
