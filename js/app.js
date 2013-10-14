@@ -91,6 +91,7 @@ angular
 
       scope.$watch(dimsToWatch, scrollBottom, deepEquals);
       angular.element(document).on('scroll', scrollBottom);
+      angular.element(window).on('resize', scrollBottom);
     };
   });
 
