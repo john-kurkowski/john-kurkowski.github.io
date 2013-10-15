@@ -223,19 +223,32 @@ nav li a.selected {
   color: #7e7e7e;
 }
 
-ul.posts {
+.posts {
   list-style-type: none;
   margin-bottom: 2em;
+  display: table;
 }
 
-ul.posts li {
+.posts li {
   line-height: 1.75em;
+  display: table-row;
 }
 
-ul.posts span {
+.posts span {
   color: #aaa;
   font-family: Monaco, "Courier New", monospace;
   font-size: 80%;
+  display: table-cell;
+  min-width: 9em;
+}
+
+.posts span:after {
+  content: "»";
+  padding: 0 0.5em;
+}
+
+.posts a {
+  display: table-cell;
 }
 
 .center {
@@ -244,13 +257,24 @@ ul.posts span {
 }
 
 .content {
-  width: 36em;
-  margin: 3em auto 2em;
+  max-width: 36em;
   line-height: 1.5em;
 }
 
 .content .meta {
   color: #aaa;
+}
+
+@media screen and (max-width: 38em) {
+  .content {
+    margin: 3em 1em 2em;
+  }
+}
+
+@media screen and (min-width: 38em) {
+  .content {
+    margin: 3em auto 2em;
+  }
 }
 
 aside {
