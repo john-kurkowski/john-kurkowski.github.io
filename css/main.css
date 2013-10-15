@@ -206,6 +206,12 @@ nav li a.selected {
   margin-left: 1em;
 }
 
+@media screen and (max-width: 38em) {
+  #back-home .statement.subtitle {
+    display: none;
+  }
+}
+
 #back-home a:hover {
   text-decoration: none;
 }
