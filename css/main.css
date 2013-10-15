@@ -79,6 +79,10 @@ header h1, header .title {
   text-transform: uppercase;
 }
 
+header h1 {
+  margin-bottom: 0.25em;
+}
+
 header h2 {
   margin-bottom: 1em;
 }
@@ -101,38 +105,57 @@ nav, .headline {
 }
 
 .headline {
-  background-color: rgba(0, 0, 0, 0.6);
   padding: 1em;
 }
 
-.headline .statement {
-  float: left;
-  height: 100%;
+@media screen and (max-width: 38em) {
+  .headline {
+    background-color: rgba(0, 0, 0, 0.85);
+    position: static !important;
+  }
 }
 
-.headline .statement + .statement {
-  margin-left: 6em;
+@media screen and (min-width: 38em) {
+  .headline {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 }
 
-.headline .statement:nth-child(1) {
-  width: 20%;
+@media screen and (max-width: 60em) {
+  .headline .scroll-instruction {
+    display: none;
+  }
 }
 
-.headline .statement:nth-child(2) {
-  width: 40%;
-}
+@media screen and (min-width: 60em) {
+  .headline .statement {
+    float: left;
+  }
 
-.headline .scroll-instruction {
-  padding: 60% 0 0;
-  opacity: 0;
-          transition: opacity 0.3s ease-in-out;
-       -o-transition: opacity 0.3s ease-in-out;
-     -moz-transition: opacity 0.3s ease-in-out;
-  -webkit-transition: opacity 0.3s ease-in-out;
-}
+  .headline .statement + .statement {
+    margin-left: 6em;
+  }
 
-.headline .show-instruction {
-  opacity: 1;
+  .headline .statement:nth-child(1) {
+    width: 20%;
+  }
+
+  .headline .statement:nth-child(2) {
+    width: 40%;
+  }
+
+  .headline .scroll-instruction {
+    padding: 60% 0 0;
+    opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+         -o-transition: opacity 0.3s ease-in-out;
+       -moz-transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+  }
+
+  .headline .show-instruction {
+    opacity: 1;
+  }
 }
 
 nav {

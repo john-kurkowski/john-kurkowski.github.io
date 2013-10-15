@@ -13,7 +13,7 @@ angular
       var bg = /url[('"]+([^)'"]+)/.exec(element.css('background-image'))[1],
           resize = function() {
             var ratio = parseFloat(attrs.backgroundResizeHeightRatio);
-            element.height(element.width() / ratio);
+            element.height(Math.floor(element.width() / ratio));
             scope.$apply();
           };
 
