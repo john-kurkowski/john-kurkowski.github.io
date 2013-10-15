@@ -298,10 +298,8 @@ footer {
   font-size: 69.269%;
   border-top: 4px solid #eee;
   margin: 3em auto 2em;
+  padding: 0 2em;
   overflow: hidden;
-}
-
-footer {
   line-height: 2em;
 }
 
