@@ -274,6 +274,13 @@ nav li a.selected {
 @media screen and (max-width: 38em) {
   .content {
     margin: 3em 1em 2em;
+    font-size: 85%;
+  }
+}
+
+@media screen and (min-width: 38em) and (max-width: 50em) {
+  .content {
+    font-size: 90%;
   }
 }
 
