@@ -1,12 +1,42 @@
 ---
-layout: default
+layout: base
 ---
 
 <div id="home">
-  <h1>Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+  <header>
+    <div id="splash" class="ng-cloak" background-resize-height-ratio="1.5">
+      <div class="tooltips" resize-from-siblings
+           title="That's me on the left. Center: the closest I can get to a real dog. Right: my lovely wife. How could I cut her out of the picture?">
+      </div>
+    </div>
+    <div class="headline" scroll-bottom-within="#splash">
+      <h1 class="statement"><a href="/">{{ site.name }}</a></h1>
+      <div class="statement">
+        <h2>UI Engineer. Second, bolder self-assertion here.</h2>
+        <h3>
+          I'm a full stack web developer with a passion for usability and data
+          transparency, making the audience more informed, productive, engaged,
+          &amp; entertained. <a href="/about" class="about">More about me</a>.
+        </h3>
+      </div>
+      <div class="statement">
+        <div class="scroll-instruction">
+          <i class="icon-double-angle-down icon-white icon-2x"></i>
+          <i class="icon-double-angle-down icon-white icon-2x"></i>
+          <i class="icon-double-angle-down icon-white icon-2x"></i>
+          <i class="icon-double-angle-down icon-white icon-2x"></i>
+          <i class="icon-double-angle-down icon-white icon-2x"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="posts" class="content">
+    <h2>Posts</h2>
+    <ul class="posts">
+      {% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

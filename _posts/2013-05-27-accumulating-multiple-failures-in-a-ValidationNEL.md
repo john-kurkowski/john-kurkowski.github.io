@@ -4,9 +4,10 @@ title:  "Accumulating More Than One Failure In A ValidationNEL"
 categories: tech
 tags: scala
 ---
-This is an adaptation of an internal blog post I made for Gravity engineers. To
-preface, Gravity likes to use 2 very predictable patterns throughout its Scala
-codebase, which is very important for a TIMTOWTDI language like Scala.
+This is an adaptation of an internal blog post I made for
+[Gravity](http://gravity.com) engineers. To preface, Gravity likes to use 2 very
+predictable patterns throughout its Scala codebase, which is very important for
+a TIMTOWTDI language like Scala.
 
 1. The **for-comprehension:** it expresses so much of Gravity's business logic,
    so it is valuable to see its familiar syntax over and over.
@@ -100,7 +101,7 @@ val sumV: ValidationNEL[String, Int] = for {
 
 So how do you accumulate failures, fail-slow?
 
-# Fail-Slow: The Short Answer
+### Fail-Slow: The Short Answer
 
 The short answer is in the general Applicative Builder operator `|@|`.
 
@@ -205,7 +206,7 @@ lambda on `sequence` though, so good luck.
 You can stop here with your newfound Validation knowledge if you like.
 Otherwise, onto the more theoretical digression.
 
-# Validation As Monad? Validation As Applicative Functor?
+### Validation As Monad? Validation As Applicative Functor?
 
 Back to `|@|`. Why another operator? Why this promise of Validations playing
 nicely with for-comprehensions—syntax we already know—and yet we can't get
