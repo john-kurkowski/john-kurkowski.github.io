@@ -58,7 +58,7 @@ I aim to bring some sensitivity to this.
 
 ### Other Relevant Posts
 
-* [Credo]({% post_url 2013-10-12-credo %})
+* [Credo]({% post_url 2013-10-16-credo %})
 
 ## Colophon
 
