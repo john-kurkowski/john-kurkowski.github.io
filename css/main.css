@@ -168,7 +168,8 @@ nav {
 nav .logo {
   width: 80px;
   height: 80px;
-  background-image: url("/images/avatar.png");
+  background: url("/images/avatar@2X.jpeg") no-repeat;
+  background-size: 100%;
   border: 3px solid #fff;
   border-radius: 50%;
 	-webkit-box-shadow: 0 12px 18px 0 rgba(43, 43, 41, 0.7);
