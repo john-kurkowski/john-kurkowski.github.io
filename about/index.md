@@ -67,8 +67,11 @@ I aim to bring some sensitivity to this.
     I'm not interested in getting on a high horse about the technologies I use;
     there's enough <a href="http://prog21.dadgum.com/128.html">coding zeal</a>
     on the Interwebs. But I will include this section for the sake of the
-    curious, perhaps for the newcomer, how I cobbled together this site. While
-    I've put my 10,000 hours into programming, <a
+    curious, perhaps for the newcomer, how I cobbled together this site.
+  </p>
+
+  <p>
+    While I've put my 10,000 hours into programming, <a
     href="http://vimeo.com/71278954">I take a look back bewildered</a>:
     programming is still something new to me every day, which is both thrilling
     and frustrating, "Why isn't this easier?" For the uninitiated, it's an
@@ -88,9 +91,12 @@ I aim to bring some sensitivity to this.
 The source is pretty traditional
 [HTML5](http://www.abookapart.com/products/html5-for-web-designers),
 [CSS3](http://www.abookapart.com/products/css3-for-web-designers), and
-[JavaScript](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742),
-written by hand in [MacVim](https://code.google.com/p/macvim/), with a lot of
-prodding in [Chrome DevTools](http://www.google.com/chrome/).
+[JavaScript](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742).
+Most written content is in
+[Markdown](http://daringfireball.net/projects/markdown/) instead of lower-level
+HTML. They are all coded by hand in
+[MacVim](https://code.google.com/p/macvim/), with a lot of prodding in [Chrome
+DevTools](http://www.google.com/chrome/).
 
 <!-- Content -->
 
