@@ -83,12 +83,9 @@ header h1 {
   margin-bottom: 0.25em;
 }
 
-header h2 {
-  margin-bottom: 1em;
-}
-
 header h2, header h3 {
   font-weight: normal;
+  margin-bottom: 1em;
 }
 
 header a, header a:visited {
