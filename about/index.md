@@ -5,11 +5,9 @@ title: "About"
 
 ## About Me
 
-I'm a **[full stack web developer](#the_tradeoffs_of_full_stack_programming)**
-with a passion for **[usability](#usability_focus)** and data transparency, making
-the audience more informed, productive, engaged, & entertained.
-
-### The Tradeoffs of Full Stack Programming
+I'm a **full stack web developer** with a passion for **usability** and data
+transparency, making the audience more informed, productive, engaged, &
+entertained.
 
 Any software user interface worth its salt is an iceberg. The user sees only
 the tip, while engineering has masked any underlying complexities with
@@ -28,8 +26,9 @@ Self-reliance. If a job's worth doing, it's worth doing yourself. I could
 suffer being blocked by different teams. They're deep in their own work &
 responsibilities though. They don't have the time and memory for all my
 requests. Play nice as you can, there are always communication breakdowns. So,
-why not figure things out myself, and GTD? Who accomplishes more, an engineer
-always at the mercy of others, or someone who can feed themself anywhere?
+why not figure things out myself, cut the red tape, and get things done? Who
+accomplishes more, an engineer always at the mercy of others, or someone who can
+feed themself anywhere?
 
 This is my personal outlook. As with any extreme though, it's not always the
 right answer. In others, I've seen the benefits of their code & project
@@ -38,8 +37,7 @@ specialization, and make it the best damn module of the application. With
 someone like me, you might get design-by-committee, as opposed to design by a
 domain expert.
 
-I say I'm a UI Engineer but I have a hand it in all. So I'm a jack of all
-trades. I'll leave it to you whether I'm a master of none.
+I say I'm a UI Engineer but I have a hand in it all. A jack of all trades.
 
 ### Usability Focus
 
@@ -56,9 +54,7 @@ The design of everyday things is often irresponsible and insulting. The
 software industry can do better. Wherever I'm involved as a software engineer,
 I aim to bring some sensitivity to this.
 
-### Other Relevant Posts
-
-* [Credo]({% post_url 2013-10-16-credo %})
+Read my other overarching themes in [Credo]({% post_url 2013-10-16-credo %}).
 
 ## Colophon
 
