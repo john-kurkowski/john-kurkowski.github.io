@@ -62,7 +62,8 @@ angular
                 viewportHeight = win.scrollTop() + win.innerHeight(),
                 includeMargin = true,
                 withinTop = withinEl.offset().top + withinEl.height(),
-                isWithin = viewportHeight < withinTop;
+                isWithin = viewportHeight < withinTop,
+                showScrollInstruction = viewportHeight < withinTop * 1.1;
 
             if (isWithin) {
               element.css({
@@ -80,7 +81,7 @@ angular
             }
 
             // TODO: externalize
-            element.find('.scroll-instruction').toggleClass('show-instruction', isWithin);
+            element.find('.scroll-instruction').toggleClass('show-instruction', showScrollInstruction);
           },
 
           dimsToWatch = function() {
