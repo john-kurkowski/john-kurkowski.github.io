@@ -19,7 +19,11 @@ html, body { height: 100%; }
 body {
   background-color: #FFF;
   color: #444;
-  font: 18px Optima, Segoe, "Segoe UI", Helvetica, Arial, sans-serif;
+  font: 18px Optima, Segoe, "Segoe UI", sans-serif;
+}
+
+a img {
+  border: 0;
 }
 
 h1 {
@@ -72,7 +76,7 @@ header {
 }
 
 header h1, header h2, header .title {
-  font-family: 'Trebuchet MS';
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 header h1, header .title {
