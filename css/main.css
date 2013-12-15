@@ -300,10 +300,17 @@ nav li a.selected {
   }
 }
 
-aside {
-  border: 4px solid #eee;
+aside, figure {
   margin: 1em auto;
   padding: 0 1em;
+}
+
+aside, figure img {
+  border: 4px solid #eee;
+}
+
+figure {
+  text-align: center;
 }
 
 aside, footer {
