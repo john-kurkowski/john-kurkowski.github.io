@@ -314,7 +314,11 @@ footer {
 
 footer .contact {
   float: left;
-  margin-right: 3em;
+  margin: 1em 3em 1em 0;
+}
+
+footer .contact .lines {
+  list-style: none;
 }
 
 footer .contact a {
