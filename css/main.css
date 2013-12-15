@@ -60,7 +60,7 @@ table {
 /*****************************************************************************/
 
 #splash {
-  background: url(/images/splash-full.jpg) no-repeat;
+  background-repeat: no-repeat;
   background-size: 100%;
 }
 
@@ -169,7 +169,7 @@ nav {
 nav .logo {
   width: 80px;
   height: 80px;
-  background: url("/images/avatar@2X.jpeg") no-repeat;
+  background-repeat: no-repeat;
   background-size: 100%;
   border: 3px solid #fff;
   border-radius: 50%;
