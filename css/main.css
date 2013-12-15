@@ -237,12 +237,12 @@ nav li a.selected {
   display: table;
 }
 
-.posts li {
+.post {
   line-height: 1.75em;
   display: table-row;
 }
 
-.posts span {
+.post .date {
   color: #aaa;
   font-family: Monaco, "Courier New", monospace;
   font-size: 80%;
@@ -250,13 +250,21 @@ nav li a.selected {
   min-width: 9em;
 }
 
-.posts span:after {
+.post .date:after {
   content: "»";
   padding: 0 0.5em;
 }
 
-.posts a {
+.post .title {
   display: table-cell;
+}
+
+.post-spacer {
+  height: 1em;
+}
+
+.post-spacer:last-of-type {
+  height: 0em;
 }
 
 .center {
@@ -319,6 +327,10 @@ footer .contact {
 
 footer .contact .lines {
   list-style: none;
+}
+
+footer .contact .line + .line {
+  margin-top: 0.25em;
 }
 
 footer .contact a {
