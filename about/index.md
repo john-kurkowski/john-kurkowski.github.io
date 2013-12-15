@@ -89,7 +89,7 @@ The source is pretty traditional
 [CSS3](http://www.abookapart.com/products/css3-for-web-designers), and
 [JavaScript](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742).
 Most written content is in
-[Markdown](http://daringfireball.net/projects/markdown/) instead of lower-level
+[kramdown](http://kramdown.gettalong.org/) instead of lower-level
 HTML. They are all coded by hand in
 [MacVim](https://code.google.com/p/macvim/), with a lot of prodding in [Chrome
 DevTools](http://www.google.com/chrome/).
