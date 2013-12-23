@@ -174,7 +174,7 @@ I'd say your users will notice and thank you. They won't. What they will do is
 be able to consume your site and determine what they need to know, rather than
 get lost and frustrated.
 
-#### 6. Avoid Modes: Hovers, Modals
+#### 6. Avoid Interaction & Modes: Hovers, Modals
 
 One day I hope the User Experience report could automatically include these
 points from my [Credo], because I see them violated again and again:
@@ -206,37 +206,61 @@ Let me explain what I was getting at.
 When presented with the problem of too-much-content-not-enough-space, some web
 site owners think, "I know, I'll use a tooltip hover" or "a modal dialog."
 These are antipatterns, plain and simple.  They a) hide what ought to be
-apparent to the user, making them think, and b) convert the fundamental
+apparent to the user, forcing them to think, and b) convert the fundamental
 human-computer task, 99% of the time to read and learn, into *interacting* with
 the computer in order to read and learn.
 
-Remember you're constantly testing your own site, navigating to all its dark
-corners. You may even become proud of this interactivity. But interactivity to
-your users is a *cost*, physical & mental (they'd rather just read, and not
-interact).
+Remember you constantly test your own site, navigating to all its dark corners.
+You may even become proud of this interactivity. But interactivity to your
+users is a *cost*, physical & mental.
 
 Physical because the user has to exercise their mouse skills to invoke these
-*data-hiding* design decisions, tooltips & dialogs. Mental because they have to
-know to do it, and how their situation changes when they do. This is the
-abstract problem with *modes*.[^3]
+*data-hiding* design decisions. Mental because they have to know to do it, how
+their situation changes when they do, and remember what they were doing
+beforehand. This is the problem with **modes**, temporary, sometimes
+imperceivable states in your software, where things suddenly behave differently
+than what the user is accustomed to. Or the user must context switch to and
+address another task before returning to their original one. Like clicking the
+X on your "Like Us On Facebook" popup.
 
-WHY YOU ALREADY KNOW MODES ARE ANNOYING (HOPEFULLY THEY'RE SOUNDING MORE AND MORE LIKE A DESIGNER'S COP-OUT)
+The dubious nature of modes is another paper in itself. Let's just say, every
+time you add a mode, you dump work on the user. You have failed your user.
 
-BRINGING IT BACK TO TOOLTIPS & DIALOGS
+Getting back to hovers and dialogs. Both of these require modes, which are
+bad for the aforementioned reasons. On mobile, the story is only worse.
 
-MOBILE IS ONLY BRINGING THE PROBLEM WITH THESE CLOSER TO THE FOREFRONT - IMPOSSIBILITY AND OFTEN CSS IMPLEMENTATION
+On mobile, there is **no** concept of a hover. Hover-invoked things like
+tooltips are completely inaccessible to mobile users, in most hover
+implementations.
 
-#### 7. Avoid Modes: Inner Scrolls
+On mobile, dialogs add further to an already strained cognitive load, with the
+tyranny of single-purpose apps the user must multitask between. A dialog is yet
+another. Also, in many web modal dialog implementations, they resist the user
+actually zooming and reading them and dismissing them (the more you zoom in,
+the more the dialog goes off screen).
+
+Solution: interaction & modes are costly to users, so avoid them. Instead,
+
+1. *Show the data* or descriptions in context. If it's not important enough to
+   show in context, delete it (#5).
+2. Establish clear & consistent symbology, so the user knows what they're
+   getting into without having to read.
+3. In the case of dialogs that gather user input, let them do it as part of
+   their existing flow, not on your terms by interrupting them with something
+   they won't read anyway.
+4. If you absolutely must give the middle finger to your users by introducing a
+   mode or interaction, please use implementations that work on touch screens.
+
+#### 7. Avoid Interaction & Modes: Inner Scrolls
 
 ABOVE THE FOLD / INNER SCROLL
 
 #### 8. No, Really, Show the Data
 
-Photo gallery sites aside, I wonder if PageSpeed could issue a warning for *too
-little content*. Probably not, but when presented with the problem of
-too-much-content-not-enough-space, some web site owners forget they could get
-rid of a vacuous graphic, carousel, or Flash intro, making space for solving
-user problems instead.
+I wonder if PageSpeed could issue a warning for *too little content*. Probably
+not, but when presented with the problem of too-much-content-not-enough-space,
+some web site owners forget they could get rid of a vacuous graphic, carousel,
+or Flash intro, making space for solving user problems instead.
 
 Finally, if you're hiding data *on purpose* out of fear of information
 overload, remember, "[there's no such thing as information overload, only bad
@@ -255,13 +279,6 @@ design][Tufte-isms]."
       of mobile experience taking over where you might not expect, in applying
       for jobs.
 
-[^3]: In [A Personal History of Modeless Text Editing and Cut/Copy-Paste],
-      Larry Tesler says a mode is "a state of the user interface that lasts
-      for a period of time, is not associated with any particular object, and
-      has no role other than to place an interpretation on operator input."
-      So, modes only burden the user. The advice to avoid them continues the
-      usability theme of Don't Make Me Think.
-
 [PageSpeed Insights]: http://developers.google.com/speed/pagespeed/insights/
 [PageSpeed Insights - johnkurkowski.com]: http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fjohnkurkowski.com
 [10 Usability Heuristics]: http://www.nngroup.com/articles/ten-usability-heuristics/
@@ -278,4 +295,3 @@ design][Tufte-isms]."
 [Use Legible Font Sizes]: https://developers.google.com/speed/docs/insights/UseLegibleFontSizes
 [Credo]: {% post_url 2013-10-16-credo %}
 [Tufte-isms]: http://spectrum.ieee.org/at-work/innovation/tufteisms
-[A Personal History of Modeless Text Editing and Cut/Copy-Paste]: http://dl.acm.org/authorize?6716500
