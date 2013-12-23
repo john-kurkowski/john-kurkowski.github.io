@@ -5,16 +5,21 @@ categories: tech
 tags: engineering usability
 ---
 
-[Google PageSpeed][PageSpeed Insights] was already a great suite of tools for
-analysis and automatic enforcement of your web page's speed. Now it is
-pioneering **User Experience** and **Mobile** reports, where they warn you
+I liken mobile web design to designing for handicaps, in that good ideas in designing
+for handicapped users benefit unhandicapped users alike. For example,
+
+1. Writing text for screen readers for the blind---rather than embedding text
+   in images---lets the seeing find, copy, & zoom the text too.
+2. Leaving an extra pause between slides lets interpreters keep up with the
+   material and lets native speakers absorb the material better, without anyone
+   having to multitask between reading the slide & listening to the presenter.
+
+[Google PageSpeed][PageSpeed Insights] got me thinking about this, as it
+recently added **User Experience** and **Mobile** reports, where they warn you
 e.g. if your buttons are too small for users’ fingers, or if your plugins won’t
-work on their device.
+work on their mobile device.
 
 <figure><a href="/images/posts/pagespeed_insights.png"><img src="/images/posts/pagespeed_insights.png" width="50%" height="50%" alt="PageSpeed Insights - screenshot"/></a></figure>
-
-Perhaps these high-level, easy-to-implement tips are the mobile era's addendum
-to Nielsen's [10 Usability Heuristics].
 
 Also notice the handy preview of what it looks like on mobile. Not
 revolutionary, but when you don’t already have [an expansive device lab][Etsy's
@@ -36,8 +41,8 @@ efforts. I don’t think mobile always needs to be. Because a) users will put up
 with more than you think, and b) good ideas that come out of mobile design are
 good for desktop too. Kill 2 birds with 1 stone.
 
-You can start with PageSpeed's report. I don't advocate an absolute need to
-stop the presses and switch to mobile-first, or responsive design.[^1]
+I don't advocate an absolute need to stop the presses and switch to
+mobile-first, or responsive design.[^1] You can start with PageSpeed's report.
 
 ### Why This Is Important
 
@@ -281,7 +286,6 @@ design][Tufte-isms]."
 
 [PageSpeed Insights]: http://developers.google.com/speed/pagespeed/insights/
 [PageSpeed Insights - johnkurkowski.com]: http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fjohnkurkowski.com
-[10 Usability Heuristics]: http://www.nngroup.com/articles/ten-usability-heuristics/
 [Etsy's Device Lab]: http://codeascraft.com/2013/08/09/mobile-device-lab/
 [Don't Make Me Think]: http://www.sensible.com/dmmt.html
 [Size Tap Targets Appropriately]: https://developers.google.com/speed/docs/insights/SizeTapTargetsAppropriately
