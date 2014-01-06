@@ -14,6 +14,9 @@ for handicapped users benefit un-handicapped users alike. For example,
    with the material and lets native speakers absorb the material better. No
    one has to multitask between reading the slide & listening to the presenter.
 
+I think the same killing 2 birds with 1 stone applies to designing for mobile
+devices.
+
 [Google PageSpeed][PageSpeed Insights] got me thinking about this, as it
 recently added **User Experience** and **Mobile** reports, where they warn you
 e.g. if your buttons are *too small* for users’ fingers, or if your *plugins*
@@ -42,7 +45,11 @@ with more than you think, and **b)** good ideas that come out of mobile design a
 good for desktop too. Kill 2 birds with 1 stone.
 
 I don't advocate an absolute need to stop the presses and switch to
-mobile-first, or responsive design.[^1] You can start with PageSpeed's report.
+mobile-first, or responsive design. I believe you should separately investigate
+and adopt them if they fit your needs and resources. On the extreme, a tailored
+experience on every device is best. But it’s understandable to be too
+overwhelmed to consider these, and seek the most user experience bang for your
+buck.  You can start with PageSpeed's report.
 
 ### Why This Is Important
 
@@ -74,7 +81,7 @@ Think], the primer on web usability:
 > competition will be any less frustrating?
 
 At the very least, you alienate people whose only option is a smartphone, or
-who don't want to get up from their couch, or who are on the go.[^2]
+who don't want to get up from their couch, or who are on the go.[^1]
 
 So how about those 2 birds with 1 stone? Keep the following ideas in mind, and
 help both customers. Stop making excuses to your mobile audience.
@@ -225,7 +232,8 @@ Let me explain what I was getting at.
 
 When presented with the problem of too-much-content-not-enough-space, some web
 site owners think, "I know, I'll use a tooltip hover" or "a modal dialog." It
-is an antipattern to leap to these as your first line of defense. They **a)**
+is an antipattern to leap to these as your first line of defense. At best, they
+are an Easter egg-level progressive enhancement. More typically, they **a)**
 hide what ought to be apparent to the user, forcing them to think, and **b)**
 convert the fundamental human-computer task, 99% of the time to read and learn,
 into *interacting* with the computer in order to read and learn.
@@ -235,12 +243,12 @@ You may even become proud of this interactivity. But interactivity to your
 users is a *cost*, physical & mental.
 
 Physical because the user has to exercise their mouse skills to invoke these
-*data-hiding* design decisions. Mental because they have to know to do it, how
+*data-hiding* design decisions. Mental because they have to *know to do it*, how
 their situation changes when they do, and remember what they were doing
 beforehand. This is the problem with **modes**, temporary, sometimes
 imperceivable states in your software, where things suddenly behave differently
 than what the user is accustomed to. Or another task the user must context
-switch to and address before returning to their original one. Like clicking the
+switch to and address, before returning to their original one. Like clicking the
 X on your "Like Us On Facebook" popup.
 
 The dubious nature of modes is another paper in itself. Let's just say, every
@@ -346,13 +354,7 @@ design][Tufte-isms]."
 
 ### Footnotes
 
-[^1]: I believe you should investigate mobile-first, responsive design, et al.,
-      and adopt them if they fit your needs and resources. On the extreme, a
-      tailored experience on every device is best. But it’s understandable to
-      be too overwhelmed to consider these, and seek the most user experience
-      bang for your buck.
-
-[^2]: [Here's one surprising
+[^1]: [Here's one surprising
       account](http://the-pastry-box-project.net/karen-mcgrane/2013-august-7/)
       of mobile experience taking over where you might not expect, in applying
       for jobs.
