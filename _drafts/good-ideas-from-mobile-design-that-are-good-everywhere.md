@@ -352,6 +352,17 @@ Finally, if you're hiding data *on purpose* out of fear of information
 overload, remember, "[there's no such thing as information overload, only bad
 design][Tufte-isms]."
 
+### Conclusion
+
+The common thread among these tips is that following them empowers users on all
+devices. Doesn't matter whether you target mobile. Meanwhile disregarding the
+tips hurts users on all devices. Sometimes it completely alienates them.
+
+My approach might not beat a mobile-dedicated design, but it'll get you ready
+for one. If you'd rather have that alienated audience than not, I believe you
+can start saving them now. It is little extra cost over what you're already
+building to avoid these design pitfalls.
+
 ### Footnotes
 
 [^1]: [Here's one surprising
