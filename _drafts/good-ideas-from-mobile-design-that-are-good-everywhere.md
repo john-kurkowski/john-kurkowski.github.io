@@ -37,19 +37,24 @@ Insights - johnkurkowski.com].
 If PageSpeed Insights gives you bad marks for Mobile, this is the point the web
 site owner gets defensive.
 
-“Oh, we haven’t optimized for mobile yet...”
+*“Oh, we haven’t optimized for mobile yet...”*
 
 This attitude incorrectly assumes desktop and mobile are completely separate
 efforts. I don’t think mobile always needs to be. Because **a)** users will put up
 with more than you think, and **b)** good ideas that come out of mobile design are
 good for desktop too. Kill 2 birds with 1 stone.
 
-I don't advocate an absolute need to stop the presses and switch to
-mobile-first, or responsive design. I believe you should separately investigate
-and adopt them if they fit your needs and resources. On the extreme, a tailored
-experience on every device is best. But it’s understandable to be too
-overwhelmed to consider these, and seek the most user experience bang for your
-buck.  You can start with PageSpeed's report.
+*"But there's so much different about mobile! Mobile First, Responsive Design,
+Goldilocks. Most of my users are on desktop anyway. How do I pick?"*
+
+I don't advocate an absolute need to stop the presses and switch to these
+strategies. I believe you should separately investigate and adopt them if they
+fit your needs and resources. On the extreme, a tailored experience on every
+device is best. But it’s understandable to be too overwhelmed, too entrenched
+in desktop-thought to consider these, and instead seek the most user experience
+bang for your buck.
+
+You can start with PageSpeed's report.
 
 ### Why This Is Important
 
@@ -352,6 +357,27 @@ Finally, if you're hiding data *on purpose* out of fear of information
 overload, remember, "[there's no such thing as information overload, only bad
 design][Tufte-isms]."
 
+### Comparison To Mobile First
+
+What's the difference between what I'm proposing and [Mobile First]? There
+isn't much actually. I've avoided the comparison because I really just want
+desktop-oriented designers to stop violating these tips, regardless of platform
+(skipping their upsetting paradigm shift to mobile thinking, if need be).
+
+The name of the Mobile First movement is a misnomer to what I'm proposing.
+Rather than share its name, this article shares Mobile First's principles.
+
+1. Mobile's growth: it's the reason you should go study Mobile First,
+   Responsive Design, et al. after my article.  But enough cramming the growth
+   numbers down your throat...
+2. Focus your content: typical desktop design has spiraled out of control. The
+   constraints of mobile have forced designers to focus again. That's all I
+   mean, particularly with tips #4, #5, & #8. The difference is, I didn't say
+   you have to think about how it looks on a phone first.
+3. Embrace mobile's capabilities: for example you gain gyroscopes &
+   geolocation, but lose hovers. However hovers were always a bad idea anyway.
+   Mobile is just a reminder of that.
+
 ### Conclusion
 
 The common thread among these tips is that following them empowers users on all
@@ -387,3 +413,4 @@ building to avoid these design pitfalls.
 [Prioritize Visible Content]: https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent
 [Auto-Forwarding Carousels]: http://www.nngroup.com/articles/auto-forwarding/
 [Tufte-isms]: http://spectrum.ieee.org/at-work/innovation/tufteisms
+[Mobile First]: http://vimeo.com/38187066
