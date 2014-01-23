@@ -329,13 +329,21 @@ figure {
   text-align: center;
 }
 
+figcaption {
+  line-height: 1.5em;
+  margin-top: 1em;
+}
+
 aside, footer {
   background: url('/images/cream_pixels_@2X.png');
   color: #666;
 }
 
-footer {
+figcaption, footer {
   font-size: 69.269%;
+}
+
+footer {
   border-top: 4px solid #eee;
   margin: 3em auto 2em;
   padding: 0 2em;
