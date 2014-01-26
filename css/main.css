@@ -201,7 +201,7 @@ nav ul {
 nav li a {
   display: block;
   font: 100% 'Trebuchet MS';
-  padding: 5px;
+  padding: 5px 0;
   text-decoration: none;
 }
 
