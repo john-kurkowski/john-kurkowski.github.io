@@ -6,9 +6,11 @@
         {% if page.title %}
           <title>{{ page.title }} &ndash; {{site.name}}</title>
           <meta property="og:title" content="{{ page.title }}" />
+          <meta property="og:type" content="article"/>
         {% else %}
           <title>{{site.name}}</title>
           <meta property="og:title" content="{{ site.name }}" />
+          <meta property="og:type" content="website"/>
         {% endif %}
 
         <meta name="author" content="{{ site.name }}" />
