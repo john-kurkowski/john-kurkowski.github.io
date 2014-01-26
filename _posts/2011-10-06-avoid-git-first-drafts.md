@@ -3,6 +3,7 @@ layout: post
 title: Avoid Git First Drafts
 categories: tech
 tags: git
+description: Here are pages rife with debate on using git pull vs. git pull --rebase. I’ve decided for myself there are times for both, that is, there are times for merge commits and not.
 ---
 Here are [pages](http://www.viget.com/extend/only-you-can-prevent-git-merge-
 commits/) [rife](http://notes.envato.com/developers/rebasing-merge-commits-in-
