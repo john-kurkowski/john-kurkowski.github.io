@@ -10,14 +10,19 @@
         {% else %}
           <title>{{site.name}}</title>
           <meta property="og:title" content="{{ site.name }}" />
-          <meta property="og:type" content="website"/>
+          <meta property="og:type" content="profile"/>
         {% endif %}
 
         <meta name="author" content="{{ site.name }}" />
-        {% if page.url != '/index.html' %}
-          <meta name="description" content="{{ page.content | strip_html | xml_escape | truncate: 256 }}" />
-        {% else %}
+        <meta property="og:author" content="{{ site.url }}" />
+        <meta property="profile:first_name" content="John">
+        <meta property="profile:last_name" content="Kurkowski">
+        {% if page.url == '/' or page.url == '/index.html' %}
           <meta name="description" content="{{ site.description }}" />
+          <meta name="twitter:description" content="{{ site.description }}">
+        {% else %}
+          <meta name="description" content="{{ page.content | markdownify | strip_html | xml_escape | truncate: 256 }}" />
+          <meta name="twitter:description" content="{{ page.content | markdownify | strip_html | xml_escape | truncate: 256 }}">
         {% endif %}
 
         {% if page.date %}
@@ -98,6 +103,9 @@
                   <li class="line">
                     <a href="http://flipflopsornot.com"><img src="/images/flipflopsornot.ico" width="16" height="16" /></a>
                     <a href="http://flipflopsornot.com">Flip-Flops or Not?</a>
+                  </li>
+                  <li class="line" style="display: none;">
+                    <a href="https://plus.google.com/+JohnKurkowski?rel=author">Google</a>
                   </li>
                 </ul>
               </div>
