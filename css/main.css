@@ -180,6 +180,12 @@ nav {
   position: relative;
 }
 
+@media screen and (max-width: 38em) {
+  nav {
+    padding: 0 0.5em;
+  }
+}
+
 nav .logo {
   width: 80px;
   height: 80px;
@@ -229,6 +235,10 @@ h1.statement, .statement h2, .statement h3 {
 @media screen and (max-width: 38em) {
   #back-home .statement.subtitle {
     display: none;
+  }
+
+  #back-home .statement + .statement {
+    margin-left: 0.5em;
   }
 }
 
