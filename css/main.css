@@ -177,6 +177,7 @@ nav {
   padding: 0 1em;
   width: 100%;
   height: 2.5em;
+  position: relative;
 }
 
 nav .logo {
@@ -287,6 +288,10 @@ h1.statement, .statement h2, .statement h3 {
 .center {
   width: 36em;
   margin: 0 auto;
+}
+
+.container {
+  overflow-x: hidden;
 }
 
 .content {
