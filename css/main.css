@@ -323,10 +323,34 @@ aside, figure {
 
 aside, figure img {
   border: 4px solid #eee;
+  vertical-align: middle;
 }
 
 figure {
   text-align: center;
+}
+
+.figure-items {
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.figure-item {
+  -webkit-flex: 1 0;
+  -moz-flex: 1 0;
+  flex: 1 0;
+}
+
+.figure-item + .figure-item {
+  margin-left: 1em;
+}
+
+.figure-item img {
+  width: 100%;
 }
 
 figcaption {
@@ -401,4 +425,12 @@ footer .rss img {
 
 .content ul, .content ol {
   margin: 1em 1.35em;
+}
+
+.content ol {
+  list-style-position: inside;
+}
+
+.footnotes ol {
+  list-style-position: outside;
 }

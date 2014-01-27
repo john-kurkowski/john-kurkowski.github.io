@@ -3,16 +3,20 @@ layout: post
 title:  "Good Ideas From Mobile Design That Are Good Everywhere"
 categories: tech
 tags: engineering usability
+description:
+  A collection of 9 usability tips from mobile design, yet they benefit desktop
+  users too. 2 birds, 1 stone.
 ---
 
-I liken mobile web design to designing for handicaps, in that good ideas in designing
-for handicapped users benefit un-handicapped users alike. For example,
+I liken mobile web design to designing for handicaps, in that good ideas in
+designing for handicaps benefit all users alike. For example,
 
-1. Writing text for screen readers for the blind---rather than embedding text
+*  Writing text for screen readers for the blind---rather than embedding text
    in images---lets seeing people find, copy, & zoom the text too.
-2. Leaving an extra pause between presentation slides lets interpreters keep up
-   with the material and lets native speakers absorb the material better. No
-   one has to multitask between reading the slide & listening to the presenter.
+*  In a presentation, leaving an extra pause between slides lets interpreters
+   keep up with the material and lets native speakers absorb the material
+   better. No one has to multitask between reading the slide & listening to the
+   presenter.
 
 I think the same killing 2 birds with 1 stone applies to designing for mobile
 devices.
@@ -41,8 +45,11 @@ site owner gets defensive.
 
 This attitude incorrectly assumes desktop and mobile are completely separate
 efforts. I don’t think mobile always needs to be. Because **a)** users will put up
-with more than you think, and **b)** good ideas that come out of mobile design are
-good for desktop too. Kill 2 birds with 1 stone.
+with more than you think, and **b)** good ideas that come out of mobile design
+are good for desktop too.
+
+Those earlier tips about finger sizes and plugins on mobile? Those are good
+tips to keep in mind everywhere. Kill 2 birds with 1 stone.
 
 *"But there's so much different about mobile! Mobile First, Responsive Design,
 Goldilocks. Most of my users are on desktop anyway. How do I pick?"*
@@ -54,7 +61,9 @@ device is best. But it’s understandable to be too overwhelmed, too entrenched
 in desktop-thought to consider these, and instead seek the most user experience
 bang for your buck.
 
-You can start with PageSpeed's report.
+You can start with PageSpeed's tips. Then I'd like to add a few web design
+antipatterns I've witnessed over the years. Following both sets of tips should
+benefit all devices simultaneously.
 
 ### Why This Is Important
 
@@ -63,43 +72,41 @@ your development resources are finite.
 
 If you've deliberately chosen against any mobile user experience, is it because
 you're trapped in a mindset of, why would anyone use the web differently than
-me? Do you think, the only place from which anyone would use my site would be a
-hardware setup identical to mine? Or only from a single device? Think again.
+me? Do you think, everyone will use my site from a hardware setup identical to
+mine? Only from a single device? Think again.
 
-Sometimes you're too proud and won't settle for anything less than a dedicated
-mobile experience.
+Your analytics might say your visitors are mostly desktop, but users too lazy
+to get off the couch are itching to try out your site on mobile.  They might be
+in for a surprise when it doesn't do what they think it can do.  Do you want to
+take the chance they'll give it a second try on a different device?
 
-In all these cases, your users *will* actually settle for a lot less. All
-you'll do is frustrate them, and bring down your brand. From [Don't Make Me
-Think], the primer on web usability:
+According to [Don't Make Me Think], the primer on web usability, users will
+continue to put up with your frustrating site, to a degree. You've hooked
+the mobile user a little while longer. But if you've succumbed to a bevy of bad
+desktop design patterns, your site won't contain the answer for mobile users,
+because you've made it hard to reach, or even impossible. You alienate people
+whose only option is a smartphone, or who don't want to get up from their
+couch, or who are on the go.[^1]
 
-> ... you'd be surprised at how long some people will tough it out at sites
-> that frustrate them. Many people who encounter problems with a site tend to
-> blame themselves and not the site.
->
-> The fact is, your site may not have been that easy to find in the first place
-> and visitors may not know of an alternative. The prospect of starting over
-> isn't always that attractive.
->
-> And there's also the "I've waited ten minutes for this bus already, so I may
-> as well hang in a little longer" phenomenon. Besides, who's to say that the
-> competition will be any less frustrating?
-
-At the very least, you alienate people whose only option is a smartphone, or
-who don't want to get up from their couch, or who are on the go.[^1]
-
-So how about those 2 birds with 1 stone? Keep the following ideas in mind, and
-help both customers. Stop making excuses to your mobile audience.
+So how about those 2 birds with 1 stone? Stop making excuses to your mobile
+audience. Keep the following ideas in mind. Benefit both desktop & mobile
+customers.
 
 * * *
 
 ### The Good Ideas
 
 You should check out PageSpeed's experimental User Experience report's advice
-by running it against your own site. I'll expand on some of its tips here. Then
-I'll mix in what *I wish* was in the report.
+by running it against your own site. I'll link to each tip and expand on them
+here. Then I'll mix in what *I wish* was in the report.
+
+1. [Size Tap Targets Appropriately](#size-tap-targets-appropriately)
+2. [Avoid Plugins](#avoid-plugins)
+3. [Configure the Viewport](#configure-the-viewport)
+4. [Use Legible Font Sizes](#use-legible-font-sizes)
 
 #### 1. Size Tap Targets Appropriately ([link][Size Tap Targets Appropriately])
+{:#size-tap-targets-appropriately}
 
 Pour your blood & sweat into making a web page, and you'll internalize its
 flow. You constantly test its dark corners, probably more than your users.
@@ -112,7 +119,7 @@ only worse on mobile, with the variability of device and human finger sizes.
 **Solution:** big click targets, and make them look clickable (like a button).
 They're more visible and easier to click on.
 
-PageSpeed's recommendation here talks about the minimum *millimeter* margins
+Read PageSpeed's recommendation. They talk about the minimum *millimeter* margins
 between elements on a mobile device. Millimeters? Hell, big click targets are a
 good idea even when we're talking much larger than millimeters. Go big.
 
@@ -123,15 +130,16 @@ Further reading:
   click on?
 
 #### 2. Avoid Plugins ([link][Avoid Plugins])
+{:#avoid-plugins}
 
 Adobe Flash: don't use it.
 
 Google cites its security flaws, crashes, and battery drain. I say it's too
 easy for web designers to build unusable things with it.
 
-As an example, I can't complain enough about *restaurant* web sites neglecting
-their on-the-go audience. They have such a prevalent use-case. Among a group of
-friends pondering what to eat, I want to answer: what's on the menu, is the
+As an example, *restaurant* web sites seem to favor Flash but this neglects a
+large part of their audience who is on-the-go. Among a group of friends ready
+to go out, pondering what to eat, I want to answer: what's on the menu, is the
 restaurant open right now, how do I get to the restaurant? Let me get out my
 phone.
 
@@ -139,7 +147,7 @@ Instead I'm greeted with a Flash intro---one more download to wait for and link
 to click past---and a Flash site standing in my way. Using raw Flash (and not a
 higher level toolkit like Flex), the web designer amateur breaks standard
 operating system scrolling, copy & paste, screen readers, and more. We've known
-Flash has been [bad for usability for 10 years][Flash]. Flash is also
+Flash has been [thwarting usability for 10 years][Flash]. Flash is also
 completely unusable on iOS, a sizable and [spendy][Mobile shoppers] portion of
 mobile users.
 
@@ -147,19 +155,19 @@ Flash *can* be accessible. But for some reason its ecosystem makes it easy to
 skip that part, and proceed directly to visually and aurally wooing potential
 customers.
 
-Shouldn't you invest in people getting to your restaurant instead? How about a
-linkable text menu, a clickable phone number?  Integration with familiar
-services that will do your job better than you can, like a link to Google Maps
-for directions, or OpenTable for instant reservations? Much easier than hiring
-a Flash artist consultancy to counterfeit all that, and then maintain their
-work.
+Shouldn't you invest in people getting to your restaurant instead? A linkable
+text menu, a clickable phone number?  Integration with familiar services that
+do your job better than you can, like Google Maps for directions, OpenTable for
+reservations? Much easier than hiring a Flash artist consultancy to counterfeit
+all that, and then maintain their work.
 
-I focus on restaurants because they've been frustrating me a long time.
-Breaking basic operating system usability and wasting user time are no-nos for
-*everyone*, though. Reconsider your desire to be stylish and unique. Being
-usable is a lost art that packs a superior ROI.
+I focus on restaurants because they've been frustrating me a long time. Though
+breaking basic operating system usability and wasting user time are no-nos for
+*everyone*. Reconsider your desire to be stylish and unique. Focus on content
+and use, a lost art that packs a superior ROI.
 
 #### 3. Configure the Viewport ([link][Configure the Viewport] & [link][Size Content to Viewport])
+{:#configure-the-viewport}
 
 Sure, do it. It's a few lines of code at most.
 
@@ -171,6 +179,7 @@ The greater upset is violating the other design guidelines in this article and
 making those corners inaccessible entirely!
 
 #### 4. Use Legible Font Sizes ([link][Use Legible Font Sizes])
+{:#use-legible-font-sizes}
 
 Don't make your users' job harder then it has to be. Let them read your
 content.
@@ -184,29 +193,38 @@ If you follow the next tip, this shouldn't be a problem.
 
 Here's what I would love to see added to the User Experience report.
 
-#### 5. Remove Half Your Text, Then Remove Half Of What's Left
+<ol start="5">
+  <li><a href="#avoid-interaction--modes-hovers-menus-modals">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
+  <li><a href="#avoid-interaction--modes-hovers-menus-modals">Avoid Interaction & Modes: Hovers, Menus, Modals</a></li>
+  <li><a href="#avoid-interaction--modes-inner-scrolls">Avoid Interaction & Modes: Inner Scrolls</a></li>
+  <li><a href="#dont-restyle-form-inputs--scrollbars">Don't Restyle Form Inputs & Scrollbars</a></li>
+  <li><a href="#no-really-show-the-data">No, Really, Show the Data</a></li>
+</ol>
+
+#### 5. Remove Half Your Content, Then Remove Half Of What's Left
 
 Maybe Google PageSpeed can't tell you what to write. But I can. The answer
 is *less*.
 
 People don't read. They scan for the information they're looking for. They
-don't want to think. So there's no time for people to read instructions, or
-internalize the specifics of your web site. There are a million other web sites
-they have to keep up with. Stop thinking your text is so special.
+don't want to think. So there's no time for people to read instructions, digest
+your myraid widgets & ads, or internalize the specifics of your web site. There
+are a million other web sites they have to keep up with. Your text is not
+special.
 
-Then on **mobile**, a wall of text is like trying to read a novel through a
-keyhole.
+Then on **mobile**, a wall of unfocused content is like trying to peruse the
+New York Times through a keyhole. Not saying it can't be done. Just help your
+users by getting to the point and removing distractions.
 
 **Solution:** listen again to Don't Make Me Think. Write your text, then, before
 publishing ...
 
 > Get rid of half the words on each page, then get rid of half of what’s left.
 
-I'd say your users will notice and thank you. They won't. What they will do is
-be able to consume your site and determine what they need to know, rather than
-get lost and frustrated.
+This benefits not only the paragraph you shorten, but your whole site, as this
+exercise forces focus on your site's core values.[^2]
 
-#### 6. Avoid Interaction & Modes: Hovers, Modals
+#### 6. Avoid Interaction & Modes: Hovers, Menus, Modals
 
 One day I hope the User Experience report could automatically include these
 points from my [Credo], because I see them violated again and again:
@@ -236,10 +254,12 @@ points from my [Credo], because I see them violated again and again:
 Let me explain what I was getting at.
 
 When presented with the problem of too-much-content-not-enough-space, some web
-site owners think, "I know, I'll use a tooltip hover" or "a modal dialog." It
-is an antipattern to leap to these as your first line of defense. At best, they
-are an Easter egg-level progressive enhancement. More typically, they **a)**
-hide what ought to be apparent to the user, forcing them to think, and **b)**
+site owners think, "I know, I'll use a { tooltip hover, context menu, modal
+dialog }." It is an antipattern to leap to these as your first line of defense.
+At best, they are an Easter egg-level progressive enhancement. More typically,
+they are a designer's crutch for tucking away unimportant content you're too
+lazy to give proper design attention or remove. The techniques **a)** hide
+what ought to be apparent to the user, forcing them to think, and **b)**
 convert the fundamental human-computer task, 99% of the time to read and learn,
 into *interacting* with the computer in order to read and learn.
 
@@ -254,20 +274,23 @@ beforehand. This is the problem with **modes**, temporary, sometimes
 imperceivable states in your software, where things suddenly behave differently
 than what the user is accustomed to. Or another task the user must context
 switch to and address, before returning to their original one. Like clicking the
-X on your "Like Us On Facebook" popup.
+X on your "Like Us On Facebook" interstitial popup.
 
-The dubious nature of modes is another paper in itself. Let's just say, every
+The dubiousness of modes is another article in itself. Let's just say, every
 time you add a mode, you dump work on the user. You have failed your user.
 
-Getting back to hovers and dialogs. Both of these require modes, which are
-bad for the aforementioned reasons. On mobile, the story is only worse.
+Getting back to hovers, menus, and dialogs. These require modes, which
+are bad for the aforementioned reasons. On mobile, the story is only worse.
 
-On **mobile**, hovering means a higher number of clicks or it is outright
-impossible (i.e. on touch screens). So hover-invoked things like tooltips are
-inaccessible to mobile users, in most hover implementations.
+On **mobile**, hovering means a higher number of clicks to invoke it , or it is
+outright impossible, i.e. on many touch screen hover implementations.
+
+On **mobile**, certain devices don't have dedicated hardware for context menus.
+Regardless, however the user invokes context menus, don't expect them to try
+every time they run into an invisible barrier on your site.
 
 On **mobile**, dialogs add further to an already strained cognitive load, with the
-tyranny of single-purpose apps the user must multitask between. A dialog is yet
+tyranny of single-purpose apps the user must already multitask between. A dialog is yet
 another. Also, in many web modal dialog implementations, they resist the user
 actually zooming, reading, and dismissing them (i.e. the more you zoom in, the
 more the dialog goes off screen).
@@ -275,17 +298,20 @@ more the dialog goes off screen).
 By choosing these techniques, you have chosen to cripple mobile users. Nobody
 on the desktop likes them either.
 
-**Solution:** interaction & modes are costly to users, so avoid them. Instead,
+**Solution:** data-hiding interaction & modes are costly to users, so avoid
+them. Instead,
 
-* *Show the data* or descriptions in context. If it's not important enough to
-  show in context, delete it (#5).
+* *Show the data* or descriptions or actions in context. If it's not important
+  enough to show in context, delete it
+  ([#5](#remove-half-your-content-then-remove-half-of-whats-left)).
 * Use direct & consistent text & symbology, so the user knows what they're
   getting into without having to read.
 * In the case of dialogs that gather user input, let users do it as part of
   their existing flow, not on your terms by interrupting them with something
   they won't read anyway.
 * If you absolutely must give the middle finger to your users by introducing a
-  mode or interaction, pick implementations that work on touch screens.
+  mode or interaction, prefer self-evident scrolling & hyperlinks[^3]. At the
+  very least, pick implementations that work on touch screens.
 
 #### 7. Avoid Interaction & Modes: Inner Scrolls
 
@@ -293,15 +319,24 @@ After web designers learn the importance of above-the-fold content ("users
 don't wanna scroll; they'll hit that Back button in n seconds instead") they
 can take the guideline too far, focusing on cramming content. They ensure all
 their site's widgets are above the fold by giving them their own, inner
-scrollbars, i.e. areas that scroll independently of the main browser window.
+scrollbars, i.e. areas that scroll independently of the main app window.
 
-I've worked with several designers with this tendency. The work was not made
-public, so I'll just have to point to the most prominent inner scroll example
-(admittedly a far-from-terrible use of inner scrolls). In Gmail's New Compose,
-you can scroll the text of the email you're composing independently of
-scrolling your list of inbox messages.
+I've worked with a few designers with this tendency. The work was not made
+public, so I can't point to the worst of it. I'll just have to point to more
+mainstream examples (admittedly not the worst uses of inner scrolls).
 
-<figure><a href="/images/posts/gmails-new-compose.png"><img src="/images/posts/gmails-new-compose.png" width="50%" height="50%" alt="Gmail's New Compose - screenshot"/></a></figure>
+<figure>
+  <div class="figure-items">
+    <a href="/images/posts/gmails-new-compose.png" class="figure-item"><img src="/images/posts/gmails-new-compose.png" alt="Gmail's New Compose - screenshot"/></a>
+    <a href="/images/posts/spotify-desktop.jpg" class="figure-item"><img src="/images/posts/spotify-desktop.jpg" alt="Spotify's desktop app - screenshot"/></a>
+  </div>
+  <figcaption>
+    In Gmail's New Compose, you can scroll the text of the email you're
+    composing independently of your list of inbox messages. In Spotify's
+    desktop client, there are 3 inner scrolls from left to right: a list of
+    music sources, the currently browsed music, and a friend news feed.
+  </figcaption>
+</figure>
 
 On the plus side, this facilitates comparison. This is a valuable part of the
 most common human-computer task of learning. It even gives some extra sense
@@ -310,32 +345,58 @@ now.
 
 On the down side, it introduces extra interaction cost to get at the data
 hidden within the scroll and it introduces a mode: the scroll only works when
-in the scroll's mode, e.g. if the user's mouse happens to be hovering over the
-inner scroll's area. The Gmail screenshot has only 1 inner scroll, but I've
-seen 5 stacked screen edge to edge. To fit, the inner scroll areas must get
-smaller and smaller. If you did the reading on [Fitts's Law], there's then a
-proportional slowdown in being able to mouse over any individual scroll. So it
-becomes costly to scroll if desired, and scrolling is often accidental
-(scrolling an inner when you mean to scroll the outer, and vice-versa).
+the user's mouse happens to be hovering over the inner scroll's area or
+scrollbar. The more inner scrolls, the trickier this gets. If you did the
+reading on [Fitts's Law], you know there's a proportional slowdown in being
+able to mouse over any small scroll area. So it becomes costly to scroll if
+desired. Scrolling is often accidental, like  scrolling one area when you mean
+to scroll another.
 
-The inner scroll is only more finicky on **mobile** devices. More clicks for
-the user to target the scroll they want to use. Or the scroll just doesn't
-anticipate touch at all, and the data it hides is again completely
-*inaccessible*.
+The inner scroll is only more finicky on **mobile** devices. It takes more
+clicks for the user to select the scroll they want to use. Or the scroll
+implementation just doesn't anticipate touch at all. And the data it hides is
+again inaccessible.
 
-It is less cost for the user to just scroll the whole window for their desired
-data, because the user is more accustomed to scrolling that way, and without
-dealing with modes.
+It is often less cost for the user to just scroll the whole window for their
+desired data, because the user is more accustomed to scrolling that way,
+without dealing with modes.
 
 **Solution:** let users scroll as they are accustomed.
 
-* Below-the-fold content isn't the end of the world, as long as there is
+* Below-the-fold content isn't the end of the world. As long as there is
   indication it's there.
-* Facilitating side-by-side comparisons is good, it just isn't achieved so well
-  by inner scrolls. If comparison is a major use case, design for it. Better
-  than putting work on the user, to line up the scrolls just right.
+* Facilitating side-by-side comparisons is good, but inner scrolls aren't
+  always the best answer. If comparison is a major use case, design for it.
+  Better than putting work on the user, to line up the scrolls just right.
+* At the least, use inner scroll implementations that work on touch
+  screens.[^4]
 
-#### 8. No, Really, Show the Data
+#### 8. Don't Restyle Form Inputs & Scrollbars
+
+Web programmers know how hard it is to restyle standard form `<input>` elements
+& scrollbars. Their style is tightly locked into web browsers and perhaps the
+host operating system. Maybe this is a warning that you shouldn't mess with
+them!
+
+This tip recalls [#2](#avoid-plugins) and
+[#5](#remove-half-your-content-then-remove-half-of-whats-left), in that you
+should focus on valuable content, rather than distracting you & your users with
+style points. You'll make users think (bad), "Why is this widget
+different?"[^5] Leave it alone.
+
+<figure>
+  <a href="http://codepen.io/ericrasch/details/zjDBx"><img src="/images/posts/restyle-select-box.png" width="40%" height="40%" alt="Restyled <select> box - screenshot"/></a>
+  <figcaption>Was it worth it?</figcaption>
+</figure>
+
+Also, because these custom versions are difficult to program, they virtually
+always behave poorly compared to native ones. They don't respond to
+accelerators, form-filling tools, or they perform slowly.
+
+Web users deal with forms and scrollbars all day. Why must yours look & work
+differently & poorly?
+
+#### 9. No, Really, Show the Data
 
 I wonder if PageSpeed could issue a warning for *too little* content. It
 already takes into account [the performance of your above-the-fold
@@ -347,7 +408,7 @@ site owners forget they could free up screen real estate by removing
 
 * a vacuous graphic
 * a [carousel][Auto-Forwarding Carousels]
-* the Flash intro (#2)
+* the Flash intro ([#2](#avoid-plugins))
 
 making space for solving the audience's problems instead.
 
@@ -360,23 +421,21 @@ design][Tufte-isms]."
 ### Comparison To Mobile First
 
 What's the difference between what I'm proposing and [Mobile First]? There
-isn't much actually. I've avoided the comparison because I really just want
-desktop-oriented designers to stop violating these tips, regardless of platform
-(skipping their upsetting paradigm shift to mobile thinking, if need be).
+isn't much, I've only avoided the comparison because I really just want
+designers to stop violating these tips, regardless of platform.
 
-The name of the Mobile First movement is a misnomer to what I'm proposing.
-Rather than share its name, this article shares Mobile First's principles.
+I share Mobile First's focus on content, though the movement is a misnomer to
+what I'm proposing. Typical desktop design has spiraled out of control. The
+constraints of mobile have forced designers to focus again. That's all I mean,
+particularly with tips [#4](#use-legible-font-sizes),
+[#5](#remove-half-your-content-then-remove-half-of-whats-left), &
+[#9](#no-really-show-the-data). The difference is, I didn't say you have to
+think about how it looks on a phone first.
 
-1. Mobile's growth: it's the reason you should go study Mobile First,
-   Responsive Design, et al. after my article.  But enough cramming the growth
-   numbers down your throat...
-2. Focus your content: typical desktop design has spiraled out of control. The
-   constraints of mobile have forced designers to focus again. That's all I
-   mean, particularly with tips #4, #5, & #8. The difference is, I didn't say
-   you have to think about how it looks on a phone first.
-3. Embrace mobile's capabilities: for example you gain gyroscopes &
-   geolocation, but lose hovers. However hovers were always a bad idea anyway.
-   Mobile is just a reminder of that.
+A phone isn't the point. What if phone display sizes magically catch up with
+desktop? Will you then regress to including everything and the kitchen sink on
+your landing page? I hope you don't. Instead, focus.  Focus stands the test of
+time, anywhere.
 
 ### Conclusion
 
@@ -384,10 +443,13 @@ The common thread among these tips is that following them empowers users on all
 devices. Doesn't matter whether you target mobile. Meanwhile disregarding the
 tips hurts users on all devices. Sometimes it completely alienates them.
 
+I think PageSpeed could recommend all these tips. Even if they're not all
+objectively measurable, they're all good to strive for.
+
 My approach might not beat a mobile-dedicated design, but it'll get you ready
 for one. If you'd rather have that alienated audience than not, I believe you
-can start saving them now. It is little extra cost over what you're already
-building to avoid these design pitfalls.
+can start saving them now. Avoiding these design pitfalls is little extra cost
+over what you're already building.
 
 ### Footnotes
 
@@ -395,6 +457,32 @@ building to avoid these design pitfalls.
       account](http://the-pastry-box-project.net/karen-mcgrane/2013-august-7/)
       of mobile experience taking over where you might not expect, in applying
       for jobs.
+
+[^2]: [This case study of Southwest Airlines' desktop & mobile redesign][Mobile
+      First Helps with Big Issues] shows a huge difference in focus, when the
+      company was forced to get rid of 80% of its desktop clutter to produce a
+      mobile version.  With a few bold links, they capture the core of their
+      business and what *I* really want to do with their website. A refocused
+      desktop version soon followed. Unfortunately, at the time of writing my
+      article, Southwest's desktop site has regressed to its former ad-fueled
+      mess. I suppose they weren't selling enough Florida vacation packages.
+
+[^3]: Note even hyperlinks have a cost: [they can lower
+      comprehension][Hyperlink Comprehension]. These footnotes probably don't
+      help either.
+
+[^4]: I include the Spotify desktop screenshot because I witnessed its inner
+      scrolls confuse users on a Surface RT. The only way to invoke the inner
+      scrolls via touch was to actually touch the tiny scrollbar. The users
+      learned that only after some frustration trying to manipulate the scroll
+      area directly (remember the days when you had to actually touch a
+      scrollbar? Tuh).
+
+      This could be fixed with a better touch scroll implementation, or taking
+      a cue from their mobile app and not using inner scrolls at all.
+
+[^5]: I'm reminded of [this graphic](http://ux.stackexchange.com/a/21971/31812)
+      from Don't Make Me Think.
 
 [PageSpeed Insights]: http://developers.google.com/speed/pagespeed/insights/
 [PageSpeed Insights - johnkurkowski.com]: http://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fjohnkurkowski.com
@@ -410,7 +498,9 @@ building to avoid these design pitfalls.
 [Size Content to Viewport]: https://developers.google.com/speed/docs/insights/SizeContentToViewport
 [Use Legible Font Sizes]: https://developers.google.com/speed/docs/insights/UseLegibleFontSizes
 [Credo]: {% post_url 2013-10-16-credo %}
+[Hyperlink Comprehension]: http://en.wikipedia.org/wiki/Reading_comprehension#Hyperlinks
 [Prioritize Visible Content]: https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent
 [Auto-Forwarding Carousels]: http://www.nngroup.com/articles/auto-forwarding/
 [Tufte-isms]: http://spectrum.ieee.org/at-work/innovation/tufteisms
 [Mobile First]: http://vimeo.com/38187066
+[Mobile First Helps with Big Issues]: http://www.lukew.com/ff/entry.asp?1117
