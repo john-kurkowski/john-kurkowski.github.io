@@ -100,10 +100,27 @@ You should check out PageSpeed's experimental User Experience report's advice
 by running it against your own site. I'll link to each tip and expand on them
 here. Then I'll mix in what *I wish* was in the report.
 
-1. [Size Tap Targets Appropriately](#size-tap-targets-appropriately)
-2. [Avoid Plugins](#avoid-plugins)
-3. [Configure the Viewport](#configure-the-viewport)
-4. [Use Legible Font Sizes](#use-legible-font-sizes)
+<ul>
+  <li>
+    From PageSpeed
+    <ol>
+      <li><a href="#size-tap-targets-appropriately">Size Tap Targets Appropriately</a></li>
+      <li><a href="#avoid-plugins">Avoid Plugins</a></li>
+      <li><a href="#configure-the-viewport">Configure the Viewport</a></li>
+      <li><a href="#use-legible-font-sizes">Use Legible Font Sizes</a></li>
+    </ol>
+  </li>
+  <li>
+    My (Stolen) Ideas
+    <ol start="5">
+      <li><a href="#avoid-interaction--modes-hovers-menus-modals">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
+      <li><a href="#avoid-interaction--modes-hovers-menus-modals">Avoid Interaction & Modes: Hovers, Menus, Modals</a></li>
+      <li><a href="#avoid-interaction--modes-inner-scrolls">Avoid Interaction & Modes: Inner Scrolls</a></li>
+      <li><a href="#dont-restyle-form-inputs--scrollbars">Don't Restyle Form Inputs & Scrollbars</a></li>
+      <li><a href="#no-really-show-the-data">No, Really, Show the Data</a></li>
+    </ol>
+  </li>
+</ul>
 
 #### 1. Size Tap Targets Appropriately ([link][Size Tap Targets Appropriately])
 {:#size-tap-targets-appropriately}
@@ -192,14 +209,6 @@ If you follow the next tip, this shouldn't be a problem.
 ### My (Stolen) Ideas
 
 Here's what I would love to see added to the User Experience report.
-
-<ol start="5">
-  <li><a href="#avoid-interaction--modes-hovers-menus-modals">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
-  <li><a href="#avoid-interaction--modes-hovers-menus-modals">Avoid Interaction & Modes: Hovers, Menus, Modals</a></li>
-  <li><a href="#avoid-interaction--modes-inner-scrolls">Avoid Interaction & Modes: Inner Scrolls</a></li>
-  <li><a href="#dont-restyle-form-inputs--scrollbars">Don't Restyle Form Inputs & Scrollbars</a></li>
-  <li><a href="#no-really-show-the-data">No, Really, Show the Data</a></li>
-</ol>
 
 #### 5. Remove Half Your Content, Then Remove Half Of What's Left
 
