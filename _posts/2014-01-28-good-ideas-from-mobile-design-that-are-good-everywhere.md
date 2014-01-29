@@ -472,7 +472,7 @@ over what you're already building.
       help either.
 
 [^4]: I include the Spotify desktop screenshot because I witnessed its inner
-      scrolls confuse users on a Surface RT. The only way to invoke the inner
+      scrolls confuse users on a Surface Pro. The only way to invoke the inner
       scrolls via touch was to actually touch the tiny scrollbar. The users
       learned that only after some frustration trying to manipulate the scroll
       area directly (remember the days when you had to actually touch a
