@@ -217,7 +217,7 @@ is *less*.
 
 People don't read. They scan for the information they're looking for. They
 don't want to think. So there's no time for people to read instructions, digest
-your myraid widgets & ads, or internalize the specifics of your web site. There
+your myriad widgets & ads, or internalize the specifics of your web site. There
 are a million other web sites they have to keep up with. Your text is not
 special.
 
