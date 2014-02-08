@@ -36,8 +36,9 @@ rest of the world piled on their own custom blocks while you weren't looking.
 
 To ameliorate this, there are human engineering techniques, but they treat the
 symptoms, not the root cause. [Coding's accessibility to humans has stagnated
-in the past few decades][The Future of Programming]. I don’t mean accessibility
-to just outsiders. It is a large mess that hardcore coders themselves
+in the past few decades][The Future of Programming] (a video that should be
+required monthly watching for programmers). I don’t mean accessibility to just
+outsiders. It is a large mess that hardcore coders themselves
 can hardly keep up with and predict. Sometimes, I take a step back from mashing
 together 2 things that were never meant to work together---for the 100th time
 today---and wonder how anything ever gets done. What cool thing was I trying to
