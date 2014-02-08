@@ -6,11 +6,14 @@ Source for [johnkurkowski.com](http://johnkurkowski.com).
 
 ## Install
 
-Don't forget to use [the same versions of Jekyll and other dependencies that
-GitHub uses](https://help.github.com/articles/using-jekyll-with-pages).
-
-    gem install jekyll --version <GitHub's Jekyll version>
+    bundle install
 
 ## Running
 
-    jekyll serve --watch
+    bundle exec jekyll serve --watch --drafts
+
+## Contributing
+
+To ensure your local development environment is using the same version of Jekyll and its dependencies as GitHub Pages:
+
+    bundle update
