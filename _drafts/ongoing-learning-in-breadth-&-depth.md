@@ -10,8 +10,8 @@ changing daily, I'd like to offer some peace of mind. In [my previous
 article][Don’t Learn to Code, Learn to Program Instead - But Come Back In 10
 Years], I questioned the rampant, disconnected proliferation of code. I don't
 know why it is stuck the way it is. I dream of a revolution that cleans it up,
-but I don't know how. Nevertheless, I have some tips on what you can do *now*
-in your ongoing learning of programming tools in breadth and depth.
+but I don't know how. Nevertheless, I have some tips on what you can do now
+in your ongoing learning of programming tools.
 
 I gave a talk at the [Ember-SC meetup] comparing 6 different JavaScript build
 tools, and glossing over several more. The final slide rated each tool on
@@ -37,7 +37,7 @@ my time. I have things to do.
 
 Figuring out the slide’s 6 unscientific criteria for rating and then actually
 investigating was an exercise in itself. Just to make some sense of the
-landscape, but probably only making sense to me. Why are bake-offs so hard and
+landscape, probably only to me. Why are bake-offs so individual, so hard, and
 still not definitive?
 
 This was considerable effort for what amounts to a necessary evil. My customers
@@ -45,8 +45,8 @@ don’t care what build tool I use. So I’d rather be programming my app.
 
 Perhaps JavaScript programmers all want to make their mark on the community. Or
 they aren’t talking to each other. Or they’re truly dissatisfied with all the
-existing options.[^1] Or some decades-old idea [being rewritten in JavaScript
-is inevitable][The Principle of Least Power]. I don’t know.
+existing options.[^1] [^2] Or some decades-old idea [being rewritten in
+JavaScript is inevitable][The Principle of Least Power]. I don’t know.
 
 ### What I Learned About Bake-Offs
 
@@ -56,10 +56,10 @@ possibilities.
 
 1. Establish criteria for what is important to your team.
     * The tool helping you and not getting in your way is most important, but
-      this is most difficult to measure at a glance. So you’ll need other
-      criteria.
-2. Find what tools exist and which fit your criteria, from discussion of and
-   with real users and code snippets.
+      this is the most difficult to measure at a glance. So you’ll need other
+      criteria to identify cost and risk.
+2. Find what tools exist and which fit your criteria, from discussion with real
+   users and code snippets.
 3. Choose one.
 
 Don’t even go as deep as my build tool evaluation. I regret it some. I enjoyed
@@ -73,6 +73,8 @@ on the firehose of new tech on Hacker News.
 
 “3 steps? That’s it?” you gasp. “What if I get stuck with the wrong tool?”
 
+Much more effort and you risk analysis paralysis.
+
 I can't think of a technology company that was killed by its choice of tech. I
 can think of plenty that were killed by failing to get things done. There is an
 overlap there, but programmers put too much emphasis on it. With a small
@@ -84,6 +86,9 @@ way more than they serve you, ditch them. You might worry now that the tool
 will take root in your organization and be hard to excise. If it gets to that
 point, you’ll be far along, and your enterprise will have bigger problems than
 a lone e.g. build tool you chose all those years ago.
+
+The bad news about this formula is it's still more art than science. The good
+news is you can start feeling better now.
 
 ### To Those On The Cutting Edge
 
@@ -122,8 +127,7 @@ It goes on. The deluge the commenter raises is real; programming is definitely
 in a pickle. But we can still accomplish things right now.
 
 If you're too up-to-date with cutting edge solutions, that attitude is not
-getting anything done. It's [depressing from all the choices][Choices =
-Headaches].
+getting anything done. The Paradox of Choice can even be depressing.[^3]
 
 So do not stress too much that you can’t keep up. In reality, it’s better to
 just pick one tool, develop competence with it, and maintain a light awareness
@@ -131,7 +135,7 @@ of other things going on. Most tools will not utterly pigeonhole you. They
 will grant you experience that applies beyond their walls.
 
 Don’t get too comfortable either. Maintain an attitude of wondering if there’s
-a better way, up to but not including the stress you’re doing things wrong.
+a better way, up to but *not including* the stress you’re doing things wrong.
 There’s a difference between self-improvement and self-doubt. Accept you can’t
 learn everything. Enjoy what you do learn. Don’t be zealous about it. It’s a
 balance.
@@ -143,9 +147,15 @@ balance.
      grain of salt though, or else it's a depressing reminder you previously
      picked the wrong tool.
 
+[^2]: For great humor: [Task Runners and Builders: Just Because You Can Does That Mean You Should?]
+
+[^3]: For a light, software-oriented intro to the Paradox of Choice, see
+      Spolsky's [Choices = Headaches].
+
 [Don’t Learn to Code, Learn to Program Instead - But Come Back In 10 Years]: {% post_url 2014-02-05-dont-learn-to-code-learn-to-program-but-come-back-in-10-years %}
 [Ember-SC meetup]: http://www.meetup.com/Ember-SC/events/159041272/
 [The Principle of Least Power]: http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html
 [Credo]: {% post_url 2013-10-16-credo %}
-[Choices = Headaches]: http://www.joelonsoftware.com/items/2006/11/21.html
 [Broccoli: First Beta Release]: http://www.solitr.com/blog/2014/02/broccoli-first-release/
+[Task Runners and Builders: Just Because You Can Does That Mean You Should?]: https://medium.com/cool-code-pal/d8eeefdc4395
+[Choices = Headaches]: http://www.joelonsoftware.com/items/2006/11/21.html
