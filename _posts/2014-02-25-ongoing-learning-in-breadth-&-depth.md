@@ -13,6 +13,8 @@ know why it is stuck the way it is. I dream of a revolution that cleans it up,
 but I don't know how. Nevertheless, I have some tips on what you can do now
 in your ongoing learning of programming tools.
 
+First, a frustrating, inspiring anecdote.
+
 I gave a talk at the [Ember-SC meetup] comparing 6 different JavaScript build
 tools, and glossing over several more. The final slide rated each tool on
 6 factors.
