@@ -262,37 +262,24 @@ h1.statement, .statement h2, .statement h3 {
 .posts {
   list-style-type: none;
   margin-bottom: 2em;
-  display: table;
 }
 
 .post {
   line-height: 1.75em;
-  display: table-row;
+  display: flex;
+  margin-bottom: 1em;
 }
 
 .post .date {
   color: #aaa;
   font-family: Monaco, "Courier New", monospace;
   font-size: 80%;
-  display: table-cell;
   min-width: 9em;
 }
 
 .post .date:after {
   content: "»";
   padding: 0 0.5em;
-}
-
-.post .title {
-  display: table-cell;
-}
-
-.post-spacer {
-  height: 1em;
-}
-
-.post-spacer:last-of-type {
-  height: 0em;
 }
 
 .center {
