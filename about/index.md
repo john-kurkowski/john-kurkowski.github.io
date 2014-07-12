@@ -6,7 +6,7 @@ title: "About"
 ## About Me
 
 I'm a **full stack web developer** with a passion for **usability** and data
-transparency, making the audience more informed, productive, engaged, &
+transparency. I help make the audience more informed, productive, engaged, &
 entertained.
 
 Any software user interface worth its salt is an iceberg. The user sees only
