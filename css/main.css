@@ -201,12 +201,12 @@ nav .logo {
 }
 
 nav ul {
+  display: inline-block;
   list-style: none;
   overflow: hidden;
 }
 
 nav li a {
-  display: block;
   font: 100% 'Trebuchet MS';
   padding: 5px 0;
   text-decoration: none;
@@ -222,6 +222,27 @@ nav li a:visited {
 
 nav li a.selected {
   text-decoration: underline;
+}
+
+#tools {
+  float: right;
+  padding: 8px 0;
+}
+
+#tools .tool a:hover {
+  text-decoration: none;
+}
+
+#tools .tool i {
+  color: #7e7e7e;
+}
+
+#tools .tool:hover i {
+  color: #fff;
+}
+
+#tools .tool-title {
+  font-size: 0;
 }
 
 h1.statement, .statement h2, .statement h3 {
@@ -240,6 +261,10 @@ h1.statement, .statement h2, .statement h3 {
   #back-home .statement + .statement {
     margin-left: 0.5em;
   }
+}
+
+#back-home a {
+  display: block;
 }
 
 #back-home a:hover {
