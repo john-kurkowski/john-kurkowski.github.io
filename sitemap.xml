@@ -12,7 +12,7 @@
 
     {% for post in site.posts %}
     <url>
-        <loc>{{ site.url }}{{ post.url }}</loc>
+        <loc>{{ site.url }}{{ post.url | xml_escape }}</loc>
     </url>
     {% endfor %}
 </urlset>
