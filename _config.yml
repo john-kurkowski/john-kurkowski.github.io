@@ -1,6 +1,6 @@
 name: John Kurkowski
 url: http://johnkurkowski.com
 description: UI Engineer. Second, bolder self-assertion here.
-pygments: true
+highlighter: pygments
 permalink: /posts/:title
 markdown: kramdown
