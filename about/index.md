@@ -86,7 +86,8 @@ Read my other overarching themes in [Credo]({% post_url 2013-10-16-credo %}).
 
 The source is pretty traditional
 [HTML5](http://www.abookapart.com/products/html5-for-web-designers),
-[CSS3](http://www.abookapart.com/products/css3-for-web-designers), and
+[CSS3](http://www.abookapart.com/products/css3-for-web-designers)
+([Sass](http://sass-lang.com/)), and
 [JavaScript](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742).
 Most written content is in
 [kramdown](http://kramdown.gettalong.org/) instead of lower-level

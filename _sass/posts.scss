@@ -1,0 +1,21 @@
+#post {
+  margin-bottom: 3em;
+
+  blockquote {
+    border-left: 6px solid #ddd;
+    padding: 0 1em;
+    font-style: italic;
+  }
+}
+
+.content ul, .content ol {
+  margin: 1em 1.35em;
+}
+
+.content ol {
+  list-style-position: inside;
+}
+
+.footnotes ol {
+  list-style-position: outside;
+}
