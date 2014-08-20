@@ -146,9 +146,9 @@ The compiler will enforce that they all fit together, and that your
 implementations stick to the contract.
 
 Finally, when you're able to run the program for the first time, there's a
-higher rate that it "just works." That's overly simplistic, of course. Types do
-not protect you from logic bugs. Even so, it feels like most of the hard work
-is over. Oh, that hard work we're used to, from lower level languages and
+higher rate that it "just works." That's overly simplistic, of course, as types
+do not protect you from logic bugs. Even so, it feels like most of the hard
+work is over. Oh, that hard work we're used to, from lower level languages and
 weaker type systems, that we assumed was a necessary evil of the job.
 
 [A Comparison Between Perl and Haskell] tells one such story.
@@ -178,13 +178,22 @@ This is especially poignant given all the bashing Haskell gets for being ivory
 tower, mathematician stuff. Rather, it's helping people get real stuff done,
 predictably and reliably.
 
-I liken all this to fly-by-wire, where automated systems will automatically
-stabilize an aircraft on behalf of a human pilot, and prevent the human from
-forcing the system into a catastrophic state. I also liken it to paint by
-numbers. Both analogies involve guides for imperfect humans. Though they ignore
-the fully creative aspect. Haskell honors the promise of programming, that you
+I liken type-driven development to fly-by-wire, an automated system that
+automatically stabilizes an aircraft on behalf of a human pilot, preventing the
+human from forcing the system into a catastrophic state. As programming is a
+bit more creative, not so mechanical, I also like the analogy of paint by
+numbers.
+
+<figure>
+  <img src="/images/posts/paint-by-numbers.jpg" width="61%" height="auto" alt="Paint By Numbers example"/></a>
+  <figcaption>"I wonder what NPEs are going to happen today?" Worry not.</figcaption>
+</figure>
+
+Both analogies involve guides for imperfect humans, though they ignore the
+fully creative aspect. Rather, Haskell honors the promise of programming: you
 can create anything you can imagine. But with its strong type system, the
 compiler will give you feedback early and often if your imagination was flawed!
+Try painting in the lines, with types as your guide.
 
 [UPenn's CIS 194 - Introduction to Haskell]: http://www.seas.upenn.edu/~cis194/lectures.html
 [CIS 194 Week 5]: http://www.seas.upenn.edu/~cis194/lectures/05-type-classes.html
