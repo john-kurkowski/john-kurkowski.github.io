@@ -3,6 +3,9 @@ layout: post
 title: "Code As Craft As Career?"
 categories: tech
 tags: engineering programming
+description:
+  As a career programmer, I pursue code mastery. Economics at scale however
+  stamps out the craftsman. How do I stay ahead?
 ---
 
 I see 2 paths of career programmers around me: 1) transition to leadership, 2)
