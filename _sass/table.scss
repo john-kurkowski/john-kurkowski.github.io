@@ -1,0 +1,32 @@
+table {
+  border-collapse: collapse;
+  font-size: inherit;
+  font: 100%;
+  text-align: center;
+  width: 100%;
+}
+td, th {
+  padding: 0.5em 1em;
+}
+th {
+  background-color: #eee;
+  border-bottom: solid 1px grey;
+}
+th + th {
+  border-left: solid 1px grey;
+}
+td {
+  border: solid 1px grey;
+}
+tbody tr:first-of-type td {
+  border-top: none;
+}
+td:first-of-type {
+  border-left: none;
+}
+td:last-of-type {
+  border-right: none;
+}
+tbody tr:last-of-type td {
+  border-bottom: none;
+}
