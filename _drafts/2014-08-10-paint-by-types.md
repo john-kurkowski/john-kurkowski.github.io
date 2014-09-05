@@ -59,7 +59,8 @@ function's possible behavior.
 In concert, this function can't do IO, since all it can know is that it deals
 with things of type `a`, not type `IO`. So it can't talk to a database or the
 filesystem. And it will return a real value, as there is no `null`. All this
-put another way: `a -> a -> a` must behave uniformly for any type `a`.
+put another way: `a -> a -> a` must behave uniformly for any type `a`. This is
+called [parametricity][Parametric polymorphism].
 
 The answer to the exercise:
 
@@ -94,9 +95,9 @@ The answer: given a tuple of any 2 types `a` and `b`, `fst` returns the tuple's
 first element. Very handy when unzipping zipped sequences.
 
 Although these types are elementary, I'm optimistic about the potential here.
-When reading a more real world type signature, you stand a much greater chance
-to reason about what the function does, without reading its source or testing
-it.
+These types are so generic _that_ they are constrained and simple. When reading
+a more real world type signature, you stand a much greater chance to reason
+about what the function does, without reading its source or testing it.
 
 ### A Note On Self-Documentation
 
@@ -114,6 +115,9 @@ know what the function does. I had to interpret its type signature to know what
 I was going to get. But once I interpreted that much, I had a pretty good idea,
 without reading its documentation. Just like I have a pretty good idea how to
 deal with a doorknob on sight.
+
+[Parametricity: Types Are Documentation] reinforces this, with more evidence
+that naming alone isn't all its cracked up to be.
 
 It is not always possible to communicate everything in a type signature, so do
 employ comments and documentation where it's unavoidable. I just bring up that
@@ -134,7 +138,8 @@ first, and fill in the implementations later, in a top-down approach.
 Contrary to interface-driven development in other languages, this actually
 gives you early indicators whether the interface itself works. A lot of bad
 assumptions get caught by the compiler when writing the types, as well as when
-implementing them.
+implementing them. Imagine that, a computer that lets you know when _your_
+thinking isn't clear.
 
 With the predictability of types saying and enforcing what a function is going
 to do, defining types first works beyond mere interfaces; they guide
@@ -197,5 +202,7 @@ Try painting in the lines, with types as your guide.
 
 [UPenn's CIS 194 - Introduction to Haskell]: http://www.seas.upenn.edu/~cis194/lectures.html
 [CIS 194 Week 5]: http://www.seas.upenn.edu/~cis194/lectures/05-type-classes.html
+[Parametric polymorphism]: http://en.wikipedia.org/wiki/Parametric_polymorphism
+[Parametricity: Types Are Documentation]: https://dl.dropboxusercontent.com/u/7810909/media/doc/parametricity.pdf
 [A Comparison Between Perl and Haskell]: https://ocharles.org.uk/blog/posts/2013-07-26-a-comparison-between-perl-and-haskell.html
 [Meditations on learning Haskell]: http://bitemyapp.com/posts/2014-04-29-meditations-on-learning-haskell.html
