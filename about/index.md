@@ -37,11 +37,11 @@ specialization, and make it the best damn module of the application. With
 someone like me, you might get design-by-committee, as opposed to design by a
 domain expert.
 
-I say I'm a UI Engineer but I have a hand in it all. A jack of all trades.
+I say I'm a UX Engineer but I have a hand in it all. A jack of all trades.
 
 ### Usability Focus
 
-I say UI specifically because it's my personal mission to make human-computer
+I say UX specifically because it's my personal mission to make human-computer
 interfaces more usable and informative. I grew up in the Internet age, thrilled
 by what a computer could do for me. A familiar story for most techies.
 
