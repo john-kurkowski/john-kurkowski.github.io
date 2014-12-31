@@ -225,6 +225,9 @@ h1.statement, .statement h2, .statement h3 {
 
 .post {
   line-height: 1.75em;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
   display: flex;
   margin-bottom: 1em;
 
@@ -294,6 +297,7 @@ figure {
 .figure-items {
   display: -webkit-inline-flex;
   display: -moz-inline-flex;
+  display: -ms-inline-flex;
   display: inline-flex;
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
@@ -303,6 +307,7 @@ figure {
 .figure-item {
   -webkit-flex: 1 0;
   -moz-flex: 1 0;
+  -ms-flex: 1 0;
   flex: 1 0;
 
   & + .figure-item {
