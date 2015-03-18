@@ -7,8 +7,8 @@ description:
   On the web, your users are no longer a secondary engineering concern. A thick-client framework, like Ember.js, makes UX 1st class.
 ---
 
-Programmers often talk about their tools making functions first class, or
-objects first class. What about users?
+Programmers often talk about their tools making functions 1st class, or objects
+1st class. What about making UX 1st class?
 
 ### The UX Trend
 
