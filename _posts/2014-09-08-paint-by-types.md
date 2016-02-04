@@ -44,11 +44,11 @@ To the functional programming transplant, coming from a type system with
 generics like Java's, the type signature is too generic to say anything about
 it. Here's the Java version.
 
-{% highlight java %}
+```java
 public static <A> foo(A arg1, A arg2) {
   // go nuts!
 }
-{% endhighlight %}
+```
 
 The function body could do anything. It could typecast the inputs, read a
 database, write a database, `rm -rf /`, exit the application, ignore the
@@ -89,9 +89,9 @@ implementations for this type?
 
 How about a real function from Haskell's standard includes?
 
-{% highlight haskell %}
+```haskell
 fst :: (a, b) -> a
-{% endhighlight %}
+```
 
 Similar to the previous exercise, but this time there's only 1 possible
 implementation.

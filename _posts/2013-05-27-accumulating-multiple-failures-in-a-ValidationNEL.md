@@ -63,7 +63,7 @@ So why are we practically restricted to one failure? A for-comprehenion is often
 sugar for calls to `flatMap`[<sup>1</sup>](#1). This could also be called
 fail-fast. Let's review `flatMap` behavior.
 
-{% highlight scala %}
+```scala
 def evenNumber(n: Int) = if (n % 2 == 0) Some(n) else None
 
 // an example for-comprehension …
@@ -74,30 +74,30 @@ for {
 
 // … which desugars to …
 List(1, 2, 3) flatMap (evenNumber)
-{% endhighlight %}
+```
 
 For empty collections, `flatMap` is a no-op.
 
-{% highlight scala %}
+```scala
 // evenNumber won't get called at all (what args could it possibly be called with?)
 for {
   num <- List.empty[Int] // comprehension doesn't get past this
   evenNum <- evenNumber(num)
   doubleEven <- evenNumber(evenNum * 2)
 } yield doubleEven
-{% endhighlight %}
+```
 
 So when `flatMap`ping over a series of Validations, as soon as one of them is a
 `Failure`, you won't reach the others.
 
-{% highlight scala %}
+```scala
 val sumV: ValidationNEL[String, Int] = for {
   a <- 42.successNel[String]
   b <- "Boo".failNel[Int]
   c <- "Wah wah".failNel[Int] // by defn of flatMap, can't get here
 } yield a + b + c
 // sumV == Failure(NonEmptyList(Boo))
-{% endhighlight %}
+```
 
 So how do you accumulate failures, fail-slow?
 
@@ -122,7 +122,7 @@ Validations are Successes. The return type of this whole operation will be
 
 Let's see `|@|` in action. Note the `NonEmptyList` of length 2 at the end.
 
-{% highlight scala %}
+```scala
 val yes = 3.14.successNel[String]
 val doh = "Error".failNel[Double]
 
@@ -136,7 +136,7 @@ def addTwo(x: Double, y: Double) = x + y
 (yes |@| doh){_ + _} // Failure(NonEmptyList(Error))
 (doh |@| yes){_ + _} // Failure(NonEmptyList(Error))
 (doh |@| doh){_ + _} // Failure(NonEmptyList(Error, Error))
-{% endhighlight %}
+```
 
 `|@|` is the most general way to deal with ValidationNELs. There are also more
 specific operators for shorthand accumulation, if you can make certain
@@ -148,39 +148,39 @@ each other, favoring Success rather than failing fast. Note, for appending to be
 possible, the Success type and Failure type must both be Semigroups, such as
 numbers, strings, and NonEmptyLists, among others.
 
-{% highlight scala %}
+```scala
 yes >>*<< yes // Success(6.28)
 yes >>*<< doh // Success(3.14)
 doh >>*<< yes // Success(3.14)
 doh >>*<< doh // Failure(NonEmptyList(Error, Error))
-{% endhighlight %}
+```
 
 Scalaz 7 introduces findSuccess, which short-circuits, returning first success,
 otherwise appending failures. Unlike `>>*<<`, only the Failure type must be a
 Semigroup.
 
-{% highlight scala %}
+```scala
 yes findSuccess yes // Success(3.14)
 yes findSuccess doh // Success(3.14)
 doh findSuccess yes // Success(3.14)
 doh findSuccess doh // Failure(NonEmptyList(Error, Error))
-{% endhighlight %}
+```
 
 Finally, for favoring Failure, Scalaz 7 introduces `+++`. Both Success and
 Failure must be Semigroups again.
 
-{% highlight scala %}
+```scala
 yes +++ yes // Success(6.28)
 yes +++ doh // Failure(NonEmptyList(Error))
 doh +++ yes // Failure(NonEmptyList(Error))
 doh +++ doh // Failure(NonEmptyList(Error, Error))
-{% endhighlight %}
+```
 
 The alternative to learning these typeclasses and their operators is
 constructing a mutable buffer and side-effectfully accumulating failures
 yourself.
 
-{% highlight scala %}
+```scala
 var sum = 0.0
 val fails = collection.mutable.ArrayBuffer[String]()
 yes fold (fails ++= _.list, sum += _)
@@ -191,7 +191,7 @@ if (fails.isEmpty) {
   NonEmptyList(fails.head, fails.tail: _*).fail
 }
 // Failure(NonEmptyList(Error))
-{% endhighlight %}
+```
 
 Awkward, no?
 
