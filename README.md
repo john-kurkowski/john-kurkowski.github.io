@@ -10,7 +10,7 @@ Source for [johnkurkowski.com](http://johnkurkowski.com).
 
 ## Running
 
-    bundle exec jekyll serve --watch --drafts
+    bundle exec jekyll serve --watch --incremental --drafts
 
 ## Contributing
 
