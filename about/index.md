@@ -110,7 +110,7 @@ font is the humanist sans-serif [Optima](http://en.wikipedia.org/wiki/Optima),
 widely installed on [Mac OS X](http://www.apple.com/osx/). On
 [Windows](http://windows.microsoft.com/en-us/windows/home), this site will
 degrade to either humanist [Segoe](http://en.wikipedia.org/wiki/Segoe) or
-Helvetica. [Pygments](http://pygments.org/) (bundled with Jekyll) highlights
+Helvetica. [Rouge](https://github.com/jneen/rouge) highlights
 code snippets in a [Solarized](http://ethanschoonover.com/solarized) color
 scheme. Photos edited in [Pixelmator](http://www.pixelmator.com/).
 

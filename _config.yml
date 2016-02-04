@@ -1,8 +1,6 @@
 name: John Kurkowski
 url: http://johnkurkowski.com
 description: UX Engineer. Second, bolder self-assertion here.
-highlighter: pygments
 permalink: /posts/:title
-markdown: kramdown
 sass:
   style: :compressed
