@@ -32,7 +32,7 @@ but also *why*[<sup>1</sup>](#1). If you publish history exactly as it was, you
 lose this clarity.
 
 A book author never publishes first drafts. Book readers never see the book with
-rough around the edges, so they puzzle less, avoiding questions like, what does
+rough around the edges. So readers puzzle less, altogether avoiding questions like, what does
 the author mean here? Or, did he really mean to include this sentence?
 
 No creator gets their art right the first time. Programmers are no exception.
