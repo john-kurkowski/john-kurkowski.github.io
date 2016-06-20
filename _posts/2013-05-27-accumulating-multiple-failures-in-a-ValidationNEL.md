@@ -60,7 +60,7 @@ side, you must accept the wart of running `NonEmptyList.list.contains` to handle
 specific errors; perhaps write a custom extractor.
 
 So why are we practically restricted to one failure? A for-comprehenion is often
-sugar for calls to `flatMap`[<sup>1</sup>](#1). This could also be called
+sugar for calls to `flatMap`[^1]. This could also be called
 fail-fast. Let's review `flatMap` behavior.
 
 ```scala
@@ -193,7 +193,8 @@ if (fails.isEmpty) {
 // Failure(NonEmptyList(Error))
 ```
 
-Awkward, no?
+Awkward, no? You'd have to copy & paste that block for every different
+accumulation strategy. And tweak each slightly.[^2]
 
 So, I've shown you how to accumulate a handful of Validations. If you're
 interested in accumulating errors for N Validations, still fail-slow, check out
@@ -243,5 +244,9 @@ as a right-biased Either monad, as its `flatMap` would only deal with its
 right-side/success). For more Validation potential though, use it as an
 applicative functor with `|@|` and company.
 
-<small><sup id="1">1</sup>For-comprehensions compile to flatMap, map, filter,
-and/or foreach calls. That's it.</small>
+[^1]: For-comprehensions compile to `flatMap`, `map`, `filter`, and/or `foreach` calls. That's it.
+
+[^2]: Reminds me of clinging to old, verbose, C-style `for (int i = 0; i <
+      length; i++) { ... }` blocks. Nowadays, you use `map`, `filter`, and
+      friends. Declarative over imperative. Separate what you want from how you
+      get it.
