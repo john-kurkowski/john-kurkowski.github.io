@@ -129,7 +129,7 @@ val doh = "Error".failNel[Double]
 def addTwo(x: Double, y: Double) = x + y
 
 (yes |@| yes)(addTwo) // Success(6.28)
-(no |@| no)(addTwo)   // Failure(NonEmptyList(Error, Error))
+(doh |@| doh)(addTwo) // Failure(NonEmptyList(Error, Error))
 
 // or shorthand
 (yes |@| yes){_ + _} // Success(6.28)
