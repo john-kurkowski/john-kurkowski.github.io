@@ -27,7 +27,7 @@ suffer being blocked by different teams. They're deep in their own work &
 responsibilities though. They don't have the time and memory for all my
 requests. Play nice as you can, there are always communication breakdowns. So,
 why not figure things out myself, cut the red tape, and get things done? Who
-accomplishes more engineers always at the mercy of others, or ones who can
+accomplishes more: engineers always at the mercy of others, or ones who can
 feed themselves anywhere?
 
 This is my personal outlook. As with any extreme though, it's not always the
