@@ -27,8 +27,8 @@ suffer being blocked by different teams. They're deep in their own work &
 responsibilities though. They don't have the time and memory for all my
 requests. Play nice as you can, there are always communication breakdowns. So,
 why not figure things out myself, cut the red tape, and get things done? Who
-accomplishes more, an engineer always at the mercy of others, or someone who can
-feed themself anywhere?
+accomplishes more engineers always at the mercy of others, or ones who can
+feed themselves anywhere?
 
 This is my personal outlook. As with any extreme though, it's not always the
 right answer. In others, I've seen the benefits of their code & project
@@ -47,12 +47,12 @@ by what a computer could do for me. A familiar story for most techies.
 
 However I'm *scarred* from being unable to share that thrill. In contrast to
 me, for all my family and peers, computers did nothing but get in their way.
-[Computers are too difficult, and it's no wonder most remain
+[Computers are too difficult, and it's no wonder most people remain
 illiterate](http://studiotendra.com/2013/08/14/computers-are-both-too-difficult-and-people-are-computer-illiterate/).
 
 The design of everyday things is often irresponsible and insulting. The
 software industry can do better. Wherever I'm involved as a software engineer,
-I aim to bring some sensitivity to this.
+I aim to bring sensitivity to this.
 
 Read my other overarching themes in [Credo]({% post_url 2013-10-16-credo %}).
 
@@ -68,9 +68,9 @@ Read my other overarching themes in [Credo]({% post_url 2013-10-16-credo %}).
 
   <p>
     While I've put my 10,000 hours into programming, <a
-    href="http://vimeo.com/71278954">I take a look back bewildered</a>:
-    programming is still something new to me every day, which is both thrilling
-    and frustrating, "Why isn't this easier?" For the uninitiated, it's an
+    href="http://vimeo.com/71278954">I take a look back bewildered</a>.
+    Programming is still something new to me every day. This is both thrilling
+    and frustrating. "Why isn't this easier?" For the uninitiated, it's an
     unintuitive jigsaw of lines of <em>text</em> jammed together. So how does
     anyone ever get to the point of realizing their own website? I don't have a
     great answer for myself, much less a one-size-fits-all. So I think a
