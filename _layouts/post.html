@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<div class="site">
+<article>
   <h2>{{ page.title }}</h2>
   <p class="meta">{{ page.date | date_to_string }}</p>
 
-  <div id="post">
+  <div class="post">
     {{ content }}
   </div>
 
   <div id="disqus_thread"></div>
   <noscript>Enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript>
-</div>
+</article>

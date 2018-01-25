@@ -1,21 +1,30 @@
-#post {
-  margin-bottom: 3em;
+$color-blockquote-border: #ddd;
 
-  blockquote {
-    border-left: 6px solid #ddd;
-    padding: 0 1em;
-    font-style: italic;
+article {
+  .post {
+    margin-bottom: 3em;
+
+    blockquote {
+      border-left: 6px solid $color-blockquote-border;
+      font-style: italic;
+      padding: 0 1em;
+    }
   }
 }
 
-.content ul, .content ol {
-  margin: 1em 1.35em;
+.content {
+  ol,
+  ul {
+    margin: 1em 1.35em;
+  }
+
+  ol {
+    list-style-position: inside;
+  }
 }
 
-.content ol {
-  list-style-position: inside;
-}
-
-.footnotes ol {
-  list-style-position: outside;
+.footnotes {
+  ol {
+    list-style-position: outside;
+  }
 }

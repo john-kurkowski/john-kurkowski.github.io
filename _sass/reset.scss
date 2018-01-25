@@ -1,26 +1,31 @@
+$color-a: #00a;
+$color-a-hover: #000;
+$color-a-visited: #93a1a1;
+$color-bg: #333;
+$color-fg: #444;
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
-  background-color: #333;
-  color: #444;
-  font: 18px Optima, Segoe, "Segoe UI", sans-serif;
+  background-color: $color-bg;
+  color: $color-fg;
+  font: 18px Optima, Segoe, 'Segoe UI', sans-serif;
   line-height: 1.555em;
 }
 
-a img {
-  border: 0;
-}
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   line-height: 1.555em;
 }
 
@@ -28,8 +33,14 @@ h1 {
   font-size: 47px;
 }
 
-h2, header .title {
+h2 {
   font-size: 29px;
+}
+
+header {
+  .title {
+    font-size: 29px;
+  }
 }
 
 h3 {
@@ -42,19 +53,36 @@ h4 {
 
 p { margin: 1em 0; }
 
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #93A1A1; }
+a {
+  color: $color-a;
+
+  img {
+    border: 0;
+  }
+
+  &:hover {
+    color: $color-a-hover;
+  }
+
+  &:visited {
+    color: $color-a-visited;
+  }
+}
 
 table {
-  font-size: inherit;
   font: 100%;
+  font-size: inherit;
 }
 
 hr {
   margin-bottom: 1em;
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
   display: none;
 }

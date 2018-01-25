@@ -1,32 +1,53 @@
+$color-table-bg: #eee;
+$color-table-border-underline: #000;
+$color-table-border-th: #808080;
+
 table {
   border-collapse: collapse;
-  font-size: inherit;
   font: 100%;
+  font-size: inherit;
   text-align: center;
   width: 100%;
 }
-td, th {
-  padding: 0.5em 1em;
-}
+
+td,
 th {
-  background-color: #eee;
-  border-bottom: solid 1px grey;
+  padding: .5em 1em;
 }
+
+th {
+  background-color: $color-table-bg;
+  border-bottom: solid 1px $color-table-border-underline;
+}
+
 th + th {
-  border-left: solid 1px grey;
+  border-left: solid 1px $color-table-border-th;
 }
+
 td {
-  border: solid 1px grey;
+  border: solid 1px $color-table-border-th;
+
+  &:first-of-type {
+    border-left: 0;
+  }
+
+  &:last-of-type {
+    border-right: 0;
+  }
 }
-tbody tr:first-of-type td {
-  border-top: none;
-}
-td:first-of-type {
-  border-left: none;
-}
-td:last-of-type {
-  border-right: none;
-}
-tbody tr:last-of-type td {
-  border-bottom: none;
+
+tbody {
+  tr {
+    &:first-of-type {
+      td { // sass-lint:disable-line nesting-depth
+        border-top: 0;
+      }
+    }
+
+    &:last-of-type {
+      td { // sass-lint:disable-line nesting-depth
+        border-bottom: 0;
+      }
+    }
+  }
 }
