@@ -1,3 +1,5 @@
+/* global angular */
+
 var dims = function(i, el) {
   return { width: angular.element(el).width(), height: angular.element(el).height() };
 };
@@ -24,7 +26,7 @@ angular
     };
   })
   .directive('resizeFromSiblings', function() {
-    return function(scope, element, attrs) {
+    return function(scope, element) {
       var resize = function() {
           var parentRect = element.parent()[0].getBoundingClientRect(),
             prev = element.prev().length ? element.prev()[0].getBoundingClientRect().bottom : parentRect.top,
@@ -100,15 +102,16 @@ angular
   var disqus_loaded = false,
     load_disqus = function() {
       var dsq;
+      var disqus_shortname;
 
-      window.disqus_shortname = 'johnkurkowski';
+      disqus_shortname = window.disqus_shortname = 'johnkurkowski';
 
       dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     };
 
-  window.onscroll = function(evt) {
+  window.onscroll = function() {
     var disqus_thread,
       load_range_px = 600;
 
