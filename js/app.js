@@ -19,7 +19,7 @@ angular
           scope.$apply();
         };
 
-      angular.element('<img>').load(function() {
+      angular.element('<img>').on('load', function() {
         resize();
         angular.element(window).on('resize', resize);
       }).attr('src', bg);
@@ -40,7 +40,15 @@ angular
         },
         dimsToWatch = function() {
           var els = element.parent().add(element.prev()).add(element.next()),
-            dims = els.map(function(i, el) { return el.getBoundingClientRect(); }).toArray();
+            dims = els.toArray().map(function domRect2Pojo(el) {
+              var rect = el.getBoundingClientRect();
+              return {
+                bottom: rect.bottom,
+                left: rect.left,
+                right: rect.right,
+                top: rect.top,
+              };
+            });
           return dims;
         },
         deepEquals = true;
