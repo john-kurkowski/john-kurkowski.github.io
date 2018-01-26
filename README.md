@@ -1,6 +1,6 @@
 # john-kurkowski.github.io
 
-Source for [johnkurkowski.com](http://johnkurkowski.com).
+Source for [johnkurkowski.com](https://johnkurkowski.com).
 
 # Development
 
