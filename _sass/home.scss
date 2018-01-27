@@ -341,10 +341,19 @@ footer {
 
     a {
       color: $color-contact-link;
+      text-decoration: none;
+
+      figcaption {
+        text-decoration: underline;
+      }
     }
 
     img {
       vertical-align: sub;
+    }
+
+    figcaption {
+      display: inline;
     }
   }
 
