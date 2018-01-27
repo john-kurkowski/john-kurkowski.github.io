@@ -10,4 +10,4 @@ Source for [johnkurkowski.com](https://johnkurkowski.com).
 
 ### Running
 
-    bundle exec jekyll serve --watch --incremental --drafts
+    bundle exec jekyll serve --watch --livereload --incremental --drafts
