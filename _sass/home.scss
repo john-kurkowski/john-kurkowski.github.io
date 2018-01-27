@@ -314,63 +314,14 @@ nav {
 }
 
 aside,
-figure {
-  margin: 1em auto;
-  padding: 0 1em;
-}
-
-aside {
-  border: 4px solid $color-figure-border;
-  vertical-align: middle;
-}
-
-figure {
-  text-align: center;
-
-  img {
-    border: 4px solid $color-figure-border;
-    vertical-align: middle;
-  }
-}
-
-.figure-items {
-  -ms-flex-pack: center; // sass-lint:disable-line no-vendor-prefixes
-  display: -ms-inline-flex; // sass-lint:disable-line no-vendor-prefixes
-  display: inline-flex; // sass-lint:disable-line no-duplicate-properties
-  justify-content: space-between;
-}
-
-.figure-item {
-  -ms-flex: 1 0; // sass-lint:disable-line no-vendor-prefixes
-  flex: 1 0;
-
-  & + .figure-item {
-    margin-left: 1em;
-  }
-
-  img {
-    width: 100%;
-  }
-}
-
-figcaption {
-  line-height: 1.5em;
-  margin-top: 1em;
-}
-
-aside,
 footer {
   background: url('/images/cream_pixels_@2X.png');
   color: $color-footer;
 }
 
-figcaption,
-footer {
-  font-size: 69.269%;
-}
-
 footer {
   border-top: 4px solid $color-figure-border;
+  font-size: 69.269%;
   line-height: 2em;
   margin: 3em auto 0;
   overflow: hidden;
