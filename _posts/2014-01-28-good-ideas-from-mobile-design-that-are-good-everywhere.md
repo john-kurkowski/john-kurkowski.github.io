@@ -113,9 +113,9 @@ here. Then I'll mix in what *I wish* was in the report.
   <li>
     My (Stolen) Ideas
     <ol start="5">
-      <li><a href="#avoid-interaction--modes-hovers-menus-modals">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
-      <li><a href="#avoid-interaction--modes-hovers-menus-modals">Avoid Interaction & Modes: Hovers, Menus, Modals</a></li>
-      <li><a href="#avoid-interaction--modes-inner-scrolls">Avoid Interaction & Modes: Inner Scrolls</a></li>
+      <li><a href="#remove-half">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
+      <li><a href="#avoid-modes">Avoid Interaction & Modes: Hovers, Menus, Modals</a></li>
+      <li><a href="#avoid-inner-scrolls">Avoid Interaction & Modes: Inner Scrolls</a></li>
       <li><a href="#dont-restyle-form-inputs--scrollbars">Don't Restyle Form Inputs & Scrollbars</a></li>
       <li><a href="#no-really-show-the-data">No, Really, Show the Data</a></li>
     </ol>
@@ -211,6 +211,7 @@ If you follow the next tip, this shouldn't be a problem.
 Here's what I would love to see added to the User Experience report.
 
 #### 5. Remove Half Your Content, Then Remove Half Of What's Left
+{:#remove-half}
 
 Maybe Google PageSpeed can't tell you what to write. But I can. The answer
 is *less*.
@@ -234,6 +235,7 @@ This benefits not only the paragraph you shorten, but your whole site, as this
 exercise forces focus on your site's core values.[^2]
 
 #### 6. Avoid Interaction & Modes: Hovers, Menus, Modals
+{:#avoid-modes}
 
 One day I hope the User Experience report could automatically include these
 points from my [Credo], because I see them violated again and again:
@@ -323,6 +325,7 @@ them. Instead,
   very least, pick implementations that work on touch screens.
 
 #### 7. Avoid Interaction & Modes: Inner Scrolls
+{:#avoid-inner-scrolls}
 
 After web designers learn the importance of above-the-fold content ("users
 don't wanna scroll; they'll hit that Back button in n seconds instead") they
@@ -381,6 +384,7 @@ without dealing with modes.
   screens.[^4]
 
 #### 8. Don't Restyle Form Inputs & Scrollbars
+{:#dont-restyle-form-inputs--scrollbars}
 
 Web programmers know how hard it is to restyle standard form `<input>` elements
 & scrollbars. Their style is tightly locked into web browsers and perhaps the
@@ -406,6 +410,7 @@ Web users deal with forms and scrollbars all day. Why must yours look & work
 differently & poorly?
 
 #### 9. No, Really, Show the Data
+{:#no-really-show-the-data}
 
 I wonder if PageSpeed could issue a warning for *too little* content. It
 already takes into account [the performance of your above-the-fold
