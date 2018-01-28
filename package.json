@@ -1,0 +1,19 @@
+{
+  "name": "john-kurkowski.github.io",
+  "version": "1.0.0",
+  "description": "Source for https://johnkurkowski.com.",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-kurkowski/john-kurkowski.github.io.git"
+  },
+  "author": "John Kurkowski <john.kurkowski@gmail.com> (https://johnkurkowski.com/)",
+  "license": "UNLICENSED",
+  "private": true,
+  "homepage": "https://github.com/john-kurkowski/john-kurkowski.github.io#readme",
+  "devDependencies": {
+    "eslint": "^4.16.0"
+  }
+}
