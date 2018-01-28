@@ -8,6 +8,9 @@ module.exports = {
   'parserOptions': {
     'sourceType': 'module',
   },
+  'plugins': [
+    'frontmatter',
+  ],
   'rules': {
     'comma-dangle': [
       'error',
