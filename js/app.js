@@ -123,10 +123,19 @@ angular
     };
 
   window.onscroll = function() {
-    var disqus_thread,
-      load_range_px = 600;
+    if (disqus_loaded) {
+      return;
+    }
 
-    if (!disqus_loaded && (disqus_thread = document.getElementById('disqus_thread')) && (window.innerHeight || document.documentElement.clientHeight) + load_range_px >= disqus_thread.getBoundingClientRect().top) {
+    const disqus_thread = document.getElementById('disqus_thread');
+    if (!disqus_thread) {
+      return;
+    }
+
+    const load_range_px = 600;
+    const scroll_height = window.innerHeight || document.documentElement.clientHeight;
+    const disqus_top = disqus_thread.getBoundingClientRect().top;
+    if (scroll_height + load_range_px >= disqus_top) {
       disqus_loaded = true;
       load_disqus();
     }
