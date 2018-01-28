@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Source for https://johnkurkowski.com.",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
