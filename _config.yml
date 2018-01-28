@@ -4,5 +4,8 @@ description: UX Engineer. Second, bolder self-assertion here.
 kramdown:
   input: GFM
 permalink: /posts/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
 sass:
   style: :compressed
