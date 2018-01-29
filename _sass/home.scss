@@ -138,8 +138,6 @@ nav {
     border-radius: 50%;
     box-shadow: 0 12px 18px 0 $color-logo-shadow;
     height: 80px;
-    position: absolute;
-    top: -20px;
     width: 80px;
   }
 
@@ -217,7 +215,11 @@ nav {
   }
 
   a {
-    display: block;
+    align-items: center;
+    display: -ms-flex; // sass-lint:disable-line no-vendor-prefixes
+    display: flex; // sass-lint:disable-line no-duplicate-properties
+    position: relative;
+    top: -24px;
 
     &:hover {
       text-decoration: none;
