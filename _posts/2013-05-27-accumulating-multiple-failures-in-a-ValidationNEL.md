@@ -198,7 +198,7 @@ accumulation strategy. And tweak each slightly.[^2]
 
 So, I've shown you how to accumulate a handful of Validations. If you're
 interested in accumulating errors for N Validations, still fail-slow, check out
-more examples in [A Tale of 3 Nightclubs](https://gist.github.com/970717). Take
+more examples in [A Tale of 3 Nightclubs](https://gist.github.com/oxbowlakes/970717). Take
 a look for calls to `sequence` which essentially inverts a sequence of
 Validations into a Validation of a sequence: `Seq[ValidationNEL[E, A] =>
 ValidationNEL[E, Seq[A]]`. It's beyond my current ability to explain the type
