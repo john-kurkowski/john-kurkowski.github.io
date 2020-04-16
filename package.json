@@ -14,7 +14,7 @@
   "private": true,
   "homepage": "https://github.com/john-kurkowski/john-kurkowski.github.io#readme",
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^6.8.0",
     "eslint-plugin-frontmatter": "0.0.8"
   }
 }
