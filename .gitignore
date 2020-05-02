@@ -2,4 +2,3 @@
 .netlify
 node_modules/
 public/
-.sass-cache/
