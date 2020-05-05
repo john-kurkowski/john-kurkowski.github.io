@@ -2,6 +2,10 @@
 
 @import "./syntax";
 
-@import "tailwindcss/components";
+p + p {
+  @apply mt-2;
+}
 
-@import "tailwindcss/utilities";
+@tailwind components;
+
+@tailwind utilities;

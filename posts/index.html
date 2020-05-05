@@ -1,0 +1,15 @@
+---
+layout: base
+---
+
+<section class="">
+  <h2>Posts</h2>
+  <ul class="">
+    {% for post in site.posts %}
+      <li class="">
+        <span class="">{{ post.date | date_to_string }}</span>
+        <a class="" href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
