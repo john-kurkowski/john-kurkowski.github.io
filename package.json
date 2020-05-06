@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Source for https://johnkurkowski.com.",
   "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
     "test": "eslint --ignore-path .gitignore ."
   },
   "repository": {
@@ -13,6 +15,11 @@
   "license": "UNLICENSED",
   "private": true,
   "homepage": "https://github.com/john-kurkowski/john-kurkowski.github.io#readme",
+  "dependencies": {
+    "gatsby": "^2.21.16",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-plugin-frontmatter": "0.0.8"
