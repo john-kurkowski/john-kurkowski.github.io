@@ -4,7 +4,6 @@ import Layout from 'src/components/layouts/base'
 export default function Index () {
   return Layout({
     page: {}, // TODO
-    site: {}, // TODO
     children: (
       <section className='max-w-2xl mx-auto my-16'>
         <h2 className='text-center my-16'>

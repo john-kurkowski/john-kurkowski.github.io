@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import avatar2X from 'src/images/avatar@2X.jpeg'
 import favicon from 'src/images/favicon.ico'
@@ -8,48 +9,81 @@ import gitHubLogo from 'src/images/icons/iconmonstr-github-1.svg'
 import linkedInLogo from 'src/images/icons/iconmonstr-linkedin-3.svg'
 import twitterLogo from 'src/images/icons/iconmonstr-twitter-1.svg'
 
-function Layout ({ children, page, site }) {
+function Layout ({ children, page }) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            description
+            title
+            url
+          }
+        }
+      }
+    `
+  )
+
   return (
     <React.Fragment>
       <Helmet htmlAttributes={{ lang: 'en-US' }}>
         <meta charset='utf-8' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge,chrome=1' />
-        {page.title ? (
-          <Helmet>
-            <title>
-              {page.title} &ndash; {site.name}
-            </title>
-            <meta property='og:title' content={page.title} />
-            <meta property='og:type' content='article' />
-          </Helmet>
-        ) : (
-          <Helmet>
-            <title>{site.name}</title>
-            <meta property='og:title' content={site.name} />
-            <meta property='og:type' content='profile' />
-          </Helmet>
-        )}
 
-        <meta name='author' content={site.name} />
-        <meta property='og:author' content={site.url} />
+        {
+          // Use repetitive if/else check, because Helmet doesn't flatten
+          // fragments (multiple tags) and complains.
+        }
+        {page.title && (
+          <title>
+            {page.title} &ndash; {data.site.siteMetadata.title}
+          </title>
+        )}
+        {page.title && <meta property='og:title' content={page.title} />}
+        {page.title && <meta property='og:type' content='article' />}
+        {!page.title && <title>{data.site.siteMetadata.title}</title>}
+        {!page.title && (
+          <meta property='og:title' content={data.site.siteMetadata.title} />
+        )}
+        {!page.title && <meta property='og:type' content='profile' />}
+
+        <meta name='author' content={data.site.siteMetadata.title} />
+        <meta property='og:author' content={data.site.siteMetadata.url} />
         <meta property='profile:first_name' content='John' />
         <meta property='profile:last_name' content='Kurkowski' />
-        {page.url === '/' || page.url === '/index.html' ? (
-          <Helmet>
-            <meta name='description' content={site.description} />
-            <meta name='twitter:description' content={site.description} />
-          </Helmet>
-        ) : page.description ? (
-          <Helmet>
-            <meta name='description' content={page.description} />
-            <meta name='twitter:description' content={page.description} />
-          </Helmet>
-        ) : (
-          <Helmet>
-            <meta name='description' content={page.contentForMeta} />
-            <meta name='twitter:description' content={page.contentForMeta} />
-          </Helmet>
+
+        {
+          // Use repetitive if/else check, because Helmet doesn't flatten
+          // fragments (multiple tags) and complains.
+        }
+        {(page.url === '/' || page.url === '/index.html') && (
+          <meta
+            name='description'
+            content={data.site.siteMetadata.description}
+          />
         )}
+        {(page.url === '/' || page.url === '/index.html') && (
+          <meta
+            name='twitter:description'
+            content={data.site.siteMetadata.description}
+          />
+        )}
+        {!(page.url === '/' || page.url === '/index.html') &&
+          page.description && (
+            <meta name='description' content={page.description} />
+          )}
+        {!(page.url === '/' || page.url === '/index.html') &&
+          page.description && (
+            <meta name='twitter:description' content={page.description} />
+          )}
+        {!(page.url === '/' || page.url === '/index.html') &&
+          !page.description && (
+            <meta name='description' content={page.contentForMeta} />
+          )}
+        {!(page.url === '/' || page.url === '/index.html') &&
+          !page.description && (
+            <meta name='twitter:description' content={page.contentForMeta} />
+          )}
 
         {page.date && <meta httpEquiv='date' content={page.dateForMeta} />}
 
@@ -143,8 +177,7 @@ function Layout ({ children, page, site }) {
 
 Layout.propTypes = {
   children: PropTypes.func,
-  page: PropTypes.object,
-  site: PropTypes.object
+  page: PropTypes.object
 }
 
 export default Layout

@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    description: 'UX Engineer. Second, bolder self-assertion here.',
+    title: 'John Kurkowski',
+    url: 'https://johnkurkowski.com'
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
