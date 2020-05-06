@@ -17,7 +17,14 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react'],
-  rules: {},
+  rules: {
+    'react/no-unescaped-entities': [
+      'error',
+      {
+        forbid: ['>', '}']
+      }
+    ]
+  },
   settings: {
     react: {
       version: 'detect'
