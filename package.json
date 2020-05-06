@@ -5,7 +5,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "test": "eslint --ignore-path .gitignore ."
+    "test": "eslint --ignore-path .gitignore . && prettier-standard --check $(git ls-files '*.css' '*.html' '*.js')"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-frontmatter": "0.0.8"
+    "eslint-plugin-react": "^7.19.0",
+    "prettier-standard": "^16.3.0"
   }
 }
