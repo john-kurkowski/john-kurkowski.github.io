@@ -14,6 +14,14 @@ module.exports = {
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-root-import`
+    `gatsby-plugin-root-import`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/_posts/`,
+      }
+    },
+    `gatsby-transformer-remark`
   ]
 }
