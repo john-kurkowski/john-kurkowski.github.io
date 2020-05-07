@@ -58,7 +58,10 @@ export default Posts
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
+    allMarkdownRemark(
+      filter: { fields: { date: { ne: null } } }
+      sort: { fields: [fields___date], order: DESC }
+    ) {
       edges {
         node {
           fields {

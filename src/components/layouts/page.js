@@ -4,11 +4,11 @@ import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-function Post ({ data }) {
+function Page ({ data }) {
   const post = data.markdownRemark
 
   const page = {
-    dateForMeta: post.fields.dateForMeta,
+    dateForMeta: '',
     description: post.frontmatter.description || post.excerpt,
     title: post.frontmatter.title,
     url: ''
@@ -16,35 +16,19 @@ function Post ({ data }) {
 
   return (
     <Layout page={page}>
-      <article>
-        <h2>{page.title}</h2>
-        <p className='meta'>{post.fields.dateForTitle}</p>
-
-        <div
-          className='post'
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        ></div>
-
-        <div id='disqus_thread'></div>
-        <noscript>
-          Enable JavaScript to view the{' '}
-          <a href='https://disqus.com/?ref_noscript'>comments.</a>
-        </noscript>
-      </article>
+      <div
+        className='post'
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      ></div>
     </Layout>
   )
 }
 
-Post.propTypes = {
+Page.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       excerpt: PropTypes.string,
       html: PropTypes.string,
-
-      fields: PropTypes.shape({
-        dateForMeta: PropTypes.string.isRequired,
-        dateForTitle: PropTypes.string.isRequired
-      }),
 
       frontmatter: PropTypes.shape({
         description: PropTypes.string,
@@ -54,17 +38,13 @@ Post.propTypes = {
   }).isRequired
 }
 
-export default Post
+export default Page
 
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       excerpt(pruneLength: 256)
       html
-      fields {
-        dateForMeta: date(formatString: "dddd, DD MMM YYYY HH:mm:ss [GMT]")
-        dateForTitle: date(formatString: "DD MMM YYYY")
-      }
       frontmatter {
         description
         title
