@@ -1,4 +1,5 @@
 .cache
+.eslintcache
 .netlify
 node_modules/
 public/
