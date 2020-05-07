@@ -3,7 +3,6 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
-import { dateForTitle } from 'src/helpers/dates'
 
 export const page = {
   dateForMeta: '',
@@ -19,9 +18,11 @@ function Posts ({ data }) {
         <h2>Articles</h2>
         <ul className=''>
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <li className="" key={node.id}>
-              <span className="">{dateForTitle(node.fields.date)}</span>
-              <Link className="" to={node.fields.slug}>{ node.frontmatter.title }</Link>
+            <li className='' key={node.id}>
+              <span className=''>{node.fields.dateForTitle}</span>
+              <Link className='' to={node.fields.slug}>
+                {node.frontmatter.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -33,21 +34,24 @@ function Posts ({ data }) {
 Posts.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape({
-        node: PropTypes.shape({
-          fields: PropTypes.shape({
-            slug: PropTypes.string.isRequired
-          }),
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            fields: PropTypes.shape({
+              dateForTitle: PropTypes.string.isRequired,
+              slug: PropTypes.string.isRequired
+            }),
 
-          frontmatter: PropTypes.shape({
-            title: PropTypes.string.isRequired
-          }),
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired
+            }),
 
-          id: PropTypes.string.isRequired
-        }).isRequired,
-      })).isRequired
-    }).isRequired,
-  }).isRequired,
+            id: PropTypes.string.isRequired
+          }).isRequired
+        })
+      ).isRequired
+    }).isRequired
+  }).isRequired
 }
 
 export default Posts
@@ -58,7 +62,7 @@ export const query = graphql`
       edges {
         node {
           fields {
-            date
+            dateForTitle: date(formatString: "DD MMM YYYY")
             slug
           }
           frontmatter {

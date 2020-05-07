@@ -3,13 +3,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
-import { dateForMeta, dateForTitle } from 'src/helpers/dates'
 
-function Post ({ data, pageContext }) {
+function Post ({ data }) {
   const post = data.markdownRemark
 
   const page = {
-    dateForMeta: dateForMeta(pageContext.date),
+    dateForMeta: post.fields.dateForMeta,
     description: post.frontmatter.description || post.excerpt,
     title: post.frontmatter.title,
     url: ''
@@ -19,7 +18,7 @@ function Post ({ data, pageContext }) {
     <Layout page={page}>
       <article>
         <h2>{page.title}</h2>
-        <p className='meta'>{dateForTitle(pageContext.date)}</p>
+        <p className='meta'>{post.fields.dateForTitle}</p>
 
         <div
           className='post'
@@ -41,15 +40,17 @@ Post.propTypes = {
     markdownRemark: PropTypes.shape({
       excerpt: PropTypes.string,
       html: PropTypes.string,
+
+      fields: PropTypes.shape({
+        dateForMeta: PropTypes.string.isRequired,
+        dateForTitle: PropTypes.string.isRequired
+      }),
+
       frontmatter: PropTypes.shape({
         description: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
       }).isRequired
-    }).isRequired,
-  }).isRequired,
-
-  pageContext: PropTypes.shape({
-    date: PropTypes.string.isRequired
+    }).isRequired
   }).isRequired
 }
 
@@ -60,8 +61,12 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       excerpt(pruneLength: 256)
       html
+      fields {
+        dateForMeta: date(formatString: "dddd, DD MMM YYYY HH:mm:ss [GMT]")
+        dateForTitle: date(formatString: "DD MMM YYYY")
+      }
       frontmatter {
-        description,
+        description
         title
       }
     }
