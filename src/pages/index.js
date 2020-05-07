@@ -1,10 +1,10 @@
 import React from 'react'
+
 import Layout from 'src/components/layouts/base'
 
 export default function Index () {
-  return Layout({
-    page: {}, // TODO
-    children: (
+  return (
+    <Layout>
       <section className='max-w-2xl mx-auto my-16'>
         <h2 className='text-center my-16'>
           I'm baby yuccie small batch roof party freegan gentrify humblebrag
@@ -53,6 +53,6 @@ export default function Index () {
           </li>
         </ul>
       </section>
-    )
-  })
+    </Layout>
+  )
 }

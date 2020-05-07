@@ -9,7 +9,7 @@ import gitHubLogo from 'src/images/icons/iconmonstr-github-1.svg'
 import linkedInLogo from 'src/images/icons/iconmonstr-linkedin-3.svg'
 import twitterLogo from 'src/images/icons/iconmonstr-twitter-1.svg'
 
-function Layout ({ children, page }) {
+function Layout ({ children, page = {} }) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -85,7 +85,9 @@ function Layout ({ children, page }) {
             <meta name='twitter:description' content={page.contentForMeta} />
           )}
 
-        {page.date && <meta httpEquiv='date' content={page.dateForMeta} />}
+        {page.dateForMeta && (
+          <meta httpEquiv='date' content={page.dateForMeta} />
+        )}
 
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
@@ -176,8 +178,15 @@ function Layout ({ children, page }) {
 }
 
 Layout.propTypes = {
-  children: PropTypes.func,
-  page: PropTypes.object
+  children: PropTypes.element.isRequired,
+
+  page: PropTypes.shape({
+    contentForMeta: PropTypes.string.isRequired,
+    dateForMeta: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
+  })
 }
 
 export default Layout
