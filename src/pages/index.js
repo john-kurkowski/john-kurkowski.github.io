@@ -2,9 +2,16 @@ import React from 'react'
 
 import Layout from 'src/components/layouts/base'
 
+export const page = {
+  dateForMeta: '',
+  description: '',
+  title: '',
+  url: '/',
+}
+
 export default function Index () {
   return (
-    <Layout>
+    <Layout page={page}>
       <section className='max-w-2xl mx-auto my-16'>
         <h2 className='text-center my-16'>
           I'm baby yuccie small batch roof party freegan gentrify humblebrag

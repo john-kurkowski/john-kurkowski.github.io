@@ -56,33 +56,25 @@ function Layout ({ children, page = {} }) {
           // Use repetitive if/else check, because Helmet doesn't flatten
           // fragments (multiple tags) and complains.
         }
-        {(page.url === '/' || page.url === '/index.html') && (
+        {page.url === '/' && (
           <meta
             name='description'
             content={data.site.siteMetadata.description}
           />
         )}
-        {(page.url === '/' || page.url === '/index.html') && (
+        {page.url === '/' && (
           <meta
             name='twitter:description'
             content={data.site.siteMetadata.description}
           />
         )}
-        {!(page.url === '/' || page.url === '/index.html') &&
+        {page.url !== '/' &&
           page.description && (
             <meta name='description' content={page.description} />
           )}
-        {!(page.url === '/' || page.url === '/index.html') &&
+        {page.url !== '/' &&
           page.description && (
             <meta name='twitter:description' content={page.description} />
-          )}
-        {!(page.url === '/' || page.url === '/index.html') &&
-          !page.description && (
-            <meta name='description' content={page.contentForMeta} />
-          )}
-        {!(page.url === '/' || page.url === '/index.html') &&
-          !page.description && (
-            <meta name='twitter:description' content={page.contentForMeta} />
           )}
 
         {page.dateForMeta && (
@@ -181,12 +173,11 @@ Layout.propTypes = {
   children: PropTypes.element.isRequired,
 
   page: PropTypes.shape({
-    contentForMeta: PropTypes.string.isRequired,
     dateForMeta: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
-  })
+  }).isRequired
 }
 
 export default Layout

@@ -3,7 +3,6 @@ import React from 'react'
 import Layout from 'src/components/layouts/base'
 
 export const page = {
-  contentForMeta: '',
   dateForMeta: '',
   description: '',
   title: 'Not Found',
