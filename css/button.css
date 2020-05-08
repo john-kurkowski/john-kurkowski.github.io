@@ -1,0 +1,32 @@
+.btn {
+  @apply border;
+  @apply border-white;
+  @apply rounded;
+  @apply px-4;
+  @apply py-2;
+  @apply tracking-widest;
+  @apply uppercase;
+}
+
+.btn,
+.nav-link {
+  @apply duration-150;
+  @apply ease-linear;
+  @apply transition-colors;
+}
+
+.btn:hover {
+  @apply bg-red;
+}
+
+.nav-link {
+  @apply inline-block;
+  @apply lowercase;
+  @apply px-8;
+  @apply py-4;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  @apply bg-red;
+}

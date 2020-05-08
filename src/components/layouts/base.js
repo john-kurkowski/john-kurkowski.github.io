@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import avatar2X from 'src/images/avatar@2X.jpeg'
 import favicon from 'src/images/favicon.ico'
@@ -92,22 +92,38 @@ function Layout ({ children, page = {} }) {
         <meta name='twitter:creator' content='@bluu' />
       </Helmet>
 
-      <div className='font-body px-8 py-4'>
+      <div className='bg-navy font-body pb-4 px-8 text-white'>
         <header className='mb-8'>
-          <nav className='flex justify-between text-xl'>
-            <h1 className='font-titlebold'>
+          <nav className='flex items-center justify-between text-xl'>
+            <h1 className='font-titlebold tracking-widest uppercase'>
               <a href='/'>John Kurkowski</a>
             </h1>
 
             <ul className='flex'>
               <li className=''>
-                <a href='/hire'>Hire</a>
+                <Link activeClassName='active' className='nav-link' to='/'>
+                  Home
+                </Link>
               </li>
-              <li className='ml-12'>
-                <a href='/about'>About</a>
+              <li className=''>
+                <Link activeClassName='active' className='nav-link' to='/hire'>
+                  Hire
+                </Link>
               </li>
-              <li className='ml-12'>
-                <a href='/posts'>Articles</a>
+              <li className=''>
+                <Link activeClassName='active' className='nav-link' to='/about'>
+                  About
+                </Link>
+              </li>
+              <li className=''>
+                <Link
+                  activeClassName='active'
+                  className='nav-link'
+                  partiallyActive={true}
+                  to='/posts'
+                >
+                  Articles
+                </Link>
               </li>
             </ul>
           </nav>
@@ -123,7 +139,7 @@ function Layout ({ children, page = {} }) {
                   <figure>
                     <img
                       alt='Twitter logo icon'
-                      className='w-8'
+                      className='icon-social-media w-8'
                       src={twitterLogo}
                     />
                     <figcaption className='sr-only'>Twitter</figcaption>
@@ -135,7 +151,7 @@ function Layout ({ children, page = {} }) {
                   <figure>
                     <img
                       alt='LinkedIn logo icon'
-                      className='w-8'
+                      className='icon-social-media w-8'
                       src={linkedInLogo}
                     />
                     <figcaption className='sr-only'>LinkedIn</figcaption>
@@ -147,7 +163,7 @@ function Layout ({ children, page = {} }) {
                   <figure>
                     <img
                       alt='GitHub logo icon'
-                      className='w-8'
+                      className='icon-social-media w-8'
                       src={gitHubLogo}
                     />
                     <figcaption className='sr-only'>GitHub</figcaption>

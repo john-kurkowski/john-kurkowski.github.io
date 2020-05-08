@@ -1,6 +1,11 @@
 @import 'tailwindcss/base';
 @import './syntax';
 @import './typography';
+@import 'tailwindcss/components';
+@import './button';
 
-@tailwind components;
+.icon-social-media {
+  filter: invert(1);
+}
+
 @tailwind utilities;

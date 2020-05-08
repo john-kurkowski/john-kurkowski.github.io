@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
@@ -53,10 +54,14 @@ export default function Index () {
 
         <ul className='flex justify-center my-16'>
           <li className=''>
-            <a href='/hire'>Hire</a>
+            <Link className='btn' to='/hire'>
+              Hire
+            </Link>
           </li>
           <li className='ml-12'>
-            <a href='/about'>More about me</a>
+            <Link className='btn' to='/about'>
+              More about me
+            </Link>
           </li>
         </ul>
       </section>
