@@ -6,14 +6,14 @@ export const page = {
   dateForMeta: '',
   description: '',
   title: '',
-  url: '/',
+  url: '/'
 }
 
 export default function Index () {
   return (
     <Layout page={page}>
       <section className='max-w-2xl mx-auto my-16'>
-        <h2 className='text-center my-16'>
+        <h2 className='font-titlebold my-16 text-center text-xl'>
           I'm baby yuccie small batch roof party freegan gentrify humblebrag
           forage.
         </h2>
@@ -22,18 +22,18 @@ export default function Index () {
           <div className='flex justify-between'>
             <h3 className='w-1/2'>I help frontend …</h3>
 
-            <ol className='w-1/2'>
-              <li>Banh mi typewriter irony forage +1.</li>
-              <li>
+            <ul className='list-disc w-1/2'>
+              <li className=''>Banh mi typewriter irony forage +1.</li>
+              <li className=''>
                 Echo park iceland twee selfies cray typewriter single-origin
                 coffee polaroid XOXO poutine gochujang disrupt gluten-free
                 activated charcoal.
               </li>
-              <li>
+              <li className=''>
                 Biodiesel microdosing brunch, succulents wolf tbh shabby chic
                 VHS.
               </li>
-            </ol>
+            </ul>
           </div>
 
           <div className='mt-8'>
@@ -55,7 +55,7 @@ export default function Index () {
           <li className=''>
             <a href='/hire'>Hire</a>
           </li>
-          <li className='ml-8'>
+          <li className='ml-12'>
             <a href='/about'>More about me</a>
           </li>
         </ul>

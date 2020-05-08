@@ -68,14 +68,12 @@ function Layout ({ children, page = {} }) {
             content={data.site.siteMetadata.description}
           />
         )}
-        {page.url !== '/' &&
-          page.description && (
-            <meta name='description' content={page.description} />
-          )}
-        {page.url !== '/' &&
-          page.description && (
-            <meta name='twitter:description' content={page.description} />
-          )}
+        {page.url !== '/' && page.description && (
+          <meta name='description' content={page.description} />
+        )}
+        {page.url !== '/' && page.description && (
+          <meta name='twitter:description' content={page.description} />
+        )}
 
         {page.dateForMeta && (
           <meta httpEquiv='date' content={page.dateForMeta} />
@@ -94,10 +92,10 @@ function Layout ({ children, page = {} }) {
         <meta name='twitter:creator' content='@bluu' />
       </Helmet>
 
-      <div className='p-8'>
+      <div className='font-body px-8 py-4'>
         <header className='mb-8'>
-          <nav className='flex justify-between'>
-            <h1>
+          <nav className='flex justify-between text-xl'>
+            <h1 className='font-titlebold'>
               <a href='/'>John Kurkowski</a>
             </h1>
 
@@ -105,10 +103,10 @@ function Layout ({ children, page = {} }) {
               <li className=''>
                 <a href='/hire'>Hire</a>
               </li>
-              <li className='ml-8'>
+              <li className='ml-12'>
                 <a href='/about'>About</a>
               </li>
-              <li className='ml-8'>
+              <li className='ml-12'>
                 <a href='/posts'>Articles</a>
               </li>
             </ul>

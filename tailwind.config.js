@@ -1,8 +1,14 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ['Atami'],
+        titlebold: ['"Atami Bold"'],
+        titlestylishbold: ['"Atami Stencil Bold"']
+      }
+    }
   },
   variants: {},
-  plugins: [],
-};
+  plugins: []
+}
