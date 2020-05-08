@@ -1,11 +1,9 @@
-@import "tailwindcss/base";
-
-@import "./syntax";
+@import 'tailwindcss/base';
+@import './syntax';
 
 p + p {
   @apply mt-2;
 }
 
 @tailwind components;
-
 @tailwind utilities;

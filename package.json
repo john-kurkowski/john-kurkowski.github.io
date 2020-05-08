@@ -36,7 +36,9 @@
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
-    "prettier-standard": "^16.3.0"
+    "prettier-standard": "^16.3.0",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0"
   },
   "husky": {
     "hooks": {
@@ -44,7 +46,13 @@
     }
   },
   "lint-staged": {
-    "*.css": ["prettier-standard"],
-    "*.js": ["eslint --cache --fix", "prettier-standard"]
+    "*.css": [
+      "stylelint --fix",
+      "prettier-standard"
+    ],
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier-standard"
+    ]
   }
 }
