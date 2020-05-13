@@ -26,7 +26,7 @@ function Layout ({ children, page = {} }) {
 
   return (
     <React.Fragment>
-      <Helmet htmlAttributes={{ lang: 'en-US' }}>
+      <Helmet htmlAttributes={{ class: 'bg-navy', lang: 'en-US' }}>
         <meta charset='utf-8' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 
@@ -92,7 +92,7 @@ function Layout ({ children, page = {} }) {
         <meta name='twitter:creator' content='@bluu' />
       </Helmet>
 
-      <div className='bg-navy font-body pb-4 px-8 text-white'>
+      <div className='font-body pb-4 px-8 text-white'>
         <header className='mb-8'>
           <nav className='flex items-center justify-between text-xl'>
             <h1 className='font-titlebold tracking-widest uppercase'>
