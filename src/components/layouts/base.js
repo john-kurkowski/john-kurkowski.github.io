@@ -133,7 +133,7 @@ function Layout ({ children, page = {} }) {
 
         <footer className='mt-8'>
           <div className=''>
-            <ul className='flex justify-end'>
+            <ul className='flex justify-center'>
               <li className=''>
                 <a href='//twitter.com/bluu'>
                   <figure>
@@ -172,6 +172,8 @@ function Layout ({ children, page = {} }) {
               </li>
             </ul>
           </div>
+
+          <small className='block mt-8 text-center'>© 2020</small>
         </footer>
 
         {
