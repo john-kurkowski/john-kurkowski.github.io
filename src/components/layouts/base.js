@@ -175,11 +175,6 @@ function Layout ({ children, page = {} }) {
 
           <small className='block mt-8 text-center'>© 2020</small>
         </footer>
-
-        {
-          // TODO: activate Disqus
-        }
-        <script src='/js/app.js'></script>
       </div>
     </React.Fragment>
   )

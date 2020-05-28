@@ -3,6 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
+import useScript from 'src/hooks/use-script'
 
 function Post ({ data }) {
   const post = data.markdownRemark
@@ -13,6 +14,10 @@ function Post ({ data }) {
     title: post.frontmatter.title,
     url: ''
   }
+
+  embedDisqus()
+
+  dangerouslyEmbedJs(post.html)
 
   return (
     <Layout page={page}>
@@ -72,3 +77,46 @@ export const query = graphql`
     }
   }
 `
+
+function dangerouslyEmbedJs (htmlString) {
+  const jsUrlsRe = /src="([^"]+\.js)"/g
+  let match
+  // eslint-disable-next-line no-cond-assign
+  while ((match = jsUrlsRe.exec(htmlString))) {
+    const [, url] = match
+    useScript(url)
+  }
+}
+
+function embedDisqus () {
+  let disqus_loaded = false
+  let disqus_shortname = 'johnkurkowski'
+
+  window.onscroll = function () {
+    if (disqus_loaded) {
+      return
+    }
+
+    const disqus_thread = document.getElementById('disqus_thread')
+    if (!disqus_thread) {
+      return
+    }
+
+    const load_range_px = 600
+    const scroll_height =
+      window.innerHeight || document.documentElement.clientHeight
+    const disqus_top = disqus_thread.getBoundingClientRect().top
+    if (scroll_height + load_range_px >= disqus_top) {
+      disqus_loaded = true
+
+      const url = `//${disqus_shortname}.disqus.com/embed.js`
+
+      const script = document.createElement('script')
+
+      script.src = url
+      script.async = true
+
+      document.body.appendChild(script)
+    }
+  }
+}
