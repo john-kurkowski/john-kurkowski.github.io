@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Don't Learn to Code, Learn to Program - But Come Back in 10 Years"
+title:  "Don’t Learn to Code, Learn to Program—But Come Back in 10 Years"
 categories: tech
 tags: engineering programming
 ---

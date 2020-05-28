@@ -15,7 +15,7 @@ export default function Index () {
     <Layout page={page}>
       <section className='max-w-2xl mx-auto my-16'>
         <h2 className='font-titlebold my-16 text-center text-xl'>
-          I'm baby yuccie small batch roof party freegan gentrify humblebrag
+          I’m baby yuccie small batch roof party freegan gentrify humblebrag
           forage.
         </h2>
 
