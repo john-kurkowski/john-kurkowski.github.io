@@ -22,15 +22,20 @@ function Post ({ data }) {
   return (
     <Layout page={page}>
       <article>
-        <h2>{page.title}</h2>
-        <p className='meta'>{post.fields.dateForTitle}</p>
+        <header className='post'>
+          <h2>{page.title}</h2>
+
+          <time className='block mt-4' dateTime={post.fields.date}>
+            {post.fields.dateForTitle}
+          </time>
+        </header>
 
         <div
           className='post'
           dangerouslySetInnerHTML={{ __html: post.html }}
         ></div>
 
-        <div id='disqus_thread'></div>
+        <div className='mt-8' id='disqus_thread'></div>
         <noscript>
           Enable JavaScript to view the{' '}
           <a href='https://disqus.com/?ref_noscript'>comments.</a>
@@ -47,6 +52,7 @@ Post.propTypes = {
       html: PropTypes.string,
 
       fields: PropTypes.shape({
+        date: PropTypes.string.isRequired,
         dateForMeta: PropTypes.string.isRequired,
         dateForTitle: PropTypes.string.isRequired
       }),
@@ -67,6 +73,7 @@ export const query = graphql`
       excerpt(pruneLength: 256)
       html
       fields {
+        date
         dateForMeta: date(formatString: "dddd, DD MMM YYYY HH:mm:ss [GMT]")
         dateForTitle: date(formatString: "DD MMM YYYY")
       }

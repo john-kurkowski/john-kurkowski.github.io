@@ -17,7 +17,7 @@ function Page ({ data }) {
   return (
     <Layout page={page}>
       <div
-        className='post'
+        className='mb-4 post'
         dangerouslySetInnerHTML={{ __html: post.html }}
       ></div>
     </Layout>

@@ -3,5 +3,84 @@ html {
 }
 
 p + p {
-  @apply mt-2;
+  @apply mt-4;
+}
+
+.post a {
+  @apply border-b-2;
+  @apply border-gray-600;
+  @apply duration-75;
+  @apply ease-linear;
+  @apply transition-colors;
+}
+
+.post a:hover {
+  @apply text-gray-600;
+}
+
+.post blockquote {
+  @apply border-gray-600;
+  @apply border-l-4;
+  @apply px-4;
+
+  font-style: italic;
+}
+
+.post figure {
+  @apply mx-auto;
+  @apply my-4;
+  @apply px-4;
+  @apply text-center;
+}
+
+.post figure img {
+  vertical-align: middle;
+}
+
+.post figcaption {
+  @apply mt-1;
+  @apply text-xs;
+  @apply tracking-wide;
+}
+
+.post h2 {
+  @apply text-3xl;
+}
+
+.post h3 {
+  @apply text-2xl;
+}
+
+.post h4 {
+  @apply text-xl;
+}
+
+.post h2,
+.post h3,
+.post h4 {
+  @apply font-titlebold;
+}
+
+.post h2,
+.post h3,
+.post h4,
+.post hr,
+.post p,
+.post table {
+  @apply mt-4;
+}
+
+.post ol,
+.post ul {
+  @apply mx-8;
+  @apply my-4;
+}
+
+.post ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+.post ul {
+  list-style-type: disc;
 }

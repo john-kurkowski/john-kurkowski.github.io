@@ -19,7 +19,9 @@ function Posts ({ data }) {
         <ul className=''>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <li className='' key={node.id}>
-              <span className=''>{node.fields.dateForTitle}</span>
+              <time className='' dateTime={node.fields.date}>
+                {node.fields.dateForTitle}
+              </time>
               <Link className='' to={node.fields.slug}>
                 {node.frontmatter.title}
               </Link>
@@ -38,6 +40,7 @@ Posts.propTypes = {
         PropTypes.shape({
           node: PropTypes.shape({
             fields: PropTypes.shape({
+              date: PropTypes.string.isRequired,
               dateForTitle: PropTypes.string.isRequired,
               slug: PropTypes.string.isRequired
             }),
@@ -65,6 +68,7 @@ export const query = graphql`
       edges {
         node {
           fields {
+            date
             dateForTitle: date(formatString: "DD MMM YYYY")
             slug
           }
