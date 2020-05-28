@@ -129,7 +129,7 @@ function Layout ({ children, page = {} }) {
           </nav>
         </header>
 
-        {children}
+        <main className='max-w-xl mx-auto my-16'>{children}</main>
 
         <footer className='mt-8'>
           <div className=''>

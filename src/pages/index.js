@@ -13,7 +13,7 @@ export const page = {
 export default function Index () {
   return (
     <Layout page={page}>
-      <section className='max-w-2xl mx-auto my-16'>
+      <section>
         <h2 className='font-titlebold my-16 text-center text-xl'>
           I’m baby yuccie small batch roof party freegan gentrify humblebrag
           forage.
