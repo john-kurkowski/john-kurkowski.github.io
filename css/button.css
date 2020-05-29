@@ -16,7 +16,7 @@
 }
 
 .btn:hover {
-  @apply bg-red;
+  @apply bg-redactive;
 }
 
 .nav-link {
@@ -35,5 +35,5 @@
 
 .nav-link.active,
 .nav-link:hover {
-  @apply bg-red;
+  @apply bg-redactive;
 }

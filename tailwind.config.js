@@ -6,7 +6,7 @@ module.exports = {
         navy: {
           default: '#00173B'
         },
-        red: {
+        redactive: {
           default: '#FF3701'
         }
       },
