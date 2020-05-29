@@ -41,14 +41,42 @@ move at a constant rate. There may be less time for you than you think.
 We see whole creative industries marginalized or eliminated by production at
 scale.
 
-<table>
+<table class='text-center'>
   <thead>
-    <tr><th>Lovingly Hand-Crafted, Expensive</th><th>Good Enough, Cheap</th></tr>
+    <tr class='bg-gray-700'>
+      <th class='border-b border-gray-500 px-4 py-2'>
+        Lovingly Hand-Crafted, Expensive
+      </th>
+      <th class='border-b border-gray-500 border-l px-4 py-2'>
+        Good Enough, Cheap
+      </th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td>Personalized table by a Woodworker</td><td>Ikea</td></tr>
-    <tr><td>Ornate lettering by a Typesetter</td><td>Adobe Illustrator &amp; a commodity laser printer</td></tr>
-    <tr><td>Code</td><td>???</td></tr>
+    <tr>
+      <td class='border-b border-gray-500 px-4 py-2'>
+        Personalized table by a Woodworker
+      </td>
+      <td class='border-b border-gray-500 border-l px-4 py-2'>
+        Ikea
+      </td>
+    </tr>
+    <tr>
+      <td class='border-b border-gray-500 px-4 py-2'>
+        Ornate lettering by a Typesetter
+      </td>
+      <td class='border-b border-gray-500 border-l px-4 py-2'>
+        Adobe Illustrator &amp; a commodity laser printer
+      </td>
+    </tr>
+    <tr>
+      <td class='border-gray-500 px-4 py-2'>
+        Code
+      </td>
+      <td class='border-gray-500 border-l px-4 py-2'>
+        ???
+      </td>
+    </tr>
   </tbody>
 </table>
 
