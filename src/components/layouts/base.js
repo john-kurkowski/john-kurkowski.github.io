@@ -92,10 +92,10 @@ function Layout ({ children, page = {} }) {
         <meta name='twitter:creator' content='@bluu' />
       </Helmet>
 
-      <div className='content-between flex flex-col font-body lg:px-8 min-h-full pb-4 px-4 text-white'>
+      <div className='content-between flex flex-col font-body lg:px-8 min-h-full pb-4 px-4 text-gray-200'>
         <div className='flex-grow'>
           <header className='mb-8'>
-            <nav className='flex flex-col items-center justify-between lg:flex-row text-xl'>
+            <nav className='flex flex-col items-center justify-between lg:flex-row text-white text-xl'>
               <h1 className='font-titlebold tracking-widest py-4 uppercase'>
                 <a href='/'>John Kurkowski</a>
               </h1>

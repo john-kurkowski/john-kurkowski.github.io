@@ -65,6 +65,7 @@ p + p {
 .post h3,
 .post h4 {
   @apply font-titlebold;
+  @apply text-white;
 }
 
 .post h2,
