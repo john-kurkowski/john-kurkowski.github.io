@@ -4,7 +4,7 @@
   "description": "Source for https://johnkurkowski.com.",
   "scripts": {
     "build": "gatsby build",
-    "start": "gatsby develop",
+    "start": "gatsby develop --host 0.0.0.0",
     "test": "eslint --ignore-path .gitignore . && prettier-standard --check $(git ls-files '*.css' '*.js')"
   },
   "repository": {
