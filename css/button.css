@@ -22,8 +22,15 @@
 .nav-link {
   @apply inline-block;
   @apply lowercase;
-  @apply px-8;
-  @apply py-4;
+  @apply px-4;
+  @apply py-2;
+}
+
+@screen md {
+  .nav-link {
+    @apply px-8;
+    @apply py-4;
+  }
 }
 
 .nav-link.active,

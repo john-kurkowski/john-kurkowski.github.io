@@ -92,44 +92,54 @@ function Layout ({ children, page = {} }) {
         <meta name='twitter:creator' content='@bluu' />
       </Helmet>
 
-      <div className='font-body pb-4 px-8 text-white'>
-        <header className='mb-8'>
-          <nav className='flex items-center justify-between text-xl'>
-            <h1 className='font-titlebold tracking-widest uppercase'>
-              <a href='/'>John Kurkowski</a>
-            </h1>
+      <div className='content-between flex flex-col font-body lg:px-8 min-h-full pb-4 px-4 text-white'>
+        <div className='flex-grow'>
+          <header className='mb-8'>
+            <nav className='flex flex-col items-center justify-between lg:flex-row text-xl'>
+              <h1 className='font-titlebold tracking-widest py-4 uppercase'>
+                <a href='/'>John Kurkowski</a>
+              </h1>
 
-            <ul className='flex'>
-              <li className=''>
-                <Link activeClassName='active' className='nav-link' to='/'>
-                  Home
-                </Link>
-              </li>
-              <li className=''>
-                <Link activeClassName='active' className='nav-link' to='/hire'>
-                  Hire
-                </Link>
-              </li>
-              <li className=''>
-                <Link activeClassName='active' className='nav-link' to='/about'>
-                  About
-                </Link>
-              </li>
-              <li className=''>
-                <Link
-                  activeClassName='active'
-                  className='nav-link'
-                  partiallyActive={true}
-                  to='/posts'
-                >
-                  Articles
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
+              <ul className='flex'>
+                <li className=''>
+                  <Link activeClassName='active' className='nav-link' to='/'>
+                    Home
+                  </Link>
+                </li>
+                <li className=''>
+                  <Link
+                    activeClassName='active'
+                    className='nav-link'
+                    to='/hire'
+                  >
+                    Hire
+                  </Link>
+                </li>
+                <li className=''>
+                  <Link
+                    activeClassName='active'
+                    className='nav-link'
+                    to='/about'
+                  >
+                    About
+                  </Link>
+                </li>
+                <li className=''>
+                  <Link
+                    activeClassName='active'
+                    className='nav-link'
+                    partiallyActive={true}
+                    to='/posts'
+                  >
+                    Articles
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
 
-        <main className='max-w-xl mx-auto my-16'>{children}</main>
+          <main className='lg:my-16 max-w-xl mx-auto my-8'>{children}</main>
+        </div>
 
         <footer className='mt-8'>
           <div className=''>

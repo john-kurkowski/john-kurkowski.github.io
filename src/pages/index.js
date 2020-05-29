@@ -14,12 +14,12 @@ export default function Index () {
   return (
     <Layout page={page}>
       <section>
-        <h2 className='font-titlebold my-16 text-center text-xl'>
+        <h2 className='font-titlebold lg:my-16 my-8 text-center text-xl'>
           I’m baby yuccie small batch roof party freegan gentrify humblebrag
           forage.
         </h2>
 
-        <div className='my-16'>
+        <div className='lg:my-16 my-8'>
           <div className='flex justify-between'>
             <h3 className='w-1/2'>I help frontend …</h3>
 
@@ -52,7 +52,7 @@ export default function Index () {
           </div>
         </div>
 
-        <ul className='flex justify-center my-16'>
+        <ul className='flex justify-center lg:my-8 my-16'>
           <li className=''>
             <Link className='btn' to='/hire'>
               Hire
