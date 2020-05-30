@@ -56,7 +56,7 @@ if they submit as their connection drops? They’ll probably get a browser
 network error page and worry they lost all their typing."
 
 <figure>
-  <img src="/images/posts/google-chrome-dinosaur.png" width="61%" height="auto" alt="Google Chrome's network error screen"/>
+  <img src="./images/google-chrome-dinosaur.png" width="61%" height="auto" alt="Google Chrome's network error screen"/>
 </figure>
 
 "Oh, yeah, it’d be nice to handle those more elegantly!" you say. "But it’s too

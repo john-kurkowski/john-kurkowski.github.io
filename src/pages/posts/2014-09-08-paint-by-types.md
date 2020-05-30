@@ -193,7 +193,7 @@ a catastrophic system state. As programming is a bit more creative, not so
 mechanical, I also like the analogy of paint by numbers.
 
 <figure>
-  <img src="/images/posts/paint-by-numbers.jpg" width="61%" height="auto" alt="Paint By Numbers example"/>
+  <img src="./images/paint-by-numbers.jpg" width="61%" height="auto" alt="Paint By Numbers example"/>
   <figcaption>"I wonder what NPEs are going to happen today?" Worry not.</figcaption>
 </figure>
 

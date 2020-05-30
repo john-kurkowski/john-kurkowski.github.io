@@ -26,7 +26,11 @@ recently added **User Experience** and **Mobile** reports, where they warn you
 e.g. if your buttons are *too small* for users’ fingers, or if your *plugins*
 won’t work on their mobile device.
 
-<figure><a href="/images/posts/pagespeed_insights.png"><img src="/images/posts/pagespeed_insights.png" width="50%" height="auto" alt="PageSpeed Insights - screenshot"/></a></figure>
+<figure>
+  <a href="./images/pagespeed_insights.png">
+    <img src="./images/pagespeed_insights.png" width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
+  </a>
+</figure>
 
 Also notice the handy preview of what it looks like on mobile. Not
 revolutionary, but when you don’t already have [an expansive device lab][Etsy's
@@ -339,8 +343,12 @@ mainstream examples (admittedly not the worst uses of inner scrolls).
 
 <figure>
   <div class="figure-items">
-    <a href="/images/posts/gmails-new-compose.png" class="figure-item"><img src="/images/posts/gmails-new-compose.png" alt="Gmail's New Compose - screenshot"/></a>
-    <a href="/images/posts/spotify-desktop.jpg" class="figure-item"><img src="/images/posts/spotify-desktop.jpg" alt="Spotify's desktop app - screenshot"/></a>
+    <a href="./images/gmails-new-compose.png" class="figure-item">
+      <img src="./images/gmails-new-compose.png" alt="Gmail's New Compose - screenshot"/>
+    </a>
+    <a href="./images/spotify-desktop.jpg" class="figure-item">
+      <img src="./images/spotify-desktop.jpg" alt="Spotify's desktop app - screenshot"/>
+    </a>
   </div>
   <figcaption>
     In Gmail's New Compose, you can scroll the text of the email you're
@@ -398,7 +406,9 @@ style points. You'll make users think (bad), "Why is this widget
 different?"[^5] Leave it alone.
 
 <figure>
-  <a href="http://codepen.io/ericrasch/details/zjDBx"><img src="/images/posts/restyle-select-box.png" width="40%" height="auto" alt="Restyled <select> box - screenshot"/></a>
+  <a href="http://codepen.io/ericrasch/details/zjDBx">
+    <img src="./images/restyle-select-box.png" width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
+  </a>
   <figcaption>Was it worth it?</figcaption>
 </figure>
 
