@@ -27,9 +27,7 @@ e.g. if your buttons are *too small* for users’ fingers, or if your *plugins*
 won’t work on their mobile device.
 
 <figure>
-  <a href="./images/pagespeed_insights.png">
-    <img src="./images/pagespeed_insights.png" width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
-  </a>
+  <img src="pagespeed_insights.png" width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
 </figure>
 
 Also notice the handy preview of what it looks like on mobile. Not
@@ -342,13 +340,9 @@ public, so I can't point to the worst of it. I'll just have to point to more
 mainstream examples (admittedly not the worst uses of inner scrolls).
 
 <figure>
-  <div class="figure-items">
-    <a href="./images/gmails-new-compose.png" class="figure-item">
-      <img src="./images/gmails-new-compose.png" alt="Gmail's New Compose - screenshot"/>
-    </a>
-    <a href="./images/spotify-desktop.jpg" class="figure-item">
-      <img src="./images/spotify-desktop.jpg" alt="Spotify's desktop app - screenshot"/>
-    </a>
+  <div class="col-gap-4 grid grid-cols-2">
+    <img src="gmails-new-compose.png" alt="Gmail's New Compose - screenshot"/>
+    <img src="spotify-desktop.jpg" alt="Spotify's desktop app - screenshot"/>
   </div>
   <figcaption>
     In Gmail's New Compose, you can scroll the text of the email you're
@@ -407,7 +401,7 @@ different?"[^5] Leave it alone.
 
 <figure>
   <a href="http://codepen.io/ericrasch/details/zjDBx">
-    <img src="./images/restyle-select-box.png" width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
+    <img src="restyle-select-box.png" width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
   </a>
   <figcaption>Was it worth it?</figcaption>
 </figure>
