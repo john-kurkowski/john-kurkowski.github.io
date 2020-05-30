@@ -81,6 +81,11 @@ function Layout ({ children, page = {} }) {
 
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
+        <link
+          href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Varela+Round&display=swap'
+          rel='stylesheet'
+        />
+
         <link rel='alternate' type='application/rss+xml' href='/atom.xml' />
 
         <link rel='shortcut icon' href={favicon} />
@@ -95,8 +100,8 @@ function Layout ({ children, page = {} }) {
       <div className='content-between flex flex-col font-body lg:px-8 min-h-full pb-4 px-4 text-gray-200'>
         <div className='flex-grow'>
           <header className='mb-8'>
-            <nav className='flex flex-col items-center justify-between lg:flex-row text-white text-xl'>
-              <h1 className='font-titlebold tracking-widest py-4 uppercase'>
+            <nav className='flex flex-col font-title items-center justify-between lg:flex-row text-white text-xl'>
+              <h1 className='font-bold tracking-widest py-4 uppercase'>
                 <a href='/'>John Kurkowski</a>
               </h1>
 
@@ -110,6 +115,7 @@ function Layout ({ children, page = {} }) {
                   <Link
                     activeClassName='active'
                     className='nav-link'
+                    partiallyActive={true}
                     to='/hire'
                   >
                     Hire
@@ -119,6 +125,7 @@ function Layout ({ children, page = {} }) {
                   <Link
                     activeClassName='active'
                     className='nav-link'
+                    partiallyActive={true}
                     to='/about'
                   >
                     About

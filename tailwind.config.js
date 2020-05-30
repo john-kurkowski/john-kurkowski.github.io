@@ -12,9 +12,8 @@ module.exports = {
       },
 
       fontFamily: {
-        body: ['Atami'],
-        titlebold: ['"Atami Bold"'],
-        titlestylishbold: ['"Atami Stencil Bold"']
+        body: ['Lora'],
+        title: ['Varela Round']
       }
     }
   },
