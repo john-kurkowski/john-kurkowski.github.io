@@ -14,7 +14,7 @@ p + p {
 
 .post a {
   @apply border-b-2;
-  @apply border-gray-600;
+  @apply border-gray-400;
   @apply duration-75;
   @apply ease-linear;
   @apply transition-colors;
@@ -25,7 +25,7 @@ p + p {
 }
 
 .post blockquote {
-  @apply border-gray-600;
+  @apply border-gray-400;
   @apply border-l-4;
   @apply px-4;
 
@@ -66,9 +66,9 @@ p + p {
 .post h3,
 .post h4 {
   @apply font-bold;
-  @apply font-title;
+  @apply font-sans;
   @apply leading-tight;
-  @apply text-white;
+  @apply text-black;
 }
 
 .footnotes li,
@@ -79,6 +79,10 @@ p + p {
 .post p,
 .post table {
   @apply mt-4;
+}
+
+.post hr {
+  @apply border-gray-400;
 }
 
 .post ol,

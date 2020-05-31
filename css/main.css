@@ -5,8 +5,4 @@
 @import 'tailwindcss/components';
 @import './button';
 
-.icon-social-media {
-  filter: invert(1);
-}
-
 @tailwind utilities;
