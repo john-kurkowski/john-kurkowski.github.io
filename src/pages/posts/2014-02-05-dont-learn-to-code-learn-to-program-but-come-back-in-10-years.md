@@ -40,8 +40,8 @@ in the past few decades][The Future of Programming] (a video that should be
 required monthly watching for programmers). I don’t mean accessibility to just
 outsiders. It is a large mess that hardcore coders themselves
 can hardly keep up with and predict. Sometimes, I take a step back from mashing
-together 2 things that were never meant to work together---for the 100th time
-today---and wonder how anything ever gets done. What cool thing was I trying to
+together 2 things that were never meant to work together—for the 100th time
+today—and wonder how anything ever gets done. What cool thing was I trying to
 build before I got sidetracked with this tedious mashing?
 
 What progress has been made? Programming ideas from *several decades ago* are
@@ -142,7 +142,7 @@ Look to these as role models. Then I challenge you to aim higher. These projects
 are also taking ideas from decades ago. Put down your text code. In 2014, how
 would *you* like to program?
 
-Until visual or touch programming---*something*---gains traction, I have to
+Until visual or touch programming—*something*—gains traction, I have to
 answer curious knowledge workers. My friends ask if they should follow one of
 these Learn to Code websites. Either they are curious about what I do or
 they hear it’s a lucrative career. If you understand it and you have fun, I

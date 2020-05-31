@@ -54,7 +54,7 @@ The design of everyday things is often irresponsible and insulting. The
 software industry can do better. Wherever I'm involved as a software engineer,
 I aim to bring sensitivity to this.
 
-Read my other overarching themes in [Credo]({% post_url 2013-10-16-credo %}).
+Read my other overarching themes in [Credo](/posts/credo/).
 
 ## Colophon
 

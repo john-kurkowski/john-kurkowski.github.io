@@ -26,12 +26,22 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-plugin-catch-links`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              enableCustomId: true,
+              isIconAfterHeader: true
+            }
+          },
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
               ignoreFileExtensions: []
             }
-          }
+          },
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-smartypants`
         ]
       }
     }

@@ -11,8 +11,8 @@ description:
 I liken mobile web design to designing for handicaps, in that good ideas in
 designing for handicaps benefit all users alike. For example,
 
-*  Writing text for screen readers for the blind---rather than embedding text
-   in images---lets seeing people find, copy, & zoom the text too.
+*  Writing text for screen readers for the blind—rather than embedding text
+   in images—lets seeing people find, copy, & zoom the text too.
 *  In a presentation, leaving an extra pause between slides lets interpreters
    keep up with the material and lets native speakers absorb the material
    better. No one has to multitask between reading the slide & listening to the
@@ -43,7 +43,7 @@ Insights - johnkurkowski.com].
 If PageSpeed Insights gives you bad marks for Mobile, this is the point the web
 site owner gets defensive.
 
-*“Oh, we haven’t optimized for mobile yet...”*
+*“Oh, we haven’t optimized for mobile yet…”*
 
 This attitude incorrectly assumes desktop and mobile are completely separate
 efforts. I don’t think mobile always needs to be. Because **a)** users will put up
@@ -124,8 +124,7 @@ here. Then I'll mix in what *I wish* was in the report.
   </li>
 </ul>
 
-#### 1. Size Tap Targets Appropriately ([link][Size Tap Targets Appropriately])
-{:#size-tap-targets-appropriately}
+#### 1. Size Tap Targets Appropriately ([link][Size Tap Targets Appropriately]) {#size-tap-targets-appropriately}
 
 Pour your blood & sweat into making a web page, and you'll internalize its
 flow. You constantly test its dark corners, probably more than your users.
@@ -148,8 +147,7 @@ Further reading:
 * [The Opposite of Fitts's Law] - what about things we *don't* want users to
   click on?
 
-#### 2. Avoid Plugins ([link][Avoid Plugins])
-{:#avoid-plugins}
+#### 2. Avoid Plugins ([link][Avoid Plugins]) {#avoid-plugins}
 
 Adobe Flash: don't use it.
 
@@ -162,8 +160,8 @@ to go out, pondering what to eat, I want to answer: what's on the menu, is the
 restaurant open right now, how do I get to the restaurant? Let me get out my
 phone.
 
-Instead I'm greeted with a Flash intro---one more download to wait for and link
-to click past---and a Flash site standing in my way. Using raw Flash (and not a
+Instead I'm greeted with a Flash intro—one more download to wait for and link
+to click past—and a Flash site standing in my way. Using raw Flash (and not a
 higher level toolkit like Flex), the web designer amateur breaks standard
 operating system scrolling, copy & paste, screen readers, and more. We've known
 Flash has been [thwarting usability for 10 years][Flash]. Flash is also
@@ -185,8 +183,7 @@ breaking basic operating system usability and wasting user time are no-nos for
 *everyone*. Reconsider your desire to be stylish and unique. Focus on content
 and use, a lost art that packs a superior ROI.
 
-#### 3. Configure the Viewport ([link][Configure the Viewport] & [link][Size Content to Viewport])
-{:#configure-the-viewport}
+#### 3. Configure the Viewport ([link][Configure the Viewport] & [link][Size Content to Viewport]) {#configure-the-viewport}
 
 Sure, do it. It's a few lines of code at most.
 
@@ -197,8 +194,7 @@ they want, again, they'll put up with it.
 The greater upset is violating the other design guidelines in this article and
 making those corners inaccessible entirely!
 
-#### 4. Use Legible Font Sizes ([link][Use Legible Font Sizes])
-{:#use-legible-font-sizes}
+#### 4. Use Legible Font Sizes ([link][Use Legible Font Sizes]) {#use-legible-font-sizes}
 
 Don't make your users' job harder then it has to be. Let them read your
 content.
@@ -212,8 +208,7 @@ If you follow the next tip, this shouldn't be a problem.
 
 Here's what I would love to see added to the User Experience report.
 
-#### 5. Remove Half Your Content, Then Remove Half Of What's Left
-{:#remove-half}
+#### 5. Remove Half Your Content, Then Remove Half Of What's Left {#remove-half}
 
 Maybe Google PageSpeed can't tell you what to write. But I can. The answer
 is *less*.
@@ -229,15 +224,14 @@ New York Times through a keyhole. Not saying it can't be done. Just help your
 users by getting to the point and removing distractions.
 
 **Solution:** listen again to Don't Make Me Think. Write your text, then, before
-publishing ...
+publishing …
 
 > Get rid of half the words on each page, then get rid of half of what’s left.
 
 This benefits not only the paragraph you shorten, but your whole site, as this
 exercise forces focus on your site's core values.[^2]
 
-#### 6. Avoid Interaction & Modes: Hovers, Menus, Modals
-{:#avoid-modes}
+#### 6. Avoid Interaction & Modes: Hovers, Menus, Modals {#avoid-modes}
 
 One day I hope the User Experience report could automatically include these
 points from my [Credo], because I see them violated again and again:
@@ -326,8 +320,7 @@ them. Instead,
   mode or interaction, prefer self-evident scrolling & hyperlinks[^3]. At the
   very least, pick implementations that work on touch screens.
 
-#### 7. Avoid Interaction & Modes: Inner Scrolls
-{:#avoid-inner-scrolls}
+#### 7. Avoid Interaction & Modes: Inner Scrolls {#avoid-inner-scrolls}
 
 After web designers learn the importance of above-the-fold content ("users
 don't wanna scroll; they'll hit that Back button in n seconds instead") they
@@ -385,8 +378,7 @@ without dealing with modes.
 * At the least, use inner scroll implementations that work on touch
   screens.[^4]
 
-#### 8. Don't Restyle Form Inputs & Scrollbars
-{:#dont-restyle-form-inputs--scrollbars}
+#### 8. Don't Restyle Form Inputs & Scrollbars {#dont-restyle-form-inputs--scrollbars}
 
 Web programmers know how hard it is to restyle standard form `<input>` elements
 & scrollbars. Their style is tightly locked into web browsers and perhaps the
@@ -413,8 +405,7 @@ accelerators, form-filling tools, or they perform slowly.
 Web users deal with forms and scrollbars all day. Why must yours look & work
 differently & poorly?
 
-#### 9. No, Really, Show the Data
-{:#no-really-show-the-data}
+#### 9. No, Really, Show the Data {#no-really-show-the-data}
 
 I wonder if PageSpeed could issue a warning for *too little* content. It
 already takes into account [the performance of your above-the-fold
@@ -515,7 +506,7 @@ over what you're already building.
 [Configure the Viewport]: https://developers.google.com/speed/docs/insights/ConfigureViewport
 [Size Content to Viewport]: https://developers.google.com/speed/docs/insights/SizeContentToViewport
 [Use Legible Font Sizes]: https://developers.google.com/speed/docs/insights/UseLegibleFontSizes
-[Credo]: {% post_url 2013-10-16-credo %}
+[Credo]: /posts/credo/
 [Hyperlink Comprehension]: http://en.wikipedia.org/wiki/Reading_comprehension#Hyperlinks
 [Prioritize Visible Content]: https://developers.google.com/speed/docs/insights/PrioritizeVisibleContent
 [Auto-Forwarding Carousels]: http://www.nngroup.com/articles/auto-forwarding/

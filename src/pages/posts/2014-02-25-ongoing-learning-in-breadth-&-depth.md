@@ -114,7 +114,7 @@ edge development tools. Shamefully, this is how a couple build tools made it
 into my “top 6.” Do not fall prey to this. You’ll end up like [this
 commenter](http://www.zemanta.com/blog/i-bet-you-over-engineered-your-startup/#comment-685047168).
 
-> ... I can't keep up, I just finished learning backbone.js and now I've found
+> … I can't keep up, I just finished learning backbone.js and now I've found
 > out on HN that it's old news, and I should use ember.js, cross that, it has
 > opinions, I should use Meteor, no, AngularJS, no, Tower.js (on node.js), and
 > for html templates I need handlebars, no mustache, wait, DoT.js is better,
@@ -123,7 +123,7 @@ commenter](http://www.zemanta.com/blog/i-bet-you-over-engineered-your-startup/#c
 > say? W3C are in the game too? you mean write REGULAR JavaScript like the
 > Google guys? yuck, oh, I just should write it with CofeeScript and it will
 > look ok, not Coffee? Coco? LiveScript?  DART? GWT? ok, let me just go back to
-> Ruby on Rails, oh it doesn't scale? ...
+> Ruby on Rails, oh it doesn't scale? …
 
 It goes on. The deluge the commenter raises is real; programming is definitely
 in a pickle. But we can still accomplish things right now.
@@ -154,10 +154,10 @@ balance.
 [^3]: For a light, software-oriented intro to the Paradox of Choice, see
       Spolsky's [Choices = Headaches].
 
-[Don’t Learn to Code, Learn to Program Instead - But Come Back In 10 Years]: {% post_url 2014-02-05-dont-learn-to-code-learn-to-program-but-come-back-in-10-years %}
+[Don’t Learn to Code, Learn to Program Instead - But Come Back In 10 Years]: /posts/dont-learn-to-code-learn-to-program-but-come-back-in-10-years/
 [Ember-SC meetup]: http://www.meetup.com/Ember-SC/events/159041272/
 [The Principle of Least Power]: http://www.codinghorror.com/blog/2007/07/the-principle-of-least-power.html
-[Credo]: {% post_url 2013-10-16-credo %}
+[Credo]: /posts/credo/
 [Broccoli: First Beta Release]: http://www.solitr.com/blog/2014/02/broccoli-first-release/
 [Task Runners and Builders: Just Because You Can Does That Mean You Should?]: https://medium.com/cool-code-pal/d8eeefdc4395
 [Choices = Headaches]: http://www.joelonsoftware.com/items/2006/11/21.html

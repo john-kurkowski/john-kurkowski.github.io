@@ -88,7 +88,7 @@ Never heard of a typesetter? [The End of Coding as We Know It] explains.
 > revolution. It was a great job, well paying, and with a lot of esteem. It was
 > a smart career choice, surely a job that would be required forever.
 >
-> ...
+> …
 >
 > Finally, the growth of desktop publishing killed it. Much of the beauty and
 > art of the layout was lost. Computers, even with good font hints, don't
@@ -166,4 +166,4 @@ direct creation and move into leadership, or 2) polish my text?
 [The End of Coding as We Know It]: http://theprogrammersparadox.blogspot.ca/2009/04/end-of-coding-as-we-know-it.html
 [Humans Need Not Apply]: https://www.youtube.com/watch?v=7Pq-S557XQU
 [How Developers Stop Learning: Rise of the Expert Beginner]: http://www.daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner
-[Ongoing Learning in Breadth & Depth]: {% post_url 2014-02-25-ongoing-learning-in-breadth-&-depth %}
+[Ongoing Learning in Breadth & Depth]: /posts/ongoing-learning-in-breadth-&-depth/

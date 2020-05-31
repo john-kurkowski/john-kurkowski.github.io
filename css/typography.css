@@ -71,6 +71,7 @@ p + p {
   @apply text-white;
 }
 
+.footnotes li,
 .post h2,
 .post h3,
 .post h4,
@@ -91,6 +92,26 @@ p + p {
   list-style-type: decimal;
 }
 
+.post sup {
+  padding-left: 0.15rem;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.post sup a {
+  /* Use traditional underline instead of "subtle underline," which doesn't
+   * look good on superscript elements, at least in Varela. */
+  @apply border-0;
+  @apply underline;
+}
+
 .post ul {
   list-style-type: disc;
+}
+
+.post .anchor {
+  @apply border-0;
+}
+
+.footnotes p:first-of-type {
+  display: inline;
 }
