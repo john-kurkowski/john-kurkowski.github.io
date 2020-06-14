@@ -54,11 +54,6 @@ export default function Index () {
 
         <ul className='flex justify-center lg:my-8 my-16'>
           <li className=''>
-            <Link className='btn' to='/hire'>
-              Hire
-            </Link>
-          </li>
-          <li className='ml-12'>
             <Link className='btn' to='/about'>
               More about me
             </Link>

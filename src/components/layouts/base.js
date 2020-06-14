@@ -116,16 +116,6 @@ function Layout ({ children, page = {} }) {
                     activeClassName='active'
                     className='nav-link'
                     partiallyActive={true}
-                    to='/hire'
-                  >
-                    Hire
-                  </Link>
-                </li>
-                <li className=''>
-                  <Link
-                    activeClassName='active'
-                    className='nav-link'
-                    partiallyActive={true}
                     to='/about'
                   >
                     About
