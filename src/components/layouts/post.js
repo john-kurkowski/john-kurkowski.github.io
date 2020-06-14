@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
@@ -99,31 +99,33 @@ function embedDisqus () {
   let disqus_loaded = false
   let disqus_shortname = 'johnkurkowski'
 
-  window.onscroll = function () {
-    if (disqus_loaded) {
-      return
+  useEffect(function () {
+    window.onscroll = function () {
+      if (disqus_loaded) {
+        return
+      }
+
+      const disqus_thread = document.getElementById('disqus_thread')
+      if (!disqus_thread) {
+        return
+      }
+
+      const load_range_px = 600
+      const scroll_height =
+        window.innerHeight || document.documentElement.clientHeight
+      const disqus_top = disqus_thread.getBoundingClientRect().top
+      if (scroll_height + load_range_px >= disqus_top) {
+        disqus_loaded = true
+
+        const url = `//${disqus_shortname}.disqus.com/embed.js`
+
+        const script = document.createElement('script')
+
+        script.src = url
+        script.async = true
+
+        document.body.appendChild(script)
+      }
     }
-
-    const disqus_thread = document.getElementById('disqus_thread')
-    if (!disqus_thread) {
-      return
-    }
-
-    const load_range_px = 600
-    const scroll_height =
-      window.innerHeight || document.documentElement.clientHeight
-    const disqus_top = disqus_thread.getBoundingClientRect().top
-    if (scroll_height + load_range_px >= disqus_top) {
-      disqus_loaded = true
-
-      const url = `//${disqus_shortname}.disqus.com/embed.js`
-
-      const script = document.createElement('script')
-
-      script.src = url
-      script.async = true
-
-      document.body.appendChild(script)
-    }
-  }
+  })
 }
