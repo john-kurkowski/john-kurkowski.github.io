@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     description: 'UX Engineer. Second, bolder self-assertion here.',
+    siteUrl: 'https://johnkurkowski.com',
     title: 'John Kurkowski',
     url: 'https://johnkurkowski.com'
   },
@@ -14,7 +15,9 @@ module.exports = {
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-root-import`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
