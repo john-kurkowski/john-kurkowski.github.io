@@ -15,39 +15,31 @@ export default function Index () {
     <Layout page={page}>
       <section>
         <h2 className='font-bold font-sans lg:my-16 my-8 text-center text-xl'>
-          I’m baby yuccie small batch roof party freegan gentrify humblebrag
-          forage.
+          UX Engineering Consultant
         </h2>
 
         <div className='lg:my-16 my-8'>
           <div className='flex justify-between'>
-            <h3 className='w-1/2'>I help frontend …</h3>
+            <h3 className='w-1/2'>I help frontend teams …</h3>
 
             <ul className='list-disc w-1/2'>
-              <li className=''>Banh mi typewriter irony forage +1.</li>
-              <li className=''>
-                Echo park iceland twee selfies cray typewriter single-origin
-                coffee polaroid XOXO poutine gochujang disrupt gluten-free
-                activated charcoal.
-              </li>
-              <li className=''>
-                Biodiesel microdosing brunch, succulents wolf tbh shabby chic
-                VHS.
-              </li>
+              <li className=''>Deliver incrementally—no rewrites</li>
+              <li className=''>Work remotely and asynchronously</li>
+              <li className=''>Debug anything</li>
             </ul>
           </div>
 
           <div className='mt-8'>
             <p>
-              Shaman intelligentsia tofu cronut shoreditch. Chia sustainable
-              occupy, narwhal bushwick snackwave squid before they sold out
-              gentrify twee letterpress.
+              Modernize your frontend development to deliver incrementally.
+              Don't believe you need to rewrite from scratch. Reduce risk for
+              you and your customers. Boost morale with the momentum of showing
+              rather than telling.
             </p>
             <p>
-              Fanny pack truffaut hoodie, kitsch deep v enamel pin iceland
-              master cleanse kinfolk fixie VHS raclette venmo ramps tacos.
-              Hammock green juice jean shorts taxidermy skateboard twee vice
-              whatever.
+              Just want a tune up? I can figure out any legacy system. I augment
+              your team to handle overflow tasks. I've worked remotely for
+              years, asynchronously and independently. I can show you how.
             </p>
           </div>
         </div>
