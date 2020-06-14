@@ -1,7 +1,7 @@
 .btn {
   @apply border;
-  @apply border-gray-500;
-  @apply font-sans;
+  @apply border-white;
+  @apply font-title;
   @apply px-4;
   @apply py-2;
   @apply rounded;
@@ -17,9 +17,7 @@
 }
 
 .btn:hover {
-  @apply bg-red-600;
-  @apply border-transparent;
-  @apply text-white;
+  @apply bg-redactive;
 }
 
 .nav-link {
@@ -38,6 +36,5 @@
 
 .nav-link.active,
 .nav-link:hover {
-  @apply bg-red-600;
-  @apply text-white;
+  @apply bg-redactive;
 }
