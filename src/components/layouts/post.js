@@ -25,7 +25,7 @@ function Post ({ data }) {
         <header className='post'>
           <h2>{page.title}</h2>
 
-          <time className='block mt-4' dateTime={post.fields.date}>
+          <time className='block mt-4 post-time' dateTime={post.fields.date}>
             {post.fields.dateForTitle}
           </time>
         </header>

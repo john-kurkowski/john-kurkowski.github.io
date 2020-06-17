@@ -135,7 +135,7 @@ function Layout ({ children, page = {} }) {
             </nav>
           </header>
 
-          <main className='lg:my-16 max-w-xl mx-auto my-8'>{children}</main>
+          <main className='lg:my-16 max-w-2xl mx-auto my-8'>{children}</main>
         </div>
 
         <footer className='mt-8'>

@@ -12,6 +12,7 @@ p + p {
   @apply mt-4;
 }
 
+.link,
 .post a {
   @apply border-b-2;
   @apply border-gray-400;
@@ -20,6 +21,7 @@ p + p {
   @apply transition-colors;
 }
 
+.link:hover,
 .post a:hover {
   @apply text-gray-600;
 }
@@ -118,4 +120,8 @@ p + p {
 
 .footnotes p:first-of-type {
   display: inline;
+}
+
+.post-time {
+  font-variant: small-caps;
 }

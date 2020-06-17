@@ -15,16 +15,18 @@ function Posts ({ data }) {
   return (
     <Layout page={page}>
       <section className=''>
-        <h2>Articles</h2>
-        <ul className=''>
+        <h2 className='font-sans text-3xl'>Articles</h2>
+
+        <ul className='mt-2 mx-2'>
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <li className='' key={node.id}>
-              <time className='' dateTime={node.fields.date}>
-                {node.fields.dateForTitle}
-              </time>
-              <Link className='' to={node.fields.slug}>
+            <li className='mt-10' key={node.id}>
+              <Link className='inline-block link' to={node.fields.slug}>
                 {node.frontmatter.title}
               </Link>
+
+              <blockquote className='italic mt-2 px-4 text-gray-600 text-sm'>
+                {node.frontmatter.description || node.excerpt}
+              </blockquote>
             </li>
           ))}
         </ul>
@@ -39,6 +41,8 @@ Posts.propTypes = {
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
+            excerpt: PropTypes.string.isRequired,
+
             fields: PropTypes.shape({
               date: PropTypes.string.isRequired,
               dateForTitle: PropTypes.string.isRequired,
@@ -46,6 +50,7 @@ Posts.propTypes = {
             }),
 
             frontmatter: PropTypes.shape({
+              description: PropTypes.string,
               title: PropTypes.string.isRequired
             }),
 
@@ -67,12 +72,14 @@ export const query = graphql`
     ) {
       edges {
         node {
+          excerpt(pruneLength: 256)
           fields {
             date
             dateForTitle: date(formatString: "DD MMM YYYY")
             slug
           }
           frontmatter {
+            description
             title
           }
           id
