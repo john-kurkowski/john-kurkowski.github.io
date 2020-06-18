@@ -29,9 +29,8 @@ p + p {
 .post blockquote {
   @apply border-gray-400;
   @apply border-l-4;
+  @apply italic;
   @apply px-4;
-
-  font-style: italic;
 }
 
 .post figure {

@@ -43,7 +43,7 @@ scale.
 
 <table class='text-center'>
   <thead>
-    <tr class='bg-gray-700'>
+    <tr class='bg-gray-200'>
       <th class='border-b border-gray-500 px-4 py-2'>
         Lovingly Hand-Crafted, Expensive
       </th>
