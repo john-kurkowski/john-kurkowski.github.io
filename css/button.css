@@ -1,6 +1,6 @@
 .btn {
-  @apply border;
-  @apply border-gray-500;
+  @apply border-2;
+  @apply border-gray-800;
   @apply font-sans;
   @apply px-4;
   @apply py-2;
@@ -17,12 +17,17 @@
 }
 
 .btn:hover {
-  @apply bg-red-600;
-  @apply border-transparent;
+  @apply bg-green-400;
   @apply text-white;
 }
 
 .nav-link {
+  @apply border-b-0;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-t-2;
+  @apply border-transparent;
+  @apply h-full;
   @apply inline-block;
   @apply lowercase;
   @apply px-4;
@@ -36,8 +41,23 @@
   }
 }
 
+.nav-link.active {
+  @apply border-gray-800;
+  @apply rounded-t;
+}
+
+@screen lg {
+  .nav-link {
+    @apply border-t-0;
+  }
+
+  .nav-link.active {
+    @apply rounded-none;
+  }
+}
+
 .nav-link.active,
 .nav-link:hover {
-  @apply bg-red-600;
+  @apply bg-green-400;
   @apply text-white;
 }

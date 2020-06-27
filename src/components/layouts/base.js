@@ -26,7 +26,7 @@ function Layout ({ children, page = {} }) {
 
   return (
     <React.Fragment>
-      <Helmet htmlAttributes={{ lang: 'en-US' }}>
+      <Helmet htmlAttributes={{ class: 'bg-orange-300', lang: 'en-US' }}>
         <meta charset='utf-8' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 
@@ -97,9 +97,9 @@ function Layout ({ children, page = {} }) {
         <meta name='twitter:creator' content='@bluu' />
       </Helmet>
 
-      <div className='content-between flex flex-col font-serif lg:px-8 min-h-full pb-4 px-4 text-gray-900'>
-        <div className='flex-grow'>
-          <header className='mb-8'>
+      <div className='content-between flex flex-col font-serif min-h-full text-gray-800'>
+        <div className='bg-white flex-grow'>
+          <header className='bg-orange-300 border-b-2 border-gray-800 lg:px-8 px-4'>
             <nav className='flex flex-col font-sans items-center justify-between lg:flex-row text-black text-xl'>
               <h1 className='font-bold tracking-widest py-4 uppercase'>
                 <a href='/'>John Kurkowski</a>
@@ -135,10 +135,12 @@ function Layout ({ children, page = {} }) {
             </nav>
           </header>
 
-          <main className='lg:my-16 max-w-2xl mx-auto my-8'>{children}</main>
+          <main className='lg:my-16 lg:px-8 max-w-2xl mx-auto my-8 px-4'>
+            {children}
+          </main>
         </div>
 
-        <footer className='mt-8'>
+        <footer className='border-gray-800 border-t-2 pb-4 pt-8'>
           <div className=''>
             <ul className='flex justify-center'>
               <li className=''>
