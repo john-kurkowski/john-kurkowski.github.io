@@ -22,26 +22,24 @@ export default function Index () {
           <div className='flex justify-between'>
             <h3 className='w-1/2'>I help frontend teams …</h3>
 
-            <ul className='list-disc w-1/2'>
-              <li className=''>Deliver incrementally—no rewrites</li>
-              <li className=''>Work remotely and asynchronously</li>
-              <li className=''>Debug anything</li>
+            <ul className='w-1/2'>
+              <li className=''>🚢 &nbsp; Ship incrementally—no rewrites</li>
+              <li className=''>🌐 &nbsp; Work remotely</li>
+              <li className=''>🔧 &nbsp; Debug anything</li>
             </ul>
           </div>
+        </div>
 
-          <div className='mt-8'>
-            <p>
-              Modernize your frontend development to deliver incrementally.
-              Don't believe you need to rewrite from scratch. Reduce risk for
-              you and your customers. Boost morale with the momentum of showing
-              rather than telling.
-            </p>
-            <p>
-              Just want a tune up? I can figure out any legacy system. I augment
-              your team to handle overflow tasks. I've worked remotely for
-              years, asynchronously and independently. I can show you how.
-            </p>
-          </div>
+        <div className='mt-8'>
+          <p>
+            Modernize your frontend development to ship incrementally. You don't
+            need to rewrite from scratch. Reduce risk for you and customers.
+            Boost momentum showing not telling.
+          </p>
+          <p>
+            Just want a tune up? I debug any legacy system. I augment your team
+            to handle overflow tasks. I work remotely, async, and independently.
+          </p>
         </div>
 
         <ul className='flex justify-center lg:my-8 my-16'>
