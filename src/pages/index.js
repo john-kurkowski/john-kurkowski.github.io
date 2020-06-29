@@ -14,20 +14,33 @@ export default function Index () {
   return (
     <Layout page={page}>
       <section>
-        <h2 className='font-bold font-sans lg:my-16 my-8 text-center text-3xl'>
+        <h2 className='font-bold font-sans lg:mt-16 mt-8 text-center text-3xl'>
           UX Engineering Consultant
         </h2>
 
-        <div className='lg:my-16 my-8'>
-          <div className='flex justify-between'>
-            <h3 className='w-1/2'>I help frontend teams …</h3>
+        <div className='flex flex-col items-center text-xl'>
+          <p className='mt-8'>I help frontend teams …</p>
 
-            <ul className='w-1/2'>
-              <li className=''>🚢 &nbsp; Ship incrementally—no rewrites</li>
-              <li className=''>🌐 &nbsp; Work remotely</li>
-              <li className=''>🔧 &nbsp; Debug anything</li>
-            </ul>
-          </div>
+          <ol className='mt-8'>
+            <li>
+              <span className='inline-block'>🚢</span>
+              <span className='inline-block ml-4'>
+                <em>Ship</em> incrementally—no rewrites
+              </span>
+            </li>
+            <li>
+              <span className='inline-block'>🌐</span>
+              <span className='inline-block ml-4'>
+                <em>Collaborate</em> remotely
+              </span>
+            </li>
+            <li>
+              <span className='inline-block'>🔧</span>
+              <span className='inline-block ml-4'>
+                <em>Debug</em> anything
+              </span>
+            </li>
+          </ol>
         </div>
 
         <div className='mt-8'>
