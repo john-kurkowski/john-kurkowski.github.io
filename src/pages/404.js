@@ -6,7 +6,7 @@ export const page = {
   dateForMeta: '',
   description: '',
   title: 'Not Found',
-  url: '',
+  url: ''
 }
 
 export default function NotFound () {
