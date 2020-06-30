@@ -4,7 +4,11 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended'
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
@@ -16,7 +20,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: ['react'],
+  plugins: ['react', 'jsx-a11y'],
   rules: {
     'no-console': 'error',
     'react/no-unescaped-entities': [

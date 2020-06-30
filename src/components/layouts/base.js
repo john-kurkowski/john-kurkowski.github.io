@@ -99,41 +99,39 @@ function Layout ({ children, page = {} }) {
 
       <div className='content-between flex flex-col font-serif min-h-full text-gray-800'>
         <div className='bg-white flex-grow'>
-          <header className='bg-orange-300 border-b-2 border-gray-800 lg:px-8 px-4'>
-            <nav className='flex flex-col font-sans items-center justify-between lg:flex-row text-black text-xl'>
-              <h1 className='font-bold tracking-widest py-4 uppercase'>
-                <a href='/'>John Kurkowski</a>
-              </h1>
+          <nav className='bg-orange-300 border-b-2 border-gray-800 flex flex-col font-sans items-center justify-between lg:flex-row lg:px-8 px-4 text-black text-xl'>
+            <h1 className='font-bold tracking-widest py-4 uppercase'>
+              <a href='/'>John Kurkowski</a>
+            </h1>
 
-              <ul className='flex'>
-                <li className=''>
-                  <Link activeClassName='active' className='nav-link' to='/'>
-                    Home
-                  </Link>
-                </li>
-                <li className=''>
-                  <Link
-                    activeClassName='active'
-                    className='nav-link'
-                    partiallyActive={true}
-                    to='/about'
-                  >
-                    About
-                  </Link>
-                </li>
-                <li className=''>
-                  <Link
-                    activeClassName='active'
-                    className='nav-link'
-                    partiallyActive={true}
-                    to='/posts'
-                  >
-                    Articles
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </header>
+            <ul className='flex'>
+              <li className=''>
+                <Link activeClassName='active' className='nav-link' to='/'>
+                  Home
+                </Link>
+              </li>
+              <li className=''>
+                <Link
+                  activeClassName='active'
+                  className='nav-link'
+                  partiallyActive={true}
+                  to='/about'
+                >
+                  About
+                </Link>
+              </li>
+              <li className=''>
+                <Link
+                  activeClassName='active'
+                  className='nav-link'
+                  partiallyActive={true}
+                  to='/posts'
+                >
+                  Articles
+                </Link>
+              </li>
+            </ul>
+          </nav>
 
           <main className='lg:my-16 lg:px-8 max-w-2xl mx-auto my-8 px-4'>
             {children}

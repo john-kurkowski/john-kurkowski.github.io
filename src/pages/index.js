@@ -23,19 +23,29 @@ export default function Index () {
 
           <ol className='mt-8'>
             <li>
-              <span className='inline-block'>🚢</span>
+              <span aria-label='Ship' className='inline-block' role='img'>
+                🚢
+              </span>
               <span className='inline-block ml-4'>
                 <em>Ship</em> incrementally—no rewrites
               </span>
             </li>
             <li>
-              <span className='inline-block'>🌐</span>
+              <span
+                aria-label='Globe with meridians'
+                className='inline-block'
+                role='img'
+              >
+                🌐
+              </span>
               <span className='inline-block ml-4'>
                 <em>Collaborate</em> remotely
               </span>
             </li>
             <li>
-              <span className='inline-block'>🔧</span>
+              <span aria-label='Wrench' className='inline-block' role='img'>
+                🔧
+              </span>
               <span className='inline-block ml-4'>
                 <em>Debug</em> anything
               </span>
