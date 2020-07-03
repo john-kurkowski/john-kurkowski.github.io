@@ -96,18 +96,12 @@ news is you can start feeling better now.
 
 A more general note from my [Credo]:
 
-<blockquote>
-  <ul>
-    <li>
-      Ongoing learning.
-      <ul>
-        <li>Breadth: don't judge books by their covers. Yet accept you can't learn everything.</li>
-        <li>Depth: <a href="http://prog21.dadgum.com/128.html">don't be zealous about the technologies you do study deeply</a>. You sound like a dick, and blind yourself to complementary tech and better solutions.</li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
-
+> * Ongoing learning.
+>   * Breadth: don't judge books by their covers. Yet accept you can't learn
+>     everything.
+>   * Depth: [don't be zealous about the technologies you do study
+>     deeply](http://prog21.dadgum.com/128.html). You sound like a dick, and
+>     blind yourself to complementary tech and better solutions.
 
 Tech forums like Hacker News encourage a 5-second attention span for cutting
 edge development tools. Shamefully, this is how a couple build tools made it

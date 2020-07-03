@@ -30,10 +30,8 @@ demonstrating the potential.
 
 <blockquote>
   <p>Consider the type</p>
-
   <pre>
-    a -> a -> a</pre>
-
+&nbsp;&nbsp;&nbsp;&nbsp;a -> a -> a</pre>
   <p>Remember that <code>a</code> is a type variable which can stand for any
   type. What sorts of functions have this type?</p>
 </blockquote>
@@ -70,15 +68,17 @@ called [parametricity][Parametric polymorphism].
 The answer to the exercise:
 
 <blockquote>
-  <p>So, what functions actually could have this type? Actually, there are only
-  two!</p>
-
+  <p>So, what functions actually could have this type? Actually, there are only two!</p>
   <pre>
-    f1 :: a -> a -> a
-    f1 x y = x
-
-    f2 :: a -> a -> a
-    f2 x y = y</pre>
+  &nbsp;&nbsp;&nbsp;&nbsp;f1 :: a -> a -> a
+  <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;f1 x y = x
+  <br/>
+  <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;f2 :: a -> a -> a
+  <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;f2 x y = y
+  </pre>
 </blockquote>
 
 In Haskell, a function implementing this signature can _only_ do 1 of 2 things.

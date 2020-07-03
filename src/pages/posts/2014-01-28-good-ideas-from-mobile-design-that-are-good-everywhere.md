@@ -236,27 +236,12 @@ exercise forces focus on your site's core values.[^2]
 One day I hope the User Experience report could automatically include these
 points from my [Credo], because I see them violated again and again:
 
-<blockquote>
-  <ul>
-    <li>
-      <p>“Show the data.” – <a href="http://www.edwardtufte.com/tufte/">Edward Tufte</a></p>
-
-      <ul>
-        <li>Avoid implementing interfaces that hide their data, especially across
-  different input devices and accessibility issues.</li>
-      </ul>
-    </li>
-    <li>
-      <p>Avoid interaction &amp; modes.</p>
-
-      <ul>
-        <li><a href="http://worrydream.com/MagicInk/#most_software_is_information_software">Most software is information
-  software</a>
-  and should minimize interaction &amp; modes.</li>
-      </ul>
-    </li>
-  </ul>
-</blockquote>
+> * “Show the data.” — [Edward Tufte](http://www.edwardtufte.com/tufte/)
+>   * Avoid implementing interfaces that hide their data, especially across
+>     different input devices and accessibility issues.
+> * Avoid interaction &amp; modes.
+>   * [Most software is information software](http://worrydream.com/MagicInk/#most_software_is_information_software)
+>     and should minimize interaction &amp; modes.
 
 Let me explain what I was getting at.
 

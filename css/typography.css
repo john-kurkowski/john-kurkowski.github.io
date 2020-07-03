@@ -93,7 +93,6 @@ p + p {
 }
 
 .post ol {
-  list-style-position: inside;
   list-style-type: decimal;
 }
 
