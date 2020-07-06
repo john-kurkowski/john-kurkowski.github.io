@@ -6,69 +6,47 @@ title: "About Me"
 ## About Me
 
 I'm a software consultant who helps with the **development** of the **user
-experience (UX)**. I help you modernize your **existing** frontend stack to
-ship **incrementally**. You don't need to rewrite from scratch. This reduces
-risk for you and customers.
+experience (UX)**. With 10+ years in the game, I help you modernize your
+**existing** frontend stack to ship **incrementally**.
 
-Didn't see progress from your developer for weeks? I like to [show progress
-frequently][Showing Code Every Day Or Two]. I can show you how too. Your team
-will love the momentum from showing, not telling.
+I specialize in the following.
 
-Didn't bake in user experience from the start? Stuck with a mess? That's okay.
-[It happens to everyone.][Corporate UX Maturity: Stages 1-4] While it's not
-something you bolt on after the fact, I help you evolve UX as a core part of
-your product and team.
+* **Incremental, continuous delivery.** Don't see progress for weeks?
+  Doesn't turn out how you imagined? I spot bottlenecks to help you [connect
+  faster to what you're creating][Inventing On Principle]. Your team will love
+  the momentum from [showing][Showing Code Every Day Or Two], not telling.
 
-That's why I specialize in existing, legacy systems. I have a knack to debug
-any such system. Like a solutions architect, I figure out how to get the
-frontend from current point A to desired point B. All while maintaining a
-delightfully smooth user experience.
+* **Stuck with a user experience mess?** Didn't bake in UX from the start?
+  That's okay. [It happens to everyone.][Corporate UX Maturity: Stages 1-4]
 
-I can augment a team and spike the above processes for you. Or I can handle
-overflow tasks. I've worked remotely, asynchronously, and independently for
-years.
+    * Improve incrementally, **without rewriting** from scratch. Delivering
+      frequently actually **reduces risk**. Rewriting is a risky shock to your
+      codebase and customers. Nobody wants to get shocked.
 
-### Consultant vs. In-House
+    * I'm a fresh pair of eyes to catch your initial usability issues. But
+      neither of us are your customer. I'll teach how to continually test.
 
-I understand both sides of the consultant vs. hiring in-house debate. I used to
-look down on consultants we worked with. Why didn't they "just get it?"
+* **Stuck with legacy code?** I have a knack for debugging. I love
+  to strategize how to evolve a system from current point A to desired point B,
+  how to change the plane's engines in flight.
 
-Then I learned, rather than shaming (just like bad UX), you have to look at the
-constraints that lead to the problem. In-house, we had a tight team that met
-regularly to discuss in-flight work and code quality. Consultants weren't on
-the invite. Even when we captured decisions in code, consultants had restricted
-code permissions. How were they supposed to be on the same page as us? We made
-them 2nd class citizens in our organization.
+* **Automated tests.** Haven't been testing your frontend? Certain changes
+  collapse the house of cards? I've worked on teams with 0% test coverage and
+  100% test coverage. I'll teach the happy medium.
 
-As a consultant, if I'm unable to integrate well, I will be the squeaky wheel.
-I will let you know. I want to be augment effectively. I want our collaboration
-to be a good experience. That's why I show progress frequently and err on the
-side of overcommunication.
+* **Team augmentation.** I can spike the above processes with you. Or handle
+  overflow tasks. I've worked remotely, asynchronously, and independently for
+  years.
 
-### UX Focus
-
-It's my personal mission to make human-computer interfaces more usable and
-informative. There's a tendency to disregard the user or think you need flashy,
-unique interaction, when [all the user wants is predictable behavior and to
-learn][Avoid Interaction & Modes].
-
-I grew up in the Internet age, thrilled by what a computer could do for me. A
-familiar story for most techies.
-
-However I'm *scarred* from being unable to share that thrill. In contrast to
-me, for all my family and peers, computers did nothing but get in their way.
-[Computers are too difficult, and it's no wonder most people remain
-illiterate][Computers are too difficult].
-
-The design of everyday things is often irresponsible and insulting. The
-software industry can do better. Wherever I'm involved as a software engineer,
-I aim to bring sensitivity to this.
+* **Overcommunication.** I've been on both sides of the consultant vs. hiring
+  in-house debate. If I'm unable to integrate well, I'll be the squeaky wheel.
+  I want our collaboration to be efficient and a good experience for all.
 
 ### Even More About Me
 
-* Read my other overarching themes in [Credo](/posts/credo/).
-* Read example UX issues I want to save the world from in [Good Ideas From
-  Mobile Design That Are Good Everywhere].
+* Read my other themes in my article [Credo](/posts/credo/).
+* Read example UX issues I want to save the world from in my article [Good
+  Ideas From Mobile Design That Are Good Everywhere].
 
 ## Resume
 
@@ -82,12 +60,11 @@ play on the modern sans-serif Varela. The preferred body font is the modern
 serif [Lora]. The site is hosted on [Netlify]. [Its source is available on
 GitHub][GitHub source].
 
-[Avoid Interaction & Modes]: /posts/good-ideas-from-mobile-design-that-are-good-everywhere/#avoid-modes
-[Computers are too difficult]: https://studiotendra.com/2013/08/14/computers-are-both-too-difficult-and-people-are-computer-illiterate/
 [Corporate UX Maturity: Stages 1-4]: https://www.nngroup.com/articles/ux-maturity-stages-1-4/
 [GatsbyJS]: https://www.gatsbyjs.org/
 [GitHub source]: https://github.com/john-kurkowski/john-kurkowski.github.io
 [Good Ideas From Mobile Design That Are Good Everywhere]: /posts/good-ideas-from-mobile-design-that-are-good-everywhere/
+[Inventing On Principle]: https://vimeo.com/36579366
 [Lora]: https://github.com/cyrealtype/Lora-Cyrillic
 [Markdown]: https://commonmark.org/
 [Netlify]: https://netlify.com
