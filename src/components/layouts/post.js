@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 import useScript from 'src/hooks/use-script'
 
 function Post ({ data }) {
-  const post = data.markdownRemark
+  const post = data.mdx
 
   const page = {
     dateForMeta: post.fields.dateForMeta,
@@ -17,7 +18,7 @@ function Post ({ data }) {
 
   embedDisqus()
 
-  dangerouslyEmbedJs(post.html)
+  dangerouslyEmbedJs(post.body)
 
   return (
     <Layout page={page}>
@@ -30,10 +31,9 @@ function Post ({ data }) {
           </time>
         </header>
 
-        <div
-          className='post'
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        ></div>
+        <div className='post'>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
 
         <div className='mt-8' id='disqus_thread'></div>
         <noscript>
@@ -47,9 +47,9 @@ function Post ({ data }) {
 
 Post.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
+    mdx: PropTypes.shape({
+      body: PropTypes.string,
       excerpt: PropTypes.string,
-      html: PropTypes.string,
 
       fields: PropTypes.shape({
         date: PropTypes.string.isRequired,
@@ -69,9 +69,9 @@ export default Post
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       excerpt(pruneLength: 256)
-      html
       fields {
         date
         dateForMeta: date(formatString: "dddd, DD MMM YYYY HH:mm:ss [GMT]")
@@ -86,11 +86,11 @@ export const query = graphql`
 `
 
 function dangerouslyEmbedJs (htmlString) {
-  const jsUrlsRe = /src="([^"]+\.js)"/g
+  const jsUrlsRe = /src(:\s*|=)"([^"]+\.js)"/g
   let match
   // eslint-disable-next-line no-cond-assign
   while ((match = jsUrlsRe.exec(htmlString))) {
-    const [, url] = match
+    const [, , url] = match
     useScript(url)
   }
 }

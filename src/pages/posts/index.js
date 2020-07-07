@@ -18,7 +18,7 @@ function Posts ({ data }) {
         <h2 className='font-sans text-3xl'>Articles</h2>
 
         <ul className='mt-2 mx-2'>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
+          {data.allMdx.edges.map(({ node }) => (
             <li className='mt-10' key={node.id}>
               <Link className='inline-block link' to={node.fields.slug}>
                 {node.frontmatter.title}
@@ -37,7 +37,7 @@ function Posts ({ data }) {
 
 Posts.propTypes = {
   data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
+    allMdx: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
@@ -66,7 +66,7 @@ export default Posts
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { date: { ne: null } } }
       sort: { fields: [fields___date], order: DESC }
     ) {
