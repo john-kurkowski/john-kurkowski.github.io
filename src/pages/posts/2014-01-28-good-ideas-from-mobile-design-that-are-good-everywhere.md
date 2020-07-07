@@ -295,7 +295,7 @@ them. Instead,
 
 * *Show the data* or descriptions or actions in context. If it's not important
   enough to show in context, delete it
-  ([#5](#remove-half-your-content-then-remove-half-of-whats-left)).
+  ([#5](#remove-half)).
 * Use direct & consistent text & symbology, so the user knows what they're
   getting into without having to read.
 * In the case of dialogs that gather user input, let users do it as part of
@@ -371,7 +371,7 @@ host operating system. Maybe this is a warning that you shouldn't mess with
 them!
 
 This tip recalls [#2](#avoid-plugins) and
-[#5](#remove-half-your-content-then-remove-half-of-whats-left), in that you
+[#5](#remove-half), in that you
 should focus on valuable content, rather than distracting you & your users with
 style points. You'll make users think (bad), "Why is this widget
 different?"[^5] Leave it alone.
@@ -422,7 +422,7 @@ I share Mobile First's focus on content, though the movement is a misnomer to
 what I'm proposing. Typical desktop design has spiraled out of control. The
 constraints of mobile have forced designers to focus again. That's all I mean,
 particularly with tips [#4](#use-legible-font-sizes),
-[#5](#remove-half-your-content-then-remove-half-of-whats-left), &
+[#5](#remove-half), &
 [#9](#no-really-show-the-data). The difference is, I didn't say you have to
 think about how it looks on a phone first.
 
