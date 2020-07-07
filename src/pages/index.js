@@ -57,7 +57,6 @@ export default function Index () {
           <p>
             Modernize your frontend development to ship incrementally. You don't
             need to rewrite from scratch. Reduce risk for you and customers.
-            Boost momentum showing not telling.
           </p>
           <p>
             Just want a tune up? I debug any legacy system. I augment your team
