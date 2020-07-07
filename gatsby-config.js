@@ -46,7 +46,8 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`
-        ]
+        ],
+        plugins: [`gatsby-remark-autolink-headers`]
       }
     }
   ]
