@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import styles from './experience.module.css'
+
 const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en', {
   month: 'short',
   timeZone: 'America/Los_Angeles',
@@ -20,31 +22,24 @@ function Experience ({
     <div
       className={`border-gray-400 border-l-4 px-4 text-sm ${className || ''}`}
     >
-      <h5 className='flex justify-between'>
-        <span className='flex flex-col'>
-          <span className='font-bold text-xl'>{company}</span>
+      <h5 className={styles.header}>
+        <span className='font-bold text-xl'>{company}</span>
 
-          <span>{position}</span>
+        <span>{position}</span>
+
+        <span className='post-time'>
+          <time
+            dateTime={`${timeBegin.getFullYear()}-${timeBegin.getMonth() + 1}`}
+          >
+            {DATE_DISPLAY_FORMAT.format(timeBegin)}
+          </time>
+          –
+          <time dateTime={`${timeEnd.getFullYear()}-${timeEnd.getMonth() + 1}`}>
+            {DATE_DISPLAY_FORMAT.format(timeEnd)}
+          </time>
         </span>
 
-        <span className='flex flex-col items-end'>
-          <span className='post-time'>
-            <time
-              dateTime={`${timeBegin.getFullYear()}-${timeBegin.getMonth() +
-                1}`}
-            >
-              {DATE_DISPLAY_FORMAT.format(timeBegin)}
-            </time>
-            –
-            <time
-              dateTime={`${timeEnd.getFullYear()}-${timeEnd.getMonth() + 1}`}
-            >
-              {DATE_DISPLAY_FORMAT.format(timeEnd)}
-            </time>
-          </span>
-
-          <span>{location}</span>
-        </span>
+        <address>{location}</address>
       </h5>
 
       {children}
