@@ -1,10 +1,10 @@
 .btn {
   @apply border-2;
-  @apply border-gray-800;
+  @apply border-primary;
   @apply font-sans;
   @apply px-4;
   @apply py-2;
-  @apply rounded;
+  @apply rounded-md;
   @apply tracking-widest;
   @apply uppercase;
 }
@@ -16,22 +16,18 @@
   @apply transition-colors;
 }
 
-.btn:hover {
-  @apply bg-green-400;
-  @apply text-gray-900;
-}
-
 .nav-link {
   @apply border-b-0;
-  @apply border-l-2;
-  @apply border-r-2;
-  @apply border-t-2;
+  @apply border-l-4;
+  @apply border-r-4;
+  @apply border-t-4;
   @apply border-transparent;
   @apply h-full;
   @apply inline-block;
   @apply lowercase;
   @apply px-4;
   @apply py-2;
+  @apply rounded-t-md;
 }
 
 @screen md {
@@ -42,22 +38,18 @@
 }
 
 .nav-link.active {
-  @apply border-gray-800;
-  @apply rounded-t;
+  @apply border-primary;
 }
 
 @screen lg {
   .nav-link {
-    @apply border-t-0;
-  }
-
-  .nav-link.active {
     @apply rounded-none;
   }
 }
 
+.btn:hover,
 .nav-link.active,
 .nav-link:hover {
-  @apply bg-green-400;
-  @apply text-gray-900;
+  @apply bg-primary;
+  @apply text-background;
 }
