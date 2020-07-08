@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
+import { Link, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 import useScript from 'src/hooks/use-script'
@@ -22,6 +22,12 @@ function Post ({ data }) {
 
   return (
     <Layout page={page}>
+      <div className='text-sm'>
+        <Link className='link' to='/posts'>
+          ↩ to Articles
+        </Link>
+      </div>
+
       <article>
         <header className='post'>
           <h2>{page.title}</h2>
