@@ -3,6 +3,8 @@ layout: base
 title: "About Me"
 ---
 
+import Experience from 'src/components/resume/experience'
+
 ## About Me
 
 I'm a software consultant who helps with the **development** of the **user
@@ -48,9 +50,71 @@ I specialize in the following.
 * Read example UX issues I want to save the world from in my article [Good
   Ideas From Mobile Design That Are Good Everywhere].
 
-## Resume
+## Experience
 
-TODO
+<Experience
+  className='mt-4'
+  company='CrowdStrike'
+  location='Remote, Portland, OR'
+  position='Senior Software Developer'
+  timeBegin={new Date('2013-04-15')}
+  timeEnd={new Date('2020-02-15')}
+>
+
+Endpoint security web apps, for B2B customers to understand, triage, and hunt
+advanced threats in their corporate network. Grew the frontend software and
+team, from 10 customers to 1,000s, from 2 developers to 20. Lead culture of
+quality: continuous peer code review, checklists, automated tests, and
+deployment. Obsessed with efficiency: increased deploy frequency from 1x
+monthly to 10x daily. Ember.js, Node.js, Python, Scala, Elasticsearch, Swagger.
+
+</Experience>
+
+<Experience
+  className='mt-8'
+  company='Gravity'
+  location='Santa Monica, CA'
+  position='Senior Software Developer'
+  timeBegin={new Date('2010-11-15')}
+  timeEnd={new Date('2013-04-15')}
+>
+
+Developed a Scala web platform and 3rd party JavaScript partner integrations
+for serving realtime, personalized, article recommendations, embedded in top
+U.S. publishers’ sites. Ingested social data for analytics visualizations and
+browser extension. Built internal web APIs for tuning ontology, across
+non/relational and graph databases. Hosted Scala meetups, demonstrating company
+leadership in this niche.
+
+</Experience>
+
+<Experience
+  className='mt-8'
+  company='Quantcast'
+  location='San Francisco, CA'
+  position='Software Developer'
+  timeBegin={new Date('2008-09-15')}
+  timeEnd={new Date('2010-08-15')}
+>
+
+Implemented new features and optimizations, from front to back, for
+[quantcast.com](https://quantcast.com), an audience measurement website
+reaching over 2 million people per month. Reported service adoption in an
+internal dashboard, fed by batch jobs. Spearheaded projects, new technologies,
+and workflows in company tech talks. Java, Spring, GWT, Hadoop, Django.
+
+</Experience>
+
+## Education
+
+<Experience
+  className='mt-4'
+  company='University of Washington'
+  location='Seattle, WA'
+  position='B.S. Computer Science, B.A. Linguistics'
+  timeBegin={new Date('2004-09-15')}
+  timeEnd={new Date('2008-08-15')}
+/>
 
 ## Colophon
 
