@@ -63,6 +63,7 @@ p + p {
   @apply text-xl;
 }
 
+.heading,
 .post h2,
 .post h3,
 .post h4 {

@@ -14,7 +14,7 @@ export default function Index () {
   return (
     <Layout page={page}>
       <section>
-        <h2 className='font-bold font-sans lg:mt-16 mt-8 text-center text-3xl'>
+        <h2 className='heading lg:mt-16 mt-8 text-center text-3xl'>
           UX Engineering Consultant
         </h2>
 

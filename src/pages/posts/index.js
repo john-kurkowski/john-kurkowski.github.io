@@ -15,7 +15,7 @@ function Posts ({ data }) {
   return (
     <Layout page={page}>
       <section className=''>
-        <h2 className='font-sans text-3xl'>Articles</h2>
+        <h2 className='heading text-3xl'>Articles</h2>
 
         <ul className='mt-2 mx-2'>
           {data.allMdx.edges.map(({ node }) => (
