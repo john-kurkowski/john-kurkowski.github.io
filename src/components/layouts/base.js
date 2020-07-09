@@ -3,11 +3,11 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
+import GitHubLogo from 'src/images/icons/iconmonstr-github-1.svg'
+import LinkedInLogo from 'src/images/icons/iconmonstr-linkedin-3.svg'
+import TwitterLogo from 'src/images/icons/iconmonstr-twitter-1.svg'
 import avatar2X from 'src/images/avatar@2X.jpeg'
 import favicon from 'src/images/favicon.ico'
-import gitHubLogo from 'src/images/icons/iconmonstr-github-1.svg'
-import linkedInLogo from 'src/images/icons/iconmonstr-linkedin-3.svg'
-import twitterLogo from 'src/images/icons/iconmonstr-twitter-1.svg'
 
 function Layout ({ children, page = {} }) {
   const data = useStaticQuery(
@@ -141,38 +141,26 @@ function Layout ({ children, page = {} }) {
         <footer className='bg-secondary border-primary border-t-4 pb-4 pt-8 text-background'>
           <div className=''>
             <ul className='flex justify-center'>
-              <li className=''>
+              <li className='icon-link'>
                 <a href='//twitter.com/bluu'>
                   <figure>
-                    <img
-                      alt='Twitter logo icon'
-                      className='icon-social-media w-8'
-                      src={twitterLogo}
-                    />
+                    <TwitterLogo />
                     <figcaption className='sr-only'>Twitter</figcaption>
                   </figure>
                 </a>
               </li>
-              <li className='ml-8'>
+              <li className='icon-link ml-8'>
                 <a href='//www.linkedin.com/in/johnkurkowski'>
                   <figure>
-                    <img
-                      alt='LinkedIn logo icon'
-                      className='icon-social-media w-8'
-                      src={linkedInLogo}
-                    />
+                    <LinkedInLogo />
                     <figcaption className='sr-only'>LinkedIn</figcaption>
                   </figure>
                 </a>
               </li>
-              <li className='ml-8'>
+              <li className='icon-link ml-8'>
                 <a href='//github.com/john-kurkowski'>
                   <figure>
-                    <img
-                      alt='GitHub logo icon'
-                      className='icon-social-media w-8'
-                      src={gitHubLogo}
-                    />
+                    <GitHubLogo />
                     <figcaption className='sr-only'>GitHub</figcaption>
                   </figure>
                 </a>

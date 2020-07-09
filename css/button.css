@@ -10,10 +10,19 @@
 }
 
 .btn,
+.icon-link path,
 .nav-link {
   @apply duration-100;
   @apply ease-linear;
   @apply transition-colors;
+}
+
+.icon-link path {
+  fill: theme('colors.background');
+}
+
+.icon-link:hover path {
+  fill: theme('colors.primary');
 }
 
 .nav-link {

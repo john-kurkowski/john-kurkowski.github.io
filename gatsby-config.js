@@ -15,6 +15,7 @@ module.exports = {
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-svg`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
