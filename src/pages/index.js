@@ -14,7 +14,7 @@ export default function Index () {
   return (
     <Layout page={page}>
       <section>
-        <h2 className='heading lg:mt-16 mt-8 text-center text-3xl'>
+        <h2 className='heading mt-8 text-center text-3xl'>
           UX Engineering Consultant
         </h2>
 
@@ -64,7 +64,7 @@ export default function Index () {
           </p>
         </div>
 
-        <ul className='flex justify-center lg:my-8 my-16'>
+        <ul className='flex justify-center my-16'>
           <li className=''>
             <Link className='btn' to='/about'>
               More about me

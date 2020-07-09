@@ -99,7 +99,7 @@ function Layout ({ children, page = {} }) {
 
       <div className='content-between flex flex-col font-serif min-h-full'>
         <div className='bg-background flex-grow'>
-          <nav className='bg-secondary border-b-4 border-primary flex flex-col font-sans items-center justify-between lg:flex-row lg:px-8 px-4 text-background text-xl'>
+          <nav className='bg-secondary border-b-4 border-primary flex flex-col font-sans items-center justify-between lg:flex-row px-8 text-background text-xl'>
             <h1 className='font-bold tracking-widest py-4 uppercase'>
               <a href='/'>John Kurkowski</a>
             </h1>
@@ -133,7 +133,7 @@ function Layout ({ children, page = {} }) {
             </ul>
           </nav>
 
-          <main className='lg:my-16 lg:px-8 max-w-2xl mx-auto my-8 px-4 text-gray-800'>
+          <main className='max-w-2xl mx-auto my-8 px-4 text-gray-800'>
             {children}
           </main>
         </div>
