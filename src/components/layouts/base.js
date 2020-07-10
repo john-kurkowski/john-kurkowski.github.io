@@ -104,32 +104,30 @@ function Layout ({ children, page = {} }) {
 
             <ul className='flex font-semibold'>
               <li className=''>
-                <Link
-                  activeClassName='active'
-                  className='nav-link lg:pb-4 py-2'
-                  to='/'
-                >
-                  Home
+                <Link activeClassName='active' className='nav-link pr-4' to='/'>
+                  <span className='lg:pb-4 nav-link-content py-2'>Home</span>
                 </Link>
               </li>
               <li className=''>
                 <Link
                   activeClassName='active'
-                  className='lg:pb-4 ml-8 nav-link py-2'
+                  className='nav-link px-4'
                   partiallyActive={true}
                   to='/about'
                 >
-                  About
+                  <span className='lg:pb-4 nav-link-content py-2'>About</span>
                 </Link>
               </li>
               <li className=''>
                 <Link
                   activeClassName='active'
-                  className='lg:pb-4 ml-8 nav-link py-2'
+                  className='nav-link pl-4'
                   partiallyActive={true}
                   to='/posts'
                 >
-                  Articles
+                  <span className='lg:pb-4 nav-link-content py-2'>
+                    Articles
+                  </span>
                 </Link>
               </li>
             </ul>

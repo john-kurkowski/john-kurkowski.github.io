@@ -12,7 +12,7 @@
 
 .btn,
 .icon-link path,
-.nav-link {
+.nav-link-content {
   @apply duration-100;
   @apply ease-linear;
   @apply transition-colors;
@@ -26,27 +26,31 @@
   fill: theme('colors.primary');
 }
 
-.nav-link {
+.nav-link,
+.nav-link-content {
+  @apply h-full;
+  @apply inline-block;
+  @apply tracking-wider;
+  @apply uppercase;
+}
+
+.nav-link-content {
   @apply border-b-0;
   @apply border-l-4;
   @apply border-r-4;
   @apply border-t-4;
   @apply border-transparent;
-  @apply h-full;
-  @apply inline-block;
-  @apply px-3;
   @apply rounded-t-md;
-  @apply tracking-wider;
-  @apply uppercase;
+  @apply px-3;
 }
 
-.nav-link.active {
+.nav-link.active .nav-link-content {
   @apply border-primary;
 }
 
 .btn:hover,
-.nav-link.active,
-.nav-link:hover {
+.nav-link.active .nav-link-content,
+.nav-link:hover .nav-link-content {
   @apply bg-primary;
   @apply text-background;
 }
