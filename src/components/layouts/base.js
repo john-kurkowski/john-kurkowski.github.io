@@ -86,8 +86,6 @@ function Layout ({ children, page = {} }) {
           rel='stylesheet'
         />
 
-        <link rel='alternate' type='application/rss+xml' href='/atom.xml' />
-
         <link rel='shortcut icon' href={favicon} />
         <link rel='apple-touch-icon' href={avatar2X} />
         <meta property='og:image' content={avatar2X} />

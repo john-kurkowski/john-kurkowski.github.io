@@ -17,7 +17,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     const isPost = !!date
     if (isPost) {
-      createNodeField({ node, name: `date`, value: date })
+      createNodeField({
+        node,
+        name: `date`,
+        value: `${date}T00:00:00.0000-08:00`
+      })
       createNodeField({ node, name: `slug`, value: `/posts/${title}/` })
     } else {
       createNodeField({ node, name: `slug`, value: slug })
