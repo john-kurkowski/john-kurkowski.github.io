@@ -25,6 +25,9 @@ I specialize in the following.
       frequently actually **reduces risk**. Rewriting is a risky shock to your
       codebase and customers. Nobody wants to get shocked.
 
+    * Use **design systems** to rethink your designer-developer handoff. No
+      designer? Stay lean with open frameworks.
+
     * I'm a fresh pair of eyes to catch your initial usability issues. But
       neither of us are your customer. I'll teach how to continually test.
 
@@ -62,11 +65,11 @@ I specialize in the following.
 >
 
 Endpoint security web apps, for B2B customers to understand, triage, and hunt
-advanced threats in their corporate network. Grew the frontend software and
-team, from 10 customers to 1,000s, from 2 developers to 20. Lead culture of
-quality: continuous peer code review, checklists, automated tests, and
-deployment. Obsessed with efficiency: increased deploy frequency from 1x
-monthly to 10x daily. Ember.js, Node.js, Python, Scala, Elasticsearch, Swagger.
+advanced threats. Grew frontend software and team from 10 customers to 1,000s,
+from 2 developers to 20. Lead culture of quality: continuous peer code review,
+checklists, automated tests, and deployment. Obsessed with efficiency:
+increased deploy frequency from 1x monthly to 10x daily. Ember.js, Node.js,
+Python, Elasticsearch, Swagger.
 
 </Experience>
 
