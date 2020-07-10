@@ -14,11 +14,11 @@ export default function Index () {
   return (
     <Layout page={page}>
       <section>
-        <h2 className='heading mt-8 text-center text-3xl'>
+        <h2 className='heading my-16 text-center text-3xl'>
           UX Engineering Consultant
         </h2>
 
-        <div className='flex flex-col items-center text-xl'>
+        <div className='text-xl'>
           <p className='mt-8'>I help frontend teams …</p>
 
           <ol className='mt-8'>

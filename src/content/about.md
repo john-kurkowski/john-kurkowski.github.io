@@ -119,10 +119,9 @@ and workflows in company tech talks. Java, Spring, GWT, Hadoop, Django.
 ## Colophon
 
 This site is coded and written in [iTerm2] and [vim]. It is built around the
-framework [GatsbyJS]. The site's preferred display font is [Varela Round], a
-play on the modern sans-serif Varela. The preferred body font is the modern
-serif [Lora]. The site is hosted on [Netlify]. [Its source is available on
-GitHub][GitHub source].
+framework [GatsbyJS]. The site's preferred display font is the humanist [Open
+Sans]. The preferred body font is the modern serif [Lora]. The site is hosted
+on [Netlify]. [Its source is available on GitHub][GitHub source].
 
 [Corporate UX Maturity: Stages 1-4]: https://www.nngroup.com/articles/ux-maturity-stages-1-4/
 [GatsbyJS]: https://www.gatsbyjs.org/
@@ -132,7 +131,7 @@ GitHub][GitHub source].
 [Lora]: https://github.com/cyrealtype/Lora-Cyrillic
 [Markdown]: https://commonmark.org/
 [Netlify]: https://netlify.com
+[Open Sans]: https://en.wikipedia.org/wiki/Open_Sans
 [Showing Code Every Day Or Two]: https://www.geepawhill.org/2018/07/15/showing-code-every-day-or-two/
-[Varela Round]: https://github.com/avrahamcornfeld/Varela-Round-Hebrew
 [iTerm2]: https://www.iterm2.com/
 [vim]: https://thoughtbot.com/blog/the-vim-learning-curve-is-a-myth

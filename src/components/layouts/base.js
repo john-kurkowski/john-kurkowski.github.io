@@ -82,7 +82,7 @@ function Layout ({ children, page = {} }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
         <link
-          href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Varela+Round&display=swap'
+          href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@400;600;700;800&display=swap'
           rel='stylesheet'
         />
 
@@ -97,21 +97,25 @@ function Layout ({ children, page = {} }) {
 
       <div className='content-between flex flex-col font-serif min-h-full'>
         <div className='bg-background flex-grow'>
-          <nav className='bg-secondary border-b-4 border-primary flex flex-col font-sans items-center justify-between lg:flex-row px-8 text-background text-xl'>
-            <h1 className='font-bold tracking-widest py-4 uppercase'>
-              <a href='/'>John Kurkowski</a>
+          <nav className='bg-secondary border-b-4 border-primary flex flex-col font-sans items-center justify-between lg:flex-row pt-2 px-8 text-background'>
+            <h1 className='font-extrabold pb-2 text-2xl tracking-widester uppercase'>
+              <Link to='/'>John Kurkowski</Link>
             </h1>
 
-            <ul className='flex'>
+            <ul className='flex font-semibold'>
               <li className=''>
-                <Link activeClassName='active' className='nav-link' to='/'>
+                <Link
+                  activeClassName='active'
+                  className='nav-link lg:pb-4 py-2'
+                  to='/'
+                >
                   Home
                 </Link>
               </li>
               <li className=''>
                 <Link
                   activeClassName='active'
-                  className='nav-link'
+                  className='lg:pb-4 ml-8 nav-link py-2'
                   partiallyActive={true}
                   to='/about'
                 >
@@ -121,7 +125,7 @@ function Layout ({ children, page = {} }) {
               <li className=''>
                 <Link
                   activeClassName='active'
-                  className='nav-link'
+                  className='lg:pb-4 ml-8 nav-link py-2'
                   partiallyActive={true}
                   to='/posts'
                 >
@@ -136,7 +140,7 @@ function Layout ({ children, page = {} }) {
           </main>
         </div>
 
-        <footer className='bg-secondary border-primary border-t-4 pb-4 pt-8 text-background'>
+        <footer className='bg-secondary border-primary border-t-4 font-sans pb-4 pt-8 text-background'>
           <div className=''>
             <ul className='flex justify-center'>
               <li className='icon-link'>

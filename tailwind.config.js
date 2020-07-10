@@ -10,7 +10,7 @@ module.exports = {
         secondary: '#1E4A79'
       },
       fontFamily: {
-        sans: ['Varela Round', ...defaultTheme.fontFamily.sans],
+        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
         serif: ['Lora', ...defaultTheme.fontFamily.serif]
       }
     }

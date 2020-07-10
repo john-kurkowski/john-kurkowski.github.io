@@ -2,6 +2,7 @@
   @apply border-2;
   @apply border-primary;
   @apply font-sans;
+  @apply font-semibold;
   @apply px-4;
   @apply py-2;
   @apply rounded-md;
@@ -33,27 +34,14 @@
   @apply border-transparent;
   @apply h-full;
   @apply inline-block;
-  @apply lowercase;
-  @apply px-4;
-  @apply py-2;
+  @apply px-3;
   @apply rounded-t-md;
-}
-
-@screen md {
-  .nav-link {
-    @apply px-8;
-    @apply py-4;
-  }
+  @apply tracking-wider;
+  @apply uppercase;
 }
 
 .nav-link.active {
   @apply border-primary;
-}
-
-@screen lg {
-  .nav-link {
-    @apply rounded-none;
-  }
 }
 
 .btn:hover,
