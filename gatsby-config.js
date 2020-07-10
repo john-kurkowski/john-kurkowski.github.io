@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    description: 'UX Engineer. Second, bolder self-assertion here.',
+    description: 'UX Engineering Consultant',
     siteUrl: 'https://johnkurkowski.com',
     title: 'John Kurkowski',
     url: 'https://johnkurkowski.com'
