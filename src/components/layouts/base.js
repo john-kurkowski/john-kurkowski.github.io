@@ -133,7 +133,7 @@ function Layout ({ children, page = {} }) {
             </ul>
           </nav>
 
-          <main className='max-w-2xl mx-auto my-8 px-4 text-gray-800'>
+          <main className='max-w-2xl mx-auto my-8 px-5 text-gray-800'>
             {children}
           </main>
         </div>

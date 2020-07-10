@@ -71,7 +71,7 @@ p + p {
   @apply font-sans;
   @apply leading-tight;
   @apply text-secondary;
-  @apply tracking-wide;
+  @apply tracking-wider;
   @apply uppercase;
 }
 
@@ -131,5 +131,5 @@ p + p {
 }
 
 .tracking-widester {
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
