@@ -1,0 +1,135 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+p + p {
+  @apply mt-4;
+}
+
+.link,
+.post a {
+  @apply border-b;
+  @apply border-primary;
+  @apply duration-75;
+  @apply ease-linear;
+  @apply transition-colors;
+}
+
+.link:hover,
+.post a:hover {
+  @apply text-gray-600;
+}
+
+.post blockquote {
+  @apply border-gray-400;
+  @apply border-l-4;
+  @apply italic;
+  @apply px-4;
+}
+
+.post figure {
+  @apply mx-auto;
+  @apply my-4;
+  @apply px-4;
+  @apply text-center;
+}
+
+.post figure img {
+  display: inline;
+  vertical-align: middle;
+}
+
+.post figcaption {
+  @apply mt-1;
+  @apply text-xs;
+  @apply tracking-wide;
+}
+
+.post h2 {
+  @apply text-3xl;
+}
+
+.post h3 {
+  @apply text-2xl;
+}
+
+.post h4 {
+  @apply text-xl;
+}
+
+.heading,
+.post h2,
+.post h3,
+.post h4 {
+  @apply font-bold;
+  @apply font-sans;
+  @apply leading-tight;
+  @apply text-secondary;
+  @apply tracking-wide;
+  @apply uppercase;
+}
+
+.footnotes li,
+.post hr,
+.post p,
+.post table {
+  @apply mt-4;
+}
+
+.post h2,
+.post h3,
+.post h4 {
+  @apply mt-8;
+}
+
+.post hr {
+  @apply border-gray-400;
+}
+
+.post ol,
+.post ul {
+  @apply mx-8;
+  @apply my-4;
+}
+
+.post ol {
+  list-style-type: decimal;
+}
+
+.post sup {
+  padding-left: 0.15rem;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.post sup a {
+  /* Use traditional underline instead of custom, "subtle underline," which
+   * doesn't look good on superscript elements. */
+  @apply border-0;
+  @apply underline;
+}
+
+.post ul {
+  list-style-type: disc;
+}
+
+.post .anchor {
+  @apply border-0;
+}
+
+.footnotes p:first-of-type {
+  display: inline;
+}
+
+.post-time {
+  font-variant: small-caps;
+}
+
+.tracking-widester {
+  letter-spacing: 0.3em;
+}

@@ -6,8 +6,8 @@ Source for [johnkurkowski.com](https://johnkurkowski.com).
 
 ### Install
 
-    bundle install
+    npm install
 
 ### Running
 
-    bundle exec jekyll serve --watch --livereload --incremental --drafts
+    npm start

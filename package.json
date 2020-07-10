@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Source for https://johnkurkowski.com.",
   "scripts": {
-    "test": "eslint --ignore-path .gitignore ."
+    "build": "gatsby build",
+    "start": "gatsby develop --host 0.0.0.0",
+    "test": "eslint . && prettier-standard --check $(git ls-files '*.css' '*.js')"
   },
   "repository": {
     "type": "git",
@@ -13,8 +15,56 @@
   "license": "UNLICENSED",
   "private": true,
   "homepage": "https://github.com/john-kurkowski/john-kurkowski.github.io#readme",
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.6",
+    "@mdx-js/react": "^1.6.6",
+    "autoprefixer": "^9.8.0",
+    "gatsby": "^2.22.12",
+    "gatsby-plugin-catch-links": "^2.3.3",
+    "gatsby-plugin-feed": "^2.5.11",
+    "gatsby-plugin-google-analytics": "^2.3.2",
+    "gatsby-plugin-mdx": "^1.2.22",
+    "gatsby-plugin-postcss": "^2.3.2",
+    "gatsby-plugin-react-helmet": "^3.3.2",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-robots-txt": "^1.5.1",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-sitemap": "^2.4.5",
+    "gatsby-remark-autolink-headers": "^2.3.3",
+    "gatsby-remark-copy-linked-files": "^2.3.3",
+    "gatsby-remark-prismjs": "^3.5.2",
+    "gatsby-remark-smartypants": "^2.3.2",
+    "gatsby-source-filesystem": "^2.3.8",
+    "postcss-cli": "^7.1.1",
+    "postcss-import": "^12.0.1",
+    "prismjs": "^1.20.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0",
+    "tailwindcss": "^1.4.6"
+  },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-plugin-frontmatter": "0.0.8"
+    "eslint": "^7.1.0",
+    "eslint-plugin-react": "^7.20.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.7",
+    "prettier-standard": "^16.3.0",
+    "stylelint": "^13.5.0",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.css": [
+      "stylelint --fix",
+      "prettier-standard"
+    ],
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier-standard"
+    ]
   }
 }

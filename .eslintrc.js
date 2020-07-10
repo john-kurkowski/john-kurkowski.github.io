@@ -1,36 +1,38 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es6': true,
-    'node': true,
+  env: {
+    browser: true,
+    es6: true,
+    node: true
   },
-  'extends': 'eslint:recommended',
-  'parserOptions': {
-    'sourceType': 'module',
-  },
-  'plugins': [
-    'frontmatter',
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended'
   ],
-  'rules': {
-    'comma-dangle': [
-      'error',
-      'always-multiline',
-    ],
-    'indent': [
-      'error',
-      2,
-    ],
-    'linebreak-style': [
-      'error',
-      'unix',
-    ],
-    'quotes': [
-      'error',
-      'single',
-    ],
-    'semi': [
-      'error',
-      'always',
-    ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
-};
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module'
+  },
+  plugins: ['react', 'jsx-a11y'],
+  rules: {
+    'no-console': 'error',
+    'react/no-unescaped-entities': [
+      'error',
+      {
+        forbid: ['>', '}']
+      }
+    ]
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  }
+}

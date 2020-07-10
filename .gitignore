@@ -1,6 +1,5 @@
-_site
-.jekyll-cache
-.jekyll-metadata
+.cache
+.eslintcache
 .netlify
 node_modules/
-.sass-cache/
+public/

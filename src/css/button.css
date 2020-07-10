@@ -1,0 +1,56 @@
+.btn {
+  @apply border-2;
+  @apply border-primary;
+  @apply font-sans;
+  @apply font-semibold;
+  @apply px-4;
+  @apply py-2;
+  @apply rounded-md;
+  @apply tracking-widest;
+  @apply uppercase;
+}
+
+.btn,
+.icon-link path,
+.nav-link-content {
+  @apply duration-100;
+  @apply ease-linear;
+  @apply transition-colors;
+}
+
+.icon-link path {
+  fill: theme('colors.background');
+}
+
+.icon-link:hover path {
+  fill: theme('colors.primary');
+}
+
+.nav-link,
+.nav-link-content {
+  @apply h-full;
+  @apply inline-block;
+  @apply tracking-wider;
+  @apply uppercase;
+}
+
+.nav-link-content {
+  @apply border-b-0;
+  @apply border-l-4;
+  @apply border-r-4;
+  @apply border-t-4;
+  @apply border-transparent;
+  @apply rounded-t-md;
+  @apply px-3;
+}
+
+.nav-link.active .nav-link-content {
+  @apply border-primary;
+}
+
+.btn:hover,
+.nav-link.active .nav-link-content,
+.nav-link:hover .nav-link-content {
+  @apply bg-primary;
+  @apply text-background;
+}
