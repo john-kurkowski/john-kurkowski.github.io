@@ -77,8 +77,10 @@ p + p {
 
 .footnotes li,
 .post hr,
+.post ol,
 .post p,
-.post table {
+.post table,
+.post ul {
   @apply mt-4;
 }
 
@@ -94,8 +96,7 @@ p + p {
 
 .post ol,
 .post ul {
-  @apply mx-8;
-  @apply my-4;
+  @apply ml-8;
 }
 
 .post ol {

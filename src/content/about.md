@@ -32,8 +32,8 @@ I specialize in the following.
       neither of us are your customer. I'll teach how to continually test.
 
 * **Stuck with legacy code?** I have a knack for debugging. I love
-  to strategize how to evolve a system from current point A to desired point B,
-  how to change the plane's engines in flight.
+  to strategize how to evolve a system from current point A to desired point B.
+  Then change the plane's engines during flight.
 
 * **Automated tests.** Haven't been testing your frontend? Certain changes
   collapse the house of cards? I've worked on teams with 0% test coverage and
