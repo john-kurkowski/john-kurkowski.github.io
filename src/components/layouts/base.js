@@ -6,8 +6,6 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import GitHubLogo from 'src/images/icons/iconmonstr-github-1.svg'
 import LinkedInLogo from 'src/images/icons/iconmonstr-linkedin-3.svg'
 import TwitterLogo from 'src/images/icons/iconmonstr-twitter-1.svg'
-import avatar2X from 'src/images/avatar@2X.jpeg'
-import favicon from 'src/images/favicon.ico'
 
 function Layout ({ children, page = {} }) {
   const data = useStaticQuery(
@@ -63,10 +61,10 @@ function Layout ({ children, page = {} }) {
           rel='stylesheet'
         />
 
-        <link rel='shortcut icon' href={favicon} />
-        <link rel='apple-touch-icon' href={avatar2X} />
-        <meta property='og:image' content={avatar2X} />
-        <meta name='twitter:image:src' content={avatar2X} />
+        <link rel='shortcut icon' href='/favicon.ico' />
+        <link rel='apple-touch-icon' href='/avatar@2X.jpeg' />
+        <meta property='og:image' content='/avatar@2X.jpeg' />
+        <meta name='twitter:image:src' content='/avatar@2X.jpeg' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@bluu' />
         <meta name='twitter:creator' content='@bluu' />
