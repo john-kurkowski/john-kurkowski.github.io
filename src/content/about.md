@@ -5,8 +5,6 @@ title: "About Me"
 
 import Experience from 'src/components/resume/experience'
 
-## About Me
-
 I'm a software consultant who helps with the **development** of the **user
 experience (UX)**. With 10+ years in the game, I help you modernize your
 **existing** frontend stack to ship **incrementally**.

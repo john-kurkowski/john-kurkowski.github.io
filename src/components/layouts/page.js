@@ -17,9 +17,15 @@ function Page ({ data }) {
 
   return (
     <Layout page={page}>
-      <div className='mb-4 post'>
-        <MDXRenderer>{post.body}</MDXRenderer>
-      </div>
+      <article>
+        <header className='post'>
+          <h2>{page.title}</h2>
+        </header>
+
+        <div className='post'>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
+      </article>
     </Layout>
   )
 }
