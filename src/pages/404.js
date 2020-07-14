@@ -12,10 +12,10 @@ export const page = {
 export default function NotFound () {
   return (
     <Layout page={page}>
-      <section className='content'>
-        <h1>Not Found</h1>
+      <section className='post'>
+        <h2>Not Found</h2>
 
-        <p>Sorry! Couldn't find that page. Bummer.</p>
+        <p>Sorry! Couldn't find that page.</p>
       </section>
     </Layout>
   )
