@@ -1,16 +1,18 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-export const page = {
-  dateForMeta: '',
-  description: '',
-  title: '',
-  url: '/'
-}
+function Index ({ data }) {
+  const page = {
+    dateForMeta: '',
+    description:
+      'I help frontend teams … Ship incrementally—no rewrites. Collaborate remotely. Debug anything.',
+    title: `${data.site.siteMetadata.title} - ${data.site.siteMetadata.description}`,
+    url: '/'
+  }
 
-export default function Index () {
   return (
     <Layout page={page}>
       <section>
@@ -73,3 +75,29 @@ export default function Index () {
     </Layout>
   )
 }
+
+Index.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired
+  }).isRequired
+}
+
+export default Index
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        description
+        title
+        url
+      }
+    }
+  }
+`

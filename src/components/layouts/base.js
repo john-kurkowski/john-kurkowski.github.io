@@ -24,56 +24,33 @@ function Layout ({ children, page = {} }) {
     `
   )
 
+  let title
+  if (page.title && page.title.includes(data.site.siteMetadata.title)) {
+    title = page.title
+  } else if (page.title) {
+    title = `${page.title} - ${data.site.siteMetadata.title}`
+  } else {
+    title = data.site.siteMetadata.title
+  }
+
+  let description = page.description || data.site.siteMetadata.description
+
   return (
     <React.Fragment>
       <Helmet htmlAttributes={{ class: 'bg-secondary', lang: 'en-US' }}>
         <meta charset='utf-8' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 
-        {
-          // Use repetitive if/else check, because Helmet doesn't flatten
-          // fragments (multiple tags) and complains.
-        }
-        {page.title && (
-          <title>
-            {page.title} &ndash; {data.site.siteMetadata.title}
-          </title>
-        )}
-        {page.title && <meta property='og:title' content={page.title} />}
-        {page.title && <meta property='og:type' content='article' />}
-        {!page.title && <title>{data.site.siteMetadata.title}</title>}
-        {!page.title && (
-          <meta property='og:title' content={data.site.siteMetadata.title} />
-        )}
-        {!page.title && <meta property='og:type' content='profile' />}
+        <title>{title}</title>
+        <meta property='og:title' content={title} />
 
         <meta name='author' content={data.site.siteMetadata.title} />
         <meta property='og:author' content={data.site.siteMetadata.url} />
         <meta property='profile:first_name' content='John' />
         <meta property='profile:last_name' content='Kurkowski' />
 
-        {
-          // Use repetitive if/else check, because Helmet doesn't flatten
-          // fragments (multiple tags) and complains.
-        }
-        {page.url === '/' && (
-          <meta
-            name='description'
-            content={data.site.siteMetadata.description}
-          />
-        )}
-        {page.url === '/' && (
-          <meta
-            name='twitter:description'
-            content={data.site.siteMetadata.description}
-          />
-        )}
-        {page.url !== '/' && page.description && (
-          <meta name='description' content={page.description} />
-        )}
-        {page.url !== '/' && page.description && (
-          <meta name='twitter:description' content={page.description} />
-        )}
+        <meta name='description' content={description} />
+        <meta name='twitter:description' content={description} />
 
         {page.dateForMeta && (
           <meta httpEquiv='date' content={page.dateForMeta} />
