@@ -8,7 +8,7 @@ function Index ({ data }) {
   const page = {
     dateForMeta: '',
     description:
-      'I help frontend teams … Ship incrementally—no rewrites. Collaborate remotely. Debug anything.',
+      'I help frontend teams ship incrementally—no rewrites; collaborate remotely; debug anything.',
     title: `${data.site.siteMetadata.title} - ${data.site.siteMetadata.description}`,
     url: '/'
   }
