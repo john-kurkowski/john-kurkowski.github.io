@@ -79,14 +79,18 @@ function Layout ({ children, page = {} }) {
 
             <ul className='flex font-semibold'>
               <li className=''>
-                <Link activeClassName='active' className='nav-link pr-4' to='/'>
+                <Link
+                  activeClassName='active'
+                  className='lg:pr-4 nav-link pr-2'
+                  to='/'
+                >
                   <span className='lg:pb-4 nav-link-content py-2'>Home</span>
                 </Link>
               </li>
               <li className=''>
                 <Link
                   activeClassName='active'
-                  className='nav-link px-4'
+                  className='lg:px-4 nav-link px-2'
                   partiallyActive={true}
                   to='/about'
                 >
@@ -96,7 +100,17 @@ function Layout ({ children, page = {} }) {
               <li className=''>
                 <Link
                   activeClassName='active'
-                  className='nav-link pl-4'
+                  className='lg:px-4 nav-link px-2'
+                  partiallyActive={true}
+                  to='/hire'
+                >
+                  <span className='lg:pb-4 nav-link-content py-2'>Hire</span>
+                </Link>
+              </li>
+              <li className=''>
+                <Link
+                  activeClassName='active'
+                  className='lg:pl-4 nav-link pl-2'
                   partiallyActive={true}
                   to='/posts'
                 >

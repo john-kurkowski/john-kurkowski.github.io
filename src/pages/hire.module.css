@@ -1,0 +1,21 @@
+.alert {
+  @apply border-l-4;
+  @apply font-bold;
+  @apply p-4;
+}
+
+.input {
+  @apply border-primary;
+  @apply border;
+  @apply p-2;
+  @apply rounded;
+}
+
+.label {
+  @apply font-bold;
+  @apply font-sans;
+  @apply text-secondary;
+  @apply uppercase;
+
+  font-variant: small-caps;
+}

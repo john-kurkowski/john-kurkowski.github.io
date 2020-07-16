@@ -70,6 +70,11 @@ function Index ({ data }) {
               More about me
             </Link>
           </li>
+          <li className='ml-8'>
+            <Link className='btn' to='/hire'>
+              Hire me
+            </Link>
+          </li>
         </ul>
       </section>
     </Layout>
