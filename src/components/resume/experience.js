@@ -48,7 +48,7 @@ function Experience ({
 }
 
 Experience.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
   className: PropTypes.string,
   company: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
