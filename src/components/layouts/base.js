@@ -116,24 +116,30 @@ function Layout ({ children, page = {} }) {
         <footer className='bg-secondary border-primary border-t-4 font-sans pb-4 pt-8 text-background'>
           <div className=''>
             <ul className='flex justify-center'>
-              <li className='icon-link'>
-                <a href='//twitter.com/bluu'>
+              <li>
+                <a className='block icon-link' href='//twitter.com/bluu'>
                   <figure>
                     <TwitterLogo />
                     <figcaption className='sr-only'>Twitter</figcaption>
                   </figure>
                 </a>
               </li>
-              <li className='icon-link ml-8'>
-                <a href='//www.linkedin.com/in/johnkurkowski'>
+              <li>
+                <a
+                  className='block icon-link pl-8'
+                  href='//www.linkedin.com/in/johnkurkowski'
+                >
                   <figure>
                     <LinkedInLogo />
                     <figcaption className='sr-only'>LinkedIn</figcaption>
                   </figure>
                 </a>
               </li>
-              <li className='icon-link ml-8'>
-                <a href='//github.com/john-kurkowski'>
+              <li>
+                <a
+                  className='block icon-link pl-8'
+                  href='//github.com/john-kurkowski'
+                >
                   <figure>
                     <GitHubLogo />
                     <figcaption className='sr-only'>GitHub</figcaption>
