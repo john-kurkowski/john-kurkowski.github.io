@@ -8,7 +8,7 @@ function Index ({ data }) {
   const page = {
     dateForMeta: '',
     description:
-      'I help frontend teams ship incrementally—no rewrites; collaborate remotely; debug anything.',
+      'I help frontend teams ship incrementally, without rewrites; collaborate remotely; debug any app, existing or legacy.',
     title: `${data.site.siteMetadata.title} - ${data.site.siteMetadata.description}`,
     url: '/'
   }
@@ -27,7 +27,7 @@ function Index ({ data }) {
                 🚢
               </span>
               <span className='inline-block ml-4'>
-                <em>Ship</em> incrementally—no rewrites
+                <em>Ship</em> incrementally, without rewrites
               </span>
             </li>
             <li>
@@ -47,7 +47,7 @@ function Index ({ data }) {
                 🔧
               </span>
               <span className='inline-block ml-4'>
-                <em>Debug</em> anything
+                <em>Debug</em> any app, existing or legacy
               </span>
             </li>
           </ol>
@@ -55,12 +55,12 @@ function Index ({ data }) {
 
         <div className='mt-8'>
           <p>
-            Modernize your frontend development to ship incrementally. You don't
-            need to rewrite from scratch. Reduce risk for you and customers.
+            Evolve your frontend to ship incrementally. You don't need to
+            rewrite from scratch. Reduce risk for you and customers.
           </p>
           <p>
-            Just want a tune up? I debug any legacy system. I augment your team
-            to handle overflow tasks. I work remotely, async, and independently.
+            Just want a tune up? I debug any existing, legacy, or unfinished
+            system. I work remotely, asynchronously, and independently.
           </p>
         </div>
 
