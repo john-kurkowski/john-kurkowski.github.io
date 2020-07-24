@@ -112,7 +112,7 @@ here. Then I'll mix in what *I wish* was in the report.
       <li><a href="#use-legible-font-sizes">Use Legible Font Sizes</a></li>
     </ol>
   </li>
-  <li>
+  <li class="mt-4">
     My (Stolen) Ideas
     <ol start="5">
       <li><a href="#remove-half">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
