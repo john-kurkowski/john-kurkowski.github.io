@@ -27,7 +27,7 @@ function Index ({ data }) {
                 🚢
               </span>
               <span className='inline-block ml-4'>
-                <em>Ship</em> incrementally, without rewrites
+                <em>Ship</em> incrementally—no rewrites
               </span>
             </li>
             <li>

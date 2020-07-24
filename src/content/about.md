@@ -33,10 +33,14 @@ specialize in the following.
   collapse the house of cards? I've worked on teams with 0% test coverage and
   100% test coverage. I teach the happy medium.
 
+* **Team augmentation.** I can spike the above processes with you. Or handle
+  overflow tasks. I've worked remotely, asynchronously, and independently for
+  years.
+
 * **Overcommunication.** I've been on both sides of the consultant vs. hiring
-  in-house debate. I've worked remotely, asynchronously, and independently for
-  years. However, if I'm unable to integrate well, _I'll be the squeaky wheel_.
-  I want our collaboration to be efficient and a good experience for all.
+  in-house debate. If I'm unable to integrate well, _I'll be the squeaky
+  wheel_. I want our collaboration to be efficient and a good experience for
+  all.
 
 ### Even More About Me
 
