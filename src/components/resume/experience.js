@@ -23,11 +23,11 @@ function Experience ({
       className={`border-gray-400 border-l-4 px-4 text-sm ${className || ''}`}
     >
       <h5 className={styles.header}>
-        <span className='font-bold text-xl'>{company}</span>
+        <p className={`font-bold text-xl ${styles.dd}`}>{company}</p>
 
-        <span>{position}</span>
+        <p className={styles.dd}>{position}</p>
 
-        <span className='post-time'>
+        <p className={`post-time ${styles.dd}`}>
           <time
             className='whitespace-no-wrap'
             dateTime={`${timeBegin.getFullYear()}-${timeBegin.getMonth() + 1}`}
@@ -41,7 +41,7 @@ function Experience ({
           >
             {DATE_DISPLAY_FORMAT.format(timeEnd)}
           </time>
-        </span>
+        </p>
 
         <address>{location}</address>
       </h5>
