@@ -29,12 +29,16 @@ function Experience ({
 
         <span className='post-time'>
           <time
+            className='whitespace-no-wrap'
             dateTime={`${timeBegin.getFullYear()}-${timeBegin.getMonth() + 1}`}
           >
             {DATE_DISPLAY_FORMAT.format(timeBegin)}
           </time>
           –
-          <time dateTime={`${timeEnd.getFullYear()}-${timeEnd.getMonth() + 1}`}>
+          <time
+            className='whitespace-no-wrap'
+            dateTime={`${timeEnd.getFullYear()}-${timeEnd.getMonth() + 1}`}
+          >
             {DATE_DISPLAY_FORMAT.format(timeEnd)}
           </time>
         </span>

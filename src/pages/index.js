@@ -22,31 +22,27 @@ function Index ({ data }) {
           <p className='mt-8'>I help frontend teams …</p>
 
           <ol className='mt-8'>
-            <li>
-              <span aria-label='Ship' className='inline-block' role='img'>
+            <li className='flex'>
+              <span aria-label='Ship' role='img'>
                 🚢
               </span>
-              <span className='inline-block ml-4'>
+              <span className='ml-4'>
                 <em>Ship</em> incrementally—no rewrites
               </span>
             </li>
-            <li>
-              <span
-                aria-label='Globe with meridians'
-                className='inline-block'
-                role='img'
-              >
+            <li className='flex'>
+              <span aria-label='Globe with meridians' role='img'>
                 🌐
               </span>
-              <span className='inline-block ml-4'>
+              <span className='ml-4'>
                 <em>Collaborate</em> remotely
               </span>
             </li>
-            <li>
-              <span aria-label='Wrench' className='inline-block' role='img'>
+            <li className='flex'>
+              <span aria-label='Wrench' role='img'>
                 🔧
               </span>
-              <span className='inline-block ml-4'>
+              <span className='ml-4'>
                 <em>Debug</em> any app, existing or legacy
               </span>
             </li>
