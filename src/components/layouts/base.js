@@ -56,10 +56,12 @@ function Layout ({ children, page = {} }) {
 
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
-        <link rel='preconnect' href='https://fonts.gstatic.com/' crossOrigin />
         <link
+          as='font'
+          crossOrigin
           href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@400;600;700;800&display=swap'
-          rel='stylesheet'
+          rel='preload'
+          type='font/woff'
         />
 
         <link rel='shortcut icon' href='/favicon.ico' />
