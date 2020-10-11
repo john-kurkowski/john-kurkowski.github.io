@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
@@ -11,14 +10,14 @@ export const page = {
   url: ''
 }
 
-function Posts ({ data }) {
+function Posts (params: { data: Page }): React.ReactElement {
   return (
     <Layout page={page}>
       <section className=''>
         <h2 className='heading text-3xl'>Articles</h2>
 
         <ul className='mt-2 mx-2'>
-          {data.allMdx.edges.map(({ node }) => (
+          {params.data.allMdx.edges.map(({ node }) => (
             <li className='mt-10' key={node.id}>
               <Link className='inline-block link' to={node.fields.slug}>
                 {node.frontmatter.title}
@@ -35,31 +34,27 @@ function Posts ({ data }) {
   )
 }
 
-Posts.propTypes = {
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            excerpt: PropTypes.string.isRequired,
+interface Page {
+  allMdx: {
+    edges: {
+      node: {
+        excerpt: string
 
-            fields: PropTypes.shape({
-              date: PropTypes.string.isRequired,
-              dateForTitle: PropTypes.string.isRequired,
-              slug: PropTypes.string.isRequired
-            }),
+        fields: {
+          date: string
+          dateForTitle: string
+          slug: string
+        }
 
-            frontmatter: PropTypes.shape({
-              description: PropTypes.string,
-              title: PropTypes.string.isRequired
-            }),
+        frontmatter: {
+          description: string
+          title: string
+        }
 
-            id: PropTypes.string.isRequired
-          }).isRequired
-        })
-      ).isRequired
-    }).isRequired
-  }).isRequired
+        id: string
+      }
+    }[]
+  }
 }
 
 export default Posts

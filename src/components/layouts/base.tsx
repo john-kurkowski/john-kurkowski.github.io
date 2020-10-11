@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, graphql, useStaticQuery } from 'gatsby'
@@ -7,7 +6,10 @@ import GitHubLogo from 'src/images/icons/iconmonstr-github-1.svg'
 import LinkedInLogo from 'src/images/icons/iconmonstr-linkedin-3.svg'
 import TwitterLogo from 'src/images/icons/iconmonstr-twitter-1.svg'
 
-function Layout ({ children, page = {} }) {
+function Layout (params: {
+  children: React.ReactElement
+  page: Page
+}): React.ReactElement {
   const data = useStaticQuery(
     graphql`
       query {
@@ -22,21 +24,25 @@ function Layout ({ children, page = {} }) {
     `
   )
 
-  let title
-  if (page.title && page.title.includes(data.site.siteMetadata.title)) {
-    title = page.title
-  } else if (page.title) {
-    title = `${page.title} - ${data.site.siteMetadata.title}`
+  let title: string
+  if (
+    params.page.title &&
+    params.page.title.includes(data.site.siteMetadata.title)
+  ) {
+    title = params.page.title
+  } else if (params.page.title) {
+    title = `${params.page.title} - ${data.site.siteMetadata.title}`
   } else {
     title = data.site.siteMetadata.title
   }
 
-  let description = page.description || data.site.siteMetadata.description
+  const description =
+    params.page.description || data.site.siteMetadata.description
 
   return (
     <React.Fragment>
       <Helmet htmlAttributes={{ class: 'bg-secondary', lang: 'en-US' }}>
-        <meta charset='utf-8' />
+        <meta charSet='utf-8' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 
         <title>{title}</title>
@@ -50,13 +56,17 @@ function Layout ({ children, page = {} }) {
         <meta name='description' content={description} />
         <meta name='twitter:description' content={description} />
 
-        {page.dateForMeta && (
-          <meta httpEquiv='date' content={page.dateForMeta} />
+        {params.page.dateForMeta && (
+          <meta httpEquiv='date' content={params.page.dateForMeta} />
         )}
 
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
-        <link rel='preconnect' href='https://fonts.gstatic.com/' crossOrigin />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com/'
+          crossOrigin='anonymous'
+        />
         <link
           as='style'
           href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@400;600;700;800'
@@ -115,7 +125,7 @@ function Layout ({ children, page = {} }) {
           </nav>
 
           <main className='max-w-2xl mx-auto my-8 px-5 text-gray-800'>
-            {children}
+            {params.children}
           </main>
         </div>
 
@@ -162,15 +172,11 @@ function Layout ({ children, page = {} }) {
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.element.isRequired,
-
-  page: PropTypes.shape({
-    dateForMeta: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
-  }).isRequired
+export interface Page {
+  dateForMeta: string
+  description: string
+  title: string
+  url: string
 }
 
 export default Layout

@@ -1,15 +1,14 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-function Index ({ data }) {
+function Index (params: { data: Page }): React.ReactElement {
   const page = {
     dateForMeta: '',
     description:
       'I help frontend teams ship incrementally, without rewrites; collaborate remotely; debug any app, existing or legacy.',
-    title: `${data.site.siteMetadata.title} - ${data.site.siteMetadata.description}`,
+    title: `${params.data.site.siteMetadata.title} - ${params.data.site.siteMetadata.description}`,
     url: '/'
   }
 
@@ -72,16 +71,14 @@ function Index ({ data }) {
   )
 }
 
-Index.propTypes = {
-  data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        description: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired
-  }).isRequired
+interface Page {
+  site: {
+    siteMetadata: {
+      description: string
+      title: string
+      url: string
+    }
+  }
 }
 
 export default Index
