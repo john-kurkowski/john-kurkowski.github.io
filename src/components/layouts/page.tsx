@@ -1,12 +1,11 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-function Page ({ data }) {
-  const post = data.mdx
+function Page (params: { data: Page }): React.ReactElement {
+  const post = params.data.mdx
 
   const page = {
     dateForMeta: '',
@@ -30,18 +29,16 @@ function Page ({ data }) {
   )
 }
 
-Page.propTypes = {
-  data: PropTypes.shape({
-    mdx: PropTypes.shape({
-      body: PropTypes.string,
-      excerpt: PropTypes.string,
+interface Page {
+  mdx: {
+    body: string
+    excerpt: string
 
-      frontmatter: PropTypes.shape({
-        description: PropTypes.string,
-        title: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired
-  }).isRequired
+    frontmatter: {
+      description?: string
+      title: string
+    }
+  }
 }
 
 export default Page

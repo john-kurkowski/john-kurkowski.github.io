@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: ['src/**/*.{js,md,mdx}'],
+  purge: ['src/**/*.{js,md,mdx,ts,tsx}'],
   theme: {
     extend: {
       colors: {

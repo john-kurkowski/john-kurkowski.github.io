@@ -9,7 +9,7 @@ export const page = {
   url: ''
 }
 
-export default function NotFound () {
+export default function NotFound (): React.ReactElement {
   return (
     <Layout page={page}>
       <section className='post'>

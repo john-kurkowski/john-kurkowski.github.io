@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -6,12 +5,12 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from 'src/components/layouts/base'
 import useScript from 'src/hooks/use-script'
 
-function Post ({ data }) {
-  const post = data.mdx
+function Post (params: { data: Page }): React.ReactElement {
+  const post = params.data.mdx
 
   const page = {
     dateForMeta: post.fields.dateForMeta,
-    description: post.frontmatter.description || post.excerpt,
+    description: post.frontmatter.description || post.excerpt || '',
     title: post.frontmatter.title,
     url: ''
   }
@@ -22,53 +21,53 @@ function Post ({ data }) {
 
   return (
     <Layout page={page}>
-      <div className='text-sm'>
-        <Link className='link' to='/posts'>
-          ↩ to Articles
-        </Link>
-      </div>
-
-      <article>
-        <header className='post'>
-          <h2>{page.title}</h2>
-
-          <time className='block mt-4 post-time' dateTime={post.fields.date}>
-            {post.fields.dateForTitle}
-          </time>
-        </header>
-
-        <div className='post'>
-          <MDXRenderer>{post.body}</MDXRenderer>
+      <>
+        <div className='text-sm'>
+          <Link className='link' to='/posts'>
+            ↩ to Articles
+          </Link>
         </div>
 
-        <div className='mt-8' id='disqus_thread'></div>
-        <noscript>
-          Enable JavaScript to view the{' '}
-          <a href='https://disqus.com/?ref_noscript'>comments.</a>
-        </noscript>
-      </article>
+        <article>
+          <header className='post'>
+            <h2>{page.title}</h2>
+
+            <time className='block mt-4 post-time' dateTime={post.fields.date}>
+              {post.fields.dateForTitle}
+            </time>
+          </header>
+
+          <div className='post'>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </div>
+
+          <div className='mt-8' id='disqus_thread'></div>
+          <noscript>
+            Enable JavaScript to view the{' '}
+            <a href='https://disqus.com/?ref_noscript'>comments.</a>
+          </noscript>
+        </article>
+      </>
     </Layout>
   )
 }
 
-Post.propTypes = {
-  data: PropTypes.shape({
-    mdx: PropTypes.shape({
-      body: PropTypes.string,
-      excerpt: PropTypes.string,
+interface Page {
+  mdx: {
+    body: string
+    excerpt?: string
 
-      fields: PropTypes.shape({
-        date: PropTypes.string.isRequired,
-        dateForMeta: PropTypes.string.isRequired,
-        dateForTitle: PropTypes.string.isRequired
-      }),
+    fields: {
+      date: string
+      dateForMeta: string
+      dateForTitle: string
+    }
 
-      frontmatter: PropTypes.shape({
-        description: PropTypes.string,
-        title: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired
-  }).isRequired
+    frontmatter: {
+      description?: string
+      title: string
+    }
+  }
 }
 
 export default Post
@@ -91,7 +90,7 @@ export const query = graphql`
   }
 `
 
-function dangerouslyEmbedJs (htmlString) {
+function dangerouslyEmbedJs (htmlString: string) {
   const jsUrlsRe = /src(:\s*|=)"([^"]+\.js)"/g
   let match
   // eslint-disable-next-line no-cond-assign
@@ -103,7 +102,7 @@ function dangerouslyEmbedJs (htmlString) {
 
 function embedDisqus () {
   let disqus_loaded = false
-  let disqus_shortname = 'johnkurkowski'
+  const disqus_shortname = 'johnkurkowski'
 
   useEffect(function () {
     window.onscroll = function () {
