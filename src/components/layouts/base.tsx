@@ -41,10 +41,7 @@ function Layout (params: {
 
   return (
     <React.Fragment>
-      <Helmet htmlAttributes={{ class: 'bg-secondary', lang: 'en-US' }}>
-        <meta charSet='utf-8' />
-        <meta httpEquiv='X-UA-Compatible' content='IE=edge,chrome=1' />
-
+      <Helmet htmlAttributes={{ class: 'bg-secondary' }}>
         <title>{title}</title>
         <meta property='og:title' content={title} />
 
