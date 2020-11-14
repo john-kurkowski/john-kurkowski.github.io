@@ -8,7 +8,7 @@ const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en', {
   year: 'numeric'
 })
 
-function Experience (params: {
+function Experience (props: {
   children: React.ReactElement
   className?: string
   company: string
@@ -19,36 +19,36 @@ function Experience (params: {
 }): React.ReactElement {
   return (
     <div
-      className={`border-gray-400 border-l-4 px-4 text-sm ${params.className ||
+      className={`border-gray-400 border-l-4 px-4 text-sm ${props.className ||
         ''}`}
     >
       <h5 className={styles.header}>
-        <p className={`font-bold text-xl ${styles.dd}`}>{params.company}</p>
+        <p className={`font-bold text-xl ${styles.dd}`}>{props.company}</p>
 
-        <p className={styles.dd}>{params.position}</p>
+        <p className={styles.dd}>{props.position}</p>
 
         <p className={`post-time ${styles.dd}`}>
           <time
             className='whitespace-no-wrap'
-            dateTime={`${params.timeBegin.getFullYear()}-${params.timeBegin.getMonth() +
+            dateTime={`${props.timeBegin.getFullYear()}-${props.timeBegin.getMonth() +
               1}`}
           >
-            {DATE_DISPLAY_FORMAT.format(params.timeBegin)}
+            {DATE_DISPLAY_FORMAT.format(props.timeBegin)}
           </time>
           –
           <time
             className='whitespace-no-wrap'
-            dateTime={`${params.timeEnd.getFullYear()}-${params.timeEnd.getMonth() +
+            dateTime={`${props.timeEnd.getFullYear()}-${props.timeEnd.getMonth() +
               1}`}
           >
-            {DATE_DISPLAY_FORMAT.format(params.timeEnd)}
+            {DATE_DISPLAY_FORMAT.format(props.timeEnd)}
           </time>
         </p>
 
-        <address>{params.location}</address>
+        <address>{props.location}</address>
       </h5>
 
-      {params.children}
+      {props.children}
     </div>
   )
 }

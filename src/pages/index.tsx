@@ -3,12 +3,12 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-function Index (params: { data: Page }): React.ReactElement {
+function Index (props: { data: Page }): React.ReactElement {
   const page = {
     dateForMeta: '',
     description:
       'I help frontend teams ship incrementally, without rewrites; collaborate remotely; debug any app, existing or legacy.',
-    title: `${params.data.site.siteMetadata.title} - ${params.data.site.siteMetadata.description}`,
+    title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
     url: '/'
   }
 

@@ -4,8 +4,8 @@ import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-function Page (params: { data: Page }): React.ReactElement {
-  const post = params.data.mdx
+function Page (props: { data: Page }): React.ReactElement {
+  const post = props.data.mdx
 
   const page = {
     dateForMeta: '',

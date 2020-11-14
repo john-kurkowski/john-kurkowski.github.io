@@ -10,14 +10,14 @@ export const page = {
   url: ''
 }
 
-function Posts (params: { data: Page }): React.ReactElement {
+function Posts (props: { data: Page }): React.ReactElement {
   return (
     <Layout page={page}>
       <section className=''>
         <h2 className='heading text-3xl'>Articles</h2>
 
         <ul className='mt-2 mx-2'>
-          {params.data.allMdx.edges.map(({ node }) => (
+          {props.data.allMdx.edges.map(({ node }) => (
             <li className='mt-10' key={node.id}>
               <Link className='inline-block link' to={node.fields.slug}>
                 {node.frontmatter.title}

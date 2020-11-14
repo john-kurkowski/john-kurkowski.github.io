@@ -5,8 +5,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from 'src/components/layouts/base'
 import useScript from 'src/hooks/use-script'
 
-function Post (params: { data: Page }): React.ReactElement {
-  const post = params.data.mdx
+function Post (props: { data: Page }): React.ReactElement {
+  const post = props.data.mdx
 
   const page = {
     dateForMeta: post.fields.dateForMeta,
