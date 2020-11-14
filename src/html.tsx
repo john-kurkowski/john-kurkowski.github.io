@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-export default function HTML (props) {
+export default function HTML (props: propTypes): React.ReactElement {
   return (
     <html lang='en-US' {...props.htmlAttributes}>
       <head>
@@ -22,11 +21,11 @@ export default function HTML (props) {
   )
 }
 
-HTML.propTypes = {
-  htmlAttributes: PropTypes.object,
-  headComponents: PropTypes.array,
-  bodyAttributes: PropTypes.object,
-  preBodyComponents: PropTypes.array,
-  body: PropTypes.string,
-  postBodyComponents: PropTypes.array
+interface propTypes {
+  htmlAttributes: Record<string, unknown>
+  headComponents: React.ReactElement[]
+  bodyAttributes: Record<string, unknown>
+  preBodyComponents: React.ReactElement[]
+  body: string
+  postBodyComponents: React.ReactElement[]
 }
