@@ -7,7 +7,7 @@ function Index (props: { data: Page }): React.ReactElement {
   const page = {
     dateForMeta: '',
     description:
-      'I help frontend teams ship incrementally, without rewrites; collaborate remotely; debug any app, existing or legacy.',
+      'I help frontend teams ship incrementally, without rewrites. Collaborate remotely. Debug any app, existing or legacy.',
     title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
     url: '/'
   }
