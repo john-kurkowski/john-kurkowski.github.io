@@ -39,7 +39,7 @@
     "gatsby-source-filesystem": "^2.3.34",
     "postcss-cli": "^7.1.2",
     "postcss-import": "^12.0.1",
-    "prismjs": "^1.22.0",
+    "prismjs": "^1.25.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
