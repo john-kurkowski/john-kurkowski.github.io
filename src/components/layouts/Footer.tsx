@@ -42,7 +42,7 @@ export default function Footer (): React.ReactElement {
         </ul>
       </div>
 
-      <small className='block mt-8 text-center'>© 2021</small>
+      <small className='block mt-8 text-center'>© 2022</small>
     </footer>
   )
 }
