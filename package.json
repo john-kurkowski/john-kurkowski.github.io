@@ -75,5 +75,9 @@
       "eslint --cache --fix",
       "prettier-standard"
     ]
+  },
+  "volta": {
+    "node": "16.14.0",
+    "npm": "8.5.1"
   }
 }
