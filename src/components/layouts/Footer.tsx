@@ -10,7 +10,7 @@ export default function Footer (): React.ReactElement {
       <div className=''>
         <ul className='flex justify-center'>
           <li>
-            <a className='block icon-link' href='//twitter.com/bluu'>
+            <a className='block icon-link' href='https://twitter.com/bluu'>
               <figure>
                 <TwitterLogo />
                 <figcaption className='sr-only'>Twitter</figcaption>
@@ -20,7 +20,7 @@ export default function Footer (): React.ReactElement {
           <li>
             <a
               className='block icon-link pl-8'
-              href='//www.linkedin.com/in/johnkurkowski'
+              href='https://www.linkedin.com/in/johnkurkowski'
             >
               <figure>
                 <LinkedInLogo />
@@ -31,7 +31,7 @@ export default function Footer (): React.ReactElement {
           <li>
             <a
               className='block icon-link pl-8'
-              href='//github.com/john-kurkowski'
+              href='https://github.com/john-kurkowski'
             >
               <figure>
                 <GitHubLogo />
