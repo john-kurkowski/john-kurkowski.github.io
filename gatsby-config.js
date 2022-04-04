@@ -52,10 +52,9 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-41244988-1',
-        head: true
+        trackingIds: ['G-0DLDSD2HD9']
       }
     },
     `gatsby-plugin-postcss`,
