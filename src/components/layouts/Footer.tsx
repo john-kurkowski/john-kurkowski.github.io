@@ -2,6 +2,7 @@ import React from 'react'
 
 import GitHubLogo from 'src/images/icons/iconmonstr-github-1.svg'
 import LinkedInLogo from 'src/images/icons/iconmonstr-linkedin-3.svg'
+import SoundcloudLogo from 'src/images/icons/iconmonstr-soundcloud-1.svg'
 import TwitterLogo from 'src/images/icons/iconmonstr-twitter-1.svg'
 
 export default function Footer (): React.ReactElement {
@@ -36,6 +37,17 @@ export default function Footer (): React.ReactElement {
               <figure>
                 <GitHubLogo />
                 <figcaption className='sr-only'>GitHub</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a
+              className='block icon-link pl-8'
+              href='https://soundcloud.com/bluu/'
+            >
+              <figure>
+                <SoundcloudLogo />
+                <figcaption className='sr-only'>Soundcloud</figcaption>
               </figure>
             </a>
           </li>
