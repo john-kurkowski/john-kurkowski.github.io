@@ -3,5 +3,5 @@
   publish = "public/"
 
 [build.environment]
-  NODE_VERSION = "16.14.0"
-  NPM_VERSION = "8.5.1"
+  NODE_VERSION = "16.14.2"
+  NPM_VERSION = "8.6.0"
