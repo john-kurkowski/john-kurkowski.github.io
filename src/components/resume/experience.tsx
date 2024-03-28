@@ -1,7 +1,5 @@
 import React from 'react'
 
-import styles from './experience.module.css'
-
 const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en', {
   month: 'short',
   timeZone: 'America/Los_Angeles',
@@ -17,18 +15,30 @@ function Experience (props: {
   timeBegin: Date
   timeEnd: Date
 }): React.ReactElement {
+  const undoInheritedGlobalParagraphStyle = {
+    margin: 0
+  }
+
   return (
     <div
-      className={`border-gray-400 border-l-4 px-4 text-sm ${
+      className={`border-gray-300 border-l-4 px-4 text-sm ${
         props.className || ''
       }`}
     >
-      <h5 className={styles.header}>
-        <p className={`font-bold text-xl ${styles.dd}`}>{props.company}</p>
+      <h5 className='gap-x-4 grid grid-cols-[auto_auto] grid-flow-col grid-rows-[1fr_0.5fr] items-center justify-between'>
+        <p
+          className='font-bold text-xl'
+          style={undoInheritedGlobalParagraphStyle}
+        >
+          {props.company}
+        </p>
 
-        <p className={styles.dd}>{props.position}</p>
+        <p style={undoInheritedGlobalParagraphStyle}>{props.position}</p>
 
-        <p className={`post-time ${styles.dd}`}>
+        <p
+          className='justify-self-end post-time'
+          style={undoInheritedGlobalParagraphStyle}
+        >
           <time
             className='whitespace-no-wrap'
             dateTime={`${props.timeBegin.getFullYear()}-${
@@ -48,7 +58,7 @@ function Experience (props: {
           </time>
         </p>
 
-        <address>{props.location}</address>
+        <address className='justify-self-end'>{props.location}</address>
       </h5>
 
       {props.children}
