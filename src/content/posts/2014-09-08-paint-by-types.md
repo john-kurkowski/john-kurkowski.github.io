@@ -31,7 +31,8 @@ demonstrating the potential.
 <blockquote>
   <p>Consider the type</p>
   <pre>
-&nbsp;&nbsp;&nbsp;&nbsp;a -> a -> a</pre>
+&nbsp;&nbsp;&nbsp;&nbsp;a -> a -> a
+  </pre>
   <p>Remember that <code>a</code> is a type variable which can stand for any
   type. What sorts of functions have this type?</p>
 </blockquote>

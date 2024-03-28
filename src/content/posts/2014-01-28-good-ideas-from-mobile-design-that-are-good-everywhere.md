@@ -246,7 +246,7 @@ points from my [Credo], because I see them violated again and again:
 Let me explain what I was getting at.
 
 When presented with the problem of too-much-content-not-enough-space, some web
-site owners think, "I know, I'll use a { tooltip hover, context menu, modal
+site owners think, "I know, I'll use a \{ tooltip hover, context menu, modal
 dialog }." It is an antipattern to leap to these as your first line of defense.
 At best, they are an Easter egg-level progressive enhancement. More typically,
 they are a designer's crutch for tucking away unimportant content you're too
