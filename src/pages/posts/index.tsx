@@ -63,7 +63,7 @@ export const query = graphql`
   query {
     allMdx(
       filter: { fields: { date: { ne: null } } }
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: { date: DESC } }
     ) {
       edges {
         node {

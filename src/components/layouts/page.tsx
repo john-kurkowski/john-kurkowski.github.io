@@ -1,10 +1,11 @@
 import React from 'react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-function Page (props: { data: Page }): React.ReactElement {
+function Page (
+  props: { data: Page, children: React.ReactNode },
+): React.ReactElement {
   const post = props.data.mdx
 
   const page = {
@@ -21,9 +22,7 @@ function Page (props: { data: Page }): React.ReactElement {
           <h2>{page.title}</h2>
         </header>
 
-        <div className='post'>
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </div>
+        <div className='post'>{props.children}</div>
       </article>
     </Layout>
   )
@@ -31,7 +30,6 @@ function Page (props: { data: Page }): React.ReactElement {
 
 interface Page {
   mdx: {
-    body: string
     excerpt: string
 
     frontmatter: {
@@ -44,9 +42,8 @@ interface Page {
 export default Page
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      body
       excerpt(pruneLength: 256)
       frontmatter {
         description

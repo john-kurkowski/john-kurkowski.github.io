@@ -16,7 +16,7 @@ module.exports = {
               {
                 allMdx(
                   filter: { fields: { date: { ne: null } } }
-                  sort: { fields: [fields___date], order: DESC }
+                  sort: { fields: { date: DESC } }
                 ) {
                   edges {
                     node {
@@ -29,7 +29,6 @@ module.exports = {
                         description
                         title
                       }
-                      html
                       id
                     }
                   }
@@ -43,10 +42,11 @@ module.exports = {
                   date: edge.node.fields.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }]
+                  custom_elements: [{ 'content:encoded': edge.node.excerpt }]
                 })
               })
-            }
+            },
+            title: 'John Kurkowski'
           }
         ]
       }
@@ -92,8 +92,7 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`
-        ],
-        plugins: [`gatsby-remark-autolink-headers`]
+        ]
       }
     }
   ]

@@ -41,6 +41,9 @@ exports.createPages = async ({ graphql, actions }) => {
               date
               slug
             }
+            internal {
+              contentFilePath
+            }
           }
         }
       }
@@ -53,7 +56,9 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(
-        `./src/components/layouts/${isPost ? 'post' : 'page'}.tsx`
+        `./src/components/layouts/${
+          isPost ? 'post' : 'page'
+        }.tsx?__contentFilePath=${node.internal.contentFilePath}`
       ),
       context: {
         date: node.fields.date,

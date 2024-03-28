@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from 'src/components/layouts/base'
 import useScript from 'src/hooks/use-script'
 
-function Post (props: { data: Page }): React.ReactElement {
+function Post (
+  props: { data: Page, children: React.ReactNode }
+): React.ReactElement {
   const post = props.data.mdx
 
   const page = {
@@ -37,9 +38,7 @@ function Post (props: { data: Page }): React.ReactElement {
             </time>
           </header>
 
-          <div className='post'>
-            <MDXRenderer>{post.body}</MDXRenderer>
-          </div>
+          <div className='post'>{props.children}</div>
 
           <div className='mt-8' id='disqus_thread'></div>
           <noscript>
@@ -73,7 +72,7 @@ interface Page {
 export default Post
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       excerpt(pruneLength: 256)
