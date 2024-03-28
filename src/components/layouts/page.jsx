@@ -1,11 +1,10 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-function Page (
-  props: { data: Page, children: React.ReactNode },
-): React.ReactElement {
+function Page (props) {
   const post = props.data.mdx
 
   const page = {
@@ -28,13 +27,17 @@ function Page (
   )
 }
 
-interface Page {
-  mdx: {
-    excerpt: string
+Page.propTypes = {
+  children: PropTypes.node.isRequired,
 
-    frontmatter: {
-      description?: string
-      title: string
+  data: {
+    mdx: {
+      excerpt: PropTypes.string.isRequired,
+
+      frontmatter: {
+        description: PropTypes.string,
+        title: PropTypes.string.isRequired
+      }
     }
   }
 }

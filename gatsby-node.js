@@ -58,7 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(
         `./src/components/layouts/${
           isPost ? 'post' : 'page'
-        }.tsx?__contentFilePath=${node.internal.contentFilePath}`
+        }.jsx?__contentFilePath=${node.internal.contentFilePath}`
       ),
       context: {
         date: node.fields.date,

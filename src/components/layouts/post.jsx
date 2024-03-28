@@ -1,12 +1,11 @@
+import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 import useScript from 'src/hooks/use-script'
 
-function Post (
-  props: { data: Page, children: React.ReactNode }
-): React.ReactElement {
+function Post (props) {
   const post = props.data.mdx
 
   const page = {
@@ -51,20 +50,24 @@ function Post (
   )
 }
 
-interface Page {
-  mdx: {
-    body: string
-    excerpt?: string
+Post.propTypes = {
+  children: PropTypes.node.isRequired,
 
-    fields: {
-      date: string
-      dateForMeta: string
-      dateForTitle: string
-    }
+  data: {
+    mdx: {
+      body: PropTypes.string.isRequired,
+      excerpt: PropTypes.string,
 
-    frontmatter: {
-      description?: string
-      title: string
+      fields: {
+        date: PropTypes.string.isRequired,
+        dateForMeta: PropTypes.string.isRequired,
+        dateForTitle: PropTypes.string.isRequired
+      },
+
+      frontmatter: {
+        description: PropTypes.string,
+        title: PropTypes.string.isRequired
+      }
     }
   }
 }
@@ -89,7 +92,7 @@ export const query = graphql`
   }
 `
 
-function dangerouslyEmbedJs (htmlString: string) {
+function dangerouslyEmbedJs (htmlString) {
   const jsUrlsRe = /src(:\s*|=)"([^"]+\.js)"/g
   let match
   // eslint-disable-next-line no-cond-assign
