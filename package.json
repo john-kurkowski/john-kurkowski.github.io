@@ -6,7 +6,7 @@
     "build": "gatsby build",
     "prepare": "husky",
     "start": "gatsby develop --host 0.0.0.0",
-    "test": "eslint . --ext js --ext ts --ext tsx && prettier-standard --check $(git ls-files '*.css' '*.js' '*.ts' '*.tsx') && npm run type-check",
+    "test": "eslint . && prettier-standard --check $(git ls-files '*.css' '*.js' '*.ts' '*.tsx') && npm run type-check",
     "type-check": "tsc --pretty"
   },
   "repository": {
