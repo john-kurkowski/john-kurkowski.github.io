@@ -19,8 +19,9 @@ function Experience (props: {
 }): React.ReactElement {
   return (
     <div
-      className={`border-gray-400 border-l-4 px-4 text-sm ${props.className ||
-        ''}`}
+      className={`border-gray-400 border-l-4 px-4 text-sm ${
+        props.className || ''
+      }`}
     >
       <h5 className={styles.header}>
         <p className={`font-bold text-xl ${styles.dd}`}>{props.company}</p>
@@ -30,16 +31,18 @@ function Experience (props: {
         <p className={`post-time ${styles.dd}`}>
           <time
             className='whitespace-no-wrap'
-            dateTime={`${props.timeBegin.getFullYear()}-${props.timeBegin.getMonth() +
-              1}`}
+            dateTime={`${props.timeBegin.getFullYear()}-${
+              props.timeBegin.getMonth() + 1
+            }`}
           >
             {DATE_DISPLAY_FORMAT.format(props.timeBegin)}
           </time>
           –
           <time
             className='whitespace-no-wrap'
-            dateTime={`${props.timeEnd.getFullYear()}-${props.timeEnd.getMonth() +
-              1}`}
+            dateTime={`${props.timeEnd.getFullYear()}-${
+              props.timeEnd.getMonth() + 1
+            }`}
           >
             {DATE_DISPLAY_FORMAT.format(props.timeEnd)}
           </time>

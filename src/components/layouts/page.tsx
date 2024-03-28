@@ -44,7 +44,7 @@ interface Page {
 export default Page
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       excerpt(pruneLength: 256)
