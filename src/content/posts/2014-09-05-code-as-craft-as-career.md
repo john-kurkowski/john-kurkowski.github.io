@@ -27,8 +27,8 @@ than before. But largely business as usual.
 Am I the only one looking for something more?
 
 <figure>
-  <blockquote class="twitter-tweet" lang="en"><p>I would trade everything that I ever learned about C++ to know how to play the piano, even a tiny bit.</p>&mdash; Fogus (@fogus) <a href="https://twitter.com/fogus/statuses/383661140439363584">September 27, 2013</a></blockquote>
-  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <blockquote className="twitter-tweet" lang="en"><p>I would trade everything that I ever learned about C++ to know how to play the piano, even a tiny bit.</p>&mdash; Fogus (@fogus) <a href="https://twitter.com/fogus/statuses/383661140439363584">September 27, 2013</a></blockquote>
+  <script async src="//platform.twitter.com/widgets.js" charSet="utf-8"></script>
   <figcaption>Will you reminisce fondly of your favorite language's internals?</figcaption>
 </figure>
 
@@ -41,40 +41,40 @@ move at a constant rate. There may be less time for you than you think.
 We see whole creative industries marginalized or eliminated by production at
 scale.
 
-<table class='text-center'>
+<table className='text-center'>
   <thead>
-    <tr class='bg-gray-200'>
-      <th class='border-b border-gray-500 px-4 py-2'>
-        Lovingly Hand-Crafted, Expensive
+    <tr className='bg-gray-100'>
+      <th className='border-b border-gray-500 px-4 py-2'>
+        {`Lovingly Hand-Crafted, Expensive`}
       </th>
-      <th class='border-b border-gray-500 border-l px-4 py-2'>
-        Good Enough, Cheap
+      <th className='border-b border-gray-500 border-l px-4 py-2'>
+        {`Good Enough, Cheap`}
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class='border-b border-gray-500 px-4 py-2'>
-        Personalized table by a Woodworker
+      <td className='border-b border-gray-500 px-4 py-2'>
+        {`Personalized table by a Woodworker`}
       </td>
-      <td class='border-b border-gray-500 border-l px-4 py-2'>
-        Ikea
-      </td>
-    </tr>
-    <tr>
-      <td class='border-b border-gray-500 px-4 py-2'>
-        Ornate lettering by a Typesetter
-      </td>
-      <td class='border-b border-gray-500 border-l px-4 py-2'>
-        Adobe Illustrator &amp; a commodity laser printer
+      <td className='border-b border-gray-500 border-l px-4 py-2'>
+        {`Ikea`}
       </td>
     </tr>
     <tr>
-      <td class='border-gray-500 px-4 py-2'>
-        Code
+      <td className='border-b border-gray-500 px-4 py-2'>
+        {`Ornate lettering by a Typesetter`}
       </td>
-      <td class='border-gray-500 border-l px-4 py-2'>
-        ???
+      <td className='border-b border-gray-500 border-l px-4 py-2'>
+        {`Adobe Illustrator & a commodity laser printer`}
+      </td>
+    </tr>
+    <tr>
+      <td className='border-gray-500 px-4 py-2'>
+        {`Code`}
+      </td>
+      <td className='border-gray-500 border-l px-4 py-2'>
+        {`???`}
       </td>
     </tr>
   </tbody>

@@ -24,7 +24,7 @@ function Posts (props: { data: QueryData }): React.ReactElement {
                 {node.frontmatter.title}
               </Link>
 
-              <blockquote className='italic mt-2 px-4 text-gray-600 text-sm'>
+              <blockquote className='italic mt-2 px-4 text-gray-500 text-sm'>
                 {node.frontmatter.description || node.excerpt}
               </blockquote>
             </li>

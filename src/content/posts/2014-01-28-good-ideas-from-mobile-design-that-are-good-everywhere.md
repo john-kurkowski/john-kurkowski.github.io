@@ -8,6 +8,11 @@ description:
   users too. 2 birds, 1 stone.
 ---
 
+import gmailsNewCompose from './gmails-new-compose.png'
+import pagespeedInsights from './pagespeed_insights.png'
+import restyleSelectBox from './restyle-select-box.png'
+import spotifyDesktop from './spotify-desktop.jpg'
+
 I liken mobile web design to designing for handicaps, in that good ideas in
 designing for handicaps benefit all users alike. For example,
 
@@ -27,7 +32,7 @@ e.g. if your buttons are *too small* for users’ fingers, or if your *plugins*
 won’t work on their mobile device.
 
 <figure>
-  <img src="pagespeed_insights.png" width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
+  <img src={pagespeedInsights} width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
 </figure>
 
 Also notice the handy preview of what it looks like on mobile. Not
@@ -112,7 +117,7 @@ here. Then I'll mix in what *I wish* was in the report.
       <li><a href="#use-legible-font-sizes">Use Legible Font Sizes</a></li>
     </ol>
   </li>
-  <li class="mt-4">
+  <li className="mt-4">
     My (Stolen) Ideas
     <ol start="5">
       <li><a href="#remove-half">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
@@ -325,9 +330,9 @@ public, so I can't point to the worst of it. I'll just have to point to more
 mainstream examples (admittedly not the worst uses of inner scrolls).
 
 <figure>
-  <div class="col-gap-4 grid grid-cols-2">
-    <img src="gmails-new-compose.png" alt="Gmail's New Compose - screenshot"/>
-    <img src="spotify-desktop.jpg" alt="Spotify's desktop app - screenshot"/>
+  <div className="col-gap-4 grid grid-cols-2">
+    <img src={gmailsNewCompose} alt="Gmail's New Compose - screenshot"/>
+    <img src={spotifyDesktop} alt="Spotify's desktop app - screenshot"/>
   </div>
   <figcaption>
     In Gmail's New Compose, you can scroll the text of the email you're
@@ -386,7 +391,7 @@ different?"[^5] Leave it alone.
 
 <figure>
   <a href="http://codepen.io/ericrasch/details/zjDBx">
-    <img src="restyle-select-box.png" width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
+    <img src={restyleSelectBox} width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
   </a>
   <figcaption>Was it worth it?</figcaption>
 </figure>
