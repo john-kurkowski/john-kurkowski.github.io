@@ -78,13 +78,6 @@ module.exports = {
         gatsbyRemarkPlugins: [
           `gatsby-plugin-catch-links`,
           {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              enableCustomId: true,
-              isIconAfterHeader: true
-            }
-          },
-          {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
               ignoreFileExtensions: []

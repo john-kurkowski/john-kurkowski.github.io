@@ -124,7 +124,8 @@ here. Then I'll mix in what *I wish* was in the report.
   </li>
 </ul>
 
-#### 1. Size Tap Targets Appropriately ([link][Size Tap Targets Appropriately]) {#size-tap-targets-appropriately}
+<a name="size-tap-targets-appropriately"></a>
+#### 1. Size Tap Targets Appropriately ([link][Size Tap Targets Appropriately])
 
 Pour your blood & sweat into making a web page, and you'll internalize its
 flow. You constantly test its dark corners, probably more than your users.
@@ -147,7 +148,8 @@ Further reading:
 * [The Opposite of Fitts's Law] - what about things we *don't* want users to
   click on?
 
-#### 2. Avoid Plugins ([link][Avoid Plugins]) {#avoid-plugins}
+<a name="avoid-plugins"></a>
+#### 2. Avoid Plugins ([link][Avoid Plugins])
 
 Adobe Flash: don't use it.
 
@@ -183,7 +185,8 @@ breaking basic operating system usability and wasting user time are no-nos for
 *everyone*. Reconsider your desire to be stylish and unique. Focus on content
 and use, a lost art that packs a superior ROI.
 
-#### 3. Configure the Viewport ([link][Configure the Viewport] & [link][Size Content to Viewport]) {#configure-the-viewport}
+<a name="configure-the-viewport"></a>
+#### 3. Configure the Viewport ([link][Configure the Viewport] & [link][Size Content to Viewport])
 
 Sure, do it. It's a few lines of code at most.
 
@@ -194,7 +197,8 @@ they want, again, they'll put up with it.
 The greater upset is violating the other design guidelines in this article and
 making those corners inaccessible entirely!
 
-#### 4. Use Legible Font Sizes ([link][Use Legible Font Sizes]) {#use-legible-font-sizes}
+<a name="use-legible-font-sizes"></a>
+#### 4. Use Legible Font Sizes ([link][Use Legible Font Sizes])
 
 Don't make your users' job harder then it has to be. Let them read your
 content.
@@ -208,7 +212,8 @@ If you follow the next tip, this shouldn't be a problem.
 
 Here's what I would love to see added to the User Experience report.
 
-#### 5. Remove Half Your Content, Then Remove Half Of What's Left {#remove-half}
+<a name="remove-half"></a>
+#### 5. Remove Half Your Content, Then Remove Half Of What's Left
 
 Maybe Google PageSpeed can't tell you what to write. But I can. The answer
 is *less*.
@@ -231,7 +236,8 @@ publishing …
 This benefits not only the paragraph you shorten, but your whole site, as this
 exercise forces focus on your site's core values.[^2]
 
-#### 6. Avoid Interaction & Modes: Hovers, Menus, Modals {#avoid-modes}
+<a name="avoid-modes"></a>
+#### 6. Avoid Interaction & Modes: Hovers, Menus, Modals
 
 One day I hope the User Experience report could automatically include these
 points from my [Credo], because I see them violated again and again:
@@ -305,7 +311,8 @@ them. Instead,
   mode or interaction, prefer self-evident scrolling & hyperlinks[^3]. At the
   very least, pick implementations that work on touch screens.
 
-#### 7. Avoid Interaction & Modes: Inner Scrolls {#avoid-inner-scrolls}
+<a name="avoid-inner-scrolls"></a>
+#### 7. Avoid Interaction & Modes: Inner Scrolls
 
 After web designers learn the importance of above-the-fold content ("users
 don't wanna scroll; they'll hit that Back button in n seconds instead") they
@@ -363,7 +370,8 @@ without dealing with modes.
 * At the least, use inner scroll implementations that work on touch
   screens.[^4]
 
-#### 8. Don't Restyle Form Inputs & Scrollbars {#dont-restyle-form-inputs--scrollbars}
+<a name="dont-restyle-form-inputs--scrollbars"></a>
+#### 8. Don't Restyle Form Inputs & Scrollbars
 
 Web programmers know how hard it is to restyle standard form `<input>` elements
 & scrollbars. Their style is tightly locked into web browsers and perhaps the
@@ -390,7 +398,8 @@ accelerators, form-filling tools, or they perform slowly.
 Web users deal with forms and scrollbars all day. Why must yours look & work
 differently & poorly?
 
-#### 9. No, Really, Show the Data {#no-really-show-the-data}
+<a name="no-really-show-the-data"></a>
+#### 9. No, Really, Show the Data
 
 I wonder if PageSpeed could issue a warning for *too little* content. It
 already takes into account [the performance of your above-the-fold
