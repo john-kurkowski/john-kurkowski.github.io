@@ -7,10 +7,12 @@ import useScript from 'src/hooks/use-script'
 
 function Post (props) {
   const post = props.data.mdx
+  const { site } = props.data
 
   const page = {
     dateForMeta: post.fields.dateForMeta,
     description: post.frontmatter.description || post.excerpt || '',
+    site,
     title: post.frontmatter.title,
     url: ''
   }
@@ -67,6 +69,14 @@ Post.propTypes = {
       frontmatter: {
         description: PropTypes.string,
         title: PropTypes.string.isRequired
+      },
+
+      site: {
+        siteMetadata: {
+          description: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
+          url: PropTypes.string.isRequired
+        }
       }
     }
   }
@@ -87,6 +97,13 @@ export const query = graphql`
       frontmatter {
         description
         title
+      }
+    }
+    site {
+      siteMetadata {
+        description
+        title
+        url
       }
     }
   }

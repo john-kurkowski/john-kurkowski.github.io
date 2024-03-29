@@ -3,14 +3,15 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-export const page = {
-  dateForMeta: '',
-  description: '',
-  title: 'Articles',
-  url: ''
-}
+function Posts (props: { data: QueryData }): React.ReactElement {
+  const page = {
+    dateForMeta: '',
+    description: '',
+    site: props.data.site,
+    title: 'Articles',
+    url: ''
+  }
 
-function Posts (props: { data: Page }): React.ReactElement {
   return (
     <Layout page={page}>
       <section className=''>
@@ -34,7 +35,7 @@ function Posts (props: { data: Page }): React.ReactElement {
   )
 }
 
-interface Page {
+interface QueryData {
   allMdx: {
     edges: {
       node: {
@@ -54,6 +55,14 @@ interface Page {
         id: string
       }
     }[]
+  }
+
+  site: {
+    siteMetadata: {
+      description: string
+      title: string
+      url: string
+    }
   }
 }
 
@@ -79,6 +88,13 @@ export const query = graphql`
           }
           id
         }
+      }
+    }
+    site {
+      siteMetadata {
+        description
+        title
+        url
       }
     }
   }
