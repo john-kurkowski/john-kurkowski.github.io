@@ -1,4 +1,8 @@
-module.exports = {
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import remarkGfm from 'remark-gfm'
+
+export default {
   siteMetadata: {
     description: 'UX Engineering Consultant',
     siteUrl: 'https://johnkurkowski.com',
@@ -68,7 +72,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/content/`
+        path: `${dirname(fileURLToPath(import.meta.url))}/src/content/`
       }
     },
     {
@@ -85,7 +89,10 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`
-        ]
+        ],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm]
+        }
       }
     }
   ]
