@@ -32,24 +32,24 @@ function Page (props) {
 Page.propTypes = {
   children: PropTypes.node.isRequired,
 
-  data: {
-    mdx: {
+  data: PropTypes.shape({
+    mdx: PropTypes.shape({
       excerpt: PropTypes.string.isRequired,
 
-      frontmatter: {
+      frontmatter: PropTypes.shape({
         description: PropTypes.string,
         title: PropTypes.string.isRequired
-      },
+      }).isRequired
+    }).isRequired,
 
-      site: {
-        siteMetadata: {
-          description: PropTypes.string.isRequired,
-          title: PropTypes.string.isRequired,
-          url: PropTypes.string.isRequired
-        }
-      }
-    }
-  }
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired
+  }).isRequired
 }
 
 export default Page
