@@ -3,7 +3,7 @@ import React from 'react'
 import Footer from './Footer'
 import Nav from './Nav'
 
-function Layout (props: {
+function Layout(props: {
   children: React.ReactElement
   page: Page
 }): React.ReactElement {

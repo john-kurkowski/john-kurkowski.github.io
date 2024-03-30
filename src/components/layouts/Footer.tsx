@@ -5,7 +5,7 @@ import LinkedInLogo from 'src/images/icons/iconmonstr-linkedin-3.svg'
 import SoundcloudLogo from 'src/images/icons/iconmonstr-soundcloud-1.svg'
 import TwitterLogo from 'src/images/icons/iconmonstr-twitter-1.svg'
 
-export default function Footer (): React.ReactElement {
+export default function Footer(): React.ReactElement {
   return (
     <footer className='bg-secondary border-primary border-t-4 font-sans pb-4 pt-8 text-background'>
       <div className=''>

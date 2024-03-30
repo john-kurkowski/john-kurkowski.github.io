@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-export default function Nav (): React.ReactElement {
+export default function Nav(): React.ReactElement {
   return (
     <nav className='bg-secondary border-b-4 border-primary flex flex-col font-sans items-center justify-between lg:flex-row pt-2 px-8 text-background'>
       <h1 className='font-extrabold pb-2 text-2xl tracking-widester uppercase'>

@@ -3,10 +3,14 @@ layout: post
 title: Avoid Git First Drafts
 categories: tech
 tags: git
-description: Here are pages rife with debate on using git pull vs. git pull --rebase. I’ve decided for myself there are times for both, that is, there are times for merge commits and not.
+description:
+  Here are pages rife with debate on using git pull vs. git pull --rebase. I’ve
+  decided for myself there are times for both, that is, there are times for
+  merge commits and not.
 ---
 
-Here are [pages](http://www.viget.com/extend/only-you-can-prevent-git-merge-commits/)
+Here are
+[pages](http://www.viget.com/extend/only-you-can-prevent-git-merge-commits/)
 [rife](http://notes.envato.com/developers/rebasing-merge-commits-in-git/)
 [with](http://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase)
 [debate](http://jasoncodes.com/posts/gup-git-rebase) on using `git pull` vs.
@@ -29,12 +33,13 @@ jumping through hoops.
 But I've always found I prefer to rewrite history to present it in a clearer,
 more purposeful way. Code is read more often than it is written, and version
 control can serve as an indicator as to not only when and how things were done,
-but also *why*[^1]. If you publish history exactly as it was, you
-lose this clarity.
+but also *why*[^1]. If you publish history exactly as it was, you lose this
+clarity.
 
 A book author never publishes first drafts. Book readers never see the book with
-rough around the edges. So readers puzzle less, altogether avoiding questions like, what does
-the author mean here? Or, did he really mean to include this sentence?
+rough around the edges. So readers puzzle less, altogether avoiding questions
+like, what does the author mean here? Or, did he really mean to include this
+sentence?
 
 No creator gets their art right the first time. Programmers are no exception.
 
@@ -56,16 +61,18 @@ around the change and later reapplying or reverting it. Keep up to date but
 erase superfluous merge commits. Then clean up and reorder code and history
 before pushing. Make it as correct as possible and easy to follow.
 
-See also [Understanding the Git Workflow](http://sandofsky.com/blog/git-workflow.html),
+See
+also [Understanding the Git Workflow](http://sandofsky.com/blog/git-workflow.html),
 explaining the beauty of unpublished vs. published history.
 
-_**Update 2/1/2013:** [This blog post on
-git-rebase](http://blog.izs.me/post/37650663670/git-rebase) comes from a much
-wiser open source & Git wizard. It echoes my sentiments here, but it shows
-rather than tells!_
+_**Update 2/1/2013:**
+[This blog post on git-rebase](http://blog.izs.me/post/37650663670/git-rebase)
+comes from a much wiser open source & Git wizard. It echoes my sentiments here,
+but it shows rather than tells!_
 
 ### Footnotes
 
-[^1]: Self-documenting code is the first, greatest step toward this, but over
-      the history of a large codebase, it's impossible to express every change
-      at a single glance.
+[^1]:
+    Self-documenting code is the first, greatest step toward this, but over the
+    history of a large codebase, it's impossible to express every change at a
+    single glance.

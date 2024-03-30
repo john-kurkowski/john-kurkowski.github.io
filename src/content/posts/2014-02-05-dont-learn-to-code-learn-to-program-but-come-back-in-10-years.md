@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Don’t Learn to Code, Learn to Program—But Come Back in 10 Years"
+title: 'Don’t Learn to Code, Learn to Program—But Come Back in 10 Years'
 categories: tech
 tags: engineering programming
 ---
@@ -19,8 +19,8 @@ knowledge worker**. This would be worthy to learn.
 Yet we barely have programming today. All we seem to have is coding. It is less
 of an extension of human capability than it is a brittle hack.
 
-> If builders built buildings the way programmers wrote programs, then the
-> first woodpecker that came along would destroy civilization.
+> If builders built buildings the way programmers wrote programs, then the first
+> woodpecker that came along would destroy civilization.
 >
 > -- Gerald M. Weinberg, The Psychology of Computer Programming (1971)
 
@@ -35,16 +35,16 @@ is secure. This is unintuitive and error prone. It’s mile-high Jenga and the
 rest of the world piled on their own custom blocks while you weren't looking.
 
 To ameliorate this, there are human engineering techniques, but they treat the
-symptoms, not the root cause. [Coding's accessibility to humans has stagnated
-in the past few decades][The Future of Programming] (a video that should be
+symptoms, not the root cause. [Coding's accessibility to humans has stagnated in
+the past few decades][The Future of Programming] (a video that should be
 required monthly watching for programmers). I don’t mean accessibility to just
-outsiders. It is a large mess that hardcore coders themselves
-can hardly keep up with and predict. Sometimes, I take a step back from mashing
-together 2 things that were never meant to work together—for the 100th time
-today—and wonder how anything ever gets done. What cool thing was I trying to
-build before I got sidetracked with this tedious mashing?
+outsiders. It is a large mess that hardcore coders themselves can hardly keep up
+with and predict. Sometimes, I take a step back from mashing together 2 things
+that were never meant to work together—for the 100th time today—and wonder how
+anything ever gets done. What cool thing was I trying to build before I got
+sidetracked with this tedious mashing?
 
-What progress has been made? Programming ideas from *several decades ago* are
+What progress has been made? Programming ideas from _several decades ago_ are
 only coming to mainstream, begrudging acceptance now. For example, functional
 programming wasn't just a weird academic toy from the mid 1900s; it has a
 certain provable foundation, and evident speed & maintenance advantages. A
@@ -75,10 +75,10 @@ between them? Bake them off against all their alternatives?
 Can't I just make a website?
 
 The proliferation isn't just for hardcore web developers. Smashing Magazine and
-its ilk target more casual designers, with articles like *30 New jQuery Plugins
-Worth Taking a Look At,* *25 Social Media Plugins For WordPress*, and *22 Best
-Responsive CSS Frameworks for Web Design.* What kind of situation are we in
-that popularizes unwieldy lists of *code* like this?
+its ilk target more casual designers, with articles like _30 New jQuery Plugins
+Worth Taking a Look At,_ _25 Social Media Plugins For WordPress_, and _22 Best
+Responsive CSS Frameworks for Web Design._ What kind of situation are we in that
+popularizes unwieldy lists of _code_ like this?
 
 Meanwhile there are few souls looking to evolve text code into something more
 humanly **intuitive**. For example something you can touch, you don’t have to
@@ -105,8 +105,8 @@ teachers come from the programming industry, we get an **insular** cycle of
 this-is-the-way-I-learned-to-program-so-will-you. So the apprentice furiously
 practices their rite of passage, writing another line of code. In text.
 
-I am part of the problem. After this, sure, I will go to my job and *try* to delete
-lines of code or weasel out of writing them. More than likely though I'll
+I am part of the problem. After this, sure, I will go to my job and _try_ to
+delete lines of code or weasel out of writing them. More than likely though I'll
 shortsightedly inflict added lines of code on my team. Yet another band-aid
 around other code we wrote. Yet another path of logic to maintain. Then I'll go
 tweet about what's wrong with the programming language du jour. Because text is
@@ -115,39 +115,39 @@ principle. Because getting the job done. Because it feels good. Without fully
 stopping to think if there a drastically better way.
 
 In this article, I have been disparaging of programmer culture, similarly to
-rants against any culture stuck in its ways (I'm not stuck in traffic, I *am*
+rants against any culture stuck in its ways (I'm not stuck in traffic, I _am_
 traffic). Still, I think programmers are smart enough to overcome the problem,
 if we identify it.
 
 I don't want to conclude without any solution in sight either. So I ask you
-programmers [to note the things programming makes you waste your time on][We're
-not even trying], compared to what you should've been accomplishing. You
-probably internalize the frustrations as, "Oh well, it's the only way to do
+programmers [to note the things programming makes you waste your time
+on][We're not even trying], compared to what you should've been accomplishing.
+You probably internalize the frustrations as, "Oh well, it's the only way to do
 things. Part of the job." Take a step back to analyze instead. Maybe there's an
 opportunity in disguise for making programming easier & fun.
 
 Imagine that [black triangle][The Black Triangle] moment, but, instead of a
 brief moment after days of schlepping data around and senseless debugging,
-experiencing that joy of programming *all the time*.
+experiencing that joy of programming _all the time_.
 
 I'll note some projects that bring some hope to modern programming.
 
-* [Light Table][Wired - Light Table] - IDE that shows the result of executing
+- [Light Table][Wired - Light Table] - IDE that shows the result of executing
   source code, inline.
-* [NoFlo][NoFlo] - visual, flow-based programming. (It's interesting to note
+- [NoFlo][NoFlo] - visual, flow-based programming. (It's interesting to note
   visual programming is often thought of as "for kids." I prefer to think of it
   as for humans.)
 
 Look to these as role models. Then I challenge you to aim higher. These projects
 are also taking ideas from decades ago. Put down your text code. In 2014, how
-would *you* like to program?
+would _you_ like to program?
 
-Until visual or touch programming—*something*—gains traction, I have to
-answer curious knowledge workers. My friends ask if they should follow one of
-these Learn to Code websites. Either they are curious about what I do or
-they hear it’s a lucrative career. If you understand it and you have fun, I
-won't stop you. I don’t feel as strongly as Atwood, who says you’ll be a net
-loss to the world.
+Until visual or touch programming—_something_—gains traction, I have to answer
+curious knowledge workers. My friends ask if they should follow one of these
+Learn to Code websites. Either they are curious about what I do or they hear
+it’s a lucrative career. If you understand it and you have fun, I won't stop
+you. I don’t feel as strongly as Atwood, who says you’ll be a net loss to the
+world.
 
 But I can’t recommend coding casually either, because it is an arcane and
 insular art. It is ridiculously hostile to the layman. You have to be a
@@ -166,6 +166,8 @@ programming becomes accessible, when coding is a thing of the past.
 [The Future of Programming]: http://vimeo.com/71278954
 [Wired - Light Table]: http://www.wired.com/wiredenterprise/2014/01/light-table/
 [NoFlo]: http://noflojs.org/
-[Please Don't Learn To Code]: http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html
-[We're not even trying]: http://scattered-thoughts.net/blog/2014/01/27/were-not-even-trying/?utm_medium=twitter&utm_source=dlvr.it
+[Please Don't Learn To Code]:
+  http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html
+[We're not even trying]:
+  http://scattered-thoughts.net/blog/2014/01/27/were-not-even-trying/?utm_medium=twitter&utm_source=dlvr.it
 [The Black Triangle]: http://rampantgames.com/blog/2004/10/black-triangle.html

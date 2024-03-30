@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Page } from './base'
 
-export default function Seo (props: { page: Page }): React.ReactElement {
+export default function Seo(props: { page: Page }): React.ReactElement {
   let title: string
   if (
     props.page.title &&

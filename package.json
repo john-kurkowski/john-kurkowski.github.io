@@ -6,7 +6,7 @@
     "build": "gatsby build",
     "prepare": "husky",
     "start": "gatsby develop --host 0.0.0.0",
-    "test": "eslint . && stylelint $(git ls-files '*.css') && prettier-standard --check $(git ls-files '*.css' '*.js' '*.jsx' '*.mjs' '*.ts' '*.tsx') && npm run type-check",
+    "test": "eslint . && stylelint $(git ls-files '*.css') && prettier --check . && npm run type-check",
     "type-check": "tsc --pretty"
   },
   "repository": {
@@ -42,7 +42,6 @@
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "@ksmithut/prettier-standard": "^0.2.0",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.22",
@@ -52,6 +51,7 @@
     "eslint-plugin-react": "^7.34.1",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
     "stylelint": "^16.3.1",
     "stylelint-config-standard": "^36.0.0",
     "typescript": "^5.4.3"
@@ -59,11 +59,14 @@
   "lint-staged": {
     "*.css": [
       "stylelint --fix",
-      "prettier-standard"
+      "prettier --write"
     ],
     "*.{js,jsx,mjs,ts,tsx}": [
       "eslint --cache --fix",
-      "prettier-standard"
+      "prettier --write"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
     ]
   },
   "volta": {

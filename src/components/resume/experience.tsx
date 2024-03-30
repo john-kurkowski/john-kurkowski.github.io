@@ -3,10 +3,10 @@ import React from 'react'
 const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en', {
   month: 'short',
   timeZone: 'America/Los_Angeles',
-  year: 'numeric'
+  year: 'numeric',
 })
 
-function Experience (props: {
+function Experience(props: {
   children: React.ReactElement
   className?: string
   company: string
@@ -16,7 +16,7 @@ function Experience (props: {
   timeEnd: Date
 }): React.ReactElement {
   const undoInheritedGlobalParagraphStyle = {
-    margin: 0
+    margin: 0,
   }
 
   return (

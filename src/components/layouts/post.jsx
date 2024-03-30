@@ -6,7 +6,7 @@ import Layout from 'src/components/layouts/base'
 import Seo from 'src/components/layouts/Seo'
 import useScript from 'src/hooks/use-script'
 
-function Post (props) {
+function Post(props) {
   const post = props.data.mdx
 
   const page = pageForProps(props)
@@ -57,32 +57,32 @@ Post.propTypes = {
       fields: PropTypes.shape({
         date: PropTypes.string.isRequired,
         dateForMeta: PropTypes.string.isRequired,
-        dateForTitle: PropTypes.string.isRequired
+        dateForTitle: PropTypes.string.isRequired,
       }).isRequired,
 
       frontmatter: PropTypes.shape({
         description: PropTypes.string,
-        title: PropTypes.string.isRequired
-      }).isRequired
+        title: PropTypes.string.isRequired,
+      }).isRequired,
     }).isRequired,
 
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
         description: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired
-  }).isRequired
+        url: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 }
 
 export default Post
 
-export function Head (props) {
+export function Head(props) {
   return <Seo page={pageForProps(props)} />
 }
 
-function pageForProps (props) {
+function pageForProps(props) {
   const post = props.data.mdx
   const { site } = props.data
 
@@ -91,7 +91,7 @@ function pageForProps (props) {
     description: post.frontmatter.description || post.excerpt || '',
     site,
     title: post.frontmatter.title,
-    url: ''
+    url: '',
   }
 }
 
@@ -120,7 +120,7 @@ export const query = graphql`
   }
 `
 
-function dangerouslyEmbedJs (htmlString) {
+function dangerouslyEmbedJs(htmlString) {
   const jsUrlsRe = /src(:\s*|=)"([^"]+\.js)"/g
   let match
   // eslint-disable-next-line no-cond-assign
@@ -130,7 +130,7 @@ function dangerouslyEmbedJs (htmlString) {
   }
 }
 
-function embedDisqus () {
+function embedDisqus() {
   let disqus_loaded = false
   const disqus_shortname = 'johnkurkowski'
 

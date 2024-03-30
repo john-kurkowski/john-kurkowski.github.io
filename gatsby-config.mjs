@@ -7,7 +7,7 @@ export default {
     description: 'UX Engineering Consultant',
     siteUrl: 'https://johnkurkowski.com',
     title: 'John Kurkowski',
-    url: 'https://johnkurkowski.com'
+    url: 'https://johnkurkowski.com',
   },
   plugins: [
     {
@@ -39,27 +39,27 @@ export default {
                 }
               }
             `,
-            serialize ({ query: { site, allMdx } }) {
-              return allMdx.edges.map(edge => {
+            serialize({ query: { site, allMdx } }) {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.fields.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.excerpt }]
+                  custom_elements: [{ 'content:encoded': edge.node.excerpt }],
                 })
               })
             },
-            title: 'John Kurkowski'
-          }
-        ]
-      }
+            title: 'John Kurkowski',
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: ['G-0DLDSD2HD9']
-      }
+        trackingIds: ['G-0DLDSD2HD9'],
+      },
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-svg`,
@@ -70,8 +70,8 @@ export default {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${dirname(fileURLToPath(import.meta.url))}/src/content/`
-      }
+        path: `${dirname(fileURLToPath(import.meta.url))}/src/content/`,
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
@@ -82,16 +82,16 @@ export default {
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              ignoreFileExtensions: []
-            }
+              ignoreFileExtensions: [],
+            },
           },
           `gatsby-remark-prismjs`,
-          `gatsby-remark-smartypants`
+          `gatsby-remark-smartypants`,
         ],
         mdxOptions: {
-          remarkPlugins: [remarkGfm]
-        }
-      }
-    }
-  ]
+          remarkPlugins: [remarkGfm],
+        },
+      },
+    },
+  ],
 }

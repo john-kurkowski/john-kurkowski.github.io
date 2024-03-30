@@ -4,7 +4,7 @@ import { HeadFC, Link, graphql } from 'gatsby'
 import Layout, { Page } from 'src/components/layouts/base'
 import Seo from 'src/components/layouts/Seo'
 
-function Index (props: { data: QueryData }): React.ReactElement {
+function Index(props: { data: QueryData }): React.ReactElement {
   const page = pageForProps(props)
 
   return (
@@ -78,18 +78,18 @@ interface QueryData {
 
 export default Index
 
-export const Head: HeadFC<QueryData> = props => {
+export const Head: HeadFC<QueryData> = (props) => {
   return <Seo page={pageForProps(props)} />
 }
 
-function pageForProps (props: { data: QueryData }): Page {
+function pageForProps(props: { data: QueryData }): Page {
   return {
     dateForMeta: '',
     description:
       'I help frontend teams ship incrementally, without rewrites. Collaborate remotely. Debug any app, existing or legacy.',
     site: props.data.site,
     title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
-    url: '/'
+    url: '/',
   }
 }
 

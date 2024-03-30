@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Paint By Types"
+title: 'Paint By Types'
 categories: tech
 tags: engineering programming fp haskell
 description:
@@ -12,11 +12,11 @@ description:
 
 import paintByNumbers from './paint-by-numbers.jpg'
 
-In the debate between static vs. dynamic types, I always knew static types
-could catch programmer errors here and there. If a programming language does
-the type system right though, types also self-document better and can even
-guide a program's whole architecture. [UPenn's CIS 194 - Introduction to
-Haskell] made this click for me.
+In the debate between static vs. dynamic types, I always knew static types could
+catch programmer errors here and there. If a programming language does the type
+system right though, types also self-document better and can even guide a
+program's whole architecture. [UPenn's CIS 194 - Introduction to Haskell] made
+this click for me.
 
 All my experience had been with weak type systems, where I was constantly
 fighting the types to little benefit. Things still routinely exploded at
@@ -52,20 +52,20 @@ public static <A> foo(A arg1, A arg2) {
 ```
 
 The function body could do anything. It could typecast the inputs, read a
-database, write a database, `rm -rf /`, exit the application, ignore the
-inputs, return `null`. Any or all of the above.
+database, write a database, `rm -rf /`, exit the application, ignore the inputs,
+return `null`. Any or all of the above.
 
 Haskell is built with a few restrictions that make it easy to divine the
 function's possible behavior.
 
-* There is no typecasting nor reflection of what `a` is. No Java `instanceof`.
-* All IO is demarcated by the `IO` _type_.
-* There is no `null`.
+- There is no typecasting nor reflection of what `a` is. No Java `instanceof`.
+- All IO is demarcated by the `IO` _type_.
+- There is no `null`.
 
 In concert, this function can't do IO, since all it can know is that it deals
 with things of type `a`, not type `IO`. So it can't talk to a database or the
-filesystem. And it will return a real value, as there is no `null`. All this
-put another way: `a -> a -> a` must behave uniformly for any type `a`. This is
+filesystem. And it will return a real value, as there is no `null`. All this put
+another way: `a -> a -> a` must behave uniformly for any type `a`. This is
 called [parametricity][Parametric polymorphism].
 
 The answer to the exercise:
@@ -142,26 +142,26 @@ The expressiveness of types in determining what you want, rather than how to do
 it, becomes such a boon that many Haskell programmers define all their types
 first, and fill in the implementations later.
 
-Contrary to interface-driven development in other languages, this actually
-gives you early indicators whether the interface itself works. A lot of bad
+Contrary to interface-driven development in other languages, this actually gives
+you early indicators whether the interface itself works. A lot of bad
 assumptions get caught by the compiler when writing the types, as well as when
 implementing them. Imagine that, a computer that lets you know when _your_
 thinking isn't clear.
 
 With the predictability of types saying and enforcing what a function is going
-to do, defining types first works beyond mere interfaces; they guide
-development of the entire program. Is this the part that's going to average a
-list of numbers? Mark it with `[Int] -> Fractional`. Is this the part that will
-read a user from the database, who might not exist? Mark it with `IO Maybe
-User`. Is this the part that launches missiles? Mark it so with `IO
-MissileLaunch`. The compiler will enforce that they all fit together, and that
-your implementations stick to the contract.
+to do, defining types first works beyond mere interfaces; they guide development
+of the entire program. Is this the part that's going to average a list of
+numbers? Mark it with `[Int] -> Fractional`. Is this the part that will read a
+user from the database, who might not exist? Mark it with `IO Maybe User`. Is
+this the part that launches missiles? Mark it so with `IO MissileLaunch`. The
+compiler will enforce that they all fit together, and that your implementations
+stick to the contract.
 
 Finally, when you're able to run the program for the first time, there's a
 higher rate that it "just works." That's overly simplistic, of course, as types
-do not protect you from logic bugs. Even so, it feels like most of the hard
-work is over. Oh, that hard work we're used to, from lower level languages and
-weaker type systems, that we assumed was a necessary evil of the job.
+do not protect you from logic bugs. Even so, it feels like most of the hard work
+is over. Oh, that hard work we're used to, from lower level languages and weaker
+type systems, that we assumed was a necessary evil of the job.
 
 [A Comparison Between Perl and Haskell] tells one such story.
 
@@ -173,9 +173,9 @@ weaker type systems, that we assumed was a necessary evil of the job.
 > …
 >
 > The problems at runtime [were] genuine problems, and the bugs that I find
-> interesting to fix. I wasn’t spending time working out why something was
-> null, or if a method call had the wrong arguments, because the compiler had
-> already held my hand through that stage of programming.
+> interesting to fix. I wasn’t spending time working out why something was null,
+> or if a method call had the wrong arguments, because the compiler had already
+> held my hand through that stage of programming.
 
 Think of how much time you spend on those uninteresting yet fatal problems in
 production.
@@ -183,16 +183,16 @@ production.
 [Meditations on Learning Haskell] offers several more perspectives and is worth
 a read. I think one quote sets the tone.
 
-> I’m terrible at programming. I’m a bad programmer and not very bright.
-> Haskell covers for my dumb ass.
+> I’m terrible at programming. I’m a bad programmer and not very bright. Haskell
+> covers for my dumb ass.
 
 This is especially poignant given all the bashing Haskell gets for being ivory
 tower, mathematician stuff. Rather, the language is helping people get real
 stuff done, predictably and reliably.
 
 I liken type-driven development to fly-by-wire, an automated system that
-automatically stabilizes an aircraft on behalf of a human pilot, preventing
-a catastrophic system state. As programming is a bit more creative, not so
+automatically stabilizes an aircraft on behalf of a human pilot, preventing a
+catastrophic system state. As programming is a bit more creative, not so
 mechanical, I also like the analogy of paint by numbers.
 
 <figure>
@@ -200,15 +200,20 @@ mechanical, I also like the analogy of paint by numbers.
   <figcaption>"I wonder what NPEs are going to happen today?" Worry not.</figcaption>
 </figure>
 
-Both analogies involve guides for imperfect humans, though they ignore the
-fully creative aspect. Rather, Haskell honors the promise of programming: you
-can create anything you can imagine. But with its strong type system, the
-compiler will give you feedback early and often if your imagination was flawed!
-Try painting in the lines, with types as your guide.
+Both analogies involve guides for imperfect humans, though they ignore the fully
+creative aspect. Rather, Haskell honors the promise of programming: you can
+create anything you can imagine. But with its strong type system, the compiler
+will give you feedback early and often if your imagination was flawed! Try
+painting in the lines, with types as your guide.
 
-[UPenn's CIS 194 - Introduction to Haskell]: http://www.seas.upenn.edu/~cis194/lectures.html
-[CIS 194 Week 5]: http://www.seas.upenn.edu/~cis194/lectures/05-type-classes.html
+[UPenn's CIS 194 - Introduction to Haskell]:
+  http://www.seas.upenn.edu/~cis194/lectures.html
+[CIS 194 Week 5]:
+  http://www.seas.upenn.edu/~cis194/lectures/05-type-classes.html
 [Parametric polymorphism]: http://en.wikipedia.org/wiki/Parametric_polymorphism
-[Parametricity: Types Are Documentation]: https://dl.dropboxusercontent.com/u/7810909/media/doc/parametricity.pdf
-[A Comparison Between Perl and Haskell]: https://ocharles.org.uk/blog/posts/2013-07-26-a-comparison-between-perl-and-haskell.html
-[Meditations on Learning Haskell]: http://bitemyapp.com/posts/2014-04-29-meditations-on-learning-haskell.html
+[Parametricity: Types Are Documentation]:
+  https://dl.dropboxusercontent.com/u/7810909/media/doc/parametricity.pdf
+[A Comparison Between Perl and Haskell]:
+  https://ocharles.org.uk/blog/posts/2013-07-26-a-comparison-between-perl-and-haskell.html
+[Meditations on Learning Haskell]:
+  http://bitemyapp.com/posts/2014-04-29-meditations-on-learning-haskell.html

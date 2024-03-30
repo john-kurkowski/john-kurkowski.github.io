@@ -4,7 +4,7 @@ import { HeadFC, graphql } from 'gatsby'
 import Layout, { Page } from 'src/components/layouts/base'
 import Seo from 'src/components/layouts/Seo'
 
-export default function NotFound (props: {
+export default function NotFound(props: {
   data: QueryData
 }): React.ReactElement {
   const page = pageForProps(props)
@@ -30,17 +30,17 @@ interface QueryData {
   }
 }
 
-export const Head: HeadFC<QueryData> = props => {
+export const Head: HeadFC<QueryData> = (props) => {
   return <Seo page={pageForProps(props)} />
 }
 
-function pageForProps (props: { data: QueryData }): Page {
+function pageForProps(props: { data: QueryData }): Page {
   return {
     dateForMeta: '',
     description: '',
     site: props.data.site,
     title: 'Not Found',
-    url: ''
+    url: '',
   }
 }
 
