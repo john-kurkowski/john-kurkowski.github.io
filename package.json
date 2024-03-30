@@ -4,7 +4,9 @@
   "description": "Source for https://johnkurkowski.com.",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "prepare": "husky",
+    "serve": "gatsby serve",
     "start": "gatsby develop --host 0.0.0.0",
     "test": "eslint . && prettier-standard --check $(git ls-files '*.css' '*.js' '*.jsx' '*.mjs' '*.ts' '*.tsx') && npm run type-check",
     "type-check": "tsc --pretty"
