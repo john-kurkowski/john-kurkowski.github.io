@@ -6,6 +6,11 @@
         "screen",
         "tailwind"
       ]
+    }],
+    "function-no-unknown": [true, {
+      "ignoreFunctions": [
+        "theme"
+      ]
     }]
   }
 }

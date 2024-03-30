@@ -1,8 +1,8 @@
-@import 'tailwindcss/base';
-@import './sticky-footer';
-@import './syntax';
-@import './typography';
-@import 'tailwindcss/components';
-@import './button';
+@import url('tailwindcss/base');
+@import url('./sticky-footer');
+@import url('./syntax');
+@import url('./typography');
+@import url('tailwindcss/components');
+@import url('./button');
 
 @tailwind utilities;

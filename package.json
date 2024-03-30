@@ -6,7 +6,7 @@
     "build": "gatsby build",
     "prepare": "husky",
     "start": "gatsby develop --host 0.0.0.0",
-    "test": "eslint . && prettier-standard --check $(git ls-files '*.css' '*.js' '*.jsx' '*.mjs' '*.ts' '*.tsx') && npm run type-check",
+    "test": "eslint . && stylelint $(git ls-files '*.css') && prettier-standard --check $(git ls-files '*.css' '*.js' '*.jsx' '*.mjs' '*.ts' '*.tsx') && npm run type-check",
     "type-check": "tsc --pretty"
   },
   "repository": {
@@ -60,17 +60,12 @@
     "stylelint-config-standard": "^36.0.0",
     "typescript": "^5.4.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.css": [
       "stylelint --fix",
       "prettier-standard"
     ],
-    "*.{js,ts,tsx}": [
+    "*.{js,jsx,mjs,ts,tsx}": [
       "eslint --cache --fix",
       "prettier-standard"
     ]
