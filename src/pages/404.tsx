@@ -1,15 +1,18 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-export const page = {
-  dateForMeta: '',
-  description: '',
-  title: 'Not Found',
-  url: ''
-}
-
-export default function NotFound (): React.ReactElement {
+export default function NotFound (props: {
+  data: QueryData
+}): React.ReactElement {
+  const page = {
+    dateForMeta: '',
+    description: '',
+    site: props.data.site,
+    title: 'Not Found',
+    url: ''
+  }
   return (
     <Layout page={page}>
       <section className='post'>
@@ -20,3 +23,25 @@ export default function NotFound (): React.ReactElement {
     </Layout>
   )
 }
+
+interface QueryData {
+  site: {
+    siteMetadata: {
+      description: string
+      title: string
+      url: string
+    }
+  }
+}
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        description
+        title
+        url
+      }
+    }
+  }
+`

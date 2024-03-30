@@ -2,7 +2,7 @@ html {
   font-size: 14px;
 }
 
-@media (min-width: 640px) {
+@media (width >= 640px) {
   html {
     font-size: 18px;
   }
@@ -23,11 +23,11 @@ p + p {
 
 .link:hover,
 .post a:hover {
-  @apply text-gray-600;
+  @apply text-gray-500;
 }
 
 .post blockquote {
-  @apply border-gray-400;
+  @apply border-gray-300;
   @apply border-l-4;
   @apply italic;
   @apply px-4;

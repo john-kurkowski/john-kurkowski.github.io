@@ -30,6 +30,13 @@ function Layout (props: {
 export interface Page {
   dateForMeta: string
   description: string
+  site: {
+    siteMetadata: {
+      description: string
+      title: string
+      url: string
+    }
+  }
   title: string
   url: string
 }

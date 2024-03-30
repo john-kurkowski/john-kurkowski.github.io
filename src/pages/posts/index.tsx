@@ -3,14 +3,15 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
 
-export const page = {
-  dateForMeta: '',
-  description: '',
-  title: 'Articles',
-  url: ''
-}
+function Posts (props: { data: QueryData }): React.ReactElement {
+  const page = {
+    dateForMeta: '',
+    description: '',
+    site: props.data.site,
+    title: 'Articles',
+    url: ''
+  }
 
-function Posts (props: { data: Page }): React.ReactElement {
   return (
     <Layout page={page}>
       <section className=''>
@@ -23,7 +24,7 @@ function Posts (props: { data: Page }): React.ReactElement {
                 {node.frontmatter.title}
               </Link>
 
-              <blockquote className='italic mt-2 px-4 text-gray-600 text-sm'>
+              <blockquote className='italic mt-2 px-4 text-gray-500 text-sm'>
                 {node.frontmatter.description || node.excerpt}
               </blockquote>
             </li>
@@ -34,7 +35,7 @@ function Posts (props: { data: Page }): React.ReactElement {
   )
 }
 
-interface Page {
+interface QueryData {
   allMdx: {
     edges: {
       node: {
@@ -55,6 +56,14 @@ interface Page {
       }
     }[]
   }
+
+  site: {
+    siteMetadata: {
+      description: string
+      title: string
+      url: string
+    }
+  }
 }
 
 export default Posts
@@ -63,7 +72,7 @@ export const query = graphql`
   query {
     allMdx(
       filter: { fields: { date: { ne: null } } }
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: { date: DESC } }
     ) {
       edges {
         node {
@@ -79,6 +88,13 @@ export const query = graphql`
           }
           id
         }
+      }
+    }
+    site {
+      siteMetadata {
+        description
+        title
+        url
       }
     }
   }

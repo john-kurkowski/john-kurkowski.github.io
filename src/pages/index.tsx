@@ -2,12 +2,14 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
+import type { Page } from 'src/components/layouts/base'
 
-function Index (props: { data: Page }): React.ReactElement {
-  const page = {
+function Index (props: { data: QueryData }): React.ReactElement {
+  const page: Page = {
     dateForMeta: '',
     description:
       'I help frontend teams ship incrementally, without rewrites. Collaborate remotely. Debug any app, existing or legacy.',
+    site: props.data.site,
     title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
     url: '/'
   }
@@ -71,7 +73,7 @@ function Index (props: { data: Page }): React.ReactElement {
   )
 }
 
-interface Page {
+interface QueryData {
   site: {
     siteMetadata: {
       description: string

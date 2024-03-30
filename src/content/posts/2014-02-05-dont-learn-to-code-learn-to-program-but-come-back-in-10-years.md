@@ -66,8 +66,8 @@ know. Sadly, the more they can hold in their head at once, the better.
 Take this proud tweet for example. Someone figured out the correct cocktail
 recipe to be a web developer.
 
-<blockquote class="twitter-tweet"><p>Everything you need to win at web development: <a href="https://twitter.com/nodejs">@nodejs</a> <a href="https://twitter.com/MongoDB">@MongoDB</a> <a href="https://twitter.com/gruntjs">@gruntjs</a> <a href="https://twitter.com/bower">@bower</a> <a href="https://twitter.com/angularjs">@angularjs</a> <a href="https://twitter.com/jquery">@jquery</a> <a href="https://twitter.com/twbootstrap">@twbootstrap</a> <a href="https://twitter.com/fontawesome">@fontawesome</a> <a href="https://twitter.com/livereload">@livereload</a></p>&mdash; Justin Klemm (@justinklemm) <a href="https://twitter.com/justinklemm/statuses/396324049754009600">November 1, 2013</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote className="twitter-tweet"><p>Everything you need to win at web development: <a href="https://twitter.com/nodejs">@nodejs</a> <a href="https://twitter.com/MongoDB">@MongoDB</a> <a href="https://twitter.com/gruntjs">@gruntjs</a> <a href="https://twitter.com/bower">@bower</a> <a href="https://twitter.com/angularjs">@angularjs</a> <a href="https://twitter.com/jquery">@jquery</a> <a href="https://twitter.com/twbootstrap">@twbootstrap</a> <a href="https://twitter.com/fontawesome">@fontawesome</a> <a href="https://twitter.com/livereload">@livereload</a></p>&mdash; Justin Klemm (@justinklemm) <a href="https://twitter.com/justinklemm/statuses/396324049754009600">November 1, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charSet="utf-8"></script>
 
 How is anybody supposed to discover & master 9 disparate technologies? Switch
 between them? Bake them off against all their alternatives?
@@ -157,11 +157,11 @@ what computers have done for me and what they can do for people. But come back
 in 10 years when the promise of programming hopefully bears fruit, when
 programming becomes accessible, when coding is a thing of the past.
 
-<blockquote class="twitter-tweet"><p>&quot;Programming for the masses&quot; won&#39;t be successful if people have to change to suit programming. Programming should change to suit the people.</p>&mdash; Chris Granger (@ibdknox) <a href="https://twitter.com/ibdknox/statuses/396372478982750208">November 1, 2013</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote className="twitter-tweet"><p>&quot;Programming for the masses&quot; won&#39;t be successful if people have to change to suit programming. Programming should change to suit the people.</p>&mdash; Chris Granger (@ibdknox) <a href="https://twitter.com/ibdknox/statuses/396372478982750208">November 1, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charSet="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p>To be clear, I don&#39;t want to bring &quot;code&quot; or &quot;writing software&quot; to the masses at all. That&#39;s scary, arcane nonsense that I want to disappear</p>&mdash; Chris Granger (@ibdknox) <a href="https://twitter.com/ibdknox/statuses/396378696086339584">November 1, 2013</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote className="twitter-tweet"><p>To be clear, I don&#39;t want to bring &quot;code&quot; or &quot;writing software&quot; to the masses at all. That&#39;s scary, arcane nonsense that I want to disappear</p>&mdash; Chris Granger (@ibdknox) <a href="https://twitter.com/ibdknox/statuses/396378696086339584">November 1, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charSet="utf-8"></script>
 
 [The Future of Programming]: http://vimeo.com/71278954
 [Wired - Light Table]: http://www.wired.com/wiredenterprise/2014/01/light-table/

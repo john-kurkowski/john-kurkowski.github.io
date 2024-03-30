@@ -8,6 +8,11 @@ description:
   users too. 2 birds, 1 stone.
 ---
 
+import gmailsNewCompose from './gmails-new-compose.png'
+import pagespeedInsights from './pagespeed_insights.png'
+import restyleSelectBox from './restyle-select-box.png'
+import spotifyDesktop from './spotify-desktop.jpg'
+
 I liken mobile web design to designing for handicaps, in that good ideas in
 designing for handicaps benefit all users alike. For example,
 
@@ -27,7 +32,7 @@ e.g. if your buttons are *too small* for users’ fingers, or if your *plugins*
 won’t work on their mobile device.
 
 <figure>
-  <img src="pagespeed_insights.png" width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
+  <img src={pagespeedInsights} width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
 </figure>
 
 Also notice the handy preview of what it looks like on mobile. Not
@@ -112,7 +117,7 @@ here. Then I'll mix in what *I wish* was in the report.
       <li><a href="#use-legible-font-sizes">Use Legible Font Sizes</a></li>
     </ol>
   </li>
-  <li class="mt-4">
+  <li className="mt-4">
     My (Stolen) Ideas
     <ol start="5">
       <li><a href="#remove-half">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
@@ -124,7 +129,8 @@ here. Then I'll mix in what *I wish* was in the report.
   </li>
 </ul>
 
-#### 1. Size Tap Targets Appropriately ([link][Size Tap Targets Appropriately]) {#size-tap-targets-appropriately}
+<a name="size-tap-targets-appropriately"></a>
+#### 1. Size Tap Targets Appropriately ([link][Size Tap Targets Appropriately])
 
 Pour your blood & sweat into making a web page, and you'll internalize its
 flow. You constantly test its dark corners, probably more than your users.
@@ -147,7 +153,8 @@ Further reading:
 * [The Opposite of Fitts's Law] - what about things we *don't* want users to
   click on?
 
-#### 2. Avoid Plugins ([link][Avoid Plugins]) {#avoid-plugins}
+<a name="avoid-plugins"></a>
+#### 2. Avoid Plugins ([link][Avoid Plugins])
 
 Adobe Flash: don't use it.
 
@@ -183,7 +190,8 @@ breaking basic operating system usability and wasting user time are no-nos for
 *everyone*. Reconsider your desire to be stylish and unique. Focus on content
 and use, a lost art that packs a superior ROI.
 
-#### 3. Configure the Viewport ([link][Configure the Viewport] & [link][Size Content to Viewport]) {#configure-the-viewport}
+<a name="configure-the-viewport"></a>
+#### 3. Configure the Viewport ([link][Configure the Viewport] & [link][Size Content to Viewport])
 
 Sure, do it. It's a few lines of code at most.
 
@@ -194,7 +202,8 @@ they want, again, they'll put up with it.
 The greater upset is violating the other design guidelines in this article and
 making those corners inaccessible entirely!
 
-#### 4. Use Legible Font Sizes ([link][Use Legible Font Sizes]) {#use-legible-font-sizes}
+<a name="use-legible-font-sizes"></a>
+#### 4. Use Legible Font Sizes ([link][Use Legible Font Sizes])
 
 Don't make your users' job harder then it has to be. Let them read your
 content.
@@ -208,7 +217,8 @@ If you follow the next tip, this shouldn't be a problem.
 
 Here's what I would love to see added to the User Experience report.
 
-#### 5. Remove Half Your Content, Then Remove Half Of What's Left {#remove-half}
+<a name="remove-half"></a>
+#### 5. Remove Half Your Content, Then Remove Half Of What's Left
 
 Maybe Google PageSpeed can't tell you what to write. But I can. The answer
 is *less*.
@@ -231,7 +241,8 @@ publishing …
 This benefits not only the paragraph you shorten, but your whole site, as this
 exercise forces focus on your site's core values.[^2]
 
-#### 6. Avoid Interaction & Modes: Hovers, Menus, Modals {#avoid-modes}
+<a name="avoid-modes"></a>
+#### 6. Avoid Interaction & Modes: Hovers, Menus, Modals
 
 One day I hope the User Experience report could automatically include these
 points from my [Credo], because I see them violated again and again:
@@ -246,7 +257,7 @@ points from my [Credo], because I see them violated again and again:
 Let me explain what I was getting at.
 
 When presented with the problem of too-much-content-not-enough-space, some web
-site owners think, "I know, I'll use a { tooltip hover, context menu, modal
+site owners think, "I know, I'll use a \{ tooltip hover, context menu, modal
 dialog }." It is an antipattern to leap to these as your first line of defense.
 At best, they are an Easter egg-level progressive enhancement. More typically,
 they are a designer's crutch for tucking away unimportant content you're too
@@ -305,7 +316,8 @@ them. Instead,
   mode or interaction, prefer self-evident scrolling & hyperlinks[^3]. At the
   very least, pick implementations that work on touch screens.
 
-#### 7. Avoid Interaction & Modes: Inner Scrolls {#avoid-inner-scrolls}
+<a name="avoid-inner-scrolls"></a>
+#### 7. Avoid Interaction & Modes: Inner Scrolls
 
 After web designers learn the importance of above-the-fold content ("users
 don't wanna scroll; they'll hit that Back button in n seconds instead") they
@@ -318,9 +330,9 @@ public, so I can't point to the worst of it. I'll just have to point to more
 mainstream examples (admittedly not the worst uses of inner scrolls).
 
 <figure>
-  <div class="col-gap-4 grid grid-cols-2">
-    <img src="gmails-new-compose.png" alt="Gmail's New Compose - screenshot"/>
-    <img src="spotify-desktop.jpg" alt="Spotify's desktop app - screenshot"/>
+  <div className="col-gap-4 grid grid-cols-2">
+    <img src={gmailsNewCompose} alt="Gmail's New Compose - screenshot"/>
+    <img src={spotifyDesktop} alt="Spotify's desktop app - screenshot"/>
   </div>
   <figcaption>
     In Gmail's New Compose, you can scroll the text of the email you're
@@ -363,7 +375,8 @@ without dealing with modes.
 * At the least, use inner scroll implementations that work on touch
   screens.[^4]
 
-#### 8. Don't Restyle Form Inputs & Scrollbars {#dont-restyle-form-inputs--scrollbars}
+<a name="dont-restyle-form-inputs--scrollbars"></a>
+#### 8. Don't Restyle Form Inputs & Scrollbars
 
 Web programmers know how hard it is to restyle standard form `<input>` elements
 & scrollbars. Their style is tightly locked into web browsers and perhaps the
@@ -378,7 +391,7 @@ different?"[^5] Leave it alone.
 
 <figure>
   <a href="http://codepen.io/ericrasch/details/zjDBx">
-    <img src="restyle-select-box.png" width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
+    <img src={restyleSelectBox} width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
   </a>
   <figcaption>Was it worth it?</figcaption>
 </figure>
@@ -390,7 +403,8 @@ accelerators, form-filling tools, or they perform slowly.
 Web users deal with forms and scrollbars all day. Why must yours look & work
 differently & poorly?
 
-#### 9. No, Really, Show the Data {#no-really-show-the-data}
+<a name="no-really-show-the-data"></a>
+#### 9. No, Really, Show the Data
 
 I wonder if PageSpeed could issue a warning for *too little* content. It
 already takes into account [the performance of your above-the-fold
