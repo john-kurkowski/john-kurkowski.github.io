@@ -66,7 +66,6 @@ export default {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
