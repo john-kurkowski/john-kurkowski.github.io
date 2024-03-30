@@ -3,19 +3,13 @@ import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
+import Seo from 'src/components/layouts/Seo'
 import useScript from 'src/hooks/use-script'
 
 function Post (props) {
   const post = props.data.mdx
-  const { site } = props.data
 
-  const page = {
-    dateForMeta: post.fields.dateForMeta,
-    description: post.frontmatter.description || post.excerpt || '',
-    site,
-    title: post.frontmatter.title,
-    url: ''
-  }
+  const page = pageForProps(props)
 
   embedDisqus()
 
@@ -83,6 +77,23 @@ Post.propTypes = {
 }
 
 export default Post
+
+export function Head (props) {
+  return <Seo page={pageForProps(props)} />
+}
+
+function pageForProps (props) {
+  const post = props.data.mdx
+  const { site } = props.data
+
+  return {
+    dateForMeta: post.fields.dateForMeta,
+    description: post.frontmatter.description || post.excerpt || '',
+    site,
+    title: post.frontmatter.title,
+    url: ''
+  }
+}
 
 export const query = graphql`
   query ($slug: String!) {

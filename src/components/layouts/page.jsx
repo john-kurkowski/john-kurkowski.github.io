@@ -3,18 +3,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from 'src/components/layouts/base'
+import Seo from 'src/components/layouts/Seo'
 
 function Page (props) {
-  const post = props.data.mdx
-  const { site } = props.data
-
-  const page = {
-    dateForMeta: '',
-    description: post.frontmatter.description || post.excerpt,
-    site,
-    title: post.frontmatter.title,
-    url: ''
-  }
+  const page = pageForProps(props)
 
   return (
     <Layout page={page}>
@@ -53,6 +45,23 @@ Page.propTypes = {
 }
 
 export default Page
+
+export function Head (props) {
+  return <Seo page={pageForProps(props)} />
+}
+
+function pageForProps (props) {
+  const post = props.data.mdx
+  const { site } = props.data
+
+  return {
+    dateForMeta: '',
+    description: post.frontmatter.description || post.excerpt,
+    site,
+    title: post.frontmatter.title,
+    url: ''
+  }
+}
 
 export const query = graphql`
   query ($slug: String!) {

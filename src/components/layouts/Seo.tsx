@@ -1,9 +1,8 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
 import { Page } from './base'
 
-export default function Head (props: { page: Page }): React.ReactElement {
+export default function Seo (props: { page: Page }): React.ReactElement {
   let title: string
   if (
     props.page.title &&
@@ -20,7 +19,8 @@ export default function Head (props: { page: Page }): React.ReactElement {
     props.page.description || props.page.site.siteMetadata.description
 
   return (
-    <Helmet htmlAttributes={{ class: 'bg-secondary' }}>
+    <>
+      <html className='bg-secondary' lang='en-US' />
       <title>{title}</title>
       <meta property='og:title' content={title} />
 
@@ -63,6 +63,6 @@ export default function Head (props: { page: Page }): React.ReactElement {
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:site' content='@bluu' />
       <meta name='twitter:creator' content='@bluu' />
-    </Helmet>
+    </>
   )
 }

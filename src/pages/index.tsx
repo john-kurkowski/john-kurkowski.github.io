@@ -1,18 +1,11 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { HeadFC, Link, graphql } from 'gatsby'
 
-import Layout from 'src/components/layouts/base'
-import type { Page } from 'src/components/layouts/base'
+import Layout, { Page } from 'src/components/layouts/base'
+import Seo from 'src/components/layouts/Seo'
 
 function Index (props: { data: QueryData }): React.ReactElement {
-  const page: Page = {
-    dateForMeta: '',
-    description:
-      'I help frontend teams ship incrementally, without rewrites. Collaborate remotely. Debug any app, existing or legacy.',
-    site: props.data.site,
-    title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
-    url: '/'
-  }
+  const page = pageForProps(props)
 
   return (
     <Layout page={page}>
@@ -84,6 +77,21 @@ interface QueryData {
 }
 
 export default Index
+
+export const Head: HeadFC<QueryData> = props => {
+  return <Seo page={pageForProps(props)} />
+}
+
+function pageForProps (props: { data: QueryData }): Page {
+  return {
+    dateForMeta: '',
+    description:
+      'I help frontend teams ship incrementally, without rewrites. Collaborate remotely. Debug any app, existing or legacy.',
+    site: props.data.site,
+    title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
+    url: '/'
+  }
+}
 
 export const query = graphql`
   query {

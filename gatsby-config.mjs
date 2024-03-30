@@ -62,7 +62,6 @@ export default {
       }
     },
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-root-import`,

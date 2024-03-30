@@ -1,18 +1,14 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { HeadFC, graphql } from 'gatsby'
 
-import Layout from 'src/components/layouts/base'
+import Layout, { Page } from 'src/components/layouts/base'
+import Seo from 'src/components/layouts/Seo'
 
 export default function NotFound (props: {
   data: QueryData
 }): React.ReactElement {
-  const page = {
-    dateForMeta: '',
-    description: '',
-    site: props.data.site,
-    title: 'Not Found',
-    url: ''
-  }
+  const page = pageForProps(props)
+
   return (
     <Layout page={page}>
       <section className='post'>
@@ -31,6 +27,20 @@ interface QueryData {
       title: string
       url: string
     }
+  }
+}
+
+export const Head: HeadFC<QueryData> = props => {
+  return <Seo page={pageForProps(props)} />
+}
+
+function pageForProps (props: { data: QueryData }): Page {
+  return {
+    dateForMeta: '',
+    description: '',
+    site: props.data.site,
+    title: 'Not Found',
+    url: ''
   }
 }
 
