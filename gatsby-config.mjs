@@ -1,4 +1,8 @@
-module.exports = {
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import remarkGfm from 'remark-gfm'
+
+export default {
   siteMetadata: {
     description: 'UX Engineering Consultant',
     siteUrl: 'https://johnkurkowski.com',
@@ -16,7 +20,7 @@ module.exports = {
               {
                 allMdx(
                   filter: { fields: { date: { ne: null } } }
-                  sort: { fields: [fields___date], order: DESC }
+                  sort: { fields: { date: DESC } }
                 ) {
                   edges {
                     node {
@@ -29,7 +33,6 @@ module.exports = {
                         description
                         title
                       }
-                      html
                       id
                     }
                   }
@@ -43,10 +46,11 @@ module.exports = {
                   date: edge.node.fields.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }]
+                  custom_elements: [{ 'content:encoded': edge.node.excerpt }]
                 })
               })
-            }
+            },
+            title: 'John Kurkowski'
           }
         ]
       }
@@ -68,7 +72,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/content/`
+        path: `${dirname(fileURLToPath(import.meta.url))}/src/content/`
       }
     },
     {
@@ -78,13 +82,6 @@ module.exports = {
         gatsbyRemarkPlugins: [
           `gatsby-plugin-catch-links`,
           {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              enableCustomId: true,
-              isIconAfterHeader: true
-            }
-          },
-          {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
               ignoreFileExtensions: []
@@ -93,7 +90,9 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-smartypants`
         ],
-        plugins: [`gatsby-remark-autolink-headers`]
+        mdxOptions: {
+          remarkPlugins: [remarkGfm]
+        }
       }
     }
   ]

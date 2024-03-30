@@ -244,6 +244,8 @@ as a right-biased Either monad, as its `flatMap` would only deal with its
 right-side/success). For more Validation potential though, use it as an
 applicative functor with `|@|` and company.
 
+### Footnotes
+
 [^1]: For-comprehensions compile to `flatMap`, `map`, `filter`, and/or `foreach` calls. That's it.
 
 [^2]: Reminds me of clinging to old, verbose, C-style `for (int i = 0; i <

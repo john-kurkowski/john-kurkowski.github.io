@@ -10,6 +10,8 @@ description:
   architecture.
 ---
 
+import paintByNumbers from './paint-by-numbers.jpg'
+
 In the debate between static vs. dynamic types, I always knew static types
 could catch programmer errors here and there. If a programming language does
 the type system right though, types also self-document better and can even
@@ -31,7 +33,8 @@ demonstrating the potential.
 <blockquote>
   <p>Consider the type</p>
   <pre>
-&nbsp;&nbsp;&nbsp;&nbsp;a -> a -> a</pre>
+&nbsp;&nbsp;&nbsp;&nbsp;a -> a -> a
+  </pre>
   <p>Remember that <code>a</code> is a type variable which can stand for any
   type. What sorts of functions have this type?</p>
 </blockquote>
@@ -70,14 +73,14 @@ The answer to the exercise:
 <blockquote>
   <p>So, what functions actually could have this type? Actually, there are only two!</p>
   <pre>
-  &nbsp;&nbsp;&nbsp;&nbsp;f1 :: a -> a -> a
+  {`    f1 :: a -> a -> a`}
   <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;f1 x y = x
+  {`    f1 x y = x`}
   <br/>
   <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;f2 :: a -> a -> a
+  {`    f2 :: a -> a -> a`}
   <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;f2 x y = y
+  {`    f2 x y = y`}
   </pre>
 </blockquote>
 
@@ -193,7 +196,7 @@ a catastrophic system state. As programming is a bit more creative, not so
 mechanical, I also like the analogy of paint by numbers.
 
 <figure>
-  <img src="paint-by-numbers.jpg" width="61%" height="auto" alt="Paint By Numbers example"/>
+  <img src={paintByNumbers} width="61%" height="auto" alt="Paint By Numbers example"/>
   <figcaption>"I wonder what NPEs are going to happen today?" Worry not.</figcaption>
 </figure>
 

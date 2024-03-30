@@ -1,46 +1,31 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { graphql, useStaticQuery } from 'gatsby'
 
 import { Page } from './base'
 
 export default function Head (props: { page: Page }): React.ReactElement {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            description
-            title
-            url
-          }
-        }
-      }
-    `
-  )
-
   let title: string
   if (
     props.page.title &&
-    props.page.title.includes(data.site.siteMetadata.title)
+    props.page.title.includes(props.page.site.siteMetadata.title)
   ) {
     title = props.page.title
   } else if (props.page.title) {
-    title = `${props.page.title} - ${data.site.siteMetadata.title}`
+    title = `${props.page.title} - ${props.page.site.siteMetadata.title}`
   } else {
-    title = data.site.siteMetadata.title
+    title = props.page.site.siteMetadata.title
   }
 
   const description =
-    props.page.description || data.site.siteMetadata.description
+    props.page.description || props.page.site.siteMetadata.description
 
   return (
     <Helmet htmlAttributes={{ class: 'bg-secondary' }}>
       <title>{title}</title>
       <meta property='og:title' content={title} />
 
-      <meta name='author' content={data.site.siteMetadata.title} />
-      <meta property='og:author' content={data.site.siteMetadata.url} />
+      <meta name='author' content={props.page.site.siteMetadata.title} />
+      <meta property='og:author' content={props.page.site.siteMetadata.url} />
       <meta property='profile:first_name' content='John' />
       <meta property='profile:last_name' content='Kurkowski' />
 

@@ -1,16 +1,18 @@
+import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from 'src/components/layouts/base'
 import useScript from 'src/hooks/use-script'
 
-function Post (props: { data: Page }): React.ReactElement {
+function Post (props) {
   const post = props.data.mdx
+  const { site } = props.data
 
   const page = {
     dateForMeta: post.fields.dateForMeta,
     description: post.frontmatter.description || post.excerpt || '',
+    site,
     title: post.frontmatter.title,
     url: ''
   }
@@ -37,9 +39,7 @@ function Post (props: { data: Page }): React.ReactElement {
             </time>
           </header>
 
-          <div className='post'>
-            <MDXRenderer>{post.body}</MDXRenderer>
-          </div>
+          <div className='post'>{props.children}</div>
 
           <div className='mt-8' id='disqus_thread'></div>
           <noscript>
@@ -52,28 +52,40 @@ function Post (props: { data: Page }): React.ReactElement {
   )
 }
 
-interface Page {
-  mdx: {
-    body: string
-    excerpt?: string
+Post.propTypes = {
+  children: PropTypes.node.isRequired,
 
-    fields: {
-      date: string
-      dateForMeta: string
-      dateForTitle: string
-    }
+  data: PropTypes.shape({
+    mdx: PropTypes.shape({
+      body: PropTypes.string.isRequired,
+      excerpt: PropTypes.string,
 
-    frontmatter: {
-      description?: string
-      title: string
-    }
-  }
+      fields: PropTypes.shape({
+        date: PropTypes.string.isRequired,
+        dateForMeta: PropTypes.string.isRequired,
+        dateForTitle: PropTypes.string.isRequired
+      }).isRequired,
+
+      frontmatter: PropTypes.shape({
+        description: PropTypes.string,
+        title: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired,
+
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        description: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired
+  }).isRequired
 }
 
 export default Post
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       body
       excerpt(pruneLength: 256)
@@ -87,10 +99,17 @@ export const query = graphql`
         title
       }
     }
+    site {
+      siteMetadata {
+        description
+        title
+        url
+      }
+    }
   }
 `
 
-function dangerouslyEmbedJs (htmlString: string) {
+function dangerouslyEmbedJs (htmlString) {
   const jsUrlsRe = /src(:\s*|=)"([^"]+\.js)"/g
   let match
   // eslint-disable-next-line no-cond-assign

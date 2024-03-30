@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path')
-const { createFilePath } = require(`gatsby-source-filesystem`)
+import path from 'path'
+import { createFilePath } from 'gatsby-source-filesystem'
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+export function onCreateNode ({ node, getNode, actions }) {
   const { createNodeField } = actions
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent)
@@ -30,7 +29,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-exports.createPages = async ({ graphql, actions }) => {
+export async function createPages ({ graphql, actions }) {
   const { createPage } = actions
   const result = await graphql(`
     query {
@@ -40,6 +39,9 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               date
               slug
+            }
+            internal {
+              contentFilePath
             }
           }
         }
@@ -53,7 +55,9 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(
-        `./src/components/layouts/${isPost ? 'post' : 'page'}.tsx`
+        `./src/components/layouts/${
+          isPost ? 'post' : 'page'
+        }.jsx?__contentFilePath=${node.internal.contentFilePath}`
       ),
       context: {
         date: node.fields.date,

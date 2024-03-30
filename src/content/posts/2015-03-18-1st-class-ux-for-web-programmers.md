@@ -7,6 +7,8 @@ description:
   On the web, your users are no longer a secondary engineering concern. A thick-client framework, like Ember.js, makes UX 1st class.
 ---
 
+import googleChromeDinosaur from './google-chrome-dinosaur.png'
+
 Programmers often talk about their tools making functions 1st class, or objects
 1st class. What about making UX 1st class?
 
@@ -56,7 +58,7 @@ if they submit as their connection drops? They’ll probably get a browser
 network error page and worry they lost all their typing."
 
 <figure>
-  <img src="google-chrome-dinosaur.png" width="61%" height="auto" alt="Google Chrome's network error screen"/>
+  <img src={googleChromeDinosaur} width="61%" height="auto" alt="Google Chrome's network error screen"/>
 </figure>
 
 "Oh, yeah, it’d be nice to handle those more elegantly!" you say. "But it’s too
