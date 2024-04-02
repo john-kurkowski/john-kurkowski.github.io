@@ -33,12 +33,8 @@ specialize in the following.
   collapse the house of cards? I've worked on teams with 0% test coverage and
   100% test coverage. I teach the happy medium.
 
-- **Team augmentation.** I can spike the above processes with you. Or handle
-  overflow tasks. I've worked remotely, asynchronously, and independently for
-  years.
-
-- **Web tech stack.** You wanted buzzword bingo, you got it. I excel at browser
-  JavaScript, Node.js, Python, JVM, CI/CD, Unix, and Git.
+- **Web tech stack.** You wanted buzzword bingo, you got it. I excel at
+  JavaScript, TypeScript, Node.js, Python, JVM, CI/CD, Unix, and Git.
 
 - **Overcommunication.** I've been on both sides of the consultant vs. hiring
   in-house debate. If I'm unable to integrate well, _I'll be the squeaky wheel_.
