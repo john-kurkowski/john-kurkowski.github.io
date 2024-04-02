@@ -61,7 +61,7 @@ function Experience(props: {
         <address className='justify-self-end'>{props.location}</address>
       </h5>
 
-      {props.children}
+      <div className='text-justify'>{props.children}</div>
     </div>
   )
 }
