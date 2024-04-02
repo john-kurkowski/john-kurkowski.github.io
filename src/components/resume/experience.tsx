@@ -13,11 +13,21 @@ function Experience(props: {
   location: string
   position: string
   timeBegin: Date
-  timeEnd: Date
+  timeEnd: Date | 'present'
 }): React.ReactElement {
   const undoInheritedGlobalParagraphStyle = {
     margin: 0,
   }
+
+  const timeEnd =
+    props.timeEnd instanceof Date
+      ? `${props.timeEnd.getFullYear()}-${props.timeEnd.getMonth() + 1}`
+      : props.timeEnd
+
+  const timeEndDisplay =
+    props.timeEnd instanceof Date
+      ? DATE_DISPLAY_FORMAT.format(props.timeEnd)
+      : props.timeEnd
 
   return (
     <div
@@ -48,13 +58,8 @@ function Experience(props: {
             {DATE_DISPLAY_FORMAT.format(props.timeBegin)}
           </time>
           –
-          <time
-            className='whitespace-no-wrap'
-            dateTime={`${props.timeEnd.getFullYear()}-${
-              props.timeEnd.getMonth() + 1
-            }`}
-          >
-            {DATE_DISPLAY_FORMAT.format(props.timeEnd)}
+          <time className='whitespace-no-wrap' dateTime={timeEnd}>
+            {timeEndDisplay}
           </time>
         </p>
 

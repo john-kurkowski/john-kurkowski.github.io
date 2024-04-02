@@ -48,7 +48,20 @@ specialize in the following.
 
 ## Experience
 
-<Experience className='mt-4' company='CrowdStrike' location='Remote, Portland,
+<Experience className='mt-4' company='Self' location='Remote, Portland, OR'
+position='UX Engineering Consultant' timeBegin={new Date('2020-07-15')}
+timeEnd='present'
+
+>
+
+Helped clients adopt the latest frontend tooling, test coverage, and code review
+quidelines. Maintained Python OSS libraries
+[tldextract](https://github.com/john-kurkowski/tldextract) for URL parsing and
+[music](https://github.com/john-kurkowski/music) for publishing my music.
+
+</Experience>
+
+<Experience className='mt-8' company='CrowdStrike' location='Remote, Portland,
 OR' position='Senior Software Developer' timeBegin={new Date('2013-04-15')}
 timeEnd={new Date('2020-02-15')}
 
