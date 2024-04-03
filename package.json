@@ -4,7 +4,9 @@
   "description": "Source for https://johnkurkowski.com.",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "prepare": "husky",
+    "serve": "gatsby serve --host 0.0.0.0",
     "start": "gatsby develop --host 0.0.0.0",
     "test": "eslint . && stylelint $(git ls-files '*.css') && prettier --check . && npm run type-check",
     "type-check": "tsc --pretty"
@@ -50,6 +52,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "husky": "^9.0.11",
+    "lost-pixel": "^3.16.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "stylelint": "^16.3.1",

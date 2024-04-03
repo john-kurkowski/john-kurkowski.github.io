@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "esModuleInterop": true,
     "jsx": "react",
+    "lib": ["dom", "es2021"],
     "noEmit": true,
     "skipLibCheck": true,
     "strict": true
