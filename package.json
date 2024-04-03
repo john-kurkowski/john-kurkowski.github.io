@@ -6,7 +6,7 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "prepare": "husky",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --host 0.0.0.0",
     "start": "gatsby develop --host 0.0.0.0",
     "test": "eslint . && stylelint $(git ls-files '*.css') && prettier --check . && npm run type-check",
     "type-check": "tsc --pretty"
