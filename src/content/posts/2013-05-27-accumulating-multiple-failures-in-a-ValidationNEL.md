@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "Accumulating More Than One Failure In A ValidationNEL"
+title: 'Accumulating More Than One Failure In A ValidationNEL'
 categories: tech
 tags: scala
 ---
+
 This is an adaptation of an internal blog post I made for
 [Gravity](http://gravity.com) engineers. To preface, Gravity likes to use 2 very
 predictable patterns throughout its Scala codebase, which is very important for
@@ -16,17 +17,17 @@ a TIMTOWTDI language like Scala.
 
 But what does it mean for the for-compehensions to interact with ValidationNEL?
 
-(Note at the time this was written, the post targeted ValidationNEL in [Scalaz
-6](https://github.com/scalaz/scalaz/tree/v6.0.4). Since then, [Scalaz
-7](https://github.com/scalaz/scalaz/tree/v7.0.0) has been released. There may be
-differences in the examples.)
+(Note at the time this was written, the post targeted ValidationNEL in
+[Scalaz 6](https://github.com/scalaz/scalaz/tree/v6.0.4). Since then,
+[Scalaz 7](https://github.com/scalaz/scalaz/tree/v7.0.0) has been released.
+There may be differences in the examples.)
 
-* * *
+---
 
 Beyond ValidationNEL distinguishing success and failure cases, its other sell is
 accumulation of failures. I think it's superior to throwing a single exception.
-From [one Validation
-tutorial](http://www.lunatech-research.com/archives/2012/03/02/validation-scala):
+From
+[one Validation tutorial](http://www.lunatech-research.com/archives/2012/03/02/validation-scala):
 
 > Methods using exceptions automatically combine, but unfortunately not in the
 > way you would like: any failure will immediately be reported, and it will be
@@ -42,9 +43,9 @@ failures, if that's what you want.
 Of its 2 use-cases for ValidationNELs,
 
 1.  Fail-fast: pass the success of each step of a computation into the next,
-until a step fails
+    until a step fails
 2.  Fail-slow: several things can go wrong, and all can be reported up front
-(e.g. missing fields in a shopping checkout form)
+    (e.g. missing fields in a shopping checkout form)
 
 Gravity tends toward #1. This is the easiest way to use ValidationNEL, since you
 can use familiar syntax: the **for-comprehension**. However this tends to only
@@ -60,8 +61,8 @@ side, you must accept the wart of running `NonEmptyList.list.contains` to handle
 specific errors; perhaps write a custom extractor.
 
 So why are we practically restricted to one failure? A for-comprehenion is often
-sugar for calls to `flatMap`[^1]. This could also be called
-fail-fast. Let's review `flatMap` behavior.
+sugar for calls to `flatMap`[^1]. This could also be called fail-fast. Let's
+review `flatMap` behavior.
 
 ```scala
 def evenNumber(n: Int) = if (n % 2 == 0) Some(n) else None
@@ -198,11 +199,12 @@ accumulation strategy. And tweak each slightly.[^2]
 
 So, I've shown you how to accumulate a handful of Validations. If you're
 interested in accumulating errors for N Validations, still fail-slow, check out
-more examples in [A Tale of 3 Nightclubs](https://gist.github.com/oxbowlakes/970717). Take
-a look for calls to `sequence` which essentially inverts a sequence of
-Validations into a Validation of a sequence: `Seq[ValidationNEL[E, A] =>
-ValidationNEL[E, Seq[A]]`. It's beyond my current ability to explain the type
-lambda on `sequence` though, so good luck.
+more examples in
+[A Tale of 3 Nightclubs](https://gist.github.com/oxbowlakes/970717). Take a look
+for calls to `sequence` which essentially inverts a sequence of Validations into
+a Validation of a sequence:
+`Seq[ValidationNEL[E, A] => ValidationNEL[E, Seq[A]]`. It's beyond my current
+ability to explain the type lambda on `sequence` though, so good luck.
 
 You can stop here with your newfound Validation knowledge if you like.
 Otherwise, onto the more theoretical digression.
@@ -213,7 +215,7 @@ Back to `|@|`. Why another operator? Why this promise of Validations playing
 nicely with for-comprehensions—syntax we already know—and yet we can't get
 failure accumulation? Because of Scalaz's definition of Validation as a monad.
 Though very convenient for much of Gravity's business logic, Validation defining
-`flatMap` is an accident. Validation is primarily an *applicative functor*.
+`flatMap` is an accident. Validation is primarily an _applicative functor_.
 
 It's beyond this post's scope to fully explain the utility of monad and
 applicative functor typeclasses, so I'll just say that monads and Scala
@@ -223,9 +225,8 @@ If you've written a for-comprehension, or directly called `flatMap`, you've used
 a monad.
 
 But Validation, being an applicative functor, has more power than `map` and
-`flatMap`, that a for-comprehension can't harness. Borrowing from [this intro to
-monadic
-design](http://softwarejockey.wordpress.com/2012/04/30/a-taste-of-monadic-design/),
+`flatMap`, that a for-comprehension can't harness. Borrowing from
+[this intro to monadic design](http://softwarejockey.wordpress.com/2012/04/30/a-taste-of-monadic-design/),
 &#8220;&#8230; unlike a monad, an applicative functor can carry forward results
 of previous computations.&#8221; Sounds like the accumulation we need.
 
@@ -233,8 +234,7 @@ Unfortunately there's no native Scala syntax for applicatives. You have to use
 the funny Scalaz `|@|` operator and its kin.
 
 I didn't realize that Validation isn't supposed to be a monad until
-[Validation.flatMap was removed in a Scalaz 7
-milestone](https://github.com/scalaz/scalaz/commit/061e23de4848e3f97595d5a9ba1920c8827ffe41).
+[Validation.flatMap was removed in a Scalaz 7 milestone](https://github.com/scalaz/scalaz/commit/061e23de4848e3f97595d5a9ba1920c8827ffe41).
 The community has since brought it back for backwards-compatibility, so
 Validation will continue to be targetable by for-comprehensions. But now you
 know: it can viewed as a monad and an applicative functor, and they behave
@@ -246,9 +246,12 @@ applicative functor with `|@|` and company.
 
 ### Footnotes
 
-[^1]: For-comprehensions compile to `flatMap`, `map`, `filter`, and/or `foreach` calls. That's it.
+[^1]:
+    For-comprehensions compile to `flatMap`, `map`, `filter`, and/or `foreach`
+    calls. That's it.
 
-[^2]: Reminds me of clinging to old, verbose, C-style `for (int i = 0; i <
-      length; i++) { ... }` blocks. Nowadays, you use `map`, `filter`, and
-      friends. Declarative over imperative. Separate what you want from how you
-      get it.
+[^2]:
+    Reminds me of clinging to old, verbose, C-style
+    `for (int i = 0; i < length; i++) { ... }` blocks. Nowadays, you use `map`,
+    `filter`, and friends. Declarative over imperative. Separate what you want
+    from how you get it.

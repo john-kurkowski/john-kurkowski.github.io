@@ -1,11 +1,17 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "at-rule-no-unknown": [true, {
-      "ignoreAtRules": [
-        "screen",
-        "tailwind"
-      ]
-    }]
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["screen", "tailwind"]
+      }
+    ],
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": ["theme"]
+      }
+    ]
   }
 }

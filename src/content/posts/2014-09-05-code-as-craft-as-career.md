@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Code As Craft As Career?"
+title: 'Code As Craft As Career?'
 categories: tech
 tags: engineering programming
 description:
@@ -16,12 +16,11 @@ though, I want a 3rd path, something fundamentally more productive than coding.
 It is still an enormous, almost-but-not-quite rote, still error-prone task of
 spinning up a quick idea. It takes years of practice to robustly instruct the
 computer in even a trivial task, [in the robotic equivalent of making a
-sandwich][Imperative thinking and the making of
-sandwiches].
+sandwich][Imperative thinking and the making of sandwiches].
 
 So I study up on the latest languages. Or frameworks. Or someone mentions
-inversion of control. Or to be judicious with regular expressions. "Yes. Cool.
-I appreciate that tip. I’ll add that to my toolbox.” And back to coding. Better
+inversion of control. Or to be judicious with regular expressions. "Yes. Cool. I
+appreciate that tip. I’ll add that to my toolbox.” And back to coding. Better
 than before. But largely business as usual.
 
 Am I the only one looking for something more?
@@ -34,9 +33,9 @@ Am I the only one looking for something more?
 
 Meanwhile code craftsmanship may be polishing the brass on the Titanic. I don’t
 mean career programmers will drown right away. You will have your place for the
-foreseeable future, as long as you put some effort into ongoing learning. But
-if history is any indication, technology _accelerates_ forward. It does not
-move at a constant rate. There may be less time for you than you think.
+foreseeable future, as long as you put some effort into ongoing learning. But if
+history is any indication, technology _accelerates_ forward. It does not move at
+a constant rate. There may be less time for you than you think.
 
 We see whole creative industries marginalized or eliminated by production at
 scale.
@@ -102,11 +101,10 @@ maybe those WYSIWYG editors never will match your handmade code.
 However this response is similar to the scoffs of the above woodworker and
 typesetter, now marginalized. They learned the hard way that people don’t want
 everything ornately handmade. You can sob all you want about how the times are
-changing, that nobody wants craft anymore. Most consumers though will settle
-for cheap and highly available. Economics wins.
+changing, that nobody wants craft anymore. Most consumers though will settle for
+cheap and highly available. Economics wins.
 
-How long until hand-coded websites go this way? Databases? Cloud
-infrastructure?
+How long until hand-coded websites go this way? Databases? Cloud infrastructure?
 
 Don’t limit this to just the web. Think how this might apply to your insistence
 on _text_ being the be-all-end-all of programming.
@@ -120,9 +118,9 @@ or not. I’m pleased when this lets me predict requests and outmaneuver
 competitors. These are not things you acquire from a book. They require
 practice. Yet it's all incremental.
 
-I appreciate the boosts, but I’ve never met a coding technique or tool that
-gave me a 100x programming productivity boost. This discourages me from code as
-craft as an ultimate career option.
+I appreciate the boosts, but I’ve never met a coding technique or tool that gave
+me a 100x programming productivity boost. This discourages me from code as craft
+as an ultimate career option.
 
 "Programming is hard," you say. "How can you expect a 100x boost?"
 
@@ -133,16 +131,16 @@ better way.
 Admittedly, I'm not prescribing how here. I'm just pitching the idea there's
 something better.
 
-Call me an [expert beginner][How Developers Stop Learning: Rise of the Expert
-Beginner]. Maybe I hit a local maximum with techniques like OOP, FP, TDD. I
-certainly didn’t master them. I appreciate their takeaways. But I don’t see
-them putting me miles ahead if I continue to study them for 10 years. If I'm
-wrong, if I gave up too easily, please reach out with a, “Trust me, you’ll
-never look back if you stick with X.”
+Call me an [expert
+beginner][How Developers Stop Learning: Rise of the Expert Beginner]. Maybe I
+hit a local maximum with techniques like OOP, FP, TDD. I certainly didn’t master
+them. I appreciate their takeaways. But I don’t see them putting me miles ahead
+if I continue to study them for 10 years. If I'm wrong, if I gave up too easily,
+please reach out with a, “Trust me, you’ll never look back if you stick with X.”
 
 Side note regarding the holy wars between these competing techniques. Think the
-above OOP, FP, TDD, or Emacs vs. Vim, spaces vs. tabs, Python vs. Ruby. The
-fact our industry hasn’t unanimously adopted one side or the other and moved on
+above OOP, FP, TDD, or Emacs vs. Vim, spaces vs. tabs, Python vs. Ruby. The fact
+our industry hasn’t unanimously adopted one side or the other and moved on
 indicates that neither is sufficient. Fighting for the side you happen to be on
 is not worth the stress. The technology that ultimately matters is not some
 hotly debated contender. What matters is the technology where _you forget what
@@ -156,14 +154,18 @@ in the present won't be a total waste in a few years when a new set of tools
 becomes trendy. You might say this is because fundamentally programming doesn't
 change. More direly, it's because _how people program_ hasn't changed.
 
-I want a change! How programming is done is stale. I want to create faster,
-more richly. I don’t think text coding can offer that, in the long run.
+I want a change! How programming is done is stale. I want to create faster, more
+richly. I don’t think text coding can offer that, in the long run.
 
-So tell me, is there a 3rd career path? Or are my only choices 1) give up
-direct creation and move into leadership, or 2) polish my text?
+So tell me, is there a 3rd career path? Or are my only choices 1) give up direct
+creation and move into leadership, or 2) polish my text?
 
-[Imperative thinking and the making of sandwiches]: http://www.lighttable.com/2014/07/18/imperative-thinking/
-[The End of Coding as We Know It]: http://theprogrammersparadox.blogspot.ca/2009/04/end-of-coding-as-we-know-it.html
+[Imperative thinking and the making of sandwiches]:
+  http://www.lighttable.com/2014/07/18/imperative-thinking/
+[The End of Coding as We Know It]:
+  http://theprogrammersparadox.blogspot.ca/2009/04/end-of-coding-as-we-know-it.html
 [Humans Need Not Apply]: https://www.youtube.com/watch?v=7Pq-S557XQU
-[How Developers Stop Learning: Rise of the Expert Beginner]: http://www.daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner
-[Ongoing Learning in Breadth & Depth]: /posts/ongoing-learning-in-breadth-&-depth/
+[How Developers Stop Learning: Rise of the Expert Beginner]:
+  http://www.daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner
+[Ongoing Learning in Breadth & Depth]:
+  /posts/ongoing-learning-in-breadth-&-depth/

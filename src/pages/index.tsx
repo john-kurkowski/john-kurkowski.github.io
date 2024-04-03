@@ -1,18 +1,11 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { HeadFC, Link, graphql } from 'gatsby'
 
-import Layout from 'src/components/layouts/base'
-import type { Page } from 'src/components/layouts/base'
+import Layout, { Page } from 'src/components/layouts/base'
+import Seo from 'src/components/layouts/Seo'
 
-function Index (props: { data: QueryData }): React.ReactElement {
-  const page: Page = {
-    dateForMeta: '',
-    description:
-      'I help frontend teams ship incrementally, without rewrites. Collaborate remotely. Debug any app, existing or legacy.',
-    site: props.data.site,
-    title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
-    url: '/'
-  }
+function Index(props: { data: QueryData }): React.ReactElement {
+  const page = pageForProps(props)
 
   return (
     <Layout page={page}>
@@ -28,15 +21,15 @@ function Index (props: { data: QueryData }): React.ReactElement {
                 🚢
               </span>
               <span className='ml-4'>
-                <em>Ship</em> incrementally—no rewrites
+                <em>Ship</em> incrementally, no rewrites
               </span>
             </li>
             <li className='flex'>
-              <span aria-label='Globe with meridians' role='img'>
-                🌐
+              <span aria-label='Test tube' role='img'>
+                🧪
               </span>
               <span className='ml-4'>
-                <em>Collaborate</em> remotely
+                <em>Test</em> to serve the team, not a metric
               </span>
             </li>
             <li className='flex'>
@@ -53,11 +46,13 @@ function Index (props: { data: QueryData }): React.ReactElement {
         <div className='mt-8'>
           <p>
             Evolve your frontend to ship incrementally. You don't need to
-            rewrite from scratch. Reduce risk for you and customers.
+            rewrite from scratch. Reduce risk for you and customers. Your team
+            will love the momentum from showing, not telling.
           </p>
+
           <p>
             Just want a tune up? I debug any existing, legacy, or unfinished
-            system. I work remotely, asynchronously, and independently.
+            system.
           </p>
         </div>
 
@@ -84,6 +79,21 @@ interface QueryData {
 }
 
 export default Index
+
+export const Head: HeadFC<QueryData> = (props) => {
+  return <Seo page={pageForProps(props)} />
+}
+
+function pageForProps(props: { data: QueryData }): Page {
+  return {
+    dateForMeta: '',
+    description:
+      'I help frontend teams ship incrementally, no rewrites. Test to serve the team, not a metric. Debug any app, existing or legacy.',
+    site: props.data.site,
+    title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
+    url: '/',
+  }
+}
 
 export const query = graphql`
   query {

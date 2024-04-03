@@ -3,21 +3,31 @@ import React from 'react'
 const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en', {
   month: 'short',
   timeZone: 'America/Los_Angeles',
-  year: 'numeric'
+  year: 'numeric',
 })
 
-function Experience (props: {
+function Experience(props: {
   children: React.ReactElement
   className?: string
   company: string
   location: string
   position: string
   timeBegin: Date
-  timeEnd: Date
+  timeEnd: Date | 'present'
 }): React.ReactElement {
   const undoInheritedGlobalParagraphStyle = {
-    margin: 0
+    margin: 0,
   }
+
+  const timeEnd =
+    props.timeEnd instanceof Date
+      ? `${props.timeEnd.getFullYear()}-${props.timeEnd.getMonth() + 1}`
+      : props.timeEnd
+
+  const timeEndDisplay =
+    props.timeEnd instanceof Date
+      ? DATE_DISPLAY_FORMAT.format(props.timeEnd)
+      : props.timeEnd
 
   return (
     <div
@@ -48,20 +58,15 @@ function Experience (props: {
             {DATE_DISPLAY_FORMAT.format(props.timeBegin)}
           </time>
           –
-          <time
-            className='whitespace-no-wrap'
-            dateTime={`${props.timeEnd.getFullYear()}-${
-              props.timeEnd.getMonth() + 1
-            }`}
-          >
-            {DATE_DISPLAY_FORMAT.format(props.timeEnd)}
+          <time className='whitespace-no-wrap' dateTime={timeEnd}>
+            {timeEndDisplay}
           </time>
         </p>
 
         <address className='justify-self-end'>{props.location}</address>
       </h5>
 
-      {props.children}
+      <div className='text-justify'>{props.children}</div>
     </div>
   )
 }

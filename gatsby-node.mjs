@@ -1,14 +1,14 @@
 import path from 'path'
 import { createFilePath } from 'gatsby-source-filesystem'
 
-export function onCreateNode ({ node, getNode, actions }) {
+export function onCreateNode({ node, getNode, actions }) {
   const { createNodeField } = actions
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent)
     createNodeField({
       node,
       name: `collection`,
-      value: parent.sourceInstanceName
+      value: parent.sourceInstanceName,
     })
 
     const slug = createFilePath({ node, getNode })
@@ -20,7 +20,7 @@ export function onCreateNode ({ node, getNode, actions }) {
       createNodeField({
         node,
         name: `date`,
-        value: `${date}T00:00:00.0000-08:00`
+        value: `${date}T00:00:00.0000-08:00`,
       })
       createNodeField({ node, name: `slug`, value: `/posts/${title}/` })
     } else {
@@ -29,7 +29,7 @@ export function onCreateNode ({ node, getNode, actions }) {
   }
 }
 
-export async function createPages ({ graphql, actions }) {
+export async function createPages({ graphql, actions }) {
   const { createPage } = actions
   const result = await graphql(`
     query {
@@ -57,12 +57,12 @@ export async function createPages ({ graphql, actions }) {
       component: path.resolve(
         `./src/components/layouts/${
           isPost ? 'post' : 'page'
-        }.jsx?__contentFilePath=${node.internal.contentFilePath}`
+        }.jsx?__contentFilePath=${node.internal.contentFilePath}`,
       ),
       context: {
         date: node.fields.date,
-        slug: node.fields.slug
-      }
+        slug: node.fields.slug,
+      },
     })
   })
 }

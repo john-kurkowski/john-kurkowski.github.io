@@ -1,16 +1,11 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { HeadFC, Link, graphql } from 'gatsby'
 
-import Layout from 'src/components/layouts/base'
+import Layout, { Page } from 'src/components/layouts/base'
+import Seo from 'src/components/layouts/Seo'
 
-function Posts (props: { data: QueryData }): React.ReactElement {
-  const page = {
-    dateForMeta: '',
-    description: '',
-    site: props.data.site,
-    title: 'Articles',
-    url: ''
-  }
+function Posts(props: { data: QueryData }): React.ReactElement {
+  const page = pageForProps(props)
 
   return (
     <Layout page={page}>
@@ -67,6 +62,20 @@ interface QueryData {
 }
 
 export default Posts
+
+export const Head: HeadFC<QueryData> = (props) => {
+  return <Seo page={pageForProps(props)} />
+}
+
+function pageForProps(props: { data: QueryData }): Page {
+  return {
+    dateForMeta: '',
+    description: '',
+    site: props.data.site,
+    title: 'Articles',
+    url: '',
+  }
+}
 
 export const query = graphql`
   query {

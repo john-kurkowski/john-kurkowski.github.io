@@ -8,7 +8,7 @@
     "prepare": "husky",
     "serve": "gatsby serve",
     "start": "gatsby develop --host 0.0.0.0",
-    "test": "eslint . && prettier-standard --check $(git ls-files '*.css' '*.js' '*.jsx' '*.mjs' '*.ts' '*.tsx') && npm run type-check",
+    "test": "eslint . && stylelint $(git ls-files '*.css') && prettier --check . && npm run type-check",
     "type-check": "tsc --pretty"
   },
   "repository": {
@@ -27,12 +27,10 @@
     "gatsby-plugin-google-gtag": "^5.13.1",
     "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-plugin-postcss": "^6.13.1",
-    "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-root-import": "^2.0.9",
     "gatsby-plugin-sitemap": "^6.13.1",
-    "gatsby-plugin-typescript": "^5.13.1",
     "gatsby-remark-copy-linked-files": "^6.13.1",
     "gatsby-remark-prismjs": "^7.13.1",
     "gatsby-remark-smartypants": "^6.13.1",
@@ -42,16 +40,13 @@
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
     "remark-gfm": "^3.0.1",
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "@ksmithut/prettier-standard": "^0.2.0",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.22",
-    "@types/react-helmet": "^6.1.11",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
     "@typescript-eslint/parser": "^7.4.0",
     "eslint": "^8.57.0",
@@ -59,23 +54,22 @@
     "husky": "^9.0.11",
     "lost-pixel": "^3.16.0",
     "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
     "stylelint": "^16.3.1",
     "stylelint-config-standard": "^36.0.0",
     "typescript": "^5.4.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.css": [
       "stylelint --fix",
-      "prettier-standard"
+      "prettier --write"
     ],
-    "*.{js,ts,tsx}": [
+    "*.{js,jsx,mjs,ts,tsx}": [
       "eslint --cache --fix",
-      "prettier-standard"
+      "prettier --write"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
     ]
   },
   "volta": {

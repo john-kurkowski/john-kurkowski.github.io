@@ -1,17 +1,14 @@
 import React from 'react'
 
 import Footer from './Footer'
-import Head from './Head'
 import Nav from './Nav'
 
-function Layout (props: {
+function Layout(props: {
   children: React.ReactElement
   page: Page
 }): React.ReactElement {
   return (
     <React.Fragment>
-      <Head page={props.page} />
-
       <div className='content-between flex flex-col font-serif min-h-full'>
         <div className='bg-background flex-grow'>
           <Nav />
