@@ -1,0 +1,33 @@
+---
+import '../../css/main.css'
+
+import Footer from './Footer.astro'
+import Nav from './Nav.astro'
+import Seo from './Seo.astro'
+
+const frontmatter = Astro.props.frontmatter || {}
+
+const siteMetadata = {
+  description:
+    'I help frontend teams ship incrementally, without rewrites. Test to serve the team, not a metric. Debug any app, existing or legacy.',
+  title: 'John Kurkowski - UX Engineering Consultant',
+  url: '/',
+}
+---
+
+<html class='bg-secondary' lang='en-US'>
+  <Seo frontmatter={frontmatter} siteMetadata={siteMetadata} />
+  <body>
+    <div class='flex min-h-full flex-col content-between font-serif'>
+      <div class='flex-grow bg-background'>
+        <Nav />
+
+        <main class='mx-auto my-8 max-w-2xl px-5 text-gray-800'>
+          <slot />
+        </main>
+      </div>
+
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+---
+import Layout from '../../components/layouts/base.astro'
+
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+
+/**
+ * Converts filename to a URL-safe slug.
+ *
+ * To preserve URLs this project has used for years, the return value differs
+ * slightly from Astro's default `entry.slug`.
+ */
+export function slugify(entry: CollectionEntry) {
+  const maybeFilenameNoDateNoExt = /^\d+-\d+-\d+-(.+)\./.exec(entry.id)
+  if (!maybeFilenameNoDateNoExt) {
+    throw new Error(`Invalid posts filename: ${entry.id}`)
+  }
+
+  const [, filenameNoDateNoExt] = maybeFilenameNoDateNoExt
+  return filenameNoDateNoExt
+}
+
+const frontmatter = {
+  title: 'Articles',
+}
+
+const posts = await getCollection('posts')
+posts.reverse()
+---
+
+<Layout frontmatter={frontmatter}>
+  <section class=''>
+    <h2 class='heading text-3xl'>Articles</h2>
+
+    <ul class='mx-2 mt-2'>
+      {
+        posts.map((post) => (
+          <li class='mt-10'>
+            <a class='link inline-block' href={`/posts/${slugify(post)}`}>
+              {post.data.title}
+            </a>
+
+            <blockquote class='mt-2 px-4 text-sm italic text-gray-500'>
+              {post.data.description}
+            </blockquote>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
