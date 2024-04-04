@@ -1,5 +1,11 @@
-@import url('prismjs/themes/prism');
-
 code {
+  @apply bg-white;
   @apply text-sm !important;
+}
+
+.astro-code {
+  @apply my-2;
+  @apply overflow-auto;
+  @apply pl-4;
+  @apply py-4;
 }

@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: ../../components/layouts/post.astro
 title: 'Good Ideas From Mobile Design That Are Good Everywhere'
-categories: tech
-tags: engineering usability
+categories: [tech]
+tags: [engineering, usability]
 description:
   A collection of 9 usability tips from mobile design, yet they benefit desktop
   users too. 2 birds, 1 stone.
@@ -35,7 +35,7 @@ e.g. if your buttons are _too small_ for users’ fingers, or if your _plugins_
 won’t work on their mobile device.
 
 <figure>
-  <img src={pagespeedInsights} width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
+  <img src={pagespeedInsights.src} width="50%" height="auto" alt="PageSpeed Insights - screenshot"/>
 </figure>
 
 Also notice the handy preview of what it looks like on mobile. Not
@@ -120,7 +120,7 @@ Then I'll mix in what _I wish_ was in the report.
       <li><a href="#use-legible-font-sizes">Use Legible Font Sizes</a></li>
     </ol>
   </li>
-  <li className="mt-4">
+  <li class="mt-4">
     My (Stolen) Ideas
     <ol start="5">
       <li><a href="#remove-half">Remove Half Your Content, Then Remove Half Of What's Left</a></li>
@@ -338,9 +338,9 @@ public, so I can't point to the worst of it. I'll just have to point to more
 mainstream examples (admittedly not the worst uses of inner scrolls).
 
 <figure>
-  <div className="col-gap-4 grid grid-cols-2">
-    <img src={gmailsNewCompose} alt="Gmail's New Compose - screenshot"/>
-    <img src={spotifyDesktop} alt="Spotify's desktop app - screenshot"/>
+  <div class="col-gap-4 grid grid-cols-2">
+    <img src={gmailsNewCompose.src} alt="Gmail's New Compose - screenshot"/>
+    <img src={spotifyDesktop.src} alt="Spotify's desktop app - screenshot"/>
   </div>
   <figcaption>
     In Gmail's New Compose, you can scroll the text of the email you're
@@ -396,7 +396,7 @@ it alone.
 
 <figure>
   <a href="http://codepen.io/ericrasch/details/zjDBx">
-    <img src={restyleSelectBox} width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
+    <img src={restyleSelectBox.src} width="40%" height="auto" alt="Restyled <select> box - screenshot"/>
   </a>
   <figcaption>Was it worth it?</figcaption>
 </figure>

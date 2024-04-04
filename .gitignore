@@ -1,5 +1,7 @@
+.astro/
 .cache
 .eslintcache
 .netlify
+dist/
 node_modules/
-public/
+src/env.d.ts

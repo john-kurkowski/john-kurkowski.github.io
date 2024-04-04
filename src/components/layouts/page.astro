@@ -1,0 +1,15 @@
+---
+import Layout from './base.astro'
+
+const { frontmatter } = Astro.props
+---
+
+<Layout frontmatter={frontmatter}>
+  <article>
+    <header class='post'>
+      <h2>{frontmatter.title}</h2>
+    </header>
+
+    <div class='post'><slot /></div>
+  </article>
+</Layout>
