@@ -55,7 +55,7 @@ timeEnd='present'
 >
 
 Helped clients adopt the latest frontend tooling, test coverage, and code review
-quidelines. Maintained Python OSS libraries
+guidelines. Maintained Python OSS libraries
 [tldextract](https://github.com/john-kurkowski/tldextract) for URL parsing and
 [music](https://github.com/john-kurkowski/music) for publishing my music.
 
