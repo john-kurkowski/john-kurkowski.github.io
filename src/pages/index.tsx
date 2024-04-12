@@ -21,7 +21,7 @@ function Index(props: { data: QueryData }): React.ReactElement {
                 🚢
               </span>
               <span className='ml-4'>
-                <em>Ship</em> incrementally, no rewrites
+                <em>Ship</em> incrementally, without rewrites
               </span>
             </li>
             <li className='flex'>
@@ -88,7 +88,7 @@ function pageForProps(props: { data: QueryData }): Page {
   return {
     dateForMeta: '',
     description:
-      'I help frontend teams ship incrementally, no rewrites. Test to serve the team, not a metric. Debug any app, existing or legacy.',
+      'I help frontend teams ship incrementally, without rewrites. Test to serve the team, not a metric. Debug any app, existing or legacy.',
     site: props.data.site,
     title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
     url: '/',
