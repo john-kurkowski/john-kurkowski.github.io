@@ -52,11 +52,11 @@
       "stylelint --fix",
       "prettier --write"
     ],
-    "*.{astro,js,jsx,mjs,ts,tsx}": [
+    "*.{astro,js,jsx,mjs,mts,ts,tsx}": [
       "eslint --cache --fix",
       "prettier --write"
     ],
-    "*.{json,md,yml}": [
+    "*.{json,md,mdx,yml}": [
       "prettier --write"
     ]
   },
