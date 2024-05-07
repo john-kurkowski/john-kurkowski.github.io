@@ -8,8 +8,18 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:astro/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:react/recommended',
+  ],
+  overrides: [
+    {
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,20 +27,9 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['@typescript-eslint', 'jsx-a11y', 'react'],
+  plugins: ['@typescript-eslint', 'jsx-a11y'],
   root: true,
   rules: {
     'no-console': 'error',
-    'react/no-unescaped-entities': [
-      'error',
-      {
-        forbid: ['>', '}'],
-      },
-    ],
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
   },
 }

@@ -1,0 +1,55 @@
+---
+import GitHubLogo from '../../images/icons/iconmonstr-github-1.svg?raw'
+import LinkedInLogo from '../../images/icons/iconmonstr-linkedin-3.svg?raw'
+import SoundcloudLogo from '../../images/icons/iconmonstr-soundcloud-1.svg?raw'
+import TwitterLogo from '../../images/icons/iconmonstr-twitter-1.svg?raw'
+---
+
+<footer
+  class='border-t-4 border-primary bg-secondary pb-4 pt-8 font-sans text-background'
+>
+  <div class=''>
+    <ul class='flex justify-center'>
+      <li>
+        <a class='icon-link block' href='https://twitter.com/bluu'>
+          <figure>
+            <Fragment set:html={TwitterLogo} />
+            <figcaption class='sr-only'>Twitter</figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a
+          class='icon-link block pl-8'
+          href='https://www.linkedin.com/in/johnkurkowski'
+        >
+          <figure>
+            <Fragment set:html={LinkedInLogo} />
+            <figcaption class='sr-only'>LinkedIn</figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a
+          class='icon-link block pl-8'
+          href='https://github.com/john-kurkowski'
+        >
+          <figure>
+            <Fragment set:html={GitHubLogo} />
+            <figcaption class='sr-only'>GitHub</figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a class='icon-link block pl-8' href='https://soundcloud.com/bluu/'>
+          <figure>
+            <Fragment set:html={SoundcloudLogo} />
+            <figcaption class='sr-only'>Soundcloud</figcaption>
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <small class='mt-8 block text-center'>© 2024</small>
+</footer>

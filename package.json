@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Source for https://johnkurkowski.com.",
   "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "prepare": "husky",
-    "serve": "gatsby serve --host 0.0.0.0",
-    "start": "gatsby develop --host 0.0.0.0",
+    "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev --host",
+    "prepare": "husky && astro sync",
+    "preview": "astro preview --host",
+    "start": "astro dev --host",
     "test": "eslint . && stylelint $(git ls-files '*.css') && prettier --check . && npm run type-check",
     "type-check": "tsc --pretty"
   },
@@ -20,55 +21,42 @@
   "private": true,
   "homepage": "https://github.com/john-kurkowski/john-kurkowski.github.io#readme",
   "dependencies": {
-    "autoprefixer": "^10.4.19",
-    "gatsby": "^5.13.3",
-    "gatsby-plugin-catch-links": "^5.13.1",
-    "gatsby-plugin-feed": "^5.13.1",
-    "gatsby-plugin-google-gtag": "^5.13.1",
-    "gatsby-plugin-mdx": "^5.13.1",
-    "gatsby-plugin-postcss": "^6.13.1",
-    "gatsby-plugin-react-svg": "^3.3.0",
-    "gatsby-plugin-robots-txt": "^1.8.0",
-    "gatsby-plugin-root-import": "^2.0.9",
-    "gatsby-plugin-sitemap": "^6.13.1",
-    "gatsby-remark-copy-linked-files": "^6.13.1",
-    "gatsby-remark-prismjs": "^7.13.1",
-    "gatsby-remark-smartypants": "^6.13.1",
-    "gatsby-source-filesystem": "^5.13.1",
-    "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.1.0",
+    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.7.0",
     "prismjs": "^1.29.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "remark-gfm": "^3.0.1",
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30",
-    "@types/react": "^18.2.73",
-    "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-astro": "^1.0.3",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
     "husky": "^9.0.11",
-    "lost-pixel": "^3.16.0",
     "lint-staged": "^15.2.2",
+    "lost-pixel": "^3.16.0",
     "prettier": "^3.2.5",
-    "stylelint": "^16.3.1",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "stylelint": "^16.4.0",
+    "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^36.0.0",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.5"
   },
   "lint-staged": {
     "*.css": [
       "stylelint --fix",
       "prettier --write"
     ],
-    "*.{js,jsx,mjs,ts,tsx}": [
+    "*.{astro,js,jsx,mjs,mts,ts,tsx}": [
       "eslint --cache --fix",
       "prettier --write"
     ],
-    "*.{json,md,yml}": [
+    "*.{json,md,mdx,yml}": [
       "prettier --write"
     ]
   },
