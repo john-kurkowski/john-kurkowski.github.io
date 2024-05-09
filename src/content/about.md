@@ -54,10 +54,11 @@ timeEnd='present'
 
 >
 
-Helped clients adopt the latest frontend tooling, test coverage, and code review
-guidelines. Maintained Python OSS libraries
+Helped clients adopt the latest frontend tooling, component libraries, test
+coverage, and code review guidelines. Maintained OSS libraries
 [tldextract](https://github.com/john-kurkowski/tldextract) for URL parsing and
 [music](https://github.com/john-kurkowski/music) for publishing my music.
+Angular, Ember.js, Python, React, Ruby on Rails, Storybook, Tailwind, Vue.js.
 
 </Experience>
 
@@ -98,7 +99,7 @@ Date('2010-08-15')}
 >
 
 Implemented new features and optimizations, from front to back, for
-[quantcast.com](https://quantcast.com), an audience measurement website reaching
+[quantcast.com](https://quantcast.com), an audience measurement web app reaching
 over 2 million people per month. Reported service adoption in an internal
 dashboard, fed by batch jobs. Spearheaded projects, new technologies, and
 workflows in company tech talks. Java, Spring, GWT, Hadoop, Django.
