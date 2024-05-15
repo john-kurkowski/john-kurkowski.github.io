@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm'
 
 export default {
   siteMetadata: {
-    description: 'UX Engineering Consultant',
+    description: 'Full Stack Web Developer',
     siteUrl: 'https://johnkurkowski.com',
     title: 'John Kurkowski',
     url: 'https://johnkurkowski.com',

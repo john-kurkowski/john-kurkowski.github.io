@@ -10,10 +10,14 @@ function Index(props: { data: QueryData }): React.ReactElement {
   return (
     <Layout page={page}>
       <section>
-        <h2 className='heading my-16 text-3xl'>UX Engineering Consultant</h2>
+        <h2 className='heading my-16 text-3xl'>Full Stack Web Developer</h2>
 
         <div className='text-xl'>
-          <p className='mt-8'>I help frontend teams …</p>
+          <p className='mt-8'>
+            I’m a full stack web developer, leaning toward frontend,{' '}
+            <strong>user experience (UX)</strong> development. With 10+ years in
+            the game, I specialize in the following.
+          </p>
 
           <ol className='mt-8'>
             <li className='flex'>

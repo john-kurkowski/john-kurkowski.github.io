@@ -5,10 +5,8 @@ title: 'About Me'
 
 import Experience from 'src/components/resume/experience'
 
-I'm a software consultant who helps with the **development** of the **user
-experience (UX)**. With 10+ years in the game, I help you evolve your
-**existing** or **legacy** frontend stack to ship **incrementally**. I
-specialize in the following.
+I'm a full stack web developer, leaning toward frontend, **user experience
+(UX)** development. With 10+ years in the game, I specialize in the following.
 
 - **Incremental, continuous delivery.** Don't see progress for weeks? Doesn't
   turn out how you imagined? I spot bottlenecks to help you [connect faster to
