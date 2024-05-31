@@ -54,8 +54,8 @@ timeEnd='present'
 
 Helped clients adopt the latest frontend tooling, component libraries, test
 coverage, and code review guidelines. Maintained OSS libraries
-[tldextract](https://github.com/john-kurkowski/tldextract) for URL parsing and
-[music](https://github.com/john-kurkowski/music) for publishing my music.
+[tldextract](https://github.com/john-kurkowski/tldextract) to parse URLs and
+[music](https://github.com/john-kurkowski/music) CLI to publish my music.
 Angular, Ember.js, Python, React, Ruby on Rails, Storybook, Tailwind, Vue.js.
 
 </Experience>
