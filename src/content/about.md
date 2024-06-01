@@ -43,6 +43,7 @@ I'm a full stack web developer, leaning toward frontend, **user experience
 - Read my other themes in my article [Credo](/posts/credo/).
 - Read example UX issues I want to save the world from in my article [Good Ideas
   From Mobile Design That Are Good Everywhere].
+- When I'm not coding, I mix beats and cocktails. 🍸
 
 ## Experience
 
