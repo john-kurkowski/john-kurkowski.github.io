@@ -6,7 +6,7 @@ title: 'About Me'
 import Experience from 'src/components/resume/experience'
 
 I'm a full stack web developer, leaning toward frontend, **user experience
-(UX)** development. With 10+ years in the game, I specialize in the following.
+(UX)** development. With 14+ years in the game, I specialize in the following.
 
 - **Incremental, continuous delivery.** Don't see progress for weeks? Doesn't
   turn out how you imagined? I spot bottlenecks to help you [connect faster to
