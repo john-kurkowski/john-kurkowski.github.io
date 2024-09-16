@@ -90,13 +90,12 @@ get off the couch are itching to try out your site on mobile. They might be in
 for a surprise when it doesn't do what they think it can do. Do you want to take
 the chance they'll give it a second try on a different device?
 
-According to [Don't Make Me Think], the primer on web usability, users will
-continue to put up with your frustrating site, to a degree. You've hooked the
-mobile user a little while longer. But if you've succumbed to a bevy of bad
-desktop design patterns, your site won't contain the answer for mobile users,
-because you've made it hard to reach, or even impossible. You alienate people
-whose only option is a smartphone, or who don't want to get up from their couch,
-or who are on the go.[^1]
+According to [Don't Make Me Think], the primer on web usability, users will continue
+to put up with your frustrating site, to a degree. You've hooked the mobile user
+a little while longer. But if you've succumbed to a bevy of bad desktop design patterns,
+your site won't contain the answer for mobile users, because you've made it hard
+to reach, or even impossible. You alienate people whose only option is a smartphone,
+or who don't want to get up from their couch, or who are on the go.[^1]
 
 So how about those 2 birds with 1 stone? Stop making excuses to your mobile
 audience. Keep the following ideas in mind. Benefit both desktop & mobile
@@ -358,9 +357,9 @@ On the down side, it introduces extra interaction cost to get at the data hidden
 within the scroll and it introduces a mode: the scroll only works when the
 user's mouse happens to be hovering over the inner scroll's area or scrollbar.
 The more inner scrolls, the trickier this gets. If you did the reading on
-[Fitts's Law], you know there's a proportional slowdown in being able to mouse
-over any small scroll area. So it becomes costly to scroll if desired. Scrolling
-is often accidental, like scrolling one area when you mean to scroll another.
+[Fitts's Law], you know there's a proportional slowdown in being able to mouse over
+any small scroll area. So it becomes costly to scroll if desired. Scrolling is often
+accidental, like scrolling one area when you mean to scroll another.
 
 The inner scroll is only more finicky on **mobile** devices. It takes more
 clicks for the user to select the scroll they want to use. Or the scroll
@@ -435,8 +434,8 @@ design][Tufte-isms]."
 ### Comparison To Mobile First
 
 What's the difference between what I'm proposing and [Mobile First]? There isn't
-much, I've only avoided the comparison because I really just want designers to
-stop violating these tips, regardless of platform.
+much, I've only avoided the comparison because I really just want designers to stop
+violating these tips, regardless of platform.
 
 I share Mobile First's focus on content, though the movement is a misnomer to
 what I'm proposing. Typical desktop design has spiraled out of control. The

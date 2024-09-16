@@ -123,8 +123,8 @@ I was going to get. But once I interpreted that much, I had a pretty good idea,
 without reading its documentation. Just like I have a pretty good idea how to
 deal with a doorknob on sight.
 
-[Parametricity: Types Are Documentation] reinforces this, with more evidence
-that naming alone isn't what its cracked up to be.
+[Parametricity: Types Are Documentation] reinforces this, with more evidence that
+naming alone isn't what its cracked up to be.
 
 It is not always possible to communicate everything in a type signature, so do
 employ comments and documentation where necessary. I just bring up that types
@@ -180,8 +180,8 @@ type systems, that we assumed was a necessary evil of the job.
 Think of how much time you spend on those uninteresting yet fatal problems in
 production.
 
-[Meditations on Learning Haskell] offers several more perspectives and is worth
-a read. I think one quote sets the tone.
+[Meditations on Learning Haskell] offers several more perspectives and is worth a
+read. I think one quote sets the tone.
 
 > I’m terrible at programming. I’m a bad programmer and not very bright. Haskell
 > covers for my dumb ass.
