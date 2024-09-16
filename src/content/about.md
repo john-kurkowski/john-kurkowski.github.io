@@ -67,12 +67,12 @@ end: new Date('2020-02-15')}}
 
 >
 
-Endpoint security web apps, for B2B customers to understand, triage, and hunt
-advanced threats. Thick browser JavaScript atop microservice APIs. Grew frontend
-software and team from 10 customers to 1,000s, from 2 developers to 20. Lead
-culture of quality: continuous peer code review, checklists, automated tests,
-and deployment. Obsessed with efficiency: increased deploy frequency from 1x
-monthly to 10x daily. Ember.js, Node.js, Python, Elasticsearch, Swagger.
+UX team tech lead. Built single page applications for enterprise customers to
+triage and hunt advanced threats. Drove adoption of cross-team component library
+and microservice API spec. Grew team from 10 customers to 1,000s, from 2
+developers to 20. Lead a culture of quality: continuous peer code review,
+checklists, and automated tests. Obsessed over efficiency: increased deploys
+from 1x/month to 10x/day. Ember.js, Node.js, Python, Elasticsearch, Swagger.
 
 </Experience>
 
