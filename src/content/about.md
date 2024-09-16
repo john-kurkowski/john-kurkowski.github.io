@@ -48,8 +48,8 @@ I'm a full stack web developer, leaning toward frontend, **user experience
 ## Experience
 
 <Experience className='mt-4' company='Self' location='Remote, Portland, OR'
-position='UX Engineering Consultant' timeBegin={new Date('2020-07-15')}
-timeEnd='present'
+position='UX Engineering Consultant' time={{begin: new Date('2020-07-15'),
+end: 'present'}}
 
 >
 
@@ -62,8 +62,8 @@ Angular, Ember.js, Python, React, Ruby on Rails, Storybook, Tailwind, Vue.js.
 </Experience>
 
 <Experience className='mt-8' company='CrowdStrike' location='Remote, Portland,
-OR' position='Senior Software Developer' timeBegin={new Date('2013-04-15')}
-timeEnd={new Date('2020-02-15')}
+OR' position='Senior Software Developer' time={{begin: new Date('2013-04-15'),
+end: new Date('2020-02-15')}}
 
 >
 
@@ -77,8 +77,8 @@ monthly to 10x daily. Ember.js, Node.js, Python, Elasticsearch, Swagger.
 </Experience>
 
 <Experience className='mt-8' company='Gravity' location='Santa Monica, CA'
-position='Senior Software Developer' timeBegin={new Date('2010-11-15')}
-timeEnd={new Date('2013-04-15')}
+position='Senior Software Developer' time={{begin: new Date('2010-11-15'),
+end: new Date('2013-04-15')}}
 
 >
 
@@ -92,8 +92,8 @@ this niche.
 </Experience>
 
 <Experience className='mt-8' company='Quantcast' location='San Francisco, CA'
-position='Software Developer' timeBegin={new Date('2008-09-15')} timeEnd={new
-Date('2010-08-15')}
+position='Software Developer' time={{begin: new Date('2008-09-15'), end: new
+Date('2010-08-15')}}
 
 >
 
@@ -109,7 +109,7 @@ Django.
 
 <Experience className='mt-4' company='University of Washington'
 location='Seattle, WA' position='B.S. Computer Science, B.A. Linguistics'
-timeBegin={new Date('2004-09-15')} timeEnd={new Date('2008-08-15')} />
+/>
 
 ## Colophon
 

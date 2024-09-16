@@ -12,22 +12,24 @@ function Experience(props: {
   company: string
   location: string
   position: string
-  timeBegin: Date
-  timeEnd: Date | 'present'
+  time?: {
+    begin: Date
+    end: Date | 'present'
+  }
 }): React.ReactElement {
   const undoInheritedGlobalParagraphStyle = {
     margin: 0,
   }
 
   const timeEnd =
-    props.timeEnd instanceof Date
-      ? `${props.timeEnd.getFullYear()}-${props.timeEnd.getMonth() + 1}`
-      : props.timeEnd
+    props.time?.end instanceof Date
+      ? `${props.time.end.getFullYear()}-${props.time.end.getMonth() + 1}`
+      : props.time?.end
 
   const timeEndDisplay =
-    props.timeEnd instanceof Date
-      ? DATE_DISPLAY_FORMAT.format(props.timeEnd)
-      : props.timeEnd
+    props.time?.end instanceof Date
+      ? DATE_DISPLAY_FORMAT.format(props.time.end)
+      : props.time?.end
 
   return (
     <div
@@ -45,23 +47,25 @@ function Experience(props: {
 
         <p style={undoInheritedGlobalParagraphStyle}>{props.position}</p>
 
-        <p
-          className='justify-self-end post-time'
-          style={undoInheritedGlobalParagraphStyle}
-        >
-          <time
-            className='whitespace-no-wrap'
-            dateTime={`${props.timeBegin.getFullYear()}-${
-              props.timeBegin.getMonth() + 1
-            }`}
+        {props.time && (
+          <p
+            className='justify-self-end post-time'
+            style={undoInheritedGlobalParagraphStyle}
           >
-            {DATE_DISPLAY_FORMAT.format(props.timeBegin)}
-          </time>
-          –
-          <time className='whitespace-no-wrap' dateTime={timeEnd}>
-            {timeEndDisplay}
-          </time>
-        </p>
+            <time
+              className='whitespace-no-wrap'
+              dateTime={`${props.time.begin.getFullYear()}-${
+                props.time.begin.getMonth() + 1
+              }`}
+            >
+              {DATE_DISPLAY_FORMAT.format(props.time.begin)}
+            </time>
+            –
+            <time className='whitespace-no-wrap' dateTime={timeEnd}>
+              {timeEndDisplay}
+            </time>
+          </p>
+        )}
 
         <address className='justify-self-end'>{props.location}</address>
       </h5>
