@@ -5,8 +5,9 @@ title: 'About Me'
 
 import Experience from 'src/components/resume/experience'
 
-I'm a full stack web developer, leaning toward frontend, **user experience
-(UX)** development. With 14+ years in the game, I specialize in the following.
+I'm a full stack web developer, frontend-leaning. I'm obsessed with UX, DX, and
+raising team capability. With 14+ years in the game, I specialize in the
+following.
 
 - **Incremental, continuous delivery.** Don't see progress for weeks? Doesn't
   turn out how you imagined? I spot bottlenecks to help you [connect faster to
@@ -67,12 +68,12 @@ end: new Date('2020-02-15')}}
 
 >
 
-UX team tech lead. Built single page applications for enterprise customers to
-triage and hunt advanced threats. Drove adoption of cross-team component library
-and microservice API spec. Grew team from 10 customers to 1,000s, from 2
-developers to 20. Lead a culture of quality: continuous peer code review,
-checklists, and automated tests. Obsessed over efficiency: increased deploys
-from 1x/month to 10x/day. Ember.js, Node.js, Python, Elasticsearch, Swagger.
+UX team tech lead. Built SPAs for enterprise customers to triage and hunt
+advanced threats. Drove adoption of cross-team component library and
+microservice API spec. Grew team from 10 customers to 1,000s, from 2 developers
+to 20. Lead a culture of quality: continuous peer code review, checklists, and
+automated tests. Championed efficiency: increased deploys from 1x/month to
+10x/day. Ember.js, Node.js, Python, Elasticsearch, Swagger.
 
 </Experience>
 
