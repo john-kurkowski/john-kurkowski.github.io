@@ -56,7 +56,7 @@ function Index(props: { data: QueryData }): React.ReactElement {
 
           <p>
             Just want a tune up? I debug any existing, legacy, or unfinished
-            system.
+            system. I tend to work in TypeScript and Python.
           </p>
         </div>
 
