@@ -2,6 +2,11 @@ import { CustomProjectConfig } from 'lost-pixel'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
+const mask = [
+  { selector: '.speakerdeck-embed' },
+  { selector: '.twitter-tweet' },
+]
+
 function pagePaths(): string[] {
   const siteUrl = 'https://johnkurkowski.com'
   const sitemapXml = readFileSync(
@@ -25,7 +30,7 @@ export const config: CustomProjectConfig = {
   breakpoints: [414, 1280],
   lostPixelProjectId: 'clud602ae10romo0e861bvpv2',
   pageShots: {
-    pages: pagePaths().map((path) => ({ path, name: slugify(path) })),
+    pages: pagePaths().map((path) => ({ path, mask, name: slugify(path) })),
     baseUrl: 'http://172.17.0.1:9000',
   },
 }
