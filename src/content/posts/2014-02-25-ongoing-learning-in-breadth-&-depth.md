@@ -18,7 +18,7 @@ First, a frustrating, inspiring anecdote.
 I gave a talk at the [Ember-SC meetup] comparing 6 different JavaScript build tools,
 and glossing over several more. The final slide rated each tool on 6 factors.
 
-<div className="mt-4">
+<div className="embed mt-4">
   <script async className="speakerdeck-embed" data-slide="41" data-id="724a7e007bd6013119ba66337b7b74ec" data-ratio="1.77469670710572" src="//speakerdeck.com/assets/embed.js"></script>
 </div>
 

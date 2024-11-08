@@ -2,10 +2,12 @@ import { CustomProjectConfig } from 'lost-pixel'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
-const mask = [
-  { selector: '.speakerdeck-embed' },
-  { selector: '.twitter-tweet' },
-]
+/**
+ * Mask 3rd party embeds.
+ *
+ * They're a distraction from 1st party diffs.
+ */
+const mask = [{ selector: '.embed' }, { selector: '.twitter-tweet' }]
 
 function pagePaths(): string[] {
   const siteUrl = 'https://johnkurkowski.com'
