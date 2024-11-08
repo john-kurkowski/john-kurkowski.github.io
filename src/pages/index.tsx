@@ -14,9 +14,9 @@ function Index(props: { data: QueryData }): React.ReactElement {
 
         <div className='text-xl'>
           <p className='mt-8'>
-            I’m a full stack web developer, leaning toward frontend,{' '}
-            <strong>user experience (UX)</strong> development. With 14+ years in
-            the game, I specialize in the following.
+            I'm a full stack web developer, frontend-leaning. I'm obsessed with
+            UX, DX, and raising team capability. With 14+ years in the game, I
+            specialize in the following.
           </p>
 
           <ol className='mt-8'>
