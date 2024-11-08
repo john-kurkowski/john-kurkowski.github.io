@@ -9,6 +9,12 @@ import { join } from 'path'
  */
 const mask = [{ selector: '.embed' }, { selector: '.twitter-tweet' }]
 
+/**
+ * Parse the sitemap for all pages for visual regression testing to visit.
+ *
+ * The sitemap is an updated yet static list of all pages. "Parse" its XML with
+ * vanilla Node.js for the page URLs.
+ */
 function pagePaths(): string[] {
   const siteUrl = 'https://johnkurkowski.com'
   const sitemapXml = readFileSync(
@@ -21,6 +27,9 @@ function pagePaths(): string[] {
   })
 }
 
+/**
+ * Id the pages by a friendlier, more uniform slug.
+ */
 function slugify(str: string): string {
   const replaced = str.replaceAll('/', '-')
   const stripped = replaced.replaceAll(/(^-+|-+$)/g, '')
