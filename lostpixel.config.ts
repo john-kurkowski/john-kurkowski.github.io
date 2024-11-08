@@ -1,13 +1,23 @@
+import type { Page } from 'playwright-core'
 import { CustomProjectConfig } from 'lost-pixel'
-import { readFileSync } from 'fs'
 import { join } from 'path'
+import { readFileSync } from 'fs'
 
 /**
- * Mask 3rd party embeds.
+ * Hide 3rd party embeds.
  *
  * They're a distraction from 1st party diffs.
  */
-const mask = [{ selector: '.embed' }, { selector: '.twitter-tweet' }]
+async function hide3rdPartyEmbeds(page: Page) {
+  await page.addStyleTag({
+    content: `
+        .embed iframe,
+        .twitter-tweet iframe {
+          display: none !important;
+        }
+      `,
+  })
+}
 
 /**
  * Parse the sitemap for all pages for visual regression testing to visit.
@@ -38,10 +48,13 @@ function slugify(str: string): string {
 
 export const config: CustomProjectConfig = {
   apiKey: process.env.LOST_PIXEL_API_KEY,
+  beforeScreenshot: async (page) => {
+    await hide3rdPartyEmbeds(page)
+  },
   breakpoints: [414, 1280],
   lostPixelProjectId: 'clud602ae10romo0e861bvpv2',
   pageShots: {
-    pages: pagePaths().map((path) => ({ path, mask, name: slugify(path) })),
+    pages: pagePaths().map((path) => ({ path, name: slugify(path) })),
     baseUrl: 'http://172.17.0.1:9000',
   },
 }
