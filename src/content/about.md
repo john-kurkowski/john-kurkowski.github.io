@@ -49,16 +49,17 @@ following.
 ## Experience
 
 <Experience className='mt-4' company='Self' location='Remote, Portland, OR'
-position='UX Engineering Consultant' time={{begin: new Date('2020-07-15'),
+position='Frontend Development Consultant' time={{begin: new Date('2020-07-15'),
 end: 'present'}}
 
 >
 
 Helped clients adopt the latest frontend tooling, component libraries, test
 coverage, and code review guidelines. Maintained OSS libraries
-[tldextract](https://github.com/john-kurkowski/tldextract) to parse URLs and
-[music](https://github.com/john-kurkowski/music) CLI to publish my music.
-Angular, Ember.js, Python, React, Ruby on Rails, Storybook, Tailwind, Vue.js.
+[tldextract](https://github.com/john-kurkowski/tldextract) to parse URLs (35k+
+dependents) and [music](https://github.com/john-kurkowski/music) CLI to publish
+my music (100+ hours error-prone clicks saved). Angular, Ember.js, Python,
+React, Ruby on Rails, Storybook, Tailwind, Vue.js.
 
 </Experience>
 
@@ -70,8 +71,8 @@ end: new Date('2020-02-15')}}
 
 UX team tech lead. Built SPAs for enterprise customers to triage and hunt
 advanced threats. Drove adoption of cross-team component library and
-microservice API spec. Grew team from 10 customers to 1,000s, from 2 developers
-to 20. Lead a culture of quality: continuous peer code review, checklists, and
+microservice API spec. Grew team from 10 customers to 1k+, from 2 developers
+to 20. Lead culture of quality: continuous peer code review, checklists, and
 automated tests. Championed efficiency: increased deploys from 1x/month to
 10x/day. Ember.js, Node.js, Python, Elasticsearch, Swagger.
 
@@ -83,12 +84,11 @@ end: new Date('2013-04-15')}}
 
 >
 
-Developed a Scala web platform and 3rd party JavaScript partner integrations for
-serving realtime, personalized, article recommendations, embedded in top U.S.
-publishers’ sites. Ingested social data for analytics visualizations and browser
-extension. Built internal web APIs for tuning ontology, across non/relational
-and graph databases. Hosted Scala meetups, demonstrating company leadership in
-this niche.
+Developed a Scala web platform and 3rd party JavaScript integration for
+realtime, personalized article recommendations embedded in top U.S. publisher
+sites. Ingested social data for analytics visualizations and browser extension.
+Built internal web APIs for tuning ontology, across non/relational databases.
+Hosted local Scala meetups for recruitment.
 
 </Experience>
 
@@ -99,10 +99,10 @@ Date('2010-08-15')}}
 >
 
 Implemented new features and optimizations, from front to back, for an audience
-measurement web app reaching over 2 million people per month. Reported service
-adoption in an internal dashboard, fed by batch jobs. Spearheaded projects, new
-technologies, and workflows in company tech talks. Java, Spring, GWT, Hadoop,
-Django.
+measurement and dataviz web app reaching over 2 million people per month.
+Reported service adoption in an internal dashboard, fed by batch jobs.
+Spearheaded projects, new technologies, and workflows in company tech talks.
+Java, Spring, GWT, Hadoop, Django.
 
 </Experience>
 

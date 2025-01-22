@@ -10,42 +10,44 @@ function Index(props: { data: QueryData }): React.ReactElement {
   return (
     <Layout page={page}>
       <section>
-        <h2 className='heading my-16 text-3xl'>Full Stack Web Developer</h2>
+        <h2 className='heading my-16 text-3xl'>
+          Senior Full Stack Web Developer
+        </h2>
 
-        <div className='text-xl'>
-          <p className='mt-8'>
-            I'm a full stack web developer, frontend-leaning. I'm obsessed with
-            UX, DX, and raising team capability. With 14+ years in the game, I
-            specialize in the following.
-          </p>
+        <p className='mt-8 text-xl'>
+          I'm a full stack web developer, frontend-leaning. I'm obsessed with
+          UX, DX, and raising team capability. With 14+ years in the game, I
+          specialize in the following.
+        </p>
 
-          <ol className='mt-8'>
-            <li className='flex'>
-              <span aria-label='Ship' role='img'>
-                🚢
-              </span>
-              <span className='ml-4'>
-                <em>Ship</em> incrementally, without rewrites
-              </span>
-            </li>
-            <li className='flex'>
-              <span aria-label='Test tube' role='img'>
-                🧪
-              </span>
-              <span className='ml-4'>
-                <em>Test</em> to serve the team, not a metric
-              </span>
-            </li>
-            <li className='flex'>
-              <span aria-label='Wrench' role='img'>
-                🔧
-              </span>
-              <span className='ml-4'>
-                <em>Debug</em> any app, existing or legacy
-              </span>
-            </li>
-          </ol>
-        </div>
+        <ol className='mt-8 text-xl'>
+          <li className='flex'>
+            <span aria-label='Ship' role='img'>
+              🚢
+            </span>
+            <span className='ml-4'>
+              <em>Ship</em> incrementally, with test coverage confidence,
+              without rewrites
+            </span>
+          </li>
+          <li className='flex mt-2'>
+            <span aria-label='Wrench' role='img'>
+              🔧
+            </span>
+            <span className='ml-4'>
+              <em>Debug</em> any app, existing or legacy
+            </span>
+          </li>
+          <li className='flex mt-2'>
+            <span aria-label='Test tube' role='img'>
+              🤝
+            </span>
+            <span className='ml-4'>
+              <em>Collaborate</em> on distributed teams via docs, code review,
+              and mentorship
+            </span>
+          </li>
+        </ol>
 
         <div className='mt-8'>
           <p>
@@ -56,7 +58,8 @@ function Index(props: { data: QueryData }): React.ReactElement {
 
           <p>
             Just want a tune up? I debug any existing, legacy, or unfinished
-            system. I tend to work in TypeScript and Python.
+            system. I tend to work in TypeScript and Python, and I love learning
+            new tech.
           </p>
         </div>
 
@@ -92,7 +95,7 @@ function pageForProps(props: { data: QueryData }): Page {
   return {
     dateForMeta: '',
     description:
-      'With 14+ years in the game, I help frontend teams ship incrementally, without rewrites. Test to serve the team, not a metric. Debug any app, existing or legacy.',
+      'With 14+ years in the game, I help frontend teams ship incrementally, with test coverage confidence, without rewrites. Debug any app, existing or legacy. Collaborate on distributed teams via docs, code review, and mentorship.',
     site: props.data.site,
     title: `${props.data.site.siteMetadata.title} - ${props.data.site.siteMetadata.description}`,
     url: '/',
