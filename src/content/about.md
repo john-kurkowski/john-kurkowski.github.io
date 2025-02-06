@@ -33,7 +33,7 @@ following.
   100% test coverage. I teach the happy medium.
 
 - **Web tech stack.** You wanted buzzword bingo, you got it. I excel at
-  JavaScript, TypeScript, Node.js, Python, JVM, CI/CD, Unix, and Git.
+  TypeScript, JavaScript, Node.js, Python, JVM, CI/CD, Unix, and Git.
 
 - **Overcommunication.** I've been on both sides of the consultant vs. hiring
   in-house debate. If I'm unable to integrate well, _I'll be the squeaky wheel_.
@@ -54,12 +54,14 @@ end: 'present'}}
 
 >
 
-Helped clients adopt the latest frontend tooling, component libraries, test
-coverage, and code review guidelines. Maintained OSS libraries
-[tldextract](https://github.com/john-kurkowski/tldextract) to parse URLs (35k+
-dependents) and [music](https://github.com/john-kurkowski/music) CLI to publish
-my music (100+ hours error-prone clicks saved). Angular, Ember.js, Python,
-React, Ruby on Rails, Storybook, Tailwind, Vue.js.
+- Helped clients such as WhoCo and Media Arts Lab (Apple) prototype and adopt
+  frontend tooling, component libraries, test coverage, code review guidelines.
+- Maintained OSS libraries:
+  - [tldextract](https://github.com/john-kurkowski/tldextract) to parse URLs
+    (35k+ dependents).
+  - [music](https://github.com/john-kurkowski/music) CLI to publish my music
+    (100+ hours error-prone clicks saved).
+- React, Ember.js, Python, Angular, Storybook, Tailwind, Ruby on Rails, Vue.js.
 
 </Experience>
 
@@ -69,12 +71,15 @@ end: new Date('2020-02-15')}}
 
 >
 
-UX team tech lead. Built SPAs for enterprise customers to triage and hunt
-advanced threats. Drove adoption of cross-team component library and
-microservice API spec. Grew team from 10 customers to 1k+, from 2 developers
-to 20. Lead culture of quality: continuous peer code review, checklists, and
-automated tests. Championed efficiency: increased deploys from 1x/month to
-10x/day. Ember.js, Node.js, Python, Elasticsearch, Swagger.
+- UX team tech lead. Built SPAs for enterprise customers to triage and hunt
+  advanced threats.
+- Drove adoption of cross-team component library and microservice API spec.
+- Grew team from 10 customers to 1k+, from 2 developers to 20.
+- Lead culture of quality: continuous peer code review, checklists, and
+  automated tests.
+- Increased deploys from 1x/month to 10x/day, championing efficiency and team
+  feedback loop.
+- Ember.js, Node.js, Python, Elasticsearch, Scala, Swagger/OpenAPI.
 
 </Experience>
 
@@ -84,11 +89,12 @@ end: new Date('2013-04-15')}}
 
 >
 
-Developed a Scala web platform and 3rd party JavaScript integration for
-realtime, personalized article recommendations embedded in top U.S. publisher
-sites. Ingested social data for analytics visualizations and browser extension.
-Built internal web APIs for tuning ontology, across non/relational databases.
-Hosted local Scala meetups for recruitment.
+- Developed a Scala platform and 3rd party JavaScript for 30k/hr realtime,
+  personalized article recommendations, embedded in top 200 U.S. publisher
+  sites, such as TechCrunch.
+- Ingested 10k/hr live tweets for interest analytics visualizations.
+- Built browser extension for staff to annotate 100M node HBase, neo4j ontology.
+- Hosted monthly 15-person local Scala meetups for recruitment.
 
 </Experience>
 
@@ -98,11 +104,11 @@ Date('2010-08-15')}}
 
 >
 
-Implemented new features and optimizations, from front to back, for an audience
-measurement and dataviz web app reaching over 2 million people per month.
-Reported service adoption in an internal dashboard, fed by batch jobs.
-Spearheaded projects, new technologies, and workflows in company tech talks.
-Java, Spring, GWT, Hadoop, Django.
+- Built and optimized analytics web app reaching 2M+ monthly users.
+- Reported churn risks to CEO in daily internal dashboard, retaining 100s of
+  critical customers.
+- Spearheaded projects, new technologies, and workflows in company tech talks.
+- Java, Spring, GWT, Hadoop, Django, MySQL, PostgreSQL.
 
 </Experience>
 
