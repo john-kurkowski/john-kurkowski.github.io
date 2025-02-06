@@ -77,10 +77,10 @@ p + p {
 
 .footnotes li,
 .post hr,
-.post ol,
+.post ol:not(ol ol),
 .post p,
 .post table,
-.post ul {
+.post ul:not(ul ul) {
   @apply mt-4;
 }
 
