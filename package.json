@@ -21,7 +21,7 @@
   "homepage": "https://github.com/john-kurkowski/john-kurkowski.github.io#readme",
   "dependencies": {
     "autoprefixer": "^10.4.20",
-    "gatsby": "^5.14.0",
+    "gatsby": "^5.14.1",
     "gatsby-plugin-catch-links": "^5.14.0",
     "gatsby-plugin-feed": "^5.14.0",
     "gatsby-plugin-google-gtag": "^5.14.0",
@@ -41,23 +41,23 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark-gfm": "^3.0.1",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@types/node": "^22.9.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/node": "^22.13.1",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "eslint": "^8.57.1",
-    "eslint-plugin-react": "^7.37.2",
-    "husky": "^9.1.6",
-    "lost-pixel": "^3.21.0",
-    "lint-staged": "^15.2.10",
-    "prettier": "^3.3.3",
-    "stylelint": "^16.10.0",
+    "eslint-plugin-react": "^7.37.4",
+    "husky": "^9.1.7",
+    "lost-pixel": "^3.22.0",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.4.2",
+    "stylelint": "^16.14.1",
     "stylelint-config-standard": "^36.0.1",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.3"
   },
   "lint-staged": {
     "*.css": [

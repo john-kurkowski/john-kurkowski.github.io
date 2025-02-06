@@ -15,8 +15,9 @@ ongoing learning of programming tools.
 
 First, a frustrating, inspiring anecdote.
 
-I gave a talk at the [Ember-SC meetup] comparing 6 different JavaScript build tools,
-and glossing over several more. The final slide rated each tool on 6 factors.
+I gave a talk at the [Ember-SC meetup] comparing 6 different JavaScript build
+tools, and glossing over several more. The final slide rated each tool on 6
+factors.
 
 <div className="embed mt-4">
   <script async className="speakerdeck-embed" data-slide="41" data-id="724a7e007bd6013119ba66337b7b74ec" data-ratio="1.77469670710572" src="//speakerdeck.com/assets/embed.js"></script>
@@ -147,8 +148,8 @@ balance.
     wrong tool.
 
 [^2]:
-    For great humor: [Task Runners and Builders: Just Because You Can Does
-    That Mean You Should?]
+    For great humor: [Task Runners and Builders: Just Because You Can Does That
+    Mean You Should?]
 
 [^3]:
     For a light, software-oriented intro to the Paradox of Choice, see Spolsky's
