@@ -12,7 +12,7 @@ async function hide3rdPartyEmbeds(page: Page) {
   await page.addStyleTag({
     content: `
         .embed iframe,
-        .twitter-tweet iframe {
+        .twitter-tweet-rendered {
           display: none !important;
         }
       `,
