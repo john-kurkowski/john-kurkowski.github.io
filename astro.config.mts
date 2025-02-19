@@ -1,7 +1,7 @@
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import type { MarkdownAstroData, RemarkPlugin } from '@astrojs/markdown-remark'
+import type { RemarkPlugin } from '@astrojs/markdown-remark'
 import { defineConfig } from 'astro/config'
 
 const parsePublishTime: RemarkPlugin = function () {
@@ -15,7 +15,9 @@ const parsePublishTime: RemarkPlugin = function () {
       ).toISOString()
     }
 
-    const data = file.data as { astro: MarkdownAstroData }
+    const data = file.data as {
+      astro: { frontmatter: { date: string | null } }
+    }
     data.astro.frontmatter.date = authorOffsetDate
   }
 }
