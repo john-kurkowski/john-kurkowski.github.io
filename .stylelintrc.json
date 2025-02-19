@@ -12,6 +12,7 @@
       {
         "ignoreAtRules": ["config"]
       }
-    ]
+    ],
+    "import-notation": "string"
   }
 }

@@ -1,10 +1,7 @@
-@import url('tailwindcss');
-@import url('tailwindcss/base') layer(utilities);
-@import url('./sticky-footer') layer(utilities);
-@import url('./syntax') layer(utilities);
-@import url('./typography') layer(utilities);
-@import url('tailwindcss/components') layer(utilities);
-@import url('./button') layer(utilities);
-@import url('tailwindcss/utilities') layer(utilities);
+@import 'tailwindcss';
+@import './sticky-footer';
+@import './syntax';
+@import './typography';
+@import './button';
 
 @config '../../tailwind.config.js';
