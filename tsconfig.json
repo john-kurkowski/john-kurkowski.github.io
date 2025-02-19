@@ -1,13 +1,9 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "baseUrl": "./",
-    "esModuleInterop": true,
-    "jsx": "react",
     "lib": ["dom", "es2021"],
-    "noEmit": true,
-    "skipLibCheck": true,
-    "strict": true
+    "strictNullChecks": true
   },
-  "include": ["./*", "./src/**/*"]
+  "exclude": ["dist"],
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"]
 }

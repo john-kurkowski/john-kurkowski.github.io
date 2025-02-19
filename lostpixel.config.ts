@@ -1,5 +1,5 @@
 import type { Page } from 'playwright-core'
-import { CustomProjectConfig } from 'lost-pixel'
+import type { CustomProjectConfig } from 'lost-pixel'
 import { join } from 'path'
 import { readFileSync } from 'fs'
 
@@ -28,7 +28,7 @@ async function hide3rdPartyEmbeds(page: Page) {
 function pagePaths(): string[] {
   const siteUrl = 'https://johnkurkowski.com'
   const sitemapXml = readFileSync(
-    join(__dirname, 'public', 'sitemap-0.xml'),
+    join(__dirname, 'dist', 'sitemap-0.xml'),
     'utf-8',
   )
   const urlsRe = new RegExp(`${siteUrl}(/[^<]*)`, 'g')
@@ -55,6 +55,6 @@ export const config: CustomProjectConfig = {
   lostPixelProjectId: 'clud602ae10romo0e861bvpv2',
   pageShots: {
     pages: pagePaths().map((path) => ({ path, name: slugify(path) })),
-    baseUrl: 'http://172.17.0.1:9000',
+    baseUrl: 'http://172.17.0.1:4321',
   },
 }

@@ -1,8 +1,13 @@
 ---
-layout: post
+layout: ../../components/layouts/post.astro
 title: 'Accumulating More Than One Failure In A ValidationNEL'
-categories: tech
-tags: scala
+categories: [tech]
+tags: [scala]
+description: >-
+  This is an adaptation of an internal blog post I made for Gravity engineers.
+  To preface, Gravity likes to use 2 very predictable patterns throughout its
+  Scala codebase, which is very important for a TIMTOWTDI language like Scala:
+  the for-comprehension and ValidationNEL.
 ---
 
 This is an adaptation of an internal blog post I made for
@@ -10,7 +15,7 @@ This is an adaptation of an internal blog post I made for
 predictable patterns throughout its Scala codebase, which is very important for
 a TIMTOWTDI language like Scala.
 
-1. The **for-comprehension:** it expresses so much of Gravity's business logic,
+1. The **for-comprehension:** it expresses so much of Gravity’s business logic,
    so it is valuable to see its familiar syntax over and over.
 2. **ValidationNEL:** it captures success and failure states better than
    traditional imperative means.
@@ -25,7 +30,7 @@ There may be differences in the examples.)
 ---
 
 Beyond ValidationNEL distinguishing success and failure cases, its other sell is
-accumulation of failures. I think it's superior to throwing a single exception.
+accumulation of failures. I think it’s superior to throwing a single exception.
 From
 [one Validation tutorial](http://www.lunatech-research.com/archives/2012/03/02/validation-scala):
 
@@ -35,10 +40,10 @@ From
 > other ways, but that means riddling your program with try-catch blocks around
 > every sub step, which clutters the code beyond recognition.
 
-However in Gravity's typical usage of ValidationNELs, they don't accumulate
+However in Gravity’s typical usage of ValidationNELs, they don’t accumulate
 failures; they tend to produce exactly one failure, if any. This post will
 explain why, what use-case it fulfills, and the magic to actually accumulate
-failures, if that's what you want.
+failures, if that’s what you want.
 
 Of its 2 use-cases for ValidationNELs,
 
@@ -51,17 +56,17 @@ Gravity tends toward #1. This is the easiest way to use ValidationNEL, since you
 can use familiar syntax: the **for-comprehension**. However this tends to only
 ever produce one failure.
 
-Let's get one thing out of the way: if this is the case, why use a ValidationNEL
+Let’s get one thing out of the way: if this is the case, why use a ValidationNEL
 over a Validation at all? ValidationNEL is preferable throughout the codebase
 regardless of how many potential failures can occur because it plays nicer with
 type inference. If you accidentally mix e.g. `Validation[String, Int]` with
-`ValidationNEL[String, Int]` you'll get a `Validation[Object, Int]`. D'oh. It's
+`ValidationNEL[String, Int]` you’ll get a `Validation[Object, Int]`. D’oh. It’s
 also future-proof if you later decide to yield additional failures. On the flip
 side, you must accept the wart of running `NonEmptyList.list.contains` to handle
 specific errors; perhaps write a custom extractor.
 
 So why are we practically restricted to one failure? A for-comprehenion is often
-sugar for calls to `flatMap`[^1]. This could also be called fail-fast. Let's
+sugar for calls to `flatMap`[^1]. This could also be called fail-fast. Let’s
 review `flatMap` behavior.
 
 ```scala
@@ -89,7 +94,7 @@ for {
 ```
 
 So when `flatMap`ping over a series of Validations, as soon as one of them is a
-`Failure`, you won't reach the others.
+`Failure`, you won’t reach the others.
 
 ```scala
 val sumV: ValidationNEL[String, Int] = for {
@@ -194,7 +199,7 @@ if (fails.isEmpty) {
 // Failure(NonEmptyList(Error))
 ```
 
-Awkward, no? You'd have to copy & paste that block for every different
+Awkward, no? You'd have to copy paste that block for every different
 accumulation strategy. And tweak each slightly.[^2]
 
 So, I've shown you how to accumulate a handful of Validations. If you're
@@ -203,7 +208,7 @@ more examples in
 [A Tale of 3 Nightclubs](https://gist.github.com/oxbowlakes/970717). Take a look
 for calls to `sequence` which essentially inverts a sequence of Validations into
 a Validation of a sequence:
-`Seq[ValidationNEL[E, A] => ValidationNEL[E, Seq[A]]`. It's beyond my current
+`Seq[ValidationNEL[E, A] => ValidationNEL[E, Seq[A]]`. It’s beyond my current
 ability to explain the type lambda on `sequence` though, so good luck.
 
 You can stop here with your newfound Validation knowledge if you like.
@@ -212,34 +217,34 @@ Otherwise, onto the more theoretical digression.
 ### Validation As Monad? Validation As Applicative Functor?
 
 Back to `|@|`. Why another operator? Why this promise of Validations playing
-nicely with for-comprehensions—syntax we already know—and yet we can't get
-failure accumulation? Because of Scalaz's definition of Validation as a monad.
-Though very convenient for much of Gravity's business logic, Validation defining
+nicely with for-comprehensions—syntax we already know—and yet we can’t get
+failure accumulation? Because of Scalaz’s definition of Validation as a monad.
+Though very convenient for much of Gravity’s business logic, Validation defining
 `flatMap` is an accident. Validation is primarily an _applicative functor_.
 
-It's beyond this post's scope to fully explain the utility of monad and
-applicative functor typeclasses, so I'll just say that monads and Scala
+It’s beyond this post’s scope to fully explain the utility of monad and
+applicative functor typeclasses, so I’ll just say that monads and Scala
 for-comprehensions go hand in hand. When I said Gravity expresses so much of its
 business logic in for-comprehensions, that means our business logic is monadic.
-If you've written a for-comprehension, or directly called `flatMap`, you've used
+If you’ve written a for-comprehension, or directly called `flatMap`, you’ve used
 a monad.
 
 But Validation, being an applicative functor, has more power than `map` and
-`flatMap`, that a for-comprehension can't harness. Borrowing from
+`flatMap`, that a for-comprehension can’t harness. Borrowing from
 [this intro to monadic design](http://softwarejockey.wordpress.com/2012/04/30/a-taste-of-monadic-design/),
-&#8220;&#8230; unlike a monad, an applicative functor can carry forward results
-of previous computations.&#8221; Sounds like the accumulation we need.
+“… unlike a monad, an applicative functor can carry forward results of previous
+computations.” Sounds like the accumulation we need.
 
-Unfortunately there's no native Scala syntax for applicatives. You have to use
+Unfortunately there’s no native Scala syntax for applicatives. You have to use
 the funny Scalaz `|@|` operator and its kin.
 
-I didn't realize that Validation isn't supposed to be a monad until
+I didn’t realize that Validation isn’t supposed to be a monad until
 [Validation.flatMap was removed in a Scalaz 7 milestone](https://github.com/scalaz/scalaz/commit/061e23de4848e3f97595d5a9ba1920c8827ffe41).
 The community has since brought it back for backwards-compatibility, so
 Validation will continue to be targetable by for-comprehensions. But now you
 know: it can viewed as a monad and an applicative functor, and they behave
 differently (if you like to think in terms of these typeclasses, you know
-Validation is similar to Either. Think of Scalaz's `flatMap`-carrying Validation
+Validation is similar to Either. Think of Scalaz’s `flatMap`-carrying Validation
 as a right-biased Either monad, as its `flatMap` would only deal with its
 right-side/success). For more Validation potential though, use it as an
 applicative functor with `|@|` and company.
@@ -248,10 +253,10 @@ applicative functor with `|@|` and company.
 
 [^1]:
     For-comprehensions compile to `flatMap`, `map`, `filter`, and/or `foreach`
-    calls. That's it.
+    calls. That’s it.
 
 [^2]:
     Reminds me of clinging to old, verbose, C-style
-    `for (int i = 0; i < length; i++) { ... }` blocks. Nowadays, you use `map`,
+    `for (int i = 0; i < length; i++) { … }` blocks. Nowadays, you use `map`,
     `filter`, and friends. Declarative over imperative. Separate what you want
     from how you get it.

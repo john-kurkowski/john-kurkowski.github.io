@@ -1,20 +1,20 @@
 ---
-layout: base
+layout: ../components/layouts/page.astro
 title: 'About Me'
 ---
 
-import Experience from 'src/components/resume/experience'
+import Experience from '../components/resume/experience.astro'
 
-I'm a full stack web developer, frontend-leaning. I'm obsessed with UX, DX, and
+I’m a full stack web developer, frontend-leaning. I’m obsessed with UX, DX, and
 raising team capability. With 14+ years in the game, I specialize in the
 following.
 
-- **Incremental, continuous delivery.** Don't see progress for weeks? Doesn't
+- **Incremental, continuous delivery.** Don’t see progress for weeks? Doesn’t
   turn out how you imagined? I spot bottlenecks to help you [connect faster to
-  what you're creating][Inventing On Principle]. Your team will love [the
+  what you’re creating][Inventing On Principle]. Your team will love [the
   momentum from showing][Showing Code Every Day Or Two], not telling.
 
-- **Stuck with a UX mess?** Didn't bake in UX from the start? That's okay. [It
+- **Stuck with a UX mess?** Didn’t bake in UX from the start? That’s okay. [It
   happens to everyone.][Corporate UX Maturity: Stages 1-4]
 
   - Improve incrementally, **without rewriting** from scratch. Delivering
@@ -26,17 +26,17 @@ following.
 
 - **Stuck with legacy, buggy, or unfinished code?** I have a knack for
   debugging. I love to strategize how to evolve a system from current point A to
-  desired point B. Then change the plane's engines during flight.
+  desired point B. Then change the plane’s engines during flight.
 
-- **Automated tests.** Haven't been testing your frontend? Certain changes
-  collapse the house of cards? I've worked on teams with 0% test coverage and
+- **Automated tests.** Haven’t been testing your frontend? Certain changes
+  collapse the house of cards? I’ve worked on teams with 0% test coverage and
   100% test coverage. I teach the happy medium.
 
 - **Web tech stack.** You wanted buzzword bingo, you got it. I excel at
   TypeScript, JavaScript, Node.js, Python, JVM, CI/CD, Unix, and Git.
 
-- **Overcommunication.** I've been on both sides of the consultant vs. hiring
-  in-house debate. If I'm unable to integrate well, _I'll be the squeaky wheel_.
+- **Overcommunication.** I’ve been on both sides of the consultant vs. hiring
+  in-house debate. If I’m unable to integrate well, _I’ll be the squeaky wheel_.
   I want our collaboration to be efficient and a good experience for all.
 
 ### Even More About Me
@@ -114,20 +114,23 @@ Date('2010-08-15')}}
 
 ## Education
 
-<Experience className='mt-4' company='University of Washington'
-location='Seattle, WA' position='B.S. Computer Science, B.A. Linguistics'
+<Experience
+  className='mt-4'
+  company='University of Washington'
+  location='Seattle, WA'
+  position='B.S. Computer Science, B.A. Linguistics'
 />
 
 ## Colophon
 
 This site is coded and written in [iTerm2] and [vim]. It is built around the
-framework [GatsbyJS]. The site's preferred display font is the humanist [Open
+framework [Astro]. The site’s preferred display font is the humanist [Open
 Sans]. The preferred body font is the modern serif [Lora]. The site is hosted on
 [Netlify]. [Its source is available on GitHub][GitHub source].
 
+[Astro]: https://astro.build/
 [Corporate UX Maturity: Stages 1-4]:
   https://www.nngroup.com/articles/ux-maturity-stages-1-4/
-[GatsbyJS]: https://www.gatsbyjs.org/
 [GitHub source]: https://github.com/john-kurkowski/john-kurkowski.github.io
 [Good Ideas From Mobile Design That Are Good Everywhere]:
   /posts/good-ideas-from-mobile-design-that-are-good-everywhere/

@@ -1,0 +1,72 @@
+---
+interface Props {
+  className?: string
+  company: string
+  location: string
+  position: string
+  time?: {
+    begin: Date
+    end: Date | 'present'
+  }
+}
+
+const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en', {
+  month: 'short',
+  timeZone: 'America/Los_Angeles',
+  year: 'numeric',
+})
+
+const undoInheritedGlobalParagraphStyle = {
+  margin: 0,
+}
+
+const props = Astro.props
+
+const timeEnd =
+  props.time?.end instanceof Date
+    ? `${props.time.end.getFullYear()}-${props.time.end.getMonth() + 1}`
+    : props.time?.end
+
+const timeEndDisplay =
+  props.time?.end instanceof Date
+    ? DATE_DISPLAY_FORMAT.format(props.time.end)
+    : props.time?.end
+---
+
+<div class={`border-l-4 border-gray-300 px-4 text-sm ${props.className || ''}`}>
+  <h5
+    class='grid grid-flow-col grid-cols-[auto_auto] grid-rows-[1fr_0.5fr] items-center justify-between gap-x-4'
+  >
+    <p class='text-xl font-bold' style={undoInheritedGlobalParagraphStyle}>
+      {props.company}
+    </p>
+
+    <p style={undoInheritedGlobalParagraphStyle}>{props.position}</p>
+
+    {
+      props.time && (
+        <p
+          class='post-time justify-self-end'
+          style={undoInheritedGlobalParagraphStyle}
+        >
+          <time
+            class='whitespace-no-wrap'
+            dateTime={`${props.time.begin.getFullYear()}-${
+              props.time.begin.getMonth() + 1
+            }`}
+          >
+            {DATE_DISPLAY_FORMAT.format(props.time.begin)}
+          </time>
+          –
+          <time class='whitespace-no-wrap' dateTime={timeEnd}>
+            {timeEndDisplay}
+          </time>
+        </p>
+      )
+    }
+
+    <address class='justify-self-end'>{props.location}</address>
+  </h5>
+
+  <div class='text-justify'><slot /></div>
+</div>

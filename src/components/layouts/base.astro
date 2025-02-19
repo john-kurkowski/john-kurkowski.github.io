@@ -1,0 +1,38 @@
+---
+import { ClientRouter } from 'astro:transitions'
+
+import '../../css/main.css'
+
+import Footer from './Footer.astro'
+import Nav from './Nav.astro'
+import Seo from './Seo.astro'
+
+const frontmatter = Astro.props.frontmatter || {}
+
+const siteMetadata = {
+  description:
+    'With 14+ years in the game, I help frontend teams ship incrementally, with test coverage confidence, without rewrites. Debug any app, existing or legacy. Collaborate on distributed teams via docs, code review, and mentorship.',
+  title: 'John Kurkowski - Senior Full Stack Web Developer',
+  url: '/',
+}
+---
+
+<html class='bg-secondary' lang='en-US'>
+  <head>
+    <Seo frontmatter={frontmatter} siteMetadata={siteMetadata} />
+    <ClientRouter />
+  </head>
+  <body>
+    <div class='flex min-h-full flex-col content-between font-serif'>
+      <div class='flex-grow bg-background'>
+        <Nav />
+
+        <main class='mx-auto my-8 max-w-2xl px-5 text-gray-800'>
+          <slot />
+        </main>
+      </div>
+
+      <Footer />
+    </div>
+  </body>
+</html>

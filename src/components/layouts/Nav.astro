@@ -1,0 +1,35 @@
+---
+const pathname = new URL(Astro.request.url).pathname
+---
+
+<nav
+  class='flex flex-col items-center justify-between border-b-4 border-primary bg-secondary px-8 pt-2 font-sans text-background lg:flex-row'
+>
+  <h1 class='tracking-widester pb-4 text-2xl font-extrabold uppercase lg:pb-2'>
+    <a href='/'>John Kurkowski</a>
+  </h1>
+
+  <ul class='flex font-semibold'>
+    <li class=''>
+      <a class={`nav-link pr-4 ${pathname === '/' && 'active'}`} href='/'>
+        <span class='nav-link-content py-2 lg:pb-4'>Home</span>
+      </a>
+    </li>
+    <li class=''>
+      <a
+        class={`nav-link px-4 ${pathname.startsWith('/about') && 'active'}`}
+        href='/about/'
+      >
+        <span class='nav-link-content py-2 lg:pb-4'>About</span>
+      </a>
+    </li>
+    <li class=''>
+      <a
+        class={`nav-link pl-4 ${pathname.startsWith('/posts') && 'active'}`}
+        href='/posts/'
+      >
+        <span class='nav-link-content py-2 lg:pb-4'>Articles</span>
+      </a>
+    </li>
+  </ul>
+</nav>
