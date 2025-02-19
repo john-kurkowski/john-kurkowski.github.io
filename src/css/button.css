@@ -19,11 +19,11 @@
 }
 
 .icon-link path {
-  fill: theme('colors.background');
+  fill: var(--color-background);
 }
 
 .icon-link:hover path {
-  fill: theme('colors.primary');
+  fill: var(--color-primary);
 }
 
 .nav-link,
