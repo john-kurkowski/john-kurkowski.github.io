@@ -68,12 +68,12 @@ export async function createPages({ graphql, actions }) {
   })
 
   createRedirect({
-    fromPath: '/posts/accumulating-multiple-failures-in-a-ValidationNEL/',
-    toPath: '/posts/accumulating-multiple-failures-in-a-validationnel/',
+    fromPath: '/posts/accumulating-multiple-failures-in-a-validationnel/',
+    toPath: '/posts/accumulating-multiple-failures-in-a-ValidationNEL/',
   })
 
   createRedirect({
-    fromPath: '/posts/ongoing-learning-in-breadth-&-depth/',
-    toPath: '/posts/ongoing-learning-in-breadth--depth/',
+    fromPath: '/posts/ongoing-learning-in-breadth--depth/',
+    toPath: '/posts/ongoing-learning-in-breadth-&-depth/',
   })
 }
