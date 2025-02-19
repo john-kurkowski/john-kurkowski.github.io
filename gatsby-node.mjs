@@ -30,7 +30,8 @@ export function onCreateNode({ node, getNode, actions }) {
 }
 
 export async function createPages({ graphql, actions }) {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
   const result = await graphql(`
     query {
       allMdx {
@@ -64,5 +65,15 @@ export async function createPages({ graphql, actions }) {
         slug: node.fields.slug,
       },
     })
+  })
+
+  createRedirect({
+    fromPath: '/posts/accumulating-multiple-failures-in-a-ValidationNEL/',
+    toPath: '/posts/accumulating-multiple-failures-in-a-validationnel/',
+  })
+
+  createRedirect({
+    fromPath: '/posts/ongoing-learning-in-breadth-&-depth/',
+    toPath: '/posts/ongoing-learning-in-breadth--depth/',
   })
 }
