@@ -18,8 +18,10 @@ const siteMetadata = {
 ---
 
 <html class='bg-secondary' lang='en-US'>
-  <Seo frontmatter={frontmatter} siteMetadata={siteMetadata} />
-  <ClientRouter />
+  <head>
+    <Seo frontmatter={frontmatter} siteMetadata={siteMetadata} />
+    <ClientRouter />
+  </head>
   <body>
     <div class='flex min-h-full flex-col content-between font-serif'>
       <div class='flex-grow bg-background'>
