@@ -33,7 +33,7 @@ function pagePaths(): string[] {
   )
   const urlsRe = new RegExp(`${siteUrl}(/[^<]*)`, 'g')
   return Array.from(sitemapXml.matchAll(urlsRe)).map(function ([, url]) {
-    return url.replaceAll('&amp;', '&')
+    return url.replaceAll('&amp;', '').toLowerCase()
   })
 }
 
