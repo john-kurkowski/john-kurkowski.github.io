@@ -4,4 +4,13 @@
 @import './typography';
 @import './button';
 
-@config '../../tailwind.config.js';
+@theme inline {
+  --color-background: #fbf9eb;
+  --color-primary: #e0992c;
+  --color-secondary: #1e4a79;
+  --font-sans:
+    'Open Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif:
+    'Lora', ui-serif, georgia, cambria, 'Times New Roman', times, serif;
+}
