@@ -1,6 +1,6 @@
 code {
   @apply bg-white;
-  @apply text-sm !important;
+  @apply text-sm!;
 }
 
 .astro-code {

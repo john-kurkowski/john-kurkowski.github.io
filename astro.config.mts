@@ -1,6 +1,6 @@
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import type { RemarkPlugin } from '@astrojs/markdown-remark'
 import { defineConfig } from 'astro/config'
 
@@ -29,6 +29,11 @@ export default defineConfig({
       theme: 'slack-ochin',
     },
   },
+
   site: 'https://johnkurkowski.com',
-  integrations: [mdx(), sitemap(), tailwind({ applyBaseStyles: false })],
+  integrations: [mdx(), sitemap()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 })

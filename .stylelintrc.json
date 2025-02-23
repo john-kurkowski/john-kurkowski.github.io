@@ -10,22 +10,9 @@
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["screen", "tailwind"]
+        "ignoreAtRules": ["config", "theme"]
       }
     ],
-    "declaration-property-value-no-unknown": [
-      true,
-      {
-        "ignoreProperties": {
-          "fill": "/theme\\(.*\\)/"
-        }
-      }
-    ],
-    "function-no-unknown": [
-      true,
-      {
-        "ignoreFunctions": ["theme"]
-      }
-    ]
+    "import-notation": "string"
   }
 }
