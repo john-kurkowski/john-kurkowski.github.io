@@ -1,7 +1,3 @@
 {
-  "jsxSingleQuote": true,
-  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
-  "proseWrap": "always",
-  "semi": false,
-  "singleQuote": true
+  "proseWrap": "always"
 }
