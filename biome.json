@@ -27,5 +27,14 @@
       "attributePosition": "auto",
       "bracketSpacing": true
     }
+  },
+  "css": {
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "single"
+    }
   }
 }
