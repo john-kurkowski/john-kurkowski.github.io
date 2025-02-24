@@ -42,8 +42,6 @@
     "lint-staged": "^15.4.3",
     "lost-pixel": "^3.22.0",
     "prettier": "^3.5.1",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.11",
     "stylelint": "^16.14.1",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^37.0.0",
