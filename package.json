@@ -29,6 +29,7 @@
     "tailwindcss": "^4.0.7"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/culori": "^2.1.1",
     "@types/node": "^22.13.4",
     "@typescript-eslint/eslint-plugin": "^8.24.1",
