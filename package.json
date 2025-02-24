@@ -9,7 +9,7 @@
     "prepare": "husky && astro sync",
     "preview": "astro preview --host",
     "start": "astro dev --host",
-    "test": "eslint . && stylelint $(git ls-files '*.css') && prettier --check . && npm run type-check",
+    "test": "biome check . && stylelint $(git ls-files '*.css') && prettier --check '**/*.{md,mdx,yml}' && npm run type-check",
     "type-check": "tsc --pretty"
   },
   "repository": {
@@ -50,17 +50,10 @@
     "typescript": "^5.7.3"
   },
   "lint-staged": {
-    "*.css": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{astro,js,jsx,mjs,mts,ts,tsx}": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,mdx,yml}": [
-      "prettier --write"
-    ]
+    "*.css": ["stylelint --fix", "biome check --write"],
+    "*.{astro,js,jsx,mjs,mts,ts,tsx}": ["biome check --write"],
+    "*.{json,jsonc}": ["biome check --write"],
+    "*.{md,mdx,yml}": ["prettier --write"]
   },
   "volta": {
     "node": "20.17.0",
