@@ -13,6 +13,13 @@
       "semicolons": "asNeeded"
     }
   },
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noConsole": "error"
+      }
+    }
+  },
   "css": {
     "linter": {
       "enabled": true
