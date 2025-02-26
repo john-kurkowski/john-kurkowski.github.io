@@ -1,6 +1,5 @@
 ---
 const { frontmatter, siteMetadata } = Astro.props
-
 let title: string
 if (frontmatter.title?.includes(siteMetadata.title)) {
   title = frontmatter.title

@@ -28,9 +28,8 @@
   --color-gray-950: rgb(7 7 7);
 
   /* Fonts */
-  --font-sans:
-    'Open Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif:
-    'Lora', ui-serif, georgia, cambria, 'Times New Roman', times, serif;
+  --font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: 'Lora', ui-serif, georgia, cambria, 'Times New Roman', times,
+    serif;
 }

@@ -1,7 +1,7 @@
-import type { Page } from 'playwright-core'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import type { CustomProjectConfig } from 'lost-pixel'
-import { join } from 'path'
-import { readFileSync } from 'fs'
+import type { Page } from 'playwright-core'
 
 /**
  * Hide 3rd party embeds.
@@ -32,9 +32,9 @@ function pagePaths(): string[] {
     'utf-8',
   )
   const urlsRe = new RegExp(`${siteUrl}(/[^<]*)`, 'g')
-  return Array.from(sitemapXml.matchAll(urlsRe)).map(function ([, url]) {
-    return url.replaceAll('&amp;', '&')
-  })
+  return Array.from(sitemapXml.matchAll(urlsRe)).map(([, url]) =>
+    url.replaceAll('&amp;', '&'),
+  )
 }
 
 /**
