@@ -9,13 +9,14 @@
  *     --color-my-var-name: rgb(250, 250, 250);
  */
 
-import fs from 'fs'
+import fs from 'node:fs'
 
 import * as culori from 'culori'
 
 function oklch2rgb(oklchString: string): string {
+  // biome-ignore lint/style/noNonNullAssertion: guaranteed to match when called in require.main
   const [, valuesString] = oklchString.match(/oklch\((.*?)\)/)!
-  const values = valuesString.split('/').map((v) => parseFloat(v))
+  const values = valuesString.split('/').map((v) => Number.parseFloat(v))
 
   const [l, c, h, alpha] = values
 
@@ -43,5 +44,6 @@ function oklch2rgb(oklchString: string): string {
 if (require.main === module) {
   const text = fs.readFileSync(process.stdin.fd, 'utf-8')
   const converted = text.replaceAll(/oklch\((.*?)\)/g, oklch2rgb)
-  console.log(converted) // eslint-disable-line no-console
+  // biome-ignore lint/suspicious/noConsole: CLI stdout
+  console.log(converted)
 }
