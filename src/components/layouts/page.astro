@@ -10,6 +10,6 @@ const { frontmatter } = Astro.props
       <h2>{frontmatter.title}</h2>
     </header>
 
-    <div class='post'><slot /></div>
+    <slot />
   </article>
 </Layout>

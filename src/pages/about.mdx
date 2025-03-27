@@ -6,6 +6,8 @@ title: 'About Me'
 import Experience from '../components/resume/experience.astro'
 import Time from '../components/resume/time.astro'
 
+<div class="post">
+
 I’m a full stack web developer, frontend-leaning. I’m obsessed with UX, DX, and
 raising team capability. With 14+ years in the game, I specialize in the
 following.
@@ -52,6 +54,8 @@ following.
 
 ## Experience
 
+</div>
+
 <Experience className='mt-4' company='Self' location='Remote, Portland, OR'
 position='Software Development Consultant'
 
@@ -59,14 +63,33 @@ position='Software Development Consultant'
 
 <Time begin={new Date('2020-07-15')} end='present' slot='time' />
 
-- Prototyped and adopted tooling, component libraries, test coverage, and code
-  review guidelines, for clients such as WhoCo and Media Arts Lab (Apple), using
-  React, Ember.js, and Python.
-- Maintained OSS libraries:
-  - [tldextract](https://github.com/john-kurkowski/tldextract) Python library to
-    parse URLs (35k+ dependents).
-  - [music](https://github.com/john-kurkowski/music) Python CLI to publish my
-    music (100+ hours error-prone clicks saved).
+{
+
+<ul className='list-disc ml-4'>
+  <li>
+    Prototyped and adopted tooling, component libraries, test coverage, and code
+    review guidelines, for clients such as WhoCo and Media Arts Lab (Apple),
+    using React, Ember.js, and Python.
+  </li>
+  <li>
+    Maintained OSS libraries:
+    <ul className='list-disc ml-6'>
+      <li>
+        <a className='link' href='https://github.com/john-kurkowski/tldextract'>
+          tldextract
+        </a>{' '}
+        Python library to parse URLs (35k+ dependents).
+      </li>
+      <li>
+        <a className='link' href='https://github.com/john-kurkowski/music'>
+          music
+        </a>{' '}
+        Python CLI to publish my music (100+ hours error-prone clicks saved).
+      </li>
+    </ul>
+  </li>
+</ul>
+}
 
 </Experience>
 
@@ -77,16 +100,29 @@ OR' position='Senior Software Developer'
 
 <Time begin={new Date('2013-04-15')} end={new Date('2020-02-15')} slot='time' />
 
-- Led UX team tech, architecting Ember.js SPAs to triage and hunt advanced
-  security threats.
-- Drove adoption of cross-team component library and microservice
-  Swagger/OpenAPI spec, coordinating Node.js, Python, Scala, and Elasticsearch
-  backends, in AWS.
-- Increased deploys from 1x/month to 10x/day, championing efficiency and team
-  feedback loop.
-- Grew team from 10 customers to 1k+, from 2 developers to 20.
-- Cultivated quality culture: oversaw peer code review, checklists, and
-  automated tests.
+{
+
+<ul className='list-disc ml-4'>
+  <li>
+    Led UX team tech, architecting Ember.js SPAs to triage and hunt advanced
+    security threats.
+  </li>
+  <li>
+    Drove adoption of cross-team component library and microservice
+    Swagger/OpenAPI spec, coordinating Node.js, Python, Scala, and Elasticsearch
+    backends, in AWS.
+  </li>
+  <li>
+    Increased deploys from 1x/month to 10x/day, championing efficiency and team
+    feedback loop.
+  </li>
+  <li>Grew team from 10 customers to 1k+, from 2 developers to 20.</li>
+  <li>
+    Cultivated quality culture: oversaw peer code review, checklists, and
+    automated tests.
+  </li>
+</ul>
+}
 
 </Experience>
 
@@ -97,14 +133,28 @@ position='Senior Software Developer'
 
 <Time begin={new Date('2010-11-15')} end={new Date('2013-04-15')} slot='time' />
 
-- Developed a Scala platform and 3rd party JavaScript for 30k/hr realtime,
-  personalized article recommendations, embedded in top 200 U.S. publisher
-  sites, such as TechCrunch.
-- Ingested 10k/hr live tweets for interest analytics visualizations, showcasing
-  our tech during sales.
-- Built browser extension for staff to annotate 100M node HBase, neo4j ontology.
-- Organized monthly 15-person Scala meetups, fostering local dev community and
-  recruitment.
+{
+
+<ul className='list-disc ml-4'>
+  <li>
+    Developed a Scala platform and 3rd party JavaScript for 30k/hr realtime,
+    personalized article recommendations, embedded in top 200 U.S. publisher
+    sites, such as TechCrunch.
+  </li>
+  <li>
+    Ingested 10k/hr live tweets for interest analytics visualizations,
+    showcasing our tech during sales.
+  </li>
+  <li>
+    Built browser extension for staff to annotate 100M node HBase, neo4j
+    ontology.
+  </li>
+  <li>
+    Organized monthly 15-person Scala meetups, fostering local dev community and
+    recruitment.
+  </li>
+</ul>
+}
 
 </Experience>
 
@@ -115,16 +165,31 @@ position='Software Developer'
 
 <Time begin={new Date('2008-09-15')} end={new Date('2010-08-15')} slot='time' />
 
-- Enhanced Java, MySQL, PostgreSQL audience analytics web app reaching 2M+
-  monthly users.
-- Reported churn risks to CEO in daily Hadoop dashboard, retaining 100s of
-  critical customers.
-- Spearheaded modern dev practices: prefix search, Python/Django tooling, DVCS
-  workflows.
+{
+
+<ul className='list-disc ml-4'>
+  <li>
+    Enhanced Java, MySQL, PostgreSQL audience analytics web app reaching 2M+
+    monthly users.
+  </li>
+  <li>
+    Reported churn risks to CEO in daily Hadoop dashboard, retaining 100s of
+    critical customers.
+  </li>
+  <li>
+    Spearheaded modern dev practices: prefix search, Python/Django tooling, DVCS
+    workflows.
+  </li>
+</ul>
+}
 
 </Experience>
 
+<div class="post">
+
 ## Education
+
+</div>
 
 <Experience
   className='mt-4'
@@ -133,12 +198,16 @@ position='Software Developer'
   position='B.S. Computer Science, B.A. Linguistics'
 />
 
+<div class="post">
+
 ## Colophon
 
 This site is coded and written in [iTerm2] and [vim]. It is built around the
 framework [Astro]. The site’s preferred display font is the humanist [Open
 Sans]. The preferred body font is the modern serif [Lora]. The site is hosted on
 [Netlify]. [Its source is available on GitHub][GitHub source].
+
+</div>
 
 [Astro]: https://astro.build/
 [Corporate UX Maturity: Stages 1-4]:
