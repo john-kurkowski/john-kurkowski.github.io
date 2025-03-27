@@ -8,10 +8,6 @@ html {
   }
 }
 
-p + p {
-  @apply mt-4;
-}
-
 .link,
 .post a {
   @apply border-b;
