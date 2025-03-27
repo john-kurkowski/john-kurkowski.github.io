@@ -4,6 +4,7 @@ title: 'About Me'
 ---
 
 import Experience from '../components/resume/experience.astro'
+import Time from '../components/resume/time.astro'
 
 I’m a full stack web developer, frontend-leaning. I’m obsessed with UX, DX, and
 raising team capability. With 14+ years in the game, I specialize in the
@@ -52,10 +53,11 @@ following.
 ## Experience
 
 <Experience className='mt-4' company='Self' location='Remote, Portland, OR'
-position='Software Development Consultant' time={{begin: new Date('2020-07-15'),
-end: 'present'}}
+position='Software Development Consultant'
 
 >
+
+<Time begin={new Date('2020-07-15')} end='present' slot='time' />
 
 - Prototyped and adopted tooling, component libraries, test coverage, and code
   review guidelines, for clients such as WhoCo and Media Arts Lab (Apple), using
@@ -69,10 +71,11 @@ end: 'present'}}
 </Experience>
 
 <Experience className='mt-8' company='CrowdStrike' location='Remote, Portland,
-OR' position='Senior Software Developer' time={{begin: new Date('2013-04-15'),
-end: new Date('2020-02-15')}}
+OR' position='Senior Software Developer'
 
 >
+
+<Time begin={new Date('2013-04-15')} end={new Date('2020-02-15')} slot='time' />
 
 - Led UX team tech, architecting Ember.js SPAs to triage and hunt advanced
   security threats.
@@ -88,10 +91,11 @@ end: new Date('2020-02-15')}}
 </Experience>
 
 <Experience className='mt-8' company='Gravity' location='Santa Monica, CA'
-position='Senior Software Developer' time={{begin: new Date('2010-11-15'),
-end: new Date('2013-04-15')}}
+position='Senior Software Developer'
 
 >
+
+<Time begin={new Date('2010-11-15')} end={new Date('2013-04-15')} slot='time' />
 
 - Developed a Scala platform and 3rd party JavaScript for 30k/hr realtime,
   personalized article recommendations, embedded in top 200 U.S. publisher
@@ -105,10 +109,11 @@ end: new Date('2013-04-15')}}
 </Experience>
 
 <Experience className='mt-8' company='Quantcast' location='San Francisco, CA'
-position='Software Developer' time={{begin: new Date('2008-09-15'), end: new
-Date('2010-08-15')}}
+position='Software Developer'
 
 >
+
+<Time begin={new Date('2008-09-15')} end={new Date('2010-08-15')} slot='time' />
 
 - Enhanced Java, MySQL, PostgreSQL audience analytics web app reaching 2M+
   monthly users.

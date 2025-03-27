@@ -1,0 +1,38 @@
+---
+interface Props {
+  begin: Date
+  end: Date | 'present'
+}
+
+const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en', {
+  month: 'short',
+  timeZone: 'America/Los_Angeles',
+  year: 'numeric',
+})
+
+const MONTH_MACHINE_FORMAT = {
+  format(date: Date) {
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+  },
+}
+
+const props: Props = Astro.props
+---
+
+<time
+  class="whitespace-no-wrap"
+  dateTime={MONTH_MACHINE_FORMAT.format(props.begin)}
+>
+  {DATE_DISPLAY_FORMAT.format(props.begin)}
+</time>
+<span>–</span>
+{props.end instanceof Date ? (
+  <time
+    class="whitespace-no-wrap"
+    dateTime={MONTH_MACHINE_FORMAT.format(props.end)}
+  >
+    {DATE_DISPLAY_FORMAT.format(props.end)}
+  </time>
+) : (
+  <span class="whitespace-no-wrap">{props.end}</span>
+)}
