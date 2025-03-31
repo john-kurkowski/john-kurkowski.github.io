@@ -1,0 +1,140 @@
+---
+import Experience from './experience.astro'
+import Time from './time.astro'
+---
+
+<Experience
+  className='mt-4'
+  company='Self'
+  location='Remote, Portland, OR'
+  position='Software Development Consultant'
+>
+  <Time begin={new Date('2020-07-15')} end='present' slot='time' />
+
+  <ul class='list-disc ml-4'>
+    <li>
+      Prototyped and adopted tooling, component libraries, test coverage,
+      and code review guidelines, for clients such as WhoCo and Media Arts
+      Lab (Apple), using React, Ember.js, and Python.
+    </li>
+    <li>
+      Maintained OSS libraries:
+      <ul class='list-disc ml-6'>
+        <li>
+          <a
+            class='link'
+            href='https://github.com/john-kurkowski/tldextract'
+          >
+            tldextract
+          </a>{' '}
+          Python library to parse URLs (35k+ dependents).
+        </li>
+        <li>
+          <a
+            class='link'
+            href='https://github.com/john-kurkowski/music'
+          >
+            music
+          </a>{' '}
+          Python CLI to publish my music (100+ hours error-prone clicks
+          saved).
+        </li>
+      </ul>
+    </li>
+  </ul>
+</Experience>
+
+<Experience
+  className='mt-8'
+  company='CrowdStrike'
+  location='Remote, Portland, OR'
+  position='Senior Software Developer'
+>
+  <Time
+    begin={new Date('2013-04-15')}
+    end={new Date('2020-02-15')}
+    slot='time'
+  />
+
+  <ul class='list-disc ml-4'>
+    <li>
+      Led UX team tech, architecting Ember.js SPAs to triage and hunt
+      advanced security threats.
+    </li>
+    <li>
+      Drove adoption of cross-team component library and microservice
+      Swagger/OpenAPI spec, coordinating Node.js, Python, Scala, and
+      Elasticsearch backends, in AWS.
+    </li>
+    <li>
+      Increased deploys from 1x/month to 10x/day, championing efficiency
+      and team feedback loop.
+    </li>
+    <li>Grew team from 10 customers to 1k+, from 2 developers to 20.</li>
+    <li>
+      Cultivated quality culture: oversaw peer code review, checklists,
+      and automated tests.
+    </li>
+  </ul>
+</Experience>
+
+<Experience
+  className='mt-8'
+  company='Gravity'
+  location='Santa Monica, CA'
+  position='Senior Software Developer'
+>
+  <Time
+    begin={new Date('2010-11-15')}
+    end={new Date('2013-04-15')}
+    slot='time'
+  />
+
+  <ul class='list-disc ml-4'>
+    <li>
+      Developed a Scala platform and 3rd party JavaScript for 30k/hr
+      realtime, personalized article recommendations, embedded in top 200
+      U.S. publisher sites, such as TechCrunch.
+    </li>
+    <li>
+      Ingested 10k/hr live tweets for interest analytics visualizations,
+      showcasing our tech during sales.
+    </li>
+    <li>
+      Built browser extension for staff to annotate 100M node HBase, neo4j
+      ontology.
+    </li>
+    <li>
+      Organized monthly 15-person Scala meetups, fostering local dev
+      community and recruitment.
+    </li>
+  </ul>
+</Experience>
+
+<Experience
+  className='mt-8'
+  company='Quantcast'
+  location='San Francisco, CA'
+  position='Software Developer'
+>
+  <Time
+    begin={new Date('2008-09-15')}
+    end={new Date('2010-08-15')}
+    slot='time'
+  />
+
+  <ul class='list-disc ml-4'>
+    <li>
+      Enhanced Java, MySQL, PostgreSQL audience analytics web app reaching
+      2M+ monthly users.
+    </li>
+    <li>
+      Reported churn risks to CEO in daily Hadoop dashboard, retaining
+      100s of critical customers.
+    </li>
+    <li>
+      Spearheaded modern dev practices: prefix search, Python/Django
+      tooling, DVCS workflows.
+    </li>
+  </ul>
+</Experience>
