@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions'
+import { siteMetadata } from '../../config/site'
 
 import '../../css/main.css'
 
@@ -8,19 +9,18 @@ import Nav from './Nav.astro'
 import Seo from './Seo.astro'
 
 const frontmatter = Astro.props.frontmatter || {}
-
-const siteMetadata = {
-  description:
-    'With 14+ years in the game, I help frontend teams ship incrementally, with test coverage confidence, without rewrites. Debug any app, existing or legacy. Collaborate on distributed teams via docs, code review, and mentorship.',
-  title: 'John Kurkowski - Senior Full Stack Web Developer',
-  url: '/',
-}
 ---
 
 <html class='bg-secondary' lang='en-US'>
   <head>
-    <Seo frontmatter={frontmatter} siteMetadata={siteMetadata} />
+    <Seo frontmatter={frontmatter} siteMetadata={{ ...siteMetadata, url: '/' }} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      href="/rss.xml"
+      rel="alternate"
+      title={siteMetadata.title}
+      type="application/rss+xml"
+    />
     <ClientRouter />
   </head>
   <body>
