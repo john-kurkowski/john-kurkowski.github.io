@@ -16,13 +16,14 @@ import * as culori from 'culori'
 function oklch2rgb(oklchString: string): string {
   // biome-ignore lint/style/noNonNullAssertion: guaranteed to match when called in require.main
   const [, valuesString] = oklchString.match(/oklch\((.*?)\)/)!
-  const values = valuesString.split('/').map((v) => Number.parseFloat(v))
+  // biome-ignore lint/style/noNonNullAssertion: guaranteed group at this point
+  const values = valuesString!.split('/').map((v) => Number.parseFloat(v))
 
   const [l, c, h, alpha] = values
 
   const parsed = culori.oklch({
     mode: 'oklch',
-    l: l,
+    l: l || 0,
     c: c || 0,
     h: h || 0,
     alpha: alpha !== undefined ? alpha : 1,

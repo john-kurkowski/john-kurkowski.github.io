@@ -33,7 +33,8 @@ function pagePaths(): string[] {
   )
   const urlsRe = new RegExp(`${siteUrl}(/[^<]*)`, 'g')
   return Array.from(sitemapXml.matchAll(urlsRe)).map(([, url]) =>
-    url.replaceAll('&amp;', '&'),
+    // biome-ignore lint/style/noNonNullAssertion: guaranteed group at this point
+    url!.replaceAll('&amp;', '&'),
   )
 }
 
