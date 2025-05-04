@@ -1,9 +1,7 @@
 ---
-import Layout from '../../components/layouts/base.astro'
-import { slugify } from './slugify'
-
-import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
+import Layout from '../../components/layouts/base.astro'
+import { slugify } from '../../utils/content'
 
 const frontmatter = {
   title: 'Articles',
