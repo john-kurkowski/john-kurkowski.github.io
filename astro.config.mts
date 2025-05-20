@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 
-const parsePublishTime: RemarkPlugin = () => (tree, file) => {
+const parsePublishTime: RemarkPlugin = () => (_tree, file) => {
   const maybeDateString = /\d+-\d+-\d+/.exec(file.path)
   let authorOffsetDate = null
   if (maybeDateString) {
