@@ -29,7 +29,7 @@
     "tailwindcss": "^4.1.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.0.4",
     "@types/culori": "^4.0.0",
     "@types/node": "^22.15.3",
     "culori": "^4.0.1",
@@ -43,9 +43,18 @@
     "typescript": "^5.8.3"
   },
   "lint-staged": {
-    "*.css": ["stylelint --fix", "biome check --write"],
-    "*.{astro,js,jsx,mjs,mts,ts,tsx}": ["biome check --write"],
-    "*.{json,jsonc}": ["biome check --write"],
-    "*.{md,mdx,yml}": ["prettier --write"]
+    "*.css": [
+      "stylelint --fix",
+      "biome check --write"
+    ],
+    "*.{astro,js,jsx,mjs,mts,ts,tsx}": [
+      "biome check --write"
+    ],
+    "*.{json,jsonc}": [
+      "biome check --write"
+    ],
+    "*.{md,mdx,yml}": [
+      "prettier --write"
+    ]
   }
 }
