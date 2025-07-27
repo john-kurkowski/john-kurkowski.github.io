@@ -54,9 +54,23 @@ const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en-GB', {
     const scroll_height =
       window.innerHeight || document.documentElement.clientHeight
     const disqus_top = disqus_thread.getBoundingClientRect().top
-    if (scroll_height + load_range_px >= disqus_top) {
-      document.removeEventListener('scroll', embedDisqus)
+    const is_disqus_in_viewport_range = scroll_height + load_range_px >= disqus_top
+    if (!is_disqus_in_viewport_range) {
+      return
+    }
 
+    document.removeEventListener('scroll', embedDisqus)
+
+    if (window.DISQUS) {
+      window.DISQUS.reset({
+        config() {
+          this.page.identifier = window.location.pathname
+          this.page.url = window.location.href
+          this.page.title = document.title
+        },
+        reload: true,
+      })
+    } else {
       const url = `//${disqus_shortname}.disqus.com/embed.js`
 
       const script = document.createElement('script')
