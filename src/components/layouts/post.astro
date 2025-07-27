@@ -63,11 +63,6 @@ const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en-GB', {
 
     if (window.DISQUS) {
       window.DISQUS.reset({
-        config() {
-          this.page.identifier = window.location.pathname
-          this.page.url = window.location.href
-          this.page.title = document.title
-        },
         reload: true,
       })
     } else {
