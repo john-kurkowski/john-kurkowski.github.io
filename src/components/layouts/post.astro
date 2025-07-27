@@ -36,7 +36,7 @@ const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en-GB', {
 </Layout>
 
 <script>
-  embedDisqus()
+  document.addEventListener("astro:page-load", embedDisqus)
 
   function embedDisqus() {
     let disqus_loaded = false
