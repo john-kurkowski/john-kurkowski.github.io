@@ -36,38 +36,35 @@ const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en-GB', {
 </Layout>
 
 <script>
-  document.addEventListener("astro:page-load", embedDisqus)
+  document.addEventListener("astro:page-load", lookForPostDisqus)
+
+  function lookForPostDisqus() {
+    document.addEventListener("scroll", embedDisqus)
+  }
 
   function embedDisqus() {
-    let disqus_loaded = false
     const disqus_shortname = 'johnkurkowski'
 
-    window.onscroll = function () {
-      if (disqus_loaded) {
-        return
-      }
+    const disqus_thread = document.getElementById('disqus_thread')
+    if (!disqus_thread) {
+      return
+    }
 
-      const disqus_thread = document.getElementById('disqus_thread')
-      if (!disqus_thread) {
-        return
-      }
+    const load_range_px = 600
+    const scroll_height =
+      window.innerHeight || document.documentElement.clientHeight
+    const disqus_top = disqus_thread.getBoundingClientRect().top
+    if (scroll_height + load_range_px >= disqus_top) {
+      document.removeEventListener('scroll', embedDisqus)
 
-      const load_range_px = 600
-      const scroll_height =
-        window.innerHeight || document.documentElement.clientHeight
-      const disqus_top = disqus_thread.getBoundingClientRect().top
-      if (scroll_height + load_range_px >= disqus_top) {
-        disqus_loaded = true
+      const url = `//${disqus_shortname}.disqus.com/embed.js`
 
-        const url = `//${disqus_shortname}.disqus.com/embed.js`
+      const script = document.createElement('script')
 
-        const script = document.createElement('script')
+      script.src = url
+      script.async = true
 
-        script.src = url
-        script.async = true
-
-        document.body.appendChild(script)
-      }
+      document.body.appendChild(script)
     }
   }
 </script>
