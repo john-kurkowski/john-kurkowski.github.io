@@ -24,6 +24,6 @@ jobs:
         run: npm run preview &
 
       - name: Lost Pixel
-        uses: lost-pixel/lost-pixel@v3.16.0
+        uses: lost-pixel/lost-pixel@v3.22.0
         env:
           LOST_PIXEL_API_KEY: ${{ secrets.LOST_PIXEL_API_KEY }}
