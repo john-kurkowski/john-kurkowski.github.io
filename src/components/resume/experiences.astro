@@ -2,13 +2,38 @@
 import Experience from './experience.astro'
 import Time from './time.astro'
 ---
+<Experience
+  company="Source"
+  location="Remote, Portland, OR"
+  position="Senior Software Developer"
+>
+  <Time begin={new Date('2025-06-10')} end='present' slot='time' />
+
+  <ul class='list-disc ml-4'>
+    <li>
+      Building 0→1 frontend platform to incrementally replace legacy internal
+      tool, managing $6.5B in procurement across 1,225+ projects, starting with
+      automated bill pay tracking, with zero disruption.
+    </li>
+    <li>
+      Architected React/Next.js monorepo with component library, automated
+      testing, and multi-environment CI/CD, reducing frontend release cycles
+      from legacy's 2-3 weeks to same-day.
+    </li>
+    <li>
+      Partnering with purchasing agents, accountants, product, and design
+      throughout development, gathering early feedback to guide incremental
+      feature rollout and minimize adoption risk.
+    </li>
+  </ul>
+</Experience>
 
 <Experience
   company='Self'
   location='Remote, Portland, OR'
   position='Software Development Consultant'
 >
-  <Time begin={new Date('2020-07-15')} end='present' slot='time' />
+  <Time begin={new Date('2020-07-15')} end={new Date('2025-06-10')} slot='time' />
 
   <ul class='list-disc ml-4'>
     <li>
