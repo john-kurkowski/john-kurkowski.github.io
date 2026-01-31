@@ -22,24 +22,24 @@
   "homepage": "https://github.com/john-kurkowski/john-kurkowski.github.io#readme",
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.7",
+    "astro": "^5.17.1",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.11",
+    "@biomejs/biome": "^2.3.13",
     "@types/culori": "^4.0.1",
-    "@types/node": "^22.19.3",
+    "@types/node": "^22.19.7",
     "culori": "^4.0.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "lost-pixel": "^3.22.0",
-    "prettier": "^3.7.4",
-    "stylelint": "^16.26.1",
+    "prettier": "^3.8.1",
+    "stylelint": "^17.1.0",
     "stylelint-config-html": "^1.1.0",
-    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard": "^40.0.0",
     "typescript": "^5.9.3"
   },
   "lint-staged": {
