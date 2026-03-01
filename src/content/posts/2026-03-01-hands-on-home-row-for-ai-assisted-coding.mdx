@@ -1,0 +1,344 @@
+---
+layout: ../../components/layouts/post.astro
+title: 'Hands on Home Row for AI-Assisted Coding'
+categories: [tech]
+tags: [engineering, programming, ai]
+description:
+  AI-assisted coding fit surprisingly well with the terminal and text-first
+  tools I spent years sharpening. While AI may be the industry productivity
+  shift I long wanted, I feel wistful for hands-on coding.
+---
+
+import cursorLikeLayoutWireframe from './2026-03-01-hands-on-home-row-for-ai-assisted-coding/01-cursor-layout.png'
+
+import terminalSplitsWireframe from './2026-03-01-hands-on-home-row-for-ai-assisted-coding/02-terminal-mimic.png'
+
+import multiAgentTabsWireframe from './2026-03-01-hands-on-home-row-for-ai-assisted-coding/03-terminal-multiple-agents.png'
+
+On this blog over 10 years ago, I made [a rallying
+cry][Don't Learn to Code, Learn to Program Instead - But Come Back In 10 Years]
+for the field of computer programming to use richer media, to evolve its
+expression beyond _text_.
+
+(My most viral article. #1 on Hacker News for a day. Bless you, salacious
+title.)
+
+Then [I yearned for a productivity boost][Code As Craft As Career?]. Today's
+moment in agentic coding might be what I was asking for. Even as I adopt AI's
+higher leverage, I can't help feel wistful.
+
+### Back to reality
+
+Despite my rallying cry, I personally doubled down on the skill of pushing
+around _text_. My programming workhorses to this day remain **the terminal and
+Vim**. Given the programming medium we currently have, mastery of that medium
+still compounds. See my [dotfiles] commit history for how much I've sharpened
+that ax.
+
+Pushing around plain text like via the terminal is precise. It's fast. It's
+_fun_. When I pair, teammates are startled by the speed of it. It's the closest
+ol' crusties like me get to the flow state of working with your hands on the
+job. Typing uses your hands, of course, but not in the connected, intimate way
+that you would bartending or woodworking all day, say. So the shortcuts and
+chords of a TUI are the next best thing.
+
+This addresses a couple of my crafter values.
+
+1. Have fun.
+2. From my dotfiles' README:
+   > Use whatever makes you productive. Keep investing in and sharpening your
+   > tools to **shorten the feedback loop**. The quicker it is to try an idea or
+   > to cross reference it, the quicker it is to improve upon or discard.
+
+Fun though it may be, for the arcane minutiae of coding, I don't necessarily
+recommend beginners cling to 1970s tech like I do. But in the era of AI agents,
+it's starting not to matter either way. The feedback loop is evolving into an
+entirely different beast.
+
+### Wake-up call
+
+Around the time I resumed a full-time role in tech in 2025, the networking buzz
+was all about Cursor, an AI-oriented VSCode fork. All my teammates were using
+it. I feared, will I finally have to adopt VSCode?
+
+VSCode never clicked for me. The persistent chrome and editor config inflicted
+on the team felt intrusive. Why should a repo care what GUI I use? I wanted code
+maximized, chrome hidden, and every mode switch reachable from home row. Every
+mouse reach to cross reference something felt like death. Maybe Vim spoiled me.
+VSCode's Vim emulation never came close.
+
+<figure>
+  <a href={cursorLikeLayoutWireframe.src}>
+    <img
+      src={cursorLikeLayoutWireframe.src}
+      width='85%'
+      height='auto'
+      alt='Wireframe of a VSCode-alike file tree, split editor, terminal, and agent.'
+    />
+  </a>
+  <figcaption>
+    VSCode-alike's file tree, editor, terminal, and agent all competing for
+    width.
+  </figcaption>
+</figure>
+
+More worryingly, I wondered, with 2025's leaps in AI-assisted coding, is the
+1970s terminal tech finally, truly holding me back? Am I missing out on some
+superpower? Only the likes of Cursor can access it?
+
+### Revenge of the TUI
+
+VSCode-alikes' under the covers are just calling tools. GUIs atop CLIs. Under
+the covers, to format or compile your project, the IDEs are calling tools the
+same way a human would in a terminal or your CI would in the cloud. Over the
+years, IDEs have done some proprietary magic with their tool calling, to
+different degrees. But the more IDEs adopted the Unix philosophy, the more
+harmony, the more mindshare they got. The more proprietary magic, the more they
+fall behind other editors.
+
+In the Unix philosophy, what is the primary language tools interchange? _Text_.
+
+You know what is good at dealing with large amounts of text? LLMs.
+
+The interactive, AI-assisted autocomplete that was so nice suddenly started to
+look like a bottleneck. What if we instead let agents run wild on even more text
+than what the human was focused on? A text-based interface stopped seeming
+retro.
+
+Enter a slew of TUIs like Claude Code, OpenAI Codex, and even Cursor's alongside
+its VSCode GUI. The LLM-based agents are just inputting and outputting text and
+shelling out to tools. Why launch a heavyweight GUI if you're just going to push
+text around via an agent?
+
+The appearance of these TUIs let me drop the VSCode-alike. I could arrange my
+terminal splits in a way that mimicked the Cursor GUI's split editor and AI chat
+panel. Better than a mimic, I could leap between the splits in the way that Vim
+and terminal splits long made sense and felt unified to _me_, building off
+compounded fluency.
+
+<figure>
+  <a href={terminalSplitsWireframe.src}>
+    <img
+      src={terminalSplitsWireframe.src}
+      width='85%'
+      height='auto'
+      alt='Wireframe of terminal-driven coding with two code panes and stacked AI chat, dev server, and test output panes.'
+    />
+  </a>
+  <figcaption>
+    Terminal splits gave me the same ingredients with less chrome and faster
+    movement.
+  </figcaption>
+</figure>
+
+I didn't lose my investment in pushing around text yet.
+
+### Subweapons
+
+A couple side shoutouts that made agentic adoption in the terminal even better
+around this time. While not strictly necessary to work in the AI-assisted coding
+era, I would recommend the following to any aspiring terminal user, especially
+whose rate of pushing text is increasing.
+
+#### Ghostty
+
+Switching from iTerm to [Ghostty][Ghostty] made high-output agentic TUIs feel
+smoother and more legible, especially when diffs are flying by and I am
+scrolling back through long chat sessions.
+
+The default config is solid: compare my [iTerm config][iTerm Config] (36K of
+.plist XML) and [Ghostty config][Ghostty Config] (3 optional lines of text).
+
+Ghostty is a minimal, drop-in replacement for stock Terminal.app or a basic
+iTerm install. If however you want a little more out of the box from a terminal,
+try [Warp][Warp], which has AI built in. The fact Silicon Valley is investing in
+terminals reassures me about this ancient tech.[^2]
+
+#### Jujutsu
+
+AI means more edits, diffs, branches, and commits to share with your team. I
+assume you're already using version control to tell coherent, distinct stories
+to your teammates, and need to integrate their changes in turn.
+
+Switching from Git `git` to [Jujutsu][Jujutsu] `jj` made it easier to reorder,
+squash, rebase, and stack those changes into a clean story for code review,
+while minimizing conflict and interoperating with Git. Git's UX conflates these
+concepts, while unwinding stacked changes leads to repeated, self-inflicted
+conflicts. `jj` [gives proper UX attention to these
+operations][Jujutsu Strategies] and minimizes such conflicts.
+
+`jj`'s automatic snapshotting also rescued me from the Cursor GUI chat panel's
+wonky undo states. In Cursor, it was often unclear what `Cmd+Z` would undo, what
+Vim's `u` would undo, and what rewinding checkpoints within the thread would do
+to the actual working copy. Switching to the terminal for edit, AI chat, and
+code review, `jj` adds a safety net. Since I am already `jj diff`-ing what the
+agent changed, `jj` is quietly snapshotting repo state, as it does on many `jj`
+commands. That made `jj undo` a decent way to rewind. Although `jj undo` is not
+a substitute for deliberate commits.
+
+### Hardcore mode
+
+I'm not the most hardcore I could be with the terminal. My hands _do_ leave home
+row. I do use a mouse, to scroll or copy text. I'm also not the most hardcore I
+could be with AI-assisted coding. On the [Steve Yegge scale of AI
+adoption][Welcome to Gas Town], the Vim + terminal setup I've described so far,
+I'm only on stage 3-4 out of 8.
+
+> Stage 3: **Agent in IDE, YOLO mode:** Trust goes up. You turn off permissions,
+> agent gets wider.
+>
+> Stage 4: **In IDE, wide agent:** Your agent gradually grows to fill the
+> screen. Code is just for diffs.
+
+You could argue whether I'm in an "IDE" with Vim or not. That doesn't matter.
+The width is the interesting observation.
+
+Cursor foresaw this evolution of programmers. It forced an update in late 2025
+that made the width of its AI chat panel default to wider than the code editor,
+calling the newly wider panel "Agent Mode." Most users were used to the editor
+being wider, like in the earlier images in this article. Users complained, which
+convinced the Cursor team to revert. But Cursor was onto something. The
+enlightened AI-assisted programmer cares less and less about the code viewer.
+The more you trust the AI, the more you should focus on good interaction with
+the agent. Anything else is bottlenecks where the human gets in the way.
+
+Peter Steinberger suggested getting away from these GUI facades around the AI,
+to [just talk to it][Just Talk to It], one of the most inspiring AI-adoption
+journey articles I've read. Treat the AI model less like a feature inside an IDE
+and more like the primary interface. Widen the interaction with the agent.
+Shrink the ornamentation and harnessing around the agent responses.
+
+Inspired by Steinberger, you might advance to Yegge stages 5-6.
+
+> Stage 5: **CLI, single agent. YOLO.** Diffs scroll by. You may or may not look
+> at them.
+>
+> Stage 6: **CLI, multi-agent, YOLO.** You regularly use 3 to 5 parallel
+> instances. You are very fast.
+
+The terminal splits no longer mimic VSCode, but become something else:
+
+<figure>
+  <a href={multiAgentTabsWireframe.src}>
+    <img
+      src={multiAgentTabsWireframe.src}
+      width='85%'
+      height='auto'
+      alt='Wireframe of 3 agent panes handling separate coding tasks in parallel.'
+    />
+  </a>
+  <figcaption>
+    The panel width grows until the work is orchestrating multiple agents, no
+    longer the code itself.
+  </figcaption>
+</figure>
+
+For completeness, the final Yegge stages:
+
+> Stage 7: **10+ agents, hand-managed.** You are starting to push the limits of
+> hand-management.
+>
+> Stage 8: **Building your own orchestrator.** You are on the frontier,
+> automating your workflow.
+
+Perhaps agent orchestration is the productivity multiplier I yearned for, all
+those years ago. It is no longer the woodworking-like, hands-on flow state I
+described at the beginning of the article. That you use even use the terminal,
+or carefully crafted code or commit history? In the agentic frontier, maybe
+those don't matter.
+
+### Vibe engineering
+
+That anybody with a modest computer can be a vibe coder now, the special
+hands-on skills I invested so much time in? I can't help feel a loss. But I'm
+hopeful engineering discipline still offers some expertise to the world.
+
+First, some reassurance from the fact that everybody is on a different stage of
+their AI adoption journey, software engineer or not. In Silicon Valley and on
+tech social media, the cutting edge discussion buzz makes it seem like everybody
+is at least Yegge stage 5. Technology is quick to change. People are slow to
+change. Zooming out of the Silicon Valley echo chamber, I would guess what's hot
+in the valley hasn't reached SMBs, where many software engineers are still
+stages 1-2. Most _people_ are stages 0-1 ("I chatted with AI a couple years ago
+and it sucked"). We all know somebody who hasn't even tried generative AI. In
+tech, we lose sight of that.
+
+Good as the agents have gotten in the last several months at tool calling and
+one-off scripts, I can't trust them without processes yet, or I'd be fired.
+Well, it hasn't been said in those words, but: if I can barely explain what I
+shipped to production, to myself or to my team, and there's a big regression,
+the business is going to be in trouble and I'm going to be in trouble. With
+hobby projects, I've vibed, turned my engineer mind off, and lost connection
+with what the AI actually built me. Simon Willison lists [these seemingly
+evergreen engineering practices][Vibe Engineering] to keep the AI in line. They
+will amplify already good engineers. Meanwhile a truly vibes-only project will
+go off the rails, and collapse under its own tech debt weight.
+
+If you're feeling like AI must be a 10x coding multiplier and you don't know how
+to reach that number, remember engineering team constraints, like the above
+evergreen practices, do not disappear just because code is cheaper to produce.
+["10x output" claims often ignore non-coding
+bottlenecks][AI 10x Imposter Syndrome]. If anything, team constraints become
+more obvious: review quality, shared understanding, operational safety, and
+coordination. A 10x claim while retaining these processes seems unrealistic.
+
+Could a team _without_ those engineering processes safely, robustly leapfrog
+teams with? While I can haughtily dismiss the new generation of tools and tool
+wielders as not knowing what they're doing, such a dismissal does eerily sound
+like the cycle of tech: someone doing it new, different, cheaper, and taking
+over. From my article yearning for a productivity boost:
+
+> Most consumers though will settle for cheap and highly available. Economics
+> wins.
+>
+> …
+>
+> The technology that ultimately matters is not some hotly debated contender.
+> What matters is the technology where you forget what the old way of doing
+> things even was.
+>
+> Did you know there was a typesetter profession?
+
+The future is here, it's just not evenly distributed yet.
+
+Part of me wanted this better way of expressing programming to the computer.
+Back in 2014, I was already asking for a mode of creation more powerful than
+hand-writing text for every last detail. AI orchestration may be the closest
+thing yet to that wish. I like the extra leverage. I like the speed. I like that
+the terminal and other text-first tools I invested in still map surprisingly
+okay onto this new world. I also feel a little sad that one of the most
+intimate, hands-on parts of the job may matter less.
+
+I get to keep my hands on home row, at least for one more turn.
+
+### Footnotes
+
+[^2]:
+    In preparing this article, I also enjoyed reading Ghostty creator [Mitchell
+    Hashimoto's AI adoption journey][My AI Adoption Journey]. For example, I was
+    struck by deliberate use of agents at specific times, especially end-of-day,
+    rather than running them 24/7 for its own sake.
+
+[AI 10x Imposter Syndrome]:
+  https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/
+[Code As Craft As Career?]: /posts/code-as-craft-as-career/
+[Don't Learn to Code, Learn to Program Instead - But Come Back In 10 Years]:
+  /posts/dont-learn-to-code-learn-to-program-but-come-back-in-10-years/
+[Dotfiles]: https://github.com/john-kurkowski/dotfiles
+[Dotfiles README]:
+  https://github.com/john-kurkowski/dotfiles/blob/master/README.md
+[iTerm Config]:
+  https://github.com/john-kurkowski/dotfiles/blob/d5f009a7a8794ae60d7d91085bbb6ad1b188c388/Library/Preferences/com.googlecode.iterm2.plist
+[Jujutsu]: https://www.jj-vcs.dev/
+[Jujutsu Strategies]: https://reasonablypolymorphic.com/blog/jj-strategy/
+[Just Talk to It]: https://steipete.me/posts/just-talk-to-it
+[My AI Adoption Journey]: https://mitchellh.com/writing/my-ai-adoption-journey
+[The Dracula Effect]:
+  https://newsletter.pragmaticengineer.com/i/187563524/4-the-dracula-effect-the-drain-of-using-ai
+[Vibe Engineering]: https://simonwillison.net/2025/Oct/7/vibe-engineering/
+[Ghostty]: https://ghostty.org/
+[Ghostty Config]:
+  https://github.com/john-kurkowski/dotfiles/blob/d5f009a7a8794ae60d7d91085bbb6ad1b188c388/.config/ghostty/config
+[Warp]: https://www.warp.dev/
+[Welcome to Gas Town]:
+  https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04
