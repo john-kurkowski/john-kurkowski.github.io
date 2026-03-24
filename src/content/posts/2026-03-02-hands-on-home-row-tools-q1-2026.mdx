@@ -1,0 +1,129 @@
+---
+layout: ../../components/layouts/post.astro
+title: 'Hands on Home Row Tools Q1 2026'
+categories: [tech]
+tags: [engineering, programming, ai]
+description:
+  Shout out to a few tools that made my AI adoption in the terminal even better.
+---
+
+I'll shout out a few tools that made [my AI adoption in the
+terminal][Hands on Home Row for AI-Assisted Coding] even better.
+
+That previous article is a memoir that hopefully captures an evergreen feeling
+and narrative. Meanwhile, any article listing tools might be outdated by the
+next round of AI models. For an improved AI model that knows how to discover how
+to do a task autonomously, additional harnessing might just get in the way, per
+[the Bitter Lesson][The Bitter Lesson]. Especially if the tools
+[diverge][Choose Boring Technology] from what the majority of people use, and
+therefore from the majority of AI training data.
+
+Anyway, I'm one of those rebels that sharpens my own tools, not the majority's
+tools. At my own peril.
+
+While the following tools are not strictly necessary to work in the AI-assisted
+coding era, I would recommend them to any aspiring terminal user, especially
+whose rate of pushing text is increasing.
+
+### Ghostty
+
+Switching from iTerm to [Ghostty][Ghostty] made high-output agentic TUIs feel
+smoother and more legible, especially when diffs are flying by and I am
+scrolling back through long chat sessions.
+
+The default config is solid: compare my [iTerm config][iTerm Config] (36K of
+.plist XML) and [Ghostty config][Ghostty Config] (3 optional lines of text).
+
+Ghostty is a minimal, drop-in replacement for stock Terminal.app or a basic
+iTerm install. If however you want a little more out of the box from a terminal,
+try [Warp][Warp], which has AI built in. The fact Silicon Valley is investing in
+terminals reassures me about this ancient tech.
+
+Speaking of AI, in preparing this article, I also enjoyed reading Ghostty
+creator [Mitchell Hashimoto's AI adoption journey][My AI Adoption Journey]. For
+example, I was struck by deliberate use of agents, especially at end-of-day,
+rather than running them 24/7 for its own sake.
+
+### Jujutsu
+
+AI means more edits, diffs, branches, and commits to share with your team. I
+assume you're already using version control to [tell coherent, distinct
+stories][Avoid Git First Drafts] to your teammates, and need to integrate their
+changes in turn.
+
+Switching from Git `git` to [Jujutsu][Jujutsu] `jj` made it easier to reorder,
+squash, rebase, and stack those changes into a clean story for code review,
+while minimizing conflict and interoperating with Git. Git's UX conflates these
+concepts, while unwinding stacked changes leads to repeated, self-inflicted
+conflicts. `jj` [gives proper UX attention to these
+operations][Jujutsu Strategies] and minimizes such conflicts.
+
+`jj`'s automatic snapshotting also rescued me from the Cursor GUI chat panel's
+wonky undo states. In Cursor, it was often unclear what `Cmd+Z`/`u` would undo,
+and what rewinding checkpoints within the chat thread would do to the actual
+working copy. Switching to the terminal for edit, AI chat, and code review, `jj`
+adds a safety net. Since I am already `jj diff`-ing what the agent changed, `jj`
+is quietly snapshotting repo state, as it does on many `jj` commands. That made
+`jj undo` a decent way to rewind.
+
+Although neither Cursor GUI undo states nor `jj undo` are substitutes for
+deliberate commits, and you can get an agent to help with commits too. If the
+agent isn't going to stomp on my human changes, like in its own worktree, I let
+it commit at will. I can clean up its commits later. [Here are my agent
+instructions for when I tell it to use worktrees][AGENTS.md] (workspaces in `jj`
+parlance).
+
+In my previous article, I really enjoyed reading [Just Talk To It], but the
+author Peter Steinberger is not a fan of worktrees, and lets his parallel agents
+commit directly to `main`. I sense the author's learning project at the time was
+a solo effort, he didn't have to coordinate with an engineering team. At my
+company, I still have to linearize my changes for review by another human, at
+least for now. `jj` eases this process.
+
+### "Which model do you use?"
+
+Ah, the burning question at programming networking. The modern day Emacs vs.
+Vim, spaces vs. tabs. And so the least evergreen section of this article.
+
+I side with Steinberger: since GPT-5.2 in October 2025, the GPT model series has
+felt stellar, like a clone of me, a senior software developer. Its Rust-based
+[Codex](https://chatgpt.com/codex) TUI has been snappy for a long time. I for
+sure have to steer the model. But I have to delete a lot less than with Claude
+Code, whose output is more of a junior developer. It's less evergreen, with a
+lot of "Why is this comment here?" to the detriment of maintainability.
+
+Claude Code is the darling of the software developer world. Naturally, I opted
+for the less popular tool, Codex. I wouldn't be writing this section if I
+weren't a rebel.
+
+> There are only two kinds of languages: the ones people complain about and the
+> ones nobody uses.
+>
+> —Bjarne Stroustrup
+
+Claude and Claude Code do have very pleasant interfaces. They have first mover's
+advantage, so there are lots of features. If you're just getting started in the
+terminal, you will enjoy. I also admire Claude's ability to move between
+devices, and even launch a custom web \*gasp\* GUI one-shotted for you.
+
+But if you're over the chat pleasantries, the agent blowing smoke, and need a
+decisive technician in your terminal, I've really enjoyed GPT-5.2 through 5.4.
+It gets to the point and produces higher quality, shorter code.
+
+[AGENTS.md]:
+  https://github.com/john-kurkowski/dotfiles/blob/d5f009a7a8794ae60d7d91085bbb6ad1b188c388/.codex/AGENTS.md?plain=1#L60-L98
+[Choose Boring Technology]: https://mcfunley.com/choose-boring-technology
+[Avoid Git First Drafts]: /posts/avoid-git-first-drafts
+[Ghostty]: https://ghostty.org/
+[Ghostty Config]:
+  https://github.com/john-kurkowski/dotfiles/blob/d5f009a7a8794ae60d7d91085bbb6ad1b188c388/.config/ghostty/config
+[Hands on Home Row for AI-Assisted Coding]:
+  /posts/hands-on-home-row-for-ai-assisted-coding
+[iTerm Config]:
+  https://github.com/john-kurkowski/dotfiles/blob/d5f009a7a8794ae60d7d91085bbb6ad1b188c388/Library/Preferences/com.googlecode.iterm2.plist
+[Jujutsu]: https://www.jj-vcs.dev/
+[Jujutsu Strategies]: https://reasonablypolymorphic.com/blog/jj-strategy/
+[Just Talk to It]: https://steipete.me/posts/just-talk-to-it
+[My AI Adoption Journey]: https://mitchellh.com/writing/my-ai-adoption-journey
+[The Bitter Lesson]: http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+[Warp]: https://www.warp.dev/

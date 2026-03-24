@@ -133,49 +133,6 @@ compounded fluency.
 
 I didn't lose my investment in pushing around text yet.
 
-### Subweapons
-
-A couple side shoutouts that made agentic adoption in the terminal even better
-around this time. While not strictly necessary to work in the AI-assisted coding
-era, I would recommend the following to any aspiring terminal user, especially
-whose rate of pushing text is increasing.
-
-#### Ghostty
-
-Switching from iTerm to [Ghostty][Ghostty] made high-output agentic TUIs feel
-smoother and more legible, especially when diffs are flying by and I am
-scrolling back through long chat sessions.
-
-The default config is solid: compare my [iTerm config][iTerm Config] (36K of
-.plist XML) and [Ghostty config][Ghostty Config] (3 optional lines of text).
-
-Ghostty is a minimal, drop-in replacement for stock Terminal.app or a basic
-iTerm install. If however you want a little more out of the box from a terminal,
-try [Warp][Warp], which has AI built in. The fact Silicon Valley is investing in
-terminals reassures me about this ancient tech.[^2]
-
-#### Jujutsu
-
-AI means more edits, diffs, branches, and commits to share with your team. I
-assume you're already using version control to tell coherent, distinct stories
-to your teammates, and need to integrate their changes in turn.
-
-Switching from Git `git` to [Jujutsu][Jujutsu] `jj` made it easier to reorder,
-squash, rebase, and stack those changes into a clean story for code review,
-while minimizing conflict and interoperating with Git. Git's UX conflates these
-concepts, while unwinding stacked changes leads to repeated, self-inflicted
-conflicts. `jj` [gives proper UX attention to these
-operations][Jujutsu Strategies] and minimizes such conflicts.
-
-`jj`'s automatic snapshotting also rescued me from the Cursor GUI chat panel's
-wonky undo states. In Cursor, it was often unclear what `Cmd+Z` would undo, what
-Vim's `u` would undo, and what rewinding checkpoints within the thread would do
-to the actual working copy. Switching to the terminal for edit, AI chat, and
-code review, `jj` adds a safety net. Since I am already `jj diff`-ing what the
-agent changed, `jj` is quietly snapshotting repo state, as it does on many `jj`
-commands. That made `jj undo` a decent way to rewind. Although `jj undo` is not
-a substitute for deliberate commits.
-
 ### Hardcore mode
 
 I'm not the most hardcore I could be with the terminal. My hands _do_ leave home
@@ -311,13 +268,9 @@ intimate, hands-on parts of the job may matter less.
 
 I get to keep my hands on home row, at least for one more turn.
 
-### Footnotes
+### Further Reading
 
-[^2]:
-    In preparing this article, I also enjoyed reading Ghostty creator [Mitchell
-    Hashimoto's AI adoption journey][My AI Adoption Journey]. For example, I was
-    struck by deliberate use of agents at specific times, especially end-of-day,
-    rather than running them 24/7 for its own sake.
+- [Hands on Home Row Tools Q1 2026][Hands on Home Row Tools Q1 2026]
 
 [AI 10x Imposter Syndrome]:
   https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/
@@ -325,20 +278,8 @@ I get to keep my hands on home row, at least for one more turn.
 [Don't Learn to Code, Learn to Program Instead - But Come Back In 10 Years]:
   /posts/dont-learn-to-code-learn-to-program-but-come-back-in-10-years/
 [Dotfiles]: https://github.com/john-kurkowski/dotfiles
-[Dotfiles README]:
-  https://github.com/john-kurkowski/dotfiles/blob/master/README.md
-[iTerm Config]:
-  https://github.com/john-kurkowski/dotfiles/blob/d5f009a7a8794ae60d7d91085bbb6ad1b188c388/Library/Preferences/com.googlecode.iterm2.plist
-[Jujutsu]: https://www.jj-vcs.dev/
-[Jujutsu Strategies]: https://reasonablypolymorphic.com/blog/jj-strategy/
+[Hands on Home Row Tools Q1 2026]: /posts/hands-on-home-row-tools-q1-2026
 [Just Talk to It]: https://steipete.me/posts/just-talk-to-it
-[My AI Adoption Journey]: https://mitchellh.com/writing/my-ai-adoption-journey
-[The Dracula Effect]:
-  https://newsletter.pragmaticengineer.com/i/187563524/4-the-dracula-effect-the-drain-of-using-ai
 [Vibe Engineering]: https://simonwillison.net/2025/Oct/7/vibe-engineering/
-[Ghostty]: https://ghostty.org/
-[Ghostty Config]:
-  https://github.com/john-kurkowski/dotfiles/blob/d5f009a7a8794ae60d7d91085bbb6ad1b188c388/.config/ghostty/config
-[Warp]: https://www.warp.dev/
 [Welcome to Gas Town]:
   https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04
