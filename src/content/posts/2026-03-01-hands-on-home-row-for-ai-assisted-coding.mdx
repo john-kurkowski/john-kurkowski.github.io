@@ -45,10 +45,15 @@ chords of a TUI are the next best thing.
 This addresses a couple of my crafter values.
 
 1. Have fun.
+
+Pulling on the thread that's fun will keep you coming back to a skill or
+project, to see it through.
+
 2. From my dotfiles' README:
-   > Use whatever makes you productive. Keep investing in and sharpening your
-   > tools to **shorten the feedback loop**. The quicker it is to try an idea or
-   > to cross reference it, the quicker it is to improve upon or discard.
+
+> Use whatever makes you productive. Keep investing in and sharpening your tools
+> to **shorten the feedback loop**. The quicker it is to try an idea or to cross
+> reference it, the quicker it is to improve upon or discard.
 
 Fun though it may be, for the arcane minutiae of coding, I don't necessarily
 recommend beginners cling to 1970s tech like I do. But in the era of AI agents,
@@ -96,25 +101,34 @@ different degrees. But the more IDEs adopted the Unix philosophy, the more
 harmony, the more mindshare they got. The more proprietary magic, the more they
 fall behind other editors.
 
-In the Unix philosophy, what is the primary language tools interchange? _Text_.
+What is [the Unix philosophy][Basics of the Unix Philosophy] that has guided so
+many programmers and is suddenly more relevant than ever? My favorite
+simplification, bolding mine:
+
+> Write programs that do one thing and do it well. Write programs to work
+> together. Write programs to handle **text** streams, because that is a
+> **universal interface**.
 
 You know what is good at dealing with large amounts of text? LLMs.
 
-The interactive, AI-assisted autocomplete that was so nice suddenly started to
-look like a bottleneck. What if we instead let agents run wild on even more text
-than what the human was focused on? A text-based interface stopped seeming
-retro.
+The first compelling AI feature in editors like Cursor had been interactive
+autocomplete: a smarter version of helping at the human's cursor. But if LLMs
+shine when they can take in broad swaths of text, that bottlenecks at where the
+human happens to be. Why limit the model to what the human is actively typing
+when an agent could read whole files, tool output, and diffs, faster than the
+human could? A text-based interface stopped seeming retro.
 
-Enter a slew of TUIs like Claude Code, OpenAI Codex, and even Cursor's alongside
-its VSCode GUI. The LLM-based agents are just inputting and outputting text and
-shelling out to tools. Why launch a heavyweight GUI if you're just going to push
-text around via an agent?
+Enter a slew of TUIs like Claude Code, OpenAI Codex, and even Cursor's CLI
+alongside its VSCode GUI. The LLM-based agents are just inputting and outputting
+text and shelling out to tools. Why launch a heavyweight GUI if you're just
+going to push text around via an agent?
 
-The appearance of these TUIs let me drop the VSCode-alike. I could arrange my
-terminal splits in a way that mimicked the Cursor GUI's split editor and AI chat
-panel. Better than a mimic, I could leap between the splits in the way that Vim
-and terminal splits long made sense and felt unified to _me_, building off
-compounded fluency.
+The appearance of these TUIs let me avoid VSCode-alikes once more. I could
+arrange my terminal splits in a way that mimicked the Cursor GUI's split editor
+and AI chat panel. Better than a mimic, I could leap between the splits in the
+way that Vim and terminal splits long made sense and felt unified to _me_,
+building upon my compound fluency. I didn't lose my investment in pushing around
+text yet.
 
 <figure>
   <a href={terminalSplitsWireframe.src}>
@@ -130,8 +144,6 @@ compounded fluency.
     movement.
   </figcaption>
 </figure>
-
-I didn't lose my investment in pushing around text yet.
 
 ### Hardcore mode
 
@@ -163,7 +175,7 @@ Peter Steinberger suggested getting away from these GUI facades around the AI,
 to [just talk to it][Just Talk to It], one of the most inspiring AI-adoption
 journey articles I've read. Treat the AI model less like a feature inside an IDE
 and more like the primary interface. Widen the interaction with the agent.
-Shrink the ornamentation and harnessing around the agent responses.
+Shrink the ornamentation around the agent responses.
 
 Inspired by Steinberger, you might advance to Yegge stages 5-6.
 
@@ -202,7 +214,8 @@ Perhaps agent orchestration is the productivity multiplier I yearned for, all
 those years ago. It is no longer the woodworking-like, hands-on flow state I
 described at the beginning of the article. That you use even use the terminal,
 or carefully crafted code or commit history? In the agentic frontier, maybe
-those don't matter.
+those don't matter. What is mattering more is a mind for the product you want,
+rather than the code to get there.
 
 ### Vibe engineering
 
@@ -274,6 +287,7 @@ I get to keep my hands on home row, at least for one more turn.
 
 [AI 10x Imposter Syndrome]:
   https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/
+[Basics of the Unix Philosophy]: https://cscie2x.dce.harvard.edu/hw/ch01s06.html
 [Code As Craft As Career?]: /posts/code-as-craft-as-career/
 [Don't Learn to Code, Learn to Program Instead - But Come Back In 10 Years]:
   /posts/dont-learn-to-code-learn-to-program-but-come-back-in-10-years/
