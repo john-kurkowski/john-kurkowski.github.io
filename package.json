@@ -5,11 +5,13 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
+    "check": "biome check . && git ls-files '*.css' | xargs stylelint && prettier --cache --list-different '**/*.{md,mdx,yml}' && npm run type-check",
+    "check:fix": "biome check --write . && git ls-files '*.css' | xargs stylelint --fix && prettier --cache --list-different --write '**/*.{md,mdx,yml}'",
     "dev": "astro dev --host",
-    "prepare": "husky && astro sync",
+    "prepare": "astro sync",
     "preview": "astro preview --host",
     "start": "astro dev --host",
-    "test": "biome check . && stylelint $(git ls-files '*.css') && prettier --check '**/*.{md,mdx,yml}' && npm run type-check",
+    "test": "npm run check",
     "type-check": "tsc --pretty"
   },
   "repository": {
@@ -33,28 +35,11 @@
     "@types/culori": "^4.0.1",
     "@types/node": "^24.12.0",
     "culori": "^4.0.2",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
     "lost-pixel": "^3.22.0",
     "prettier": "^3.8.1",
     "stylelint": "^17.4.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^40.0.0",
     "typescript": "^5.9.3"
-  },
-  "lint-staged": {
-    "*.css": [
-      "stylelint --fix",
-      "biome check --write"
-    ],
-    "*.{astro,js,jsx,mjs,mts,ts,tsx}": [
-      "biome check --write"
-    ],
-    "*.{json,jsonc}": [
-      "biome check --write"
-    ],
-    "*.{md,mdx,yml}": [
-      "prettier --write"
-    ]
   }
 }
