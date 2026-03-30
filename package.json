@@ -12,7 +12,7 @@
     "preview": "astro preview --host",
     "start": "astro dev --host",
     "test": "npm run check",
-    "type-check": "tsc --pretty"
+    "type-check": "astro check"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
     "@biomejs/biome": "^2.4.7",
     "@types/culori": "^4.0.1",
     "@types/node": "^24.12.0",

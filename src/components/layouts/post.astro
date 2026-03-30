@@ -20,7 +20,7 @@ const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en-GB', {
     <header class='post'>
       <h2>{frontmatter.title}</h2>
 
-      <time class='post-time mt-4 block' dateTime={frontmatter.date}>
+      <time class='post-time mt-4 block' datetime={frontmatter.date}>
         {DATE_DISPLAY_FORMAT.format(new Date(frontmatter.date))}
       </time>
     </header>
