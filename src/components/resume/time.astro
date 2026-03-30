@@ -21,7 +21,7 @@ const props: Props = Astro.props
 
 <time
   class="whitespace-no-wrap"
-  dateTime={MONTH_MACHINE_FORMAT.format(props.begin)}
+  datetime={MONTH_MACHINE_FORMAT.format(props.begin)}
 >
   {DATE_DISPLAY_FORMAT.format(props.begin)}
 </time>
@@ -29,7 +29,7 @@ const props: Props = Astro.props
 {props.end instanceof Date ? (
   <time
     class="whitespace-no-wrap"
-    dateTime={MONTH_MACHINE_FORMAT.format(props.end)}
+    datetime={MONTH_MACHINE_FORMAT.format(props.end)}
   >
     {DATE_DISPLAY_FORMAT.format(props.end)}
   </time>

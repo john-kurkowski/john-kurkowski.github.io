@@ -11,7 +11,7 @@ export function slugify(entry: CollectionEntry<'posts'>) {
   const maybeFilenameNoDateNoExt = /\d+-\d+-\d+-(.+)\./.exec(
     entry.filePath ?? '',
   )
-  if (!maybeFilenameNoDateNoExt || !maybeFilenameNoDateNoExt[1]) {
+  if (!maybeFilenameNoDateNoExt?.[1]) {
     throw new Error(`Invalid posts filename: ${entry.filePath}`)
   }
 
