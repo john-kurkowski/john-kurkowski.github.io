@@ -5,8 +5,8 @@ categories: [tech]
 tags: [engineering, programming, ai]
 description:
   AI-assisted coding fit surprisingly well with the terminal and text-first
-  tools I spent years sharpening. While AI may be the industry productivity
-  shift I long wanted, I feel wistful for hands-on coding.
+  tools I spent years sharpening. While agent orchestration may be the industry
+  productivity shift I long wanted, I feel wistful for hands-on coding.
 ---
 
 import cursorLikeLayoutWireframe from './2026-03-01-hands-on-home-row-for-ai-assisted-coding/01-cursor-layout.png'
@@ -44,23 +44,21 @@ chords of a TUI are the next best thing.
 
 This addresses a couple of my crafter values.
 
-1. Have fun.
+1. **Have fun.** The thread that's fun is the one you'll keep pulling until you
+   see it through, whether in a skill or a project.
 
-Pulling on the thread that's fun will keep you coming back to a skill or
-project, to see it through.
+2. **Shorten the feedback loop.** From my dotfiles README:
+   > Use whatever makes you productive. Keep investing in and sharpening your
+   > tools to shorten the feedback loop. The quicker it is to try an idea or to
+   > cross reference it, the quicker it is to improve upon or discard.
 
-2. From my dotfiles' README:
+Fun as it is, for the arcane minutiae of coding, I don't necessarily recommend
+that beginners cling to 1970s tech the way I have. In the era of AI agents, it
+is starting to matter less either way. The feedback loop is less about how
+deftly and hands-on you wield the tools, and more how well you steer the
+machine.
 
-> Use whatever makes you productive. Keep investing in and sharpening your tools
-> to **shorten the feedback loop**. The quicker it is to try an idea or to cross
-> reference it, the quicker it is to improve upon or discard.
-
-Fun though it may be, for the arcane minutiae of coding, I don't necessarily
-recommend beginners cling to 1970s tech like I do. But in the era of AI agents,
-it's starting not to matter either way. The feedback loop is evolving into an
-entirely different beast.
-
-### Wake-up call
+### Under editor pressure
 
 Around the time I resumed a full-time role in tech in 2025, the networking buzz
 was all about Cursor, an AI-oriented VSCode fork. All my teammates were using
@@ -82,28 +80,27 @@ VSCode's Vim emulation never came close.
     />
   </a>
   <figcaption>
-    VSCode-alike's file tree, editor, terminal, and agent all competing for
-    width.
+    A VSCode-alike layout, with the file tree, editor, terminal, and agent all
+    competing for width.
   </figcaption>
 </figure>
 
-More worryingly, I wondered, with 2025's leaps in AI-assisted coding, is the
-1970s terminal tech finally, truly holding me back? Am I missing out on some
-superpower? Only the likes of Cursor can access it?
+More worryingly, I wondered, with 2025's leaps in AI-assisted coding, is 1970s
+terminal tech finally, truly holding me back? Was I missing out on a real
+superpower that only tools like Cursor could unlock?
 
 ### Revenge of the TUI
 
-VSCode-alikes' under the covers are just calling tools. GUIs atop CLIs. Under
-the covers, to format or compile your project, the IDEs are calling tools the
-same way a human would in a terminal or your CI would in the cloud. Over the
-years, IDEs have done some proprietary magic with their tool calling, to
-different degrees. But the more IDEs adopted the Unix philosophy, the more
-harmony, the more mindshare they got. The more proprietary magic, the more they
-fall behind other editors.
+Under the hood, VSCode-alikes are just calling tools. GUIs atop CLIs. To format
+or compile your project, they invoke the same commands a human would in a
+terminal or CI would in the cloud. Over the years, IDEs added proprietary magic
+to their tool calling to varying degrees. But the more IDEs instead adopted the
+Unix philosophy, the more harmony, the more mindshare they got; the more
+proprietary magic, the more they fell behind other editors.
 
-What is [the Unix philosophy][Basics of the Unix Philosophy] that has guided so
-many programmers and is suddenly more relevant than ever? My favorite
-simplification, bolding mine:
+What is [the Unix philosophy][Basics of the Unix Philosophy], which guided so
+many programmers and is suddenly more relevant than ever? My favorite shorthand,
+bolding mine:
 
 > Write programs that do one thing and do it well. Write programs to work
 > together. Write programs to handle **text** streams, because that is a
@@ -111,7 +108,7 @@ simplification, bolding mine:
 
 You know what is good at dealing with large amounts of text? LLMs.
 
-The first compelling AI feature in editors like Cursor had been interactive
+The first compelling AI feature in editors like Cursor was interactive
 autocomplete: a smarter version of helping at the human's cursor. But if LLMs
 shine when they can take in broad swaths of text, that bottlenecks at where the
 human happens to be. Why limit the model to what the human is actively typing
@@ -121,9 +118,15 @@ human could? A text-based interface stopped seeming retro.
 Enter a slew of TUIs like Claude Code, OpenAI Codex, and even Cursor's CLI
 alongside its VSCode GUI. The LLM-based agents are just inputting and outputting
 text and shelling out to tools. Why launch a heavyweight GUI if you're just
-going to push text around via an agent?[^1]
+going to push text around via an agent?
 
-The appearance of these TUIs let me avoid VSCode-alikes once more. I could
+Perhaps the GUI isn't so much heavyweight as trying to wrangle something too
+powerful and expressive. The creator of Claude Code [started the product in the
+terminal][What happens after coding is solved], because "the model is improving
+so quickly, we felt that there wasn't really another form factor that could keep
+up with it."
+
+The appearance of these TUIs let me avoid VSCode-alikes, once more. I could
 arrange my terminal splits in a way that mimicked the Cursor GUI's split editor
 and AI chat panel. Better than a mimic, I could leap between the splits in the
 way that Vim and terminal splits long made sense and felt unified to _me_,
@@ -229,7 +232,7 @@ tech social media, the cutting edge discussion buzz makes it seem like everybody
 is at least Yegge stage 5. Technology is quick to change. People are slow to
 change. Zooming out of the Silicon Valley echo chamber, I would guess what's hot
 in the valley hasn't reached SMBs, where many software engineers are still
-stages 1-2. Most _people_ are stages 0-1 ("I chatted with AI a couple years ago
+stages 1-1. Most _people_ are stages 0-1 ("I chatted with AI a couple years ago
 and it sucked"). We all know somebody who hasn't even tried generative AI. In
 tech, we lose sight of that.
 
@@ -241,7 +244,7 @@ it's hard to back out of, the business is going to be in trouble and I'm going
 to be in trouble. With hobby projects, I've vibed, turned my engineer mind off,
 and lost connection with what the AI actually built me. Simon Willison lists
 [these evergreen engineering practices][Vibe Engineering], like automated
-testing and good version control habits, to keep the AI in line.[^2] They will
+testing and good version control habits, to keep the AI in line.[^1] They will
 amplify already good engineers. Meanwhile a truly vibes-only project will go off
 the rails, and collapse under its own tech debt weight.
 
@@ -289,12 +292,6 @@ I get to keep my hands on home row, at least for one more turn.
 ### Footnotes
 
 [^1]:
-    The creator of Claude Code started the product in the terminal [coming from
-    another angle][What happens after coding is solved]: "And the biggest reason
-    was the model is improving so quickly, we felt that there wasn't really
-    another form factor that could keep up with it."
-
-[^2]:
     _Seemingly_ evergreen engineering practices. The practices were developed to
     wrangle the unruly mess humans made with text-based coding. It's possible a
     near-future AI model could work without these practices. But as long as
