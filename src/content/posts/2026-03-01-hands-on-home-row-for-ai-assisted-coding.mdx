@@ -5,8 +5,9 @@ categories: [tech]
 tags: [engineering, programming, ai]
 description:
   AI-assisted coding has fit surprisingly well with the terminal and text-first
-  tools I spent years sharpening. While agent orchestration may be the industry
-  productivity shift I long wanted, I feel wistful for hands-on coding.
+  tools I spent years sharpening. Agent orchestration may be the industry
+  productivity boost I long wanted. While engineering discipline still matters,
+  I feel wistful for hands-on coding.
 ---
 
 import cursorLikeLayoutWireframe from './2026-03-01-hands-on-home-row-for-ai-assisted-coding/01-cursor-layout.png'
@@ -23,9 +24,10 @@ expression beyond _text_.
 (My most viral article. #1 on Hacker News for a day. Bless you, salacious
 title.)
 
-Then [I yearned for a productivity boost][Code As Craft As Career?]. Today's
-moment in agentic coding might be what I was asking for. Even as I adopt AI's
-higher leverage, I can't help feel wistful.
+Then [I yearned for a productivity boost][Code As Craft As Career?]. Recent AI
+adoption essays and product shifts brought that old argument back to mind.
+Today's moment in agentic coding might be what I was asking for. Even as I adopt
+AI's higher leverage, I can't help feel wistful.
 
 ### Back to reality
 
@@ -54,9 +56,8 @@ This addresses a couple of my crafter values.
 
 Fun as it is, for the arcane minutiae of coding, I don't necessarily recommend
 that beginners cling to 1970s tech the way I have. In the era of AI agents, it
-is starting to matter less either way. The feedback loop is less about how
-deftly and hands-on you wield the tools, and more how well you steer the
-machine.
+is starting to matter less either way. The feedback loop is becoming less about
+how deftly and hands-on you wield the tools, and more how well you steer.
 
 ### Under editor pressure
 
@@ -95,7 +96,7 @@ Under the hood, VSCode-alikes are just calling tools. GUIs atop CLIs. To format
 or compile your project, they invoke the same commands a human would in a
 terminal or CI would in the cloud. Over the years, IDEs added proprietary magic
 to their tool calling to varying degrees. But the more IDEs instead adopted the
-Unix philosophy, the more harmony, the more mindshare they got; the more
+Unix philosophy, the more harmony, the more mindshare they got. The more
 proprietary magic, the more they fell behind other editors.
 
 What is [the Unix philosophy][Basics of the Unix Philosophy], which guided so
@@ -114,8 +115,8 @@ they can take in large amounts of text. That bottlenecks on wherever the human
 happens to be typing. Why limit the model to the cursor when an agent can
 instead read whole files, tool output, and diffs faster than the human can?
 
-If a text-based interface is good for LLMs, the hot technology of the day, it
-stops seeming retro for humans.
+If a text-based interface is good for LLMs, the hot technology of the day,
+text-based stops seeming retro for humans.
 
 Enter a parade of competing TUIs like Claude Code `claude`, OpenAI Codex
 `codex`, and Cursor `cursor-agent`. The LLM-based agents are just inputting and
@@ -153,9 +154,10 @@ text. Yet.
 ### Hardcore mode
 
 I'm not the most hardcore I could be with the terminal. My hands _do_ leave home
-row. Outside Vim, I do use a mouse, to scroll or copy text. I'm also not the
-most hardcore I could be with AI-assisted coding, with the Vim + terminal setup
-I've described so far. On the [Steve Yegge scale of AI
+row. Outside Vim, I do use a mouse, to scroll or copy text.
+
+I'm also not the most hardcore I could be with AI-assisted coding, with the
+Vim + terminal setup I've described so far. On the [Steve Yegge scale of AI
 adoption][Welcome to Gas Town], I'm only on stage 3-4 out of 8.
 
 > Stage 3: **Agent in IDE, YOLO mode:** Trust goes up. You turn off permissions,
@@ -167,20 +169,23 @@ adoption][Welcome to Gas Town], I'm only on stage 3-4 out of 8.
 You could argue whether I'm in an "IDE" with Vim or not. That doesn't matter.
 The width is the interesting observation.
 
-Cursor foresaw this evolution of programmers. It forced an update in late 2025
+Cursor foresaw this evolution of programmers. In late 2025, it forced an update
 that renamed its AI chat panel "Agent Mode" and defaulted it to be wider than
 the code editor. Most users were used to the editor being wider, like in the
 earlier images in this article. Users complained, which convinced the Cursor
-team to revert. But Cursor was onto something. The enlightened AI-assisted
-programmer cares less and less about the code viewer. The more you trust the AI,
-the more you focus on good interaction with the agent. Anything outside that
-interaction is a bottleneck where humans get in the way.
+team to revert. In April 2026, Cursor [is retrying the AI window takeover with
+their v3 release][Cursor’s $2 billion bet].
+
+Cursor was onto something. The enlightened AI-assisted programmer cares less and
+less about the code viewer. The more you trust the AI, the more you focus on
+good interaction with the agent. Anything outside that interaction is a
+bottleneck where humans get in the way.
 
 It might be the human at the computer getting in the way, or it could be the IDE
 maintainers overengineering the chat interface. Peter Steinberger suggested
 stripping away these GUI facades around the AI, to [just talk to
-it][Just Talk to It], one of the most inspiring AI-adoption journey articles
-I've read. Treat the AI model less like a feature inside an IDE and more like
+it][Just Talk to It] (one of the most inspiring AI-adoption journey articles
+I've read). Treat the AI model less like a feature inside an IDE and more like
 the primary interface. Widen the interaction with the agent. Shrink the
 ornamentation around the agent responses.
 
@@ -193,7 +198,11 @@ Inspired by Steinberger's article, you might advance to Yegge stages 5-6.
 > instances. You are very fast.
 
 The terminal splits no longer mimic VSCode. They're stripped to bare, uniform AI
-chat threads.[^1] Programming becomes something else.
+chat threads. The ubiquitous chat threads we see on the likes of chatgpt.com and
+claude.ai (and every legacy app cramming a chatbot into the sidebar and claiming
+to be "AI native").
+
+Programming becomes something else.
 
 <figure>
   <a href={multiAgentTabsWireframe.src}>
@@ -224,55 +233,66 @@ those years ago.
 If so, programming is trending further from the woodworking-like, hands-on flow
 state I described at the beginning of the article. In the agentic frontier, the
 engineer-favorite question, "Which IDE do you use?" doesn't matter so much. Nor
-that you use the terminal. Nor that you carefully craft your code or commit
-history. What matters more is a mind for the product you want, rather than the
-code to get there.
+that you use the terminal. What matters more is a mind for the product you want,
+rather than the code to get there.
 
 I might've backed the right horse several years in a row. But horse riding is
 quaint when everybody gets to fly a spaceship.
 
 ### Vibe engineering
 
-That anybody with a modest computer can be a vibe coder now, the special
-hands-on skills I invested so much time in? I can't help feel a loss. But I'm
-hopeful engineering discipline still offers some expertise to the world.
+When anybody with a modest computer can be a vibe coder, I can't help feel a
+loss for the hands-on skills I invested so much time in. But I'm hopeful
+engineering discipline still offers some expertise to the world.
 
-First, some reassurance from the fact that everybody is on a different stage of
-their AI adoption journey, software engineer or not. In Silicon Valley and on
-tech social media, the cutting edge discussion buzz makes it seem like everybody
-is at least Yegge stage 5. Technology is quick to change. People are slow to
-change. Zooming out of the Silicon Valley echo chamber, I would guess what's hot
-in the valley hasn't reached SMBs, where many software engineers are still
-stages 1-2. Most _people_ are stages 0-1 ("I chatted with AI a couple years ago
-and it sucked"). We all know somebody who hasn't even tried generative AI. In
-tech, we lose sight of that.
+First, some reassurance: everybody is on a different stage of their AI adoption
+journey, software engineer or not. Remember the temporarily aborted rollout of
+Cursor's wider agent window. Technology is quick to change. People are slow to
+change.
+
+In Silicon Valley and on tech social media, the cutting edge discussion buzz
+makes it seem like everybody is at least Yegge stage 5. Zooming out of the
+Silicon Valley echo chamber, the picture changes. What's hot in the valley
+hasn't reached SMBs. Many SMB software engineers are still stages 1-2. Most
+_people_ are stages 0-1 ("I chatted with AI a couple years ago and it sucked").
+We all know somebody who hasn't even tried generative AI. In tech, we lose sight
+of that.
 
 Good as the agents have gotten in the last several months at tool calling and
-one-off scripts, I can't trust them without processes yet, or I'd be fired.
-Well, it hasn't been said in those words, but: if I can barely explain what I
-shipped to production, to myself or to my team, and there's a big regression
-that it's hard to back out of, the business is going to be in trouble and I'm
-going to be in trouble.[^2] With hobby projects, I've vibed, turned my engineer
-mind off, and lost connection with what the AI actually built me. Simon Willison
-lists [these evergreen engineering practices][Vibe Engineering], like automated
-testing and good version control habits, to keep the AI in line.[^3] They will
-amplify already good engineers. Meanwhile a truly vibes-only project will go off
-the rails, and collapse under its own tech debt weight.
+one-off scripts, I can't yet trust them without process. I'd be fired. Well, it
+hasn't been said in those words. Rather, if I can barely explain to myself or to
+my team what I shipped to production, and there's a big, hard-to-reverse
+regression, the business is going to be in trouble and I'm going to be in
+trouble.
 
-If you're feeling like AI must be a 10x coding multiplier and you don't know how
-to reach that number, remember engineering team constraints, like the above
-evergreen practices, do not disappear just because code is cheaper to produce.
-["10x output" claims often ignore non-coding
+(If instead you work in [a hero culture][Prevention vs Cure], AI will let you
+produce awareness-building fires, faster.)
+
+With hobby projects, I've vibed, turned my engineer mind off, and lost
+connection with what the AI actually built me. Simon Willison lists [these
+evergreen engineering practices][Vibe Engineering], like automated testing and
+good version control habits, to keep the AI in line. They amplify already good
+engineers. Meanwhile a truly vibes-only project will go off the rails and
+collapse under its own tech debt weight.
+
+If you're told AI must be a 10x coding multiplier and you can't see how to reach
+that number, remember engineering constraints don't disappear just because code
+is cheaper to produce. ["10x output" claims often ignore non-coding
 bottlenecks][AI 10x Imposter Syndrome]. If anything, team constraints become
 more obvious: review quality, shared understanding, operational safety, and
-coordination. A 10x claim while retaining these processes seems unrealistic.
+coordination. A 10x claim that retains these processes seems unrealistic.
 
-Could a team _without_ those engineering processes safely, robustly leapfrog
-teams with? While the entrenched super senior engineer can dismiss the new
-generation of tools and tool wielders as not knowing what they're doing, such a
-dismissal does eerily sound like the cycle of tech: someone doing it new,
-different, and cheaper, then taking over. From my article yearning for a
-productivity boost:
+The engineering practices _seem_ evergreen, at least. They were developed to
+wrangle the unruly mess humans made with text-based coding, and as long as
+AI-assisted programming still builds on that swamp, they remain a good idea.
+
+Could a team _without_ those engineering processes safely leapfrog teams with?
+Maybe a near-future AI model won't need process. The entrenched senior engineer
+can dismiss the new generation of tools and tool wielders as not knowing what
+they're doing. Such a dismissal sounds eerily like the cycle of tech: someone
+doing something new, different, and cheaper, then taking over.
+
+From my article yearning for a productivity boost:
 
 > Most consumers though will settle for cheap and highly available. Economics
 > wins.
@@ -285,39 +305,25 @@ productivity boost:
 >
 > Did you know there was a typesetter profession?
 
-The future is here, it's just not evenly distributed yet.
+It's hard to say if we're seeing a shift in duties, the elimination of process,
+and/or the elimination of jobs we will soon forget existed. The future is here,
+it's just not evenly distributed yet.
 
 Part of me wanted this better way of expressing programming to the computer.
 Back in 2014, I was already asking for a mode of creation more powerful than
 hand-writing text for every last detail. AI orchestration may be the closest
 thing yet to that wish. I like the extra leverage. I like the speed. I like that
 the terminal and other text-first tools I invested in still map surprisingly
-okay onto this new world. I also feel a little sad that one of the most
-intimate, hands-on parts of the job may matter less.
+well onto this new world. But the text is becoming AI chat everywhere, whether
+you use a terminal AI instance or a desktop AI instance. I feel a little sad
+that one of the most intimate, hands-on parts of the job may matter less.
 
 I get to keep my hands on home row, at least for one more turn.
-
-### Footnotes
-
-[^1]:
-    The ubiquitous chat threads we see on the likes of chatgpt.com, claude.ai,
-    and every legacy app cramming a chatbot in the rail and claiming to be "AI
-    native."
-
-[^2]:
-    If instead you work in [a hero culture][Prevention vs Cure], AI will let you
-    produce awareness-building fires at a higher rate.
-
-[^3]:
-    The engineering practices _seem_ evergreen, at least. They were developed to
-    wrangle the unruly mess humans made with text-based coding. It's possible a
-    near-future AI model could work without the practices. But as long as
-    AI-assisted programming builds upon the swamp of the last several decades,
-    the practices continue to be a good idea.
 
 [AI 10x Imposter Syndrome]:
   https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/
 [Basics of the Unix Philosophy]: https://cscie2x.dce.harvard.edu/hw/ch01s06.html
+[Cursor’s $2 billion bet]: https://thenewstack.io/cursor-3-demotes-ide/
 [Code As Craft As Career?]: /posts/code-as-craft-as-career/
 [Don't Learn to Code, Learn to Program Instead - But Come Back In 10 Years]:
   /posts/dont-learn-to-code-learn-to-program-but-come-back-in-10-years/
