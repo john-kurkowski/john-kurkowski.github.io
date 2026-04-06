@@ -42,6 +42,6 @@
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^40.0.0",
     "typescript": "^6.0.2",
-    "vite": "^7.3.1"
+    "vite": "^7.3.2"
   }
 }
