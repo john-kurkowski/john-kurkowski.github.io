@@ -2,6 +2,9 @@ import assert from "node:assert/strict"
 import { readdir, readFile } from "node:fs/promises"
 import test from "node:test"
 import { parse } from "yaml"
+import { getSiteUrl } from "../src/config/site.ts"
+
+const expectedSiteUrl = getSiteUrl()
 
 const readPage = (path: string) =>
   readFile(new URL(path, import.meta.url), "utf8")
@@ -76,13 +79,10 @@ test("image-backed articles expose absolute social preview images and alt text",
   for (const { alt, file, slug } of cases) {
     const html = await readPage(`../dist/posts/${slug}/index.html`)
     const [name, extension] = file.split(".")
+    const imageUrl = getMetaContent(html, "property", "og:image")
 
-    assert.match(
-      getMetaContent(html, "property", "og:image"),
-      new RegExp(
-        `^https://johnkurkowski\\.com/_astro/${name}\\.[^.]+\\.${extension}$`,
-      ),
-    )
+    assert.ok(imageUrl.startsWith(`${expectedSiteUrl}/_astro/${name}.`))
+    assert.ok(imageUrl.endsWith(`.${extension}`))
     assert.equal(getMetaContent(html, "property", "og:image:alt"), alt)
   }
 })
@@ -92,7 +92,7 @@ test("articles without a preview image use the large social image fallback", asy
 
   assert.equal(
     getMetaContent(html, "property", "og:image"),
-    "https://johnkurkowski.com/avatar-social.jpeg",
+    `${expectedSiteUrl}/avatar-social.jpeg`,
   )
   assert.equal(getMetaContent(html, "property", "og:image:width"), "1200")
   assert.equal(getMetaContent(html, "property", "og:image:height"), "630")
