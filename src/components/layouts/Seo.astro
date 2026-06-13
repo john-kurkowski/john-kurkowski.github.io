@@ -17,7 +17,11 @@ const description = frontmatter.description || siteMetadata.description
 const isArticle = Boolean(date)
 const siteUrl = Astro.site || new URL(Astro.url.origin)
 const canonical = new URL(Astro.url.pathname, siteUrl).href
-const defaultImage = new URL("/avatar@2X.jpeg", siteUrl).href
+const defaultImage = new URL("/avatar-social.jpeg", siteUrl).href
+const defaultImageDimensions = {
+  height: 630,
+  width: 1200,
+}
 const image = frontmatter.image
 const postImageUrls = import.meta.glob(
   "../../content/posts/**/*.{png,jpg,jpeg,webp}",
@@ -37,6 +41,12 @@ const imageSrc =
     : image?.src
 const imageUrl = new URL(imageSrc || defaultImage, siteUrl).href
 const imageAlt = image ? frontmatter.imageAlt : "John Kurkowski"
+const imageDimensions = image
+  ? {
+      height: image.height,
+      width: image.width,
+    }
+  : defaultImageDimensions
 const article = date
   ? {
       authors: [siteMetadata.title],
@@ -63,14 +73,14 @@ const article = date
     },
     image: {
       alt: imageAlt,
-      height: image?.height,
-      width: image?.width,
+      height: imageDimensions.height,
+      width: imageDimensions.width,
     },
     ...(article ? { article } : {}),
   }}
   title={title}
   twitter={{
-    card: image ? "summary_large_image" : "summary",
+    card: "summary_large_image",
     creator: "@bluu",
     description,
     image: imageUrl,

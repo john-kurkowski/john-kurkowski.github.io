@@ -84,12 +84,18 @@ test("image-backed articles expose absolute social preview images and alt text",
   }
 })
 
-test("articles without a preview image use the avatar fallback", async () => {
+test("articles without a preview image use the large social image fallback", async () => {
   const html = await readPage("../dist/posts/avoid-git-first-drafts/index.html")
 
   assert.equal(
     getMetaContent(html, "property", "og:image"),
-    "https://johnkurkowski.com/avatar@2X.jpeg",
+    "https://johnkurkowski.com/avatar-social.jpeg",
+  )
+  assert.equal(getMetaContent(html, "property", "og:image:width"), "1200")
+  assert.equal(getMetaContent(html, "property", "og:image:height"), "630")
+  assert.equal(
+    getMetaContent(html, "name", "twitter:card"),
+    "summary_large_image",
   )
 })
 
