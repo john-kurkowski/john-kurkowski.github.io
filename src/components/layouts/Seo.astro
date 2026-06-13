@@ -15,51 +15,45 @@ const description = frontmatter.description || siteMetadata.description
 ---
 
 <title>{title}</title>
-<meta property='og:title' content={title} />
+<meta property="og:title" content={title}>
 
-<meta name='author' content={siteMetadata.title} />
-<meta property='og:author' content={siteMetadata.url} />
+<meta name="author" content={siteMetadata.title}>
+<meta property="og:author" content={siteMetadata.url}>
 
-<meta name='description' content={description} />
-<meta name='twitter:description' content={description} />
+<meta name="description" content={description}>
+<meta name="twitter:description" content={description}>
 
 {date && <meta http-equiv='date' content={date.toISOString()} />}
 
-<meta charset='utf-8' />
-<meta content='John' property='profile:first_name' />
-<meta
-  content='Kurkowski'
-  property='profile:last_name'
-/>
+<meta charset="utf-8">
+<meta content="John" property="profile:first_name">
+<meta content="Kurkowski" property="profile:last_name">
 
 <meta
-  content='width=device-width, initial-scale=1.0, viewport-fit=cover'
-  name='viewport'
-/>
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  name="viewport"
+>
 
 <link
-  crossorigin='anonymous'
-  href='https://fonts.gstatic.com/'
-  rel='preconnect'
-/>
+  crossorigin="anonymous"
+  href="https://fonts.gstatic.com/"
+  rel="preconnect"
+>
 <link
-  as='style'
-  href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,40
-0;1,700&family=Open+Sans:wght@400;600;700;800'
-  rel='preload'
-/>
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,40
+0;1,700&family=Open+Sans:wght@400;600;700;800"
+  rel="preload"
+>
 <link
-  href='https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@400;600;700;800'
-  rel='stylesheet'
-/>
+  href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@400;600;700;800"
+  rel="stylesheet"
+>
 
-<link href='/favicon.ico' rel='shortcut icon' />
-<link href='/avatar@2X.jpeg' rel='apple-touch-icon' />
-<meta content='/avatar@2X.jpeg' property='og:image' />
-<meta
-  content='/avatar@2X.jpeg'
-  name='twitter:image:src'
-/>
-<meta content='summary' name='twitter:card' />
-<meta content='@bluu' name='twitter:site' />
-<meta content='@bluu' name='twitter:creator' />
+<link href="/favicon.ico" rel="shortcut icon">
+<link href="/avatar@2X.jpeg" rel="apple-touch-icon">
+<meta content="/avatar@2X.jpeg" property="og:image">
+<meta content="/avatar@2X.jpeg" name="twitter:image:src">
+<meta content="summary" name="twitter:card">
+<meta content="@bluu" name="twitter:site">
+<meta content="@bluu" name="twitter:creator">

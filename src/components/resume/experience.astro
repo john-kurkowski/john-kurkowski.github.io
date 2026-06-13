@@ -1,5 +1,4 @@
 ---
-
 interface Props {
   className?: string
   company: string
@@ -12,9 +11,9 @@ const props: Props = Astro.props
 
 <div class={`border-l-4 border-gray-300 px-4 text-xs ${props.className || ''}`}>
   <h3
-    class='grid grid-flow-col grid-cols-[auto_auto] grid-rows-[1fr_0.5fr] items-center justify-between gap-x-4'
+    class="grid grid-flow-col grid-cols-[auto_auto] grid-rows-[1fr_0.5fr] items-center justify-between gap-x-4"
   >
-    <p class='font-bold text-lg'>{props.company}</p>
+    <p class="font-bold text-lg">{props.company}</p>
 
     <p class="italic">{props.position}</p>
 
@@ -22,8 +21,8 @@ const props: Props = Astro.props
       <slot name="time"></slot>
     </p>
 
-    <address class='justify-self-end'>{props.location}</address>
+    <address class="justify-self-end">{props.location}</address>
   </h3>
 
-  <div class='mt-1 text-justify'><slot /></div>
+  <div class="mt-1 text-justify"><slot /></div>
 </div>

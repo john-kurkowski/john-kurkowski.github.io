@@ -1,18 +1,18 @@
 ---
 interface Props {
   begin: Date
-  end: Date | 'present'
+  end: Date | "present"
 }
 
-const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en', {
-  month: 'short',
-  timeZone: 'America/Los_Angeles',
-  year: 'numeric',
+const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat("en", {
+  month: "short",
+  timeZone: "America/Los_Angeles",
+  year: "numeric",
 })
 
 const MONTH_MACHINE_FORMAT = {
   format(date: Date) {
-    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`
   },
 }
 

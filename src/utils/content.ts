@@ -1,4 +1,4 @@
-import type { CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from "astro:content"
 
 /**
  * Converts filename to a URL-safe slug.
@@ -7,9 +7,9 @@ import type { CollectionEntry } from 'astro:content'
  * slightly from Astro's default `entry.id`. For example, the `&` character is
  * preserved.
  */
-export function slugify(entry: CollectionEntry<'posts'>) {
+export function slugify(entry: CollectionEntry<"posts">) {
   const maybeFilenameNoDateNoExt = /\d+-\d+-\d+-(.+)\./.exec(
-    entry.filePath ?? '',
+    entry.filePath ?? "",
   )
   if (!maybeFilenameNoDateNoExt?.[1]) {
     throw new Error(`Invalid posts filename: ${entry.filePath}`)

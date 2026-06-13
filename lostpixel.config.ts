@@ -1,7 +1,7 @@
-import { readFileSync } from 'node:fs'
-import { join } from 'node:path'
-import type { CustomProjectConfig } from 'lost-pixel'
-import type { Page } from 'playwright-core'
+import { readFileSync } from "node:fs"
+import { join } from "node:path"
+import type { CustomProjectConfig } from "lost-pixel"
+import type { Page } from "playwright-core"
 
 /**
  * Hide 3rd party embeds.
@@ -26,15 +26,15 @@ async function hide3rdPartyEmbeds(page: Page) {
  * vanilla Node.js for the page URLs.
  */
 function pagePaths(): string[] {
-  const siteUrl = 'https://johnkurkowski.com'
+  const siteUrl = "https://johnkurkowski.com"
   const sitemapXml = readFileSync(
-    join(__dirname, 'dist', 'sitemap-0.xml'),
-    'utf-8',
+    join(__dirname, "dist", "sitemap-0.xml"),
+    "utf-8",
   )
-  const urlsRe = new RegExp(`${siteUrl}(/[^<]*)`, 'g')
+  const urlsRe = new RegExp(`${siteUrl}(/[^<]*)`, "g")
   return Array.from(sitemapXml.matchAll(urlsRe)).map(([, url]) =>
     // biome-ignore lint/style/noNonNullAssertion: guaranteed group at this point
-    url!.replaceAll('&amp;', '&'),
+    url!.replaceAll("&amp;", "&"),
   )
 }
 
@@ -42,9 +42,9 @@ function pagePaths(): string[] {
  * Id the pages by a friendlier, more uniform slug.
  */
 function slugify(str: string): string {
-  const replaced = str.replaceAll('/', '-')
-  const stripped = replaced.replaceAll(/(^-+|-+$)/g, '')
-  return stripped ? stripped : 'index'
+  const replaced = str.replaceAll("/", "-")
+  const stripped = replaced.replaceAll(/(^-+|-+$)/g, "")
+  return stripped ? stripped : "index"
 }
 
 export const config: CustomProjectConfig = {
@@ -53,9 +53,9 @@ export const config: CustomProjectConfig = {
     await hide3rdPartyEmbeds(page)
   },
   breakpoints: [414, 1280],
-  lostPixelProjectId: 'clud602ae10romo0e861bvpv2',
+  lostPixelProjectId: "clud602ae10romo0e861bvpv2",
   pageShots: {
     pages: pagePaths().map((path) => ({ path, name: slugify(path) })),
-    baseUrl: 'http://172.17.0.1:4321',
+    baseUrl: "http://172.17.0.1:4321",
   },
 }

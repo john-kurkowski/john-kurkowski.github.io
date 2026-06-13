@@ -1,8 +1,8 @@
-@import 'tailwindcss';
-@import './sticky-footer';
-@import './syntax';
-@import './typography';
-@import './button';
+@import "tailwindcss";
+@import "./sticky-footer";
+@import "./syntax";
+@import "./typography";
+@import "./button";
 
 @theme inline {
   /* Color theme */
@@ -29,8 +29,8 @@
 
   /* Fonts */
   --font-sans:
-    'Open Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    "Open Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif:
-    'Lora', ui-serif, georgia, cambria, 'Times New Roman', times, serif;
+    "Lora", ui-serif, georgia, cambria, "Times New Roman", times, serif;
 }

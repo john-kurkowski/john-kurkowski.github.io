@@ -1,23 +1,22 @@
 ---
-import { getCollection } from 'astro:content'
-import Layout from '../../components/layouts/base.astro'
-import { slugify } from '../../utils/content'
+import { getCollection } from "astro:content"
+import Layout from "../../components/layouts/base.astro"
+import { slugify } from "../../utils/content"
 
 const frontmatter = {
-  title: 'Articles',
+  title: "Articles",
 }
 
-const posts = await getCollection('posts')
+const posts = await getCollection("posts")
 posts.sort((a, b) => b.id.localeCompare(a.id))
 ---
 
 <Layout frontmatter={frontmatter}>
-  <section class=''>
-    <h2 class='heading text-3xl'>Articles</h2>
+  <section class="">
+    <h2 class="heading text-3xl">Articles</h2>
 
-    <ul class='mx-2 mt-2'>
-      {
-        posts.map((post) => (
+    <ul class="mx-2 mt-2">
+      {posts.map((post) => (
           <li class='mt-10'>
             <a class='link inline-block' href={`/posts/${slugify(post)}/`}>
               {post.data.title}
@@ -27,8 +26,7 @@ posts.sort((a, b) => b.id.localeCompare(a.id))
               {post.data.description}
             </blockquote>
           </li>
-        ))
-      }
+        ))}
     </ul>
   </section>
 </Layout>

@@ -1,16 +1,24 @@
 {
-  "extends": ["stylelint-config-html", "stylelint-config-standard"],
+  "extends": [
+    "stylelint-config-html",
+    "stylelint-config-standard"
+  ],
   "rules": {
     "at-rule-no-deprecated": [
       true,
       {
-        "ignoreAtRules": ["apply"]
+        "ignoreAtRules": [
+          "apply"
+        ]
       }
     ],
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["config", "theme"]
+        "ignoreAtRules": [
+          "config",
+          "theme"
+        ]
       }
     ],
     "import-notation": "string"

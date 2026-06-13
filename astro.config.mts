@@ -1,8 +1,8 @@
-import { type RemarkPlugin, unified } from '@astrojs/markdown-remark'
-import mdx from '@astrojs/mdx'
-import sitemap from '@astrojs/sitemap'
-import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'astro/config'
+import { type RemarkPlugin, unified } from "@astrojs/markdown-remark"
+import mdx from "@astrojs/mdx"
+import sitemap from "@astrojs/sitemap"
+import tailwindcss from "@tailwindcss/vite"
+import { defineConfig } from "astro/config"
 
 const parsePublishTime: RemarkPlugin = () => (_tree, file) => {
   const maybeDateString = /\d+-\d+-\d+/.exec(file.path)
@@ -26,11 +26,11 @@ export default defineConfig({
       remarkPlugins: [parsePublishTime],
     }),
     shikiConfig: {
-      theme: 'slack-ochin',
+      theme: "slack-ochin",
     },
   },
 
-  site: 'https://johnkurkowski.com',
+  site: "https://johnkurkowski.com",
   integrations: [mdx(), sitemap()],
 
   vite: {

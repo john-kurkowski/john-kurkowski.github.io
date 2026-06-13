@@ -1,79 +1,80 @@
 ---
-import Layout from './base.astro'
+import Layout from "./base.astro"
 
 const { frontmatter } = Astro.props
 
-const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat('en-GB', {
-  day: 'numeric',
-  month: 'short',
-  timeZone: 'America/Los_Angeles',
-  year: 'numeric',
+const DATE_DISPLAY_FORMAT = new Intl.DateTimeFormat("en-GB", {
+  day: "numeric",
+  month: "short",
+  timeZone: "America/Los_Angeles",
+  year: "numeric",
 })
 ---
 
 <Layout frontmatter={frontmatter}>
-  <div class='text-sm'>
-    <a class='link' href='/posts/'> ↩ to Articles </a>
+  <div class="text-sm">
+    <a class="link" href="/posts/"> ↩ to Articles </a>
   </div>
 
   <article>
-    <header class='post'>
+    <header class="post">
       <h2>{frontmatter.title}</h2>
 
-      <time class='post-time mt-4 block' datetime={frontmatter.date}>
+      <time class="post-time mt-4 block" datetime={frontmatter.date}>
         {DATE_DISPLAY_FORMAT.format(new Date(frontmatter.date))}
       </time>
     </header>
 
-    <div class='post'><slot /></div>
+    <div class="post"><slot /></div>
 
-    <div class='mt-8' id='disqus_thread'></div>
+    <div class="mt-8" id="disqus_thread"></div>
     <noscript>
       Enable JavaScript to view the{' '}
-      <a href='https://disqus.com/?ref_noscript'>comments.</a>
+      <a href="https://disqus.com/?ref_noscript">comments.</a>
     </noscript>
   </article>
 </Layout>
 
 <script>
-  document.addEventListener("astro:page-load", lookForPostDisqus)
+document.addEventListener("astro:page-load", lookForPostDisqus)
 
-  function lookForPostDisqus() {
-    document.addEventListener("scroll", embedDisqus)
+function lookForPostDisqus() {
+  document.addEventListener("scroll", embedDisqus)
+}
+
+function embedDisqus() {
+  const disqus_shortname = "johnkurkowski"
+
+  const disqus_thread = document.getElementById("disqus_thread")
+  if (!disqus_thread) {
+    return
   }
 
-  function embedDisqus() {
-    const disqus_shortname = 'johnkurkowski'
-
-    const disqus_thread = document.getElementById('disqus_thread')
-    if (!disqus_thread) {
-      return
-    }
-
-    const load_range_px = 600
-    const scroll_height =
-      window.innerHeight || document.documentElement.clientHeight
-    const disqus_top = disqus_thread.getBoundingClientRect().top
-    const is_disqus_in_viewport_range = scroll_height + load_range_px >= disqus_top
-    if (!is_disqus_in_viewport_range) {
-      return
-    }
-
-    document.removeEventListener('scroll', embedDisqus)
-
-    if (window.DISQUS) {
-      window.DISQUS.reset({
-        reload: true,
-      })
-    } else {
-      const url = `//${disqus_shortname}.disqus.com/embed.js`
-
-      const script = document.createElement('script')
-
-      script.src = url
-      script.async = true
-
-      document.body.appendChild(script)
-    }
+  const load_range_px = 600
+  const scroll_height =
+    window.innerHeight || document.documentElement.clientHeight
+  const disqus_top = disqus_thread.getBoundingClientRect().top
+  const is_disqus_in_viewport_range =
+    scroll_height + load_range_px >= disqus_top
+  if (!is_disqus_in_viewport_range) {
+    return
   }
+
+  document.removeEventListener("scroll", embedDisqus)
+
+  if (window.DISQUS) {
+    window.DISQUS.reset({
+      reload: true,
+    })
+  } else {
+    const url = `//${disqus_shortname}.disqus.com/embed.js`
+
+    const script = document.createElement("script")
+
+    script.src = url
+    script.async = true
+
+    document.body.appendChild(script)
+  }
+}
 </script>

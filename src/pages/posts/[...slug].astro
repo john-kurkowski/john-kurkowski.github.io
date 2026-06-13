@@ -1,10 +1,10 @@
 ---
-import { getCollection, render } from 'astro:content'
+import { getCollection, render } from "astro:content"
 
-import { slugify } from '../../utils/content'
+import { slugify } from "../../utils/content"
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts')
+  const blogEntries = await getCollection("posts")
   return blogEntries.map((entry) => {
     return {
       params: { slug: slugify(entry) },

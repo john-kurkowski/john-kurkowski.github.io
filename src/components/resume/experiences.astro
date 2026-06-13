@@ -1,22 +1,24 @@
 ---
-import Experience from './experience.astro'
-import Time from './time.astro'
+import Experience from "./experience.astro"
+import Time from "./time.astro"
 ---
+
 <Experience
   company="Source"
   location="Remote, Portland, OR"
   position="Senior Software Developer"
 >
-  <Time begin={new Date('2025-06-10')} end='present' slot='time' />
+  <Time begin={new Date('2025-06-10')} end="present" slot="time" />
 
-  <ul class='list-disc ml-4'>
+  <ul class="list-disc ml-4">
     <li>
       Building 0→1 frontend platform to incrementally replace legacy internal
       tool, managing $6.5B in procurement across 1,225+ projects, starting with
       automated bill pay tracking, with zero disruption.
     </li>
     <li>
-      Leveraging AI-assisted development tools (Codex, Cursor, CodeRabbit) to accelerate team-wide iteration cycles and enforce code quality standards.
+      Leveraging AI-assisted development tools (Codex, Cursor, CodeRabbit) to
+      accelerate team-wide iteration cycles and enforce code quality standards.
     </li>
     <li>
       Architected React/Next.js monorepo with component library, automated
@@ -32,13 +34,17 @@ import Time from './time.astro'
 </Experience>
 
 <Experience
-  company='Self'
-  location='Remote, Portland, OR'
-  position='Software Development Consultant'
+  company="Self"
+  location="Remote, Portland, OR"
+  position="Software Development Consultant"
 >
-  <Time begin={new Date('2020-07-15')} end={new Date('2025-06-10')} slot='time' />
+  <Time
+    begin={new Date('2020-07-15')}
+    end={new Date('2025-06-10')}
+    slot="time"
+  />
 
-  <ul class='list-disc ml-4'>
+  <ul class="list-disc ml-4">
     <li>
       Prototyped and adopted tooling, component libraries, test coverage, and
       code review guidelines, for clients such as WhoCo and Media Arts Lab
@@ -50,21 +56,18 @@ import Time from './time.astro'
     </li>
     <li>
       Maintained OSS libraries:
-      <ul class='list-disc ml-6'>
+      <ul class="list-disc ml-6">
         <li>
-          <a
-            class='link'
-            href='https://github.com/john-kurkowski/tldextract'
-          >tldextract</a>
+          <a class="link" href="https://github.com/john-kurkowski/tldextract"
+            >tldextract</a
+          >
           Python library to parse URLs (35k+ dependents).
         </li>
         <li>
-          <a
-            class='link'
-            href='https://github.com/john-kurkowski/music'
-          >music</a>
-          Python CLI to publish my music (100+ hours error-prone clicks
-          saved).
+          <a class="link" href="https://github.com/john-kurkowski/music"
+            >music</a
+          >
+          Python CLI to publish my music (100+ hours error-prone clicks saved).
         </li>
       </ul>
     </li>
@@ -72,20 +75,20 @@ import Time from './time.astro'
 </Experience>
 
 <Experience
-  company='CrowdStrike'
-  location='Remote, Portland, OR'
-  position='Senior Software Developer'
+  company="CrowdStrike"
+  location="Remote, Portland, OR"
+  position="Senior Software Developer"
 >
   <Time
     begin={new Date('2013-04-15')}
     end={new Date('2020-02-15')}
-    slot='time'
+    slot="time"
   />
 
-  <ul class='list-disc ml-4'>
+  <ul class="list-disc ml-4">
     <li>
-      Led UX team tech, architecting Ember.js SPAs to triage and hunt
-      advanced security threats.
+      Led UX team tech, architecting Ember.js SPAs to triage and hunt advanced
+      security threats.
     </li>
     <li>
       Drove adoption of cross-team component library and microservice
@@ -93,33 +96,33 @@ import Time from './time.astro'
       Elasticsearch backends, in AWS.
     </li>
     <li>
-      Increased deploys from 1x/month to 10x/day, championing efficiency
-      and team feedback loop.
+      Increased deploys from 1x/month to 10x/day, championing efficiency and
+      team feedback loop.
     </li>
     <li>Grew team from 10 customers to 1k+, from 2 developers to 20.</li>
     <li>
-      Cultivated quality culture: oversaw peer code review, checklists,
-      and automated tests.
+      Cultivated quality culture: oversaw peer code review, checklists, and
+      automated tests.
     </li>
   </ul>
 </Experience>
 
 <Experience
-  company='Gravity'
-  location='Santa Monica, CA'
-  position='Senior Software Developer'
+  company="Gravity"
+  location="Santa Monica, CA"
+  position="Senior Software Developer"
 >
   <Time
     begin={new Date('2010-11-15')}
     end={new Date('2013-04-15')}
-    slot='time'
+    slot="time"
   />
 
-  <ul class='list-disc ml-4'>
+  <ul class="list-disc ml-4">
     <li>
-      Developed a Scala platform and 3rd party JavaScript for 30k/hr
-      realtime, personalized article recommendations, embedded in top 200
-      U.S. publisher sites, such as TechCrunch.
+      Developed a Scala platform and 3rd party JavaScript for 30k/hr realtime,
+      personalized article recommendations, embedded in top 200 U.S. publisher
+      sites, such as TechCrunch.
     </li>
     <li>
       Ingested 10k/hr live tweets for interest analytics visualizations,
@@ -130,35 +133,35 @@ import Time from './time.astro'
       ontology.
     </li>
     <li>
-      Organized monthly 15-person Scala meetups, fostering local dev
-      community and recruitment.
+      Organized monthly 15-person Scala meetups, fostering local dev community
+      and recruitment.
     </li>
   </ul>
 </Experience>
 
 <Experience
-  company='Quantcast'
-  location='San Francisco, CA'
-  position='Software Developer'
+  company="Quantcast"
+  location="San Francisco, CA"
+  position="Software Developer"
 >
   <Time
     begin={new Date('2008-09-15')}
     end={new Date('2010-08-15')}
-    slot='time'
+    slot="time"
   />
 
-  <ul class='list-disc ml-4'>
+  <ul class="list-disc ml-4">
     <li>
-      Enhanced Java, MySQL, PostgreSQL audience analytics web app reaching
-      2M+ monthly users.
+      Enhanced Java, MySQL, PostgreSQL audience analytics web app reaching 2M+
+      monthly users.
     </li>
     <li>
-      Reported churn risks to CEO in daily Hadoop dashboard, retaining
-      100s of critical customers.
+      Reported churn risks to CEO in daily Hadoop dashboard, retaining 100s of
+      critical customers.
     </li>
     <li>
-      Spearheaded modern dev practices: prefix search, Python/Django
-      tooling, DVCS workflows.
+      Spearheaded modern dev practices: prefix search, Python/Django tooling,
+      DVCS workflows.
     </li>
   </ul>
 </Experience>
