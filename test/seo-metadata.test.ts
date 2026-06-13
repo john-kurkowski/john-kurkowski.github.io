@@ -3,14 +3,17 @@ import { readdir, readFile } from "node:fs/promises"
 import test from "node:test"
 import { parse } from "yaml"
 
-const readPage = (path) => readFile(new URL(path, import.meta.url), "utf8")
+const readPage = (path: string) =>
+  readFile(new URL(path, import.meta.url), "utf8")
 
-const getMetaContent = (html, attribute, value) => {
+const getMetaContent = (html: string, attribute: string, value: string) => {
   const pattern = new RegExp(
     `<meta\\s+${attribute}="${value}"\\s+content="([^"]*)"`,
   )
+  const content = html.match(pattern)?.[1]
 
-  return html.match(pattern)?.[1]
+  assert.ok(content, `Missing meta ${attribute}="${value}"`)
+  return content
 }
 
 test("all posts make an explicit social preview image decision", async () => {
@@ -23,7 +26,7 @@ test("all posts make an explicit social preview image decision", async () => {
 
     assert.ok(frontmatter, `${filename} is missing frontmatter`)
     assert.ok(
-      Object.hasOwn(parse(frontmatter), "image"),
+      "image" in parse(frontmatter),
       `${filename} must set image to a path or null`,
     )
   }
