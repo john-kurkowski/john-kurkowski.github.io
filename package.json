@@ -23,25 +23,25 @@
   "private": true,
   "homepage": "https://github.com/john-kurkowski/john-kurkowski.github.io#readme",
   "dependencies": {
-    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/mdx": "^6.0.3",
     "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.2",
-    "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.3.1",
-    "tailwindcss": "^4.3.0"
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "^6.4.6",
+    "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
-    "@biomejs/biome": "^2.4.14",
+    "@biomejs/biome": "^2.5.0",
     "@types/culori": "^4.0.1",
-    "@types/node": "^24.12.3",
+    "@types/node": "^24.13.2",
     "culori": "^4.0.2",
     "lost-pixel": "^3.22.0",
-    "prettier": "^3.8.3",
-    "stylelint": "^17.11.0",
+    "prettier": "^3.8.4",
+    "stylelint": "^17.13.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^40.0.0",
     "typescript": "^6.0.3",
-    "vite": "^7.3.3"
+    "vite": "^7.3.5"
   }
 }

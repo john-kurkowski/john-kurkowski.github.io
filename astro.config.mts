@@ -1,4 +1,4 @@
-import type { RemarkPlugin } from '@astrojs/markdown-remark'
+import { type RemarkPlugin, unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
@@ -22,7 +22,9 @@ const parsePublishTime: RemarkPlugin = () => (_tree, file) => {
 
 export default defineConfig({
   markdown: {
-    remarkPlugins: [parsePublishTime],
+    processor: unified({
+      remarkPlugins: [parsePublishTime],
+    }),
     shikiConfig: {
       theme: 'slack-ochin',
     },
