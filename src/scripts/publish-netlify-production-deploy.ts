@@ -1,5 +1,12 @@
 #!/usr/bin/env -S npx tsx
 
+/**
+ * Publish the Netlify-built production deploy that matches the current GitHub
+ * Actions commit. Netlify owns the build because production should exercise the
+ * same platform path as deploy previews and branch deploys; GitHub Actions owns
+ * the publish gate so production only changes after CI passes.
+ */
+
 import { pathToFileURL } from "node:url"
 
 type Fetch = typeof fetch
@@ -52,6 +59,11 @@ const pendingStates = new Set([
 
 const terminalFailureStates = new Set(["error", "rejected"])
 
+/**
+ * Poll Netlify for the production deploy that matches CI's commit, then publish
+ * it once it is ready. This keeps the workflow from publishing an older or
+ * unrelated deploy while Netlify auto publishing is locked.
+ */
 export async function publishNetlifyProductionDeploy(
   options: PublishOptions,
   dependencies: Partial<Dependencies> = {},
@@ -102,6 +114,11 @@ export async function publishNetlifyProductionDeploy(
   )
 }
 
+/**
+ * Select the Netlify production deploy for the exact branch and commit. The
+ * explicit match is necessary because Netlify may list deploys from other
+ * branches, contexts, or nearby commits while CI is waiting.
+ */
 export function findMatchingDeploy(
   deploys: NetlifyDeploy[],
   options: Pick<PublishOptions, "branch" | "commitRef">,
@@ -205,6 +222,11 @@ function readPositiveIntegerEnv(name: string, fallback: number): number {
   return parsed
 }
 
+/**
+ * Read the GitHub Actions and Netlify settings needed by the publish job.
+ * Keeping this at the CLI boundary lets tests exercise the deploy logic without
+ * depending on process environment state.
+ */
 export function readOptionsFromEnv(): PublishOptions {
   return {
     authToken: readRequiredEnv("NETLIFY_AUTH_TOKEN"),
