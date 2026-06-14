@@ -2,7 +2,7 @@ import assert from "node:assert/strict"
 import { readdir, readFile } from "node:fs/promises"
 import test from "node:test"
 import { parse } from "yaml"
-import { getSiteUrl } from "../src/config/site.ts"
+import { getSiteUrl } from "../../../src/config/site.ts"
 
 const expectedSiteUrl = getSiteUrl()
 
@@ -20,7 +20,7 @@ const getMetaContent = (html: string, attribute: string, value: string) => {
 }
 
 test("all posts make an explicit social preview image decision", async () => {
-  const postsDirectory = new URL("../src/content/posts/", import.meta.url)
+  const postsDirectory = new URL("../../../src/content/posts/", import.meta.url)
   const filenames = await readdir(postsDirectory)
 
   for (const filename of filenames.filter((name) => name.endsWith(".mdx"))) {
@@ -37,7 +37,7 @@ test("all posts make an explicit social preview image decision", async () => {
 
 test("article pages expose description metadata for link previews", async () => {
   const html = await readPage(
-    "../dist/posts/hands-on-home-row-for-ai-assisted-coding/index.html",
+    "../../../dist/posts/hands-on-home-row-for-ai-assisted-coding/index.html",
   )
   const description =
     "AI-assisted coding has fit surprisingly well with the terminal and text-first tools I spent years sharpening. Agent orchestration may be the industry productivity boost I long wanted. While engineering discipline still matters, I feel wistful for hands-on coding."
@@ -77,7 +77,7 @@ test("image-backed articles expose absolute social preview images and alt text",
   ]
 
   for (const { alt, file, slug } of cases) {
-    const html = await readPage(`../dist/posts/${slug}/index.html`)
+    const html = await readPage(`../../../dist/posts/${slug}/index.html`)
     const [name, extension] = file.split(".")
     const imageUrl = getMetaContent(html, "property", "og:image")
 
@@ -88,7 +88,9 @@ test("image-backed articles expose absolute social preview images and alt text",
 })
 
 test("articles without a preview image use the large social image fallback", async () => {
-  const html = await readPage("../dist/posts/avoid-git-first-drafts/index.html")
+  const html = await readPage(
+    "../../../dist/posts/avoid-git-first-drafts/index.html",
+  )
 
   assert.equal(
     getMetaContent(html, "property", "og:image"),
@@ -103,7 +105,7 @@ test("articles without a preview image use the large social image fallback", asy
 })
 
 test("post pages identify themselves as Open Graph articles", async () => {
-  const html = await readPage("../dist/posts/paint-by-types/index.html")
+  const html = await readPage("../../../dist/posts/paint-by-types/index.html")
 
   assert.equal(getMetaContent(html, "property", "og:type"), "article")
 })

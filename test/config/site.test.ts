@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { getSiteUrl, productionSiteUrl } from "../src/config/site.ts"
+import { getSiteUrl, productionSiteUrl } from "../../src/config/site.ts"
 
 test("site URL falls back to production outside deploy environments", () => {
   assert.equal(getSiteUrl({}), productionSiteUrl)
