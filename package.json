@@ -1,6 +1,7 @@
 {
   "name": "john-kurkowski.github.io",
   "version": "1.0.0",
+  "type": "module",
   "description": "Source for https://johnkurkowski.com.",
   "scripts": {
     "astro": "astro",
@@ -11,7 +12,7 @@
     "prepare": "astro sync",
     "preview": "astro preview --host",
     "start": "astro dev --host",
-    "test": "npm run check",
+    "test": "npm run check && npm run build && node --test 'test/**/*.test.ts'",
     "type-check": "astro check"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.6",
+    "astro-seo": "^1.1.0",
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {

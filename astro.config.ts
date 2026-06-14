@@ -3,6 +3,7 @@ import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
+import { getSiteUrl } from "./src/config/site"
 
 const parsePublishTime: RemarkPlugin = () => (_tree, file) => {
   const maybeDateString = /\d+-\d+-\d+/.exec(file.path)
@@ -30,7 +31,7 @@ export default defineConfig({
     },
   },
 
-  site: "https://johnkurkowski.com",
+  site: getSiteUrl(),
   integrations: [mdx(), sitemap()],
 
   vite: {

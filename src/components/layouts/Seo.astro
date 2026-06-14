@@ -1,4 +1,6 @@
 ---
+import { SEO } from "astro-seo"
+
 const { frontmatter, siteMetadata } = Astro.props
 let title: string
 if (frontmatter.title?.includes(siteMetadata.title)) {
@@ -12,20 +14,87 @@ if (frontmatter.title?.includes(siteMetadata.title)) {
 const date = frontmatter.date ? new Date(frontmatter.date) : null
 
 const description = frontmatter.description || siteMetadata.description
+const isArticle = Boolean(date)
+const siteUrl = Astro.site || new URL(Astro.url.origin)
+const canonical = new URL(Astro.url.pathname, siteUrl).href
+const defaultImage = new URL("/avatar-social.jpeg", siteUrl).href
+const defaultImageDimensions = {
+  height: 630,
+  width: 1200,
+}
+const image = frontmatter.image
+const postImageUrls = import.meta.glob(
+  "../../content/posts/**/*.{png,jpg,jpeg,webp}",
+  {
+    eager: true,
+    import: "default",
+    query: "?url",
+  },
+) as Record<string, string>
+const rawImagePath =
+  typeof image === "string" ? image.replace(/^\.\//, "/") : ""
+const imageSrc =
+  typeof image === "string"
+    ? Object.entries(postImageUrls).find(([path]) =>
+        path.endsWith(rawImagePath),
+      )?.[1]
+    : image?.src
+const imageUrl = new URL(imageSrc || defaultImage, siteUrl).href
+const imageAlt = image ? frontmatter.imageAlt : "John Kurkowski"
+const imageDimensions = image
+  ? {
+      height: image.height,
+      width: image.width,
+    }
+  : defaultImageDimensions
+const article = date
+  ? {
+      authors: [siteMetadata.title],
+      publishedTime: date.toISOString(),
+      tags: frontmatter.tags,
+    }
+  : undefined
 ---
 
-<title>{title}</title>
-<meta property="og:title" content={title}>
+<SEO
+  charset="utf-8"
+  canonical={canonical}
+  description={description}
+  openGraph={{
+    basic: {
+      image: imageUrl,
+      title,
+      type: isArticle ? "article" : "website",
+      url: canonical,
+    },
+    optional: {
+      description,
+      siteName: siteMetadata.title,
+    },
+    image: {
+      alt: imageAlt,
+      height: imageDimensions.height,
+      width: imageDimensions.width,
+    },
+    ...(article ? { article } : {}),
+  }}
+  title={title}
+  twitter={{
+    card: "summary_large_image",
+    creator: "@bluu",
+    description,
+    image: imageUrl,
+    imageAlt,
+    site: "@bluu",
+    title,
+  }}
+/>
 
 <meta name="author" content={siteMetadata.title}>
-<meta property="og:author" content={siteMetadata.url}>
-
-<meta name="description" content={description}>
-<meta name="twitter:description" content={description}>
+<meta property="og:author" content={canonical}>
 
 {date && <meta http-equiv='date' content={date.toISOString()} />}
 
-<meta charset="utf-8">
 <meta content="John" property="profile:first_name">
 <meta content="Kurkowski" property="profile:last_name">
 
@@ -52,8 +121,3 @@ const description = frontmatter.description || siteMetadata.description
 
 <link href="/favicon.ico" rel="shortcut icon">
 <link href="/avatar@2X.jpeg" rel="apple-touch-icon">
-<meta content="/avatar@2X.jpeg" property="og:image">
-<meta content="/avatar@2X.jpeg" name="twitter:image:src">
-<meta content="summary" name="twitter:card">
-<meta content="@bluu" name="twitter:site">
-<meta content="@bluu" name="twitter:creator">

@@ -7,12 +7,20 @@ import { z } from "astro/zod"
 const posts = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/posts" }),
 
-  schema: z.object({
-    description: z.string(),
-    title: z.string(),
-    categories: z.array(z.string()),
-    tags: z.array(z.string()),
-  }),
+  schema: ({ image }) =>
+    z
+      .object({
+        description: z.string(),
+        title: z.string(),
+        categories: z.array(z.string()),
+        tags: z.array(z.string()),
+        image: image().nullable(),
+        imageAlt: z.string().optional(),
+      })
+      .refine((data) => data.image === null || data.imageAlt, {
+        message: "imageAlt is required when image is set",
+        path: ["imageAlt"],
+      }),
 })
 
 export const collections = { posts }
