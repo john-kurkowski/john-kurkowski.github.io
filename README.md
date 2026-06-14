@@ -8,6 +8,10 @@ Source for [johnkurkowski.com](https://johnkurkowski.com).
 
     npm install
 
+Install Playwright browsers only if you plan to run browser-based tests locally.
+
+    npx playwright install chromium
+
 ### Running
 
     npm start
@@ -19,9 +23,8 @@ Source for [johnkurkowski.com](https://johnkurkowski.com).
 Tests are run in CI and must pass before production deploy, i.e. pushes to
 trunk. Branches deploy regardless of CI passing.
 
-Before push, you can preview [Lost Pixel](https://app.lost-pixel.com/) VRT's
-snapshots against your running local server in production mode.
+Before push, you can preview [Argos](https://argos-ci.com/) VRT's snapshots
+against your built site in production mode.
 
     npm run build
-    npm run preview &
-    npx lost-pixel local
+    npm run test:vrt
