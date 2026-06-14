@@ -4,4 +4,7 @@
 .netlify
 dist/
 node_modules/
+playwright-report/
+screenshots/
 src/env.d.ts
+test-results/
