@@ -27,6 +27,7 @@ jobs:
         run: npm test
 
   visual-regression:
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     name: Lost Pixel
 
