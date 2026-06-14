@@ -16,13 +16,11 @@ Source for [johnkurkowski.com](https://johnkurkowski.com).
 
     npm test
 
-Tests are run in GitHub Actions and must pass before production deploys.
+Tests are run in CI and must pass before production deploy, i.e. pushes to
+trunk. Branches deploy regardless of CI passing.
 
-[Lost Pixel](https://app.lost-pixel.com/) visual regression review is run during
-CI and must pass before production deploys. Netlify deploy previews run build
-only; production deploys are published by GitHub Actions after tests and visual
-regression pass. Before push, you can preview Lost Pixel's snapshots against
-your running local server in production mode.
+Before push, you can preview [Lost Pixel](https://app.lost-pixel.com/) VRT's
+snapshots against your running local server in production mode.
 
     npm run build
     npm run preview &
