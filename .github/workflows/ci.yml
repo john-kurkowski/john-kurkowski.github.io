@@ -72,15 +72,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build app
-        run: npm run build
-
-      - name: Deploy to Netlify
-        run: |
-          deploy_message="$(git log -1 --pretty=%s)"
-          npx --yes netlify-cli deploy --prod --dir=dist --site \
-            "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN" \
-            --message "$deploy_message"
+      - name: Publish Netlify production deploy
+        run: npx tsx src/scripts/publish-netlify-production-deploy.ts
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
