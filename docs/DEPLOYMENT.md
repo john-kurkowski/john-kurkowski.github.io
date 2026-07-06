@@ -37,3 +37,7 @@ If production does not publish after CI passes:
 - Confirm the matching Netlify deploy reached the `ready` state.
 - Confirm Netlify auto publishing is still locked; the workflow publishes one
   matching deploy and does not unlock future automatic publishing.
+- On pull requests, GitHub may still say "This branch has not been deployed"
+  even when Netlify's `deploy/netlify` check says the Deploy Preview is ready.
+  This is a GitHub UI quirk: Netlify reports the preview as a check/status, but
+  GitHub's deployments panel only reads GitHub Deployment records.
