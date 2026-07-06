@@ -24,8 +24,8 @@ const props: Props = Astro.props
   datetime={MONTH_MACHINE_FORMAT.format(props.begin)}
 >
   {DATE_DISPLAY_FORMAT.format(props.begin)}
-</time>
-<span>–</span>
+</time>{" "}
+<span>–</span>{" "}
 {props.end instanceof Date ? (
   <time
     class="whitespace-no-wrap"
