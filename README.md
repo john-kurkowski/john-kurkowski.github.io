@@ -16,6 +16,13 @@ Install Playwright browsers only if you plan to run browser-based tests locally.
 
     npm start
 
+## Deployment
+
+Netlify builds deploy previews, branch deploys, and production deploys.
+Production auto publishing is locked in Netlify; GitHub Actions publishes the
+matching production deploy after CI passes. See [Deployment](docs/DEPLOYMENT.md)
+for the full production flow.
+
 ### Tests
 
     npm test
