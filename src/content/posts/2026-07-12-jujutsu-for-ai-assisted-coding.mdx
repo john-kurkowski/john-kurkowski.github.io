@@ -1,0 +1,360 @@
+---
+layout: ../../components/layouts/post.astro
+title: 'Jujutsu for AI-Assisted Coding'
+categories: [tech]
+tags: [engineering, programming, ai]
+description:
+  I switched from Git to Jujutsu `jj` late last year. It interops with Git, so
+  collaborators haven't noticed. I was hardcore into the Git CLI for 15 years. I
+  haven't looked back. `jj` made it easier to reorder, squash, rebase, and stack
+  AI-assisted changes for review for me and my team.
+image: ./2026-07-12-jujutsu-for-ai-assisted-coding/01-before.png
+imageAlt:
+  'A colorized terminal showing a Jujutsu stack and exploratory side branches
+  diverging from main.'
+---
+
+import StackedDiff from '../../components/posts/jujutsu-for-ai-assisted-coding/StackedDiff.astro'
+import { Code } from 'astro:components'
+
+{/* Astro's Code component owns the rendered elements, so this article-local rule must be global to style its One Dark output. */}
+
+<style is:global>{`
+  .jj-command .astro-code {
+    border: 1px solid #3e4451;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+
+  .jj-command code {
+    background: transparent;
+    font-size: inherit;
+    line-height: inherit;
+  }
+`}</style>
+
+I switched from Git to [Jujutsu] (`jj`) late last year. It interops with Git, so
+my collaborators who still use Git haven't noticed. After I was hardcore into
+the Git CLI for 15 years, I didn't realize how much time I spent fighting it,
+even as an expert. The Jujutsu CLI is simpler and fluent. There was a week of
+learning curve. I haven't looked back.
+
+Jujutsu is especially relevant in the age of AI-assisted coding. AI means _more_
+edits, diffs, branches, commits, and investigations to share with your team. The
+Claude Code creator boasts that coding is a solved problem. If so, maybe a day
+is soon coming that version control systems (VCS) for code is a solved problem;
+no one will worry about or inspect or hand manage commit history. Until then, my
+job as a software developer working with a team remains: **communicate the
+changed code to myself and to the team.** This includes the code I prompt AI to
+generate.
+
+I still have to understand what the AI changed and where it placed the work. I
+need to bring my teammates along, with a [coherent, distinct
+story][Avoid Git First Drafts] they can review, integrate, and maintain. I don't
+want to foist an undebuggable pile onto them in one giant commit, leaving them
+to unravel a message like
+`Revert "Revert "hmm this seems broken but it sorta works i dunno""` (quoted
+from [the seminal article on forensic version control history][git-rebase]).
+Agents can waste tokens following the same misleading trail. I want to author
+changes that humans and robots like to work with. Jujutsu helps me slice, dice,
+and present my changes cleaner and faster.
+
+There are plenty of Jujutsu feature lists and deep dives out there, so I'll just
+highlight a few killer features that helped me the last several months, with
+links for further reading.
+
+### Stacked Diffs
+
+I came to Jujutsu for its stacking support. In an async, distributed
+environment, stacked diffs are table stakes. Having finished conceptual commit
+#1, it is inefficient to block working on commit #2 until commit #1 passes
+checks, passes review, and is deemed 100% perfect. Those checks take time,
+sometimes across timezones. Nobody gets code right the first time. For the
+author and reader, it is easier to reason about whether it works and what
+amendment it needs when it is in small chunks. A PR should represent a single
+conceptual, self-contained change. It should be as small as possible ("but no
+smaller"). Conversely, combining the concepts from commit #1 and commit #2 into
+a single large pile is hard to review and increases risk to trunk (e.g.
+unreviewed corners of the diff unintentionally slip by, harder to bisect and
+debug).
+
+`jj` makes it **first class** to **split, squash, reorder,** and **rebase**
+changes into a clean story for code review, while minimizing conflict. Git's UX
+conflates these concepts. Ever notice most of Git's utility here comes from a
+magical text file (initiated by `git rebase --interactive`) that can perform all
+these actions at once, but with little validation, only on the current working
+directory, and can lose your commits? Unwinding the stack has to be performed
+individually per branch, whose rewrites don't track each other. Even if the
+changes are performed carefully, they lead to repeated, self-inflicted
+conflicts. `jj` gives dedicated UX attention to these operations, simplifying
+them, making them safer, and minimizing conflicts.
+
+Let's say you're working on a single feature with 5 stacked branches atop your
+trunk, with any number of commits in between. Call them `parser`, `parser-api`,
+`parser-validation`, etc. Commits can occur outside them. For example, work on
+trunk from other developers, or your own exploratory commits not intended for
+merge. The first branch in the stack has passed review. It is ready to merge to
+`main`. How do you keep the remainder of the stack in sync?
+
+My team and I tend to squash merge in the GitHub GUI. For fun, here's doing the
+same merge manually in `jj`. Then, we'll rebase the whole stack in **one
+command**. Finally, we'll force push with lease in one command, as we would with
+Git.
+
+<div class="jj-command">
+  <Code
+    code={[
+      '# Equivalent to squash merge in the GitHub GUI',
+      'jj squash --from main..parser --onto main  # opens $EDITOR for combined commit message',
+      'jj bookmark set main --revision pp         # say `pp` is the squash merge commit atop `main`',
+      '',
+      '# Restack the remaining stack, including exploratory side branches',
+      "jj rebase --revision '(main..parser-api)::' --onto main",
+      'jj git push',
+    ].join('\n')}
+    lang="sh"
+    theme="one-dark-pro"
+  />
+
+</div>
+
+That's it. `main..parser-api` selects the remaining commits between the newly
+merged `main` and the next bookmark in the stack, `parser-api`. The trailing
+`::` adds _all_ those commits' descendants. Visualized while working on `main`:
+
+<StackedDiff />
+
+Jujutsu knows how all those stacked descendants relate, and rebases them all in
+one go. You can run this from anywhere. If you've ever tried this with Git, you
+know it is not nearly as simple in the Jujutsu animation above. With Jujutsu,
+you don't have to check out each branch one by one, rebasing each, praying you
+turned on Git `rerere`, resolving conflicts in each, and force pushing each.
+Instead, it's one command to rebase, and one to force push.
+
+Further reading:
+
+- [Jujutsu Strategies]
+- [Git Is Not Fine]
+
+### Better "Where am I?"
+
+The visual above is the default output of `jj log`. Let's take a moment to
+appreciate the power of good defaults.
+
+The most frequent query in a CLI is reporting system status, to answer roughly,
+"Where am I?" In Unix, you type `pwd` or `ls` a _lot_. In Git, it's `git status`
+and `git log`. Maybe you have an alias to make those more compact or decorated
+with metadata you care about.
+
+`git log` shows only things reachable from your current head. To see
+disconnected refs being worked on, you'll need to know what those refs are and
+pass them to `git log`. If anything's uncommitted, it won't be viewable at all
+without navigating to that worktree's working directory.
+
+`jj log` out of the box is vastly more informative. It answers "Where am I?" and
+"What else has been worked on recently?" The default shows a compact graph of
+your current head change, trunk, tags, and all the open branches you're tracking
+that haven't been merged, including work you've dispatched to worktrees. Notice
+the unmerged branches in the `jj log` visual above, despite my working copy on
+`main`. To remind me what I'm working on and what has been worked on recently,
+`jj log` is more of a one-stop shop, subsuming multiple invocations of
+`git branch`, `git log`, and external tools like `git recent`.
+
+Further reading:
+
+- [jj init]
+- [Steve Klabnik's Jujutsu Tutorial]
+
+### Snapshotting
+
+In Git, there's the staged and unstaged area where it detects there's a working
+copy diff. Despite there being file changes, they are not saved. They are not in
+history. They are not viewable outside Git's working directory. If you don't
+have undo history in your external editor, your history of these uncommitted
+files can be lost.
+
+In Jujutsu, there's no such staged or unstaged area. Once you start editing
+files, you're editing a commit. For virtually every `jj` command you run, behind
+the scenes, it snapshots the working copy diff.
+
+This makes spinning up a new idea a breeze. This makes checking out your
+teammate's code without losing your work-in-progress a breeze. Although, as with
+Git, you should probably apply a commit message anyway, even if it's just
+`TICKET-123: WIP` to edit later, rather than have a bunch of anonymous diffs
+littered throughout history.
+
+`jj`'s automatic snapshotting also rescued me from 2025 Cursor GUI chat panel's
+wonky undo states. In Cursor, it was often unclear what `Cmd+Z`/`u` would undo,
+and what rewinding checkpoints within the chat thread would do to the actual
+working copy. As I'm primarily a terminal user, using it for edit and code
+review, `jj` adds a safety net. Since I am already `jj diff`-ing whatever the
+agent changed, `jj` is quietly snapshotting repo state. That made `jj undo` a
+decent escape hatch to rewind. Although neither GUI undo states nor `jj undo`
+are substitutes for deliberate commits.
+
+Since my early days with Cursor, I've switched to Codex's desktop app, and it
+frequently shows just the diff from the _latest turn_. This is much better than
+making me re-read the diff of everything it's done in the chat thread up to that
+point, wondering what exact subset changed.
+
+The agent doesn't always get the diff perfect, so I prefer to have it commit
+anew and tell me what relevant changeid it worked on. Then I can verify
+independently from the specific agent's UI from anywhere in the terminal: use
+the universal `jj diff --revision <changeid>`. Or for the whole thread up to
+that point, `jj diff --revision main..<changeid>`.
+
+Then I potentially squash the fixup. Perhaps I squash with no-arg `jj squash` if
+I know my target is the immediate last commit. Or I turn to the handy
+`jj absorb` if the fixup goes further back and it's obvious to the algorithm
+where it goes in history (the 3rd party `git absorb` is built into `jj`).
+Failing absorb's automatic detection, there's the longer, precise, manual form,
+`jj squash --from <rev2> --to <rev1>`. If I'm in a trusting mood with the agent,
+I can tell it to perform the precise `jj squash` for me. If I, `jj absorb,` or
+the agent get anything wrong, I can `jj undo`.
+
+### Worktrees
+
+Worktrees (workspaces in `jj` parlance) let your repo deploy multiple working
+copies on disk, with all history shared between them. For solo dev, worktrees
+might be a little overpowered. For keeping your history clear to share with
+teammates, however, when your agents are investigating a lot of different ideas,
+worktrees can be handy.
+
+Just remember, computers may be good at context switching really fast, but
+humans aren't. If you spin up agents on 10 different worktrees, then have to
+context switch between reviewing 10 different worktrees' branched commits, you
+won't save any time and your critical thinking will be mush.
+
+That said, I usually have my default worktree for me, and up to one other
+worktree chewing on a background investigation. If the agent isn't going to
+stomp on my human changes because it's in its own worktree, I tell it to commit
+at will. I can review and clean up its commits later.
+
+The worktree concept isn't specific to `jj`, but again `jj` makes it easy to
+rearrange multiple commits. They can be in any worktree. You can view them from
+wherever you are with `jj log`. You can rearrange them from wherever you are.
+Even "uncommitted" changes, because all changes are committed via snapshot. All
+without needing to change your working directory or working copy.
+
+I don't need an agent UI-specific worktree option. Just talking to it, telling
+it to use a worktree for a particular task, with the following minimal
+instructions from my dotfiles as guardrails and optimization, the agent figures
+out the rest.
+
+Further reading:
+
+- My dotfiles' [worktrees instructions][worktrees.md] (progressively disclosed
+  from [AGENTS.md][AGENTS.md's worktrees trigger])
+
+### Caveats
+
+Again, I've been using `jj` pretty seamlessly with my engineering team for
+several months. But before you go charging in, it is worth knowing the
+outstanding, [unsupported Git features][Git compatibility]. Some points of
+friction to know about:
+
+- No submodules.
+- No Git LFS.
+- No Git hooks.
+  - The GitHub tracking issue documents workarounds. And I'm grateful the thread
+    taught me to be careful: [Git hooks are
+    perilous][pre-commit hooks are fundamentally broken].
+  - So instead of e.g. `pre-commit`, my repo AGENTS.md runs e.g.
+    `npm run lint:fix` at the end of any code-modifying turn (CI runs
+    `npm run lint`, as before). That covers more cases than pre-commit hooks
+    anyway.
+- Anything that expects `.git/` to be present, but there's only `.jj/`, such as
+  in a `jj workspace`.
+  - You'll need to drop down to `git` and pass the external location of the
+    underlying Git repo via env vars `GIT_DIR` and `GIT_WORK_TREE`. This can be
+    clunky. Examples:
+    - Repo scripts that enumerate files via `git`, e.g. `git ls-files`.
+    - `git-crypt`.
+- Anything that expects Git not on a detached `HEAD`.
+  - E.g. `gh pr view` without arguments, agent UI sidebars reporting linked PRs
+    or how many lines changed in the thread. Such tools seem hardcoded to `git`,
+    no way to swap in `jj`.
+- Agents will incur extra tool calls and missteps with `jj`.
+  - `jj` itself is written in Rust and is fast. Claude, Codex, and Cursor can
+    all intuit how to use `jj` as its concepts are similar to `git`.
+  - However, when agents use concepts they're heavily trained on, like `git`,
+    the agents require fewer tool calls and finish in fewer steps.
+  - I accept a little extra time taken by the agent, because I get to work on
+    something else, my time is more valuable, and I return to a more followable,
+    rearrangeable history.
+
+### Getting Started
+
+In the majority of Git use cases, you can run the following to colocate a
+Jujutsu repository with a Git repository.
+
+<div class="jj-command">
+  <Code
+    code={[
+      'cd path/to/a/git/repo',
+      'jj git init',
+    ].join('\n')}
+    lang="sh"
+    theme="one-dark-pro"
+  />
+
+</div>
+
+Voilà. You can interact with version control only using `jj`. No further need
+for `git`.
+
+For more exploration tips, again, check out [Steve Klabnik's Jujutsu Tutorial].
+There will be a week of learning curve. While learning, you can be productive
+with prior distributed VCS knowhow, but you'll be a little tripped up by
+Jujutsu's new mental model.
+
+For your agent workflow, `jj` is similar enough to `git`, you can [just talk to
+the agent][Just Talk To It] to get it to use `jj`. The agent can reference the
+CLI's help for anything unexpected.
+
+Note per that article, early in a chat thread or in your AGENTS.md/CLAUDE.md
+instructions, you have to yell at Claude in all caps to get it to prefer `jj`.
+Claude does not like to follow instructions otherwise (I haven't had this
+problem with Codex or Cursor). My AGENTS.md doesn't need too much else, besides
+some optional, agent-specific optimizations (e.g. proactively requesting sandbox
+escalation, since `jj` performs writes, its snapshotting, on virtually every
+command).
+
+The mainstream VCS du jour usually changes every several years, from e.g. CVS to
+SVN, mix some Perforce in there. In the late aughts, the mainstream programming
+world solidified on Git and its killer app GitHub. I worried we'd calcify
+further around Git, as agents seem to perform better on popular technology
+stacks with lots of training data. Thankfully, the Git CLI is not the best
+humanity could do, and humans and agents alike pick up `jj` without much effort.
+Give Jujutsu a try, and ease your `git` Stockholm syndrome.
+
+Further reading:
+
+- My [AGENTS.md's `jj` trigger]
+- [Will agents like Git any more than we do?]
+
+[AGENTS.md's `jj` trigger]:
+  https://github.com/john-kurkowski/dotfiles/blob/4095e15b7d90c7937f48ee8031589dff7116a29b/.agents/AGENTS.md?plain=1#L43-L52
+[AGENTS.md's worktrees trigger]:
+  https://github.com/john-kurkowski/dotfiles/blob/4095e15b7d90c7937f48ee8031589dff7116a29b/.agents/AGENTS.md?plain=1#L88-L91
+[Avoid Git First Drafts]: /posts/avoid-git-first-drafts
+[FR: Generalized hook support]: https://github.com/jj-vcs/jj/issues/3577
+[Git Is Not Fine]: https://www.billjings.com/posts/title/git-is-not-fine/
+[Git compatibility]:
+  https://github.com/jj-vcs/jj/blob/f5d757e5e7d2f724ab44a06f2726317e06e543ca/docs/git-compatibility.md#supported-features
+[git-rebase]: https://blog.izs.me/2012/12/git-rebase/
+[jj init]: https://v5.chriskrycho.com/essays/jj-init/
+[Jujutsu]: https://www.jj-vcs.dev/
+[Jujutsu Strategies]: https://reasonablypolymorphic.com/blog/jj-strategy/
+[Just Talk to It]: https://steipete.me/posts/just-talk-to-it
+[pre-commit hooks are fundamentally broken]:
+  https://jyn.dev/pre-commit-hooks-are-fundamentally-broken/
+[Steve Klabnik's Jujutsu Tutorial]:
+  https://steveklabnik.github.io/jujutsu-tutorial/
+[Will agents like Git any more than we do?]:
+  https://www.amplifypartners.com/blog-posts/will-agents-like-git-any-more-than-we-do
+[worktrees.md]:
+  https://github.com/john-kurkowski/dotfiles/blob/4095e15b7d90c7937f48ee8031589dff7116a29b/.agents/style/worktrees.md
