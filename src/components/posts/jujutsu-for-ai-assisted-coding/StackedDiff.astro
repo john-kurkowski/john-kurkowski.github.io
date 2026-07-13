@@ -1,0 +1,510 @@
+---
+/**
+ * Renders authentic `jj log` fixtures as static, accessible stack states.
+ * Stable line keys let the client-side enhancement animate graph rewrites while
+ * preserving every state when JavaScript is unavailable.
+ */
+import beforeLog from "./fixtures/01-before.txt?raw"
+import squashMergedLog from "./fixtures/02-squash-merged.txt?raw"
+import restackedLog from "./fixtures/03-restacked.txt?raw"
+
+interface State {
+  description: string
+  id: string
+  log: string
+  shortTitle: string
+  title: string
+}
+
+interface RenderedLine {
+  key: string
+  tokens: RenderedToken[]
+}
+
+interface RenderedToken {
+  bold?: boolean
+  className?: string
+  text: string
+  token?:
+    | "author"
+    | "bookmark"
+    | "change-id"
+    | "commit-id"
+    | "root"
+    | "timestamp"
+}
+
+const states: State[] = [
+  {
+    description:
+      "the working copy atop main; the stack branches off, with even further side branches.",
+    id: "before",
+    log: beforeLog.trimEnd(),
+    shortTitle: "Before",
+    title: "1. Before",
+  },
+  {
+    description:
+      "the working copy follows main's squash commit beside the unrestack.",
+    id: "squash-merged",
+    log: squashMergedLog.trimEnd(),
+    shortTitle: "Squash merged",
+    title: "2. Squash merged",
+  },
+  {
+    description:
+      "the working copy stays atop main as the stack and side branches are rebased.",
+    id: "restacked",
+    log: restackedLog.trimEnd(),
+    shortTitle: "Restacked",
+    title: "3. Restacked",
+  },
+]
+const stackId = `jj-stack-${crypto.randomUUID()}`
+const initialState = states[0]
+
+if (!initialState) {
+  throw new Error("Stacked diff requires an initial state")
+}
+
+const SUMMARY_PATTERN =
+  /^(.*?)([a-z]{8}) (\S+) (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) (?:(.+) )?([0-9a-f]{8})$/
+const ROOT_PATTERN = /^(.*?)(zzzzzzzz) (root\(\)) (00000000)$/
+const DESCRIPTION_PATTERN = /^(.*? {2})(.*)$/
+
+function colorizedId(
+  value: string,
+  color: number,
+  token: "change-id" | "commit-id",
+): RenderedToken[] {
+  return [
+    {
+      bold: true,
+      className: `ansi-fg-${color}`,
+      text: value.slice(0, 2),
+      token,
+    },
+    { className: "ansi-fg-8", text: value.slice(2), token },
+  ]
+}
+
+function colorizedGraph(
+  graph: string,
+  current: boolean,
+  root = false,
+): RenderedToken[] {
+  const marker = current ? "@" : root ? "◆" : undefined
+  if (!marker) {
+    return [{ text: graph }]
+  }
+
+  const markerIndex = graph.indexOf(marker)
+  return [
+    { text: graph.slice(0, markerIndex) },
+    {
+      bold: true,
+      className: current ? "ansi-fg-2" : "ansi-fg-14",
+      text: marker,
+    },
+    { text: graph.slice(markerIndex + marker.length) },
+  ]
+}
+
+function renderLog(log: string): RenderedLine[] {
+  let previousChangeId = "graph"
+  let previousWasCurrent = false
+
+  return log.split("\n").map((line, lineIndex) => {
+    const rootMatch = ROOT_PATTERN.exec(line)
+    if (rootMatch) {
+      const graph = rootMatch[1] ?? ""
+      const changeId = rootMatch[2] ?? ""
+      const root = rootMatch[3] ?? ""
+      const commitId = rootMatch[4] ?? ""
+      return {
+        key: "root-summary",
+        tokens: [
+          ...colorizedGraph(graph, false, true),
+          ...colorizedId(changeId, 5, "change-id"),
+          { text: " " },
+          { className: "ansi-fg-2", text: root, token: "root" },
+          { text: " " },
+          ...colorizedId(commitId, 4, "commit-id"),
+        ],
+      }
+    }
+
+    const summaryMatch = SUMMARY_PATTERN.exec(line)
+    if (summaryMatch) {
+      const graph = summaryMatch[1] ?? ""
+      const changeId = summaryMatch[2] ?? ""
+      const author = summaryMatch[3] ?? ""
+      const timestamp = summaryMatch[4] ?? ""
+      const bookmarks = summaryMatch[5]
+      const commitId = summaryMatch[6] ?? ""
+      const current = graph.includes("@")
+      previousChangeId = changeId
+      previousWasCurrent = current
+
+      return {
+        key: `${changeId}-summary`,
+        tokens: [
+          ...colorizedGraph(graph, current),
+          ...colorizedId(changeId, current ? 13 : 5, "change-id"),
+          { text: " " },
+          { className: "ansi-fg-3", text: author, token: "author" },
+          { text: " " },
+          {
+            className: `ansi-fg-${current ? 14 : 6}`,
+            text: timestamp,
+            token: "timestamp",
+          },
+          ...(bookmarks
+            ? [
+                { text: " " },
+                {
+                  className: `ansi-fg-${current ? 13 : 5}`,
+                  text: bookmarks,
+                  token: "bookmark" as const,
+                },
+              ]
+            : []),
+          { text: " " },
+          ...colorizedId(commitId, current ? 12 : 4, "commit-id"),
+        ],
+      }
+    }
+
+    const descriptionMatch = DESCRIPTION_PATTERN.exec(line)
+    if (descriptionMatch) {
+      const graph = descriptionMatch[1] ?? ""
+      const description = descriptionMatch[2] ?? ""
+      return {
+        key: `${previousChangeId}-description`,
+        tokens: [
+          { text: graph },
+          { bold: previousWasCurrent, text: description },
+        ],
+      }
+    }
+
+    return {
+      key: `line-${lineIndex}`,
+      tokens: [{ text: line }],
+    }
+  })
+}
+---
+
+<figure class="jj-stack" data-jj-stack>
+  <div class="jj-stack-controls" data-controls hidden>
+    <fieldset class="jj-stack-states">
+      <legend class="sr-only">Jujutsu stack state</legend>
+      {states.map((state, index) => (
+          <label class="jj-stack-option">
+            <input
+              aria-controls={`${stackId}-${state.id}`}
+              checked={index === 0}
+              class="jj-stack-input"
+              data-state-index={index}
+              data-state-title={state.shortTitle}
+              name={`${stackId}-state`}
+              type="radio"
+              value={state.id}
+            />
+            <span>{state.shortTitle}</span>
+          </label>
+      ))}
+    </fieldset>
+  </div>
+
+  <p class="sr-only" data-state-status role="status">
+    Showing: {initialState.shortTitle}
+  </p>
+
+  <div data-panels>
+    {states.map((state, index) => (
+        <section
+          aria-label={state.title}
+          class="jj-stack-panel"
+          data-state-index={index}
+          data-state-panel
+          id={`${stackId}-${state.id}`}
+        >
+          <div class="jj-terminal" data-jj-terminal>
+            <div class="jj-terminal-heading">
+              <h3>{state.title}</h3>
+              <p>{state.description}</p>
+            </div>
+
+            <pre class="jj-log"><code>{renderLog(state.log).map((line) => (
+                  <span
+                    class="jj-log-line"
+                    data-line-key={line.key}
+                    style={`--jj-line-transition: jj-${line.key}`}
+                  >{line.tokens.map((token) => (
+                      <span
+                        class:list={[token.className, { "ansi-bold": token.bold }]}
+                        data-token={token.token}
+                      >{token.text}</span>
+                    ))}</span>
+                ))}</code></pre>
+          </div>
+        </section>
+      ))}
+  </div>
+
+  <figcaption>
+    Change IDs remain stable while commit hashes change as the whole graph is
+    rewritten.
+  </figcaption>
+</figure>
+
+<script>
+function initializeJjStacks() {
+  const stacks = document.querySelectorAll<HTMLElement>("[data-jj-stack]")
+
+  for (const stack of stacks) {
+    if (stack.dataset.enhanced === "true") {
+      continue
+    }
+
+    const controls = stack.querySelector<HTMLElement>("[data-controls]")
+    const panels = Array.from(
+      stack.querySelectorAll<HTMLElement>("[data-state-panel]"),
+    )
+    const stateInputs = Array.from(
+      stack.querySelectorAll<HTMLInputElement>("input[data-state-index]"),
+    )
+    const status = stack.querySelector<HTMLElement>("[data-state-status]")
+
+    if (!controls || !status || panels.length === 0) {
+      continue
+    }
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
+
+    const updateState = (stateIndex: number) => {
+      for (const [index, panel] of panels.entries()) {
+        panel.hidden = index !== stateIndex
+      }
+
+      for (const [index, input] of stateInputs.entries()) {
+        input.checked = index === stateIndex
+      }
+
+      status.textContent = `Showing: ${stateInputs[stateIndex]?.dataset.stateTitle ?? ""}`
+    }
+
+    const showState = async (stateIndex: number) => {
+      if (reducedMotion.matches || !document.startViewTransition) {
+        updateState(stateIndex)
+        return
+      }
+
+      const transition = document.startViewTransition(() => {
+        updateState(stateIndex)
+      })
+      await transition.finished
+    }
+
+    for (const [index, input] of stateInputs.entries()) {
+      input.addEventListener("change", () => {
+        if (input.checked) {
+          void showState(index)
+        }
+      })
+    }
+
+    updateState(0)
+    stack.dataset.enhanced = "true"
+    controls.hidden = false
+  }
+}
+
+document.addEventListener("astro:page-load", initializeJjStacks)
+initializeJjStacks()
+</script>
+
+<style>
+.jj-stack {
+  margin-block: 1.5rem;
+  padding-inline: 0;
+  text-align: left;
+}
+
+.jj-stack-controls {
+  margin-bottom: 0.5rem;
+}
+
+.jj-stack-states {
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.jj-stack-option {
+  display: block;
+  position: relative;
+}
+
+.jj-stack-input {
+  opacity: 0;
+  position: absolute;
+}
+
+.jj-stack-option span {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 0.25rem;
+  color: inherit;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.65rem;
+}
+
+.jj-stack-input:checked + span {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+.jj-stack-input:focus-visible + span {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.jj-stack-panel + .jj-stack-panel {
+  margin-top: 1rem;
+}
+
+.jj-stack-panel[hidden] + .jj-stack-panel,
+.jj-stack-panel + .jj-stack-panel[hidden] {
+  margin-top: 0;
+}
+
+.jj-terminal {
+  background: #282c34;
+  border: 1px solid #3e4451;
+  border-radius: 0.375rem;
+  color: #abb2bf;
+  overflow: hidden;
+}
+
+.jj-terminal-heading {
+  align-items: baseline;
+  border-bottom: 1px solid #3e4451;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-sans);
+  gap: 0.35rem 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.jj-terminal-heading h3 {
+  color: #abb2bf;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.jj-terminal-heading p {
+  color: #5c6370;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.jj-log {
+  background: #282c34;
+  color: #abb2bf;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 0;
+  overflow: auto;
+  padding: 1rem;
+  view-transition-group: contain;
+  view-transition-name: jj-log;
+}
+
+.jj-log code {
+  background: transparent;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.jj-log-line {
+  display: block;
+  min-height: 1.2em;
+  view-transition-name: var(--jj-line-transition);
+}
+
+.ansi-bold,
+.jj-log-line :global(strong) {
+  font-weight: 700;
+}
+
+.jj-log-line :global(.ansi-fg-2) {
+  color: #98c379;
+}
+
+.jj-log-line :global(.ansi-fg-3) {
+  color: #e5c07b;
+}
+
+.jj-log-line :global(.ansi-fg-4) {
+  color: #61afef;
+}
+
+.jj-log-line :global(.ansi-fg-5) {
+  color: #c678dd;
+}
+
+.jj-log-line :global(.ansi-fg-6) {
+  color: #56b6c2;
+}
+
+.jj-log-line :global(.ansi-fg-8) {
+  color: #5c6370;
+}
+
+.jj-log-line :global(.ansi-fg-12) {
+  color: #61afef;
+}
+
+.jj-log-line :global(.ansi-fg-13) {
+  color: #c678dd;
+}
+
+.jj-log-line :global(.ansi-fg-14) {
+  color: #56b6c2;
+}
+
+.jj-stack figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+:global(::view-transition-group(*)) {
+  animation-duration: 350ms;
+  animation-timing-function: ease-in-out;
+}
+
+:global(::view-transition-group(jj-log)) {
+  overflow: clip;
+}
+
+:global(::view-transition-old(root)),
+:global(::view-transition-new(root)) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(::view-transition-group(*)) {
+    animation-duration: 0s;
+  }
+}
+</style>
