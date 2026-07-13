@@ -1,0 +1,27 @@
+@  vvswrqzl alice@example.com 2026-07-13 09:00:26 f8c6bbfb
+│  (empty) (no description set)
+○  upzkznrn bob@example.com 2026-07-13 09:00:05 main 07608bfd
+│  Harden CI
+○  movruppx alice@example.com 2026-07-13 09:00:04 062bec3c
+│  Update dependencies
+│ ○  mwtzonnu bob@example.com 2026-07-13 09:00:24 parser-integration 539f299c
+│ │  Integrate parser
+│ │ ○  nrroyzxq bob@example.com 2026-07-13 09:00:22 b6a6e7fa
+│ ├─╯  Try structured errors
+│ ○  kpopmkrw alice@example.com 2026-07-13 09:00:19 parser-errors a93ebade
+│ │  Document parser errors
+│ ○  muoulswl bob@example.com 2026-07-13 09:00:17 parser-validation cfdcce1b
+│ │  Add validation tests
+│ ○  nklklurt bob@example.com 2026-07-13 09:00:16 69f5024e
+│ │  Handle invalid input
+│ │ ○  pqkwwwts alice@example.com 2026-07-13 09:00:14 b7f79df0
+│ │ │  Benchmark streaming parser
+│ │ ○  nswqkxvm alice@example.com 2026-07-13 09:00:13 b03f9d45
+│ ├─╯  Prototype streaming parser
+│ ○  nvnqmyyz alice@example.com 2026-07-13 09:00:10 parser-api 3217de9b
+│ │  Expose parser API
+│ ○  lzpvzwso alice@example.com 2026-07-13 09:00:08 parser 8b5ae002
+├─╯  Add parser
+○  supuptlt alice@example.com 2026-07-13 09:00:02 5f190f5c
+│  Set up project
+◆  zzzzzzzz root() 00000000
