@@ -1,0 +1,70 @@
+---
+/**
+ * Hosts the production stacked-diff component in the SEO image's fixed canvas.
+ * Reusing the article component keeps the captured preview visually consistent.
+ */
+import StackedDiff from "../../../src/components/posts/jujutsu-for-ai-assisted-coding/StackedDiff.astro"
+---
+
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width" name="viewport">
+    <title>Jujutsu stack capture</title>
+  </head>
+  <body id="jj-stack-capture">
+    <StackedDiff />
+  </body>
+</html>
+
+<style is:global>
+html,
+body {
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+
+  background: #1d1c1d;
+  height: 630px;
+  margin: 0;
+  overflow: hidden;
+  width: 1200px;
+}
+
+#jj-stack-capture .jj-stack {
+  margin: 0;
+}
+
+#jj-stack-capture .jj-stack-controls,
+#jj-stack-capture .jj-stack figcaption {
+  display: none;
+}
+
+body .jj-terminal {
+  border: 0;
+  border-radius: 0;
+  height: 630px;
+}
+
+body .jj-terminal-heading {
+  gap: 0.5rem 1rem;
+  padding: 0.6rem 1.5rem;
+}
+
+body .jj-terminal-heading strong {
+  font-size: 1rem;
+}
+
+body .jj-terminal-heading span {
+  font-size: 0.875rem;
+}
+
+#jj-stack-capture .jj-log {
+  font-size: 15px;
+  line-height: 1.15;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem;
+}
+
+#jj-stack-capture .jj-log-line {
+  min-height: 1.15em;
+}
+</style>
