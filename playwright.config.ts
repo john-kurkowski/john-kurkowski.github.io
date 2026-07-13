@@ -1,6 +1,9 @@
 import { createArgosReporterOptions } from "@argos-ci/playwright/reporter"
 import { defineConfig, devices } from "@playwright/test"
 
+const port = process.env.PLAYWRIGHT_PORT ?? "4321"
+const baseURL = `http://localhost:${port}`
+
 export default defineConfig({
   testDir: "./test/vrt",
   testMatch: "**/*.spec.ts",
@@ -14,13 +17,14 @@ export default defineConfig({
   ],
   use: {
     ...devices["Desktop Chrome"],
-    baseURL: "http://localhost:4321",
+    baseURL,
+    channel: process.env.PLAYWRIGHT_CHANNEL,
     screenshot: "only-on-failure",
     trace: "on-first-retry",
   },
   webServer: {
-    command: "npm run preview",
+    command: `npm run preview -- --port ${port}`,
     reuseExistingServer: !process.env.CI,
-    url: "http://localhost:4321",
+    url: baseURL,
   },
 })
