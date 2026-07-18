@@ -42,25 +42,23 @@ the Git CLI for 15 years, I didn't realize how much time I spent fighting it,
 even as an expert. The Jujutsu CLI is simpler and fluent. There was a week of
 learning curve. I haven't looked back.
 
-Jujutsu is especially relevant in the age of AI-assisted coding. AI means _more_
-edits, diffs, branches, commits, and investigations to share with your team. The
-Claude Code creator boasts that coding is a solved problem. If so, maybe a day
-is soon coming that version control systems (VCS) for code is a solved problem;
-no one will worry about or inspect or hand manage commit history. Until then, my
-job as a software developer working with a team remains: **communicate the
-changed code to myself and to the team.** This includes the code I prompt AI to
-generate.
+Jujutsu is especially relevant in the age of AI-assisted coding. AI can produce
+more edits, diffs, branches, commits, and investigations to understand and share
+with a team. Simon Willison [warns software
+developers][Your job is to deliver code you have proven to work] against vibe
+coding and expecting "the 'code review' process to handle the rest." Rather:
 
-I still have to understand what the AI changed and where it placed the work. I
-need to bring my teammates along, with a [coherent, distinct
-story][Avoid Git First Drafts] they can review, integrate, and maintain. I don't
-want to foist an undebuggable pile onto them in one giant commit, leaving them
-to unravel a message like
+> Your job is to deliver code you have proven to work.
+
+On a team, that also means **communicating code changes clearly** to yourself
+and to teammates. Understand what the AI changed and give teammates a [coherent,
+distinct story][Avoid Git First Drafts] they can review, integrate, and
+maintain. I don't want to hand them one giant change, or leave them to decipher
+a message like
 `Revert "Revert "hmm this seems broken but it sorta works i dunno""` (quoted
 from [the seminal article on forensic version control history][git-rebase]).
-Agents can waste tokens following the same misleading trail. I want to author
-changes that humans and robots like to work with. Jujutsu helps me slice, dice,
-and present my changes cleaner and faster.
+Jujutsu helps me turn exploratory work into smaller, reviewable, rearrangeable
+changes.
 
 There are plenty of Jujutsu feature lists and deep dives out there, so I'll just
 highlight a few killer features that helped me the last several months, with
@@ -358,3 +356,5 @@ Further reading:
   https://www.amplifypartners.com/blog-posts/will-agents-like-git-any-more-than-we-do
 [worktrees.md]:
   https://github.com/john-kurkowski/dotfiles/blob/4095e15b7d90c7937f48ee8031589dff7116a29b/.agents/style/worktrees.md
+[Your job is to deliver code you have proven to work]:
+  https://simonwillison.net/2025/Dec/18/code-proven-to-work/
