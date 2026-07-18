@@ -47,6 +47,15 @@ test("article pages expose description metadata for link previews", async () => 
   assert.equal(getMetaContent(html, "name", "twitter:description"), description)
 })
 
+test("pages permit large image previews in search results", async () => {
+  const html = await readPage("../../../dist/index.html")
+
+  assert.equal(
+    getMetaContent(html, "name", "robots"),
+    "index, follow, max-image-preview:large",
+  )
+})
+
 test("image-backed articles expose absolute social preview images and alt text", async () => {
   const cases = [
     {
