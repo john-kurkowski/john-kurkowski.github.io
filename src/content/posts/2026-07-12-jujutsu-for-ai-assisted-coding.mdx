@@ -57,9 +57,9 @@ review' process to handle the rest."
 That also means clearly **communicating what changed and why**, to yourself and
 to teammates.
 
-Understand what the AI changed and give teammates a [coherent, distinct
-story][Avoid Git First Drafts] they can review, integrate, and maintain. I don't
-want to hand them one giant change, or leave them to decipher a message like
+Understand what the AI changed and give yourself and teammates a coherent,
+distinct story they can review, integrate, and maintain. I don't want to hand
+them one giant change, or leave them to decipher a message like
 `Revert "Revert "hmm this seems broken but it sorta works i dunno""` (quoted
 from [the seminal article on forensic version control history][git-rebase]).
 Jujutsu helps me turn exploratory work into smaller, reviewable, rearrangeable
@@ -93,17 +93,17 @@ conflicts. `jj` gives dedicated UX attention to these operations, simplifying
 them, making them safer, and minimizing conflicts (while also making conflicts
 first class in history, not just in the working copy).
 
-Let's say you're working on a single feature with 5 stacked branches atop your
-trunk, with any number of commits in between. Call them `parser`, `parser-api`,
-`parser-validation`, etc. Commits can occur outside them. For example, work on
-trunk from other developers, or your own exploratory commits not intended for
-merge. The first branch in the stack has passed review. It is ready to merge to
-`main`. How do you keep the remainder of the stack in sync?
+Let's say you're working on a single feature with 5 stacked branches: `parser`,
+`parser-api`, `parser-validation`, etc. Each can have any number of commits in
+between. Other work can sit alongside the stack, like teammates' changes to
+trunk, or your own exploratory commits. The first branch in your stack has
+passed review. It is ready to merge to `main`. How do you keep the remainder of
+the stack in sync?
 
-My team and I tend to squash merge in the GitHub GUI. For fun, here's doing the
-same merge manually in `jj`. Then, we'll rebase the whole stack in **one
-command**. Finally, we'll force push with lease in one command, as we would with
-Git.
+My team and I tend to squash merge PRs in the GitHub GUI.[^1] For demonstration,
+here's reproducing that merge in `jj`. Then, we'll rebase the whole stack in
+**one command**. Finally, we'll force push with lease in one command, as we
+would with Git.
 
 <div class="jj-command" data-jj-command="squash-and-restack">
   <Code
@@ -331,6 +331,25 @@ Further reading:
 - My [AGENTS.md's `jj` trigger]
 - [Will agents like Git any more than we do?]
 
+### Footnotes
+
+[^1]:
+    You're making [atomic commits][Write Better Commits, Build Better Projects],
+    right? If not for your team, for [helping yourself
+    think][Avoid Git First Drafts] through the evolving code change?
+
+    After development and review, this team squash merge policy loses atomic
+    commits, alas. GitHub has no way to enforce [semilinear
+    history][What are the advantages of keeping linear history in Git?]. The
+    policy is preferable to bad merge bubbles and fixup commits making it to
+    trunk.
+
+    Jujutsu distinguishes changes from commits. Because GitHub creates the
+    squash merge outside my local `jj` repository, `jj` cannot associate the
+    resulting `main` commit with the original `main..parser` changes. Although a
+    little `jj` benefit is lost in this moment, the code snippet and
+    visualization below show `jj` handles the restack anyway.
+
 [AGENTS.md's `jj` trigger]:
   https://github.com/john-kurkowski/dotfiles/blob/4095e15b7d90c7937f48ee8031589dff7116a29b/.agents/AGENTS.md?plain=1#L43-L52
 [AGENTS.md's worktrees trigger]:
@@ -349,9 +368,13 @@ Further reading:
   https://jyn.dev/pre-commit-hooks-are-fundamentally-broken/
 [Steve Klabnik's Jujutsu Tutorial]:
   https://steveklabnik.github.io/jujutsu-tutorial/
+[What are the advantages of keeping linear history in Git?]:
+  https://stackoverflow.com/a/69839256/62269
 [Will agents like Git any more than we do?]:
   https://www.amplifypartners.com/blog-posts/will-agents-like-git-any-more-than-we-do
 [worktrees.md]:
   https://github.com/john-kurkowski/dotfiles/blob/4095e15b7d90c7937f48ee8031589dff7116a29b/.agents/style/worktrees.md
+[Write Better Commits, Build Better Projects]:
+  https://github.blog/developer-skills/github/write-better-commits-build-better-projects/
 [Your job is to deliver code you have proven to work]:
   https://simonwillison.net/2025/Dec/18/code-proven-to-work/
