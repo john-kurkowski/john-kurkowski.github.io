@@ -310,11 +310,11 @@ For your agent workflow, `jj` is similar enough to `git`, you can [just talk to
 the agent][Just Talk To It] to get it to use `jj`. The agent can consult the
 CLI's help for anything unexpected.
 
-Note per that article, early in a chat thread or in your AGENTS.md/CLAUDE.md
-instructions, you have to yell at Claude in all caps to get it to prefer `jj`.
-Claude does not like to follow instructions otherwise (I haven't had this
-problem with Codex or Cursor). My AGENTS.md doesn't need too much else, besides
-some optional, agent-specific optimizations (e.g. proactively requesting sandbox
+That article recommends telling Claude early in a chat thread—or in
+`AGENTS.md`/`CLAUDE.md`—to prefer `jj`. In my experience, I sometimes have to
+yell that instruction in all caps to make it stick; I haven't needed to with
+Codex or Cursor. My `AGENTS.md` doesn't need too much else, besides some
+optional, agent-specific optimizations (e.g. proactively requesting sandbox
 escalation, since `jj` performs writes, its snapshotting, on virtually every
 command).
 
@@ -335,8 +335,8 @@ Further reading:
 
 [^1]:
     You're making [atomic commits][Write Better Commits, Build Better Projects],
-    right? If not for your team, for [helping yourself
-    think][Avoid Git First Drafts] through the evolving code change?
+    right? They help your team, and they can also [help you
+    think][Avoid Git First Drafts] through an evolving code change.
 
     After development and review, this team squash merge policy loses atomic
     commits, alas. GitHub has no way to enforce [semilinear
