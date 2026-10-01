@@ -48,6 +48,6 @@
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^40.0.0",
     "tsx": "^4.23.15",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   }
 }
